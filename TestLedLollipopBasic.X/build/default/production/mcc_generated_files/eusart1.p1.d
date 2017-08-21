@@ -1,6 +1,0 @@
- build/default/production/mcc_generated_files/eusart1.d  \
- build/default/production/mcc_generated_files/eusart1.p1:  \
- mcc_generated_files/eusart1.c  \
-mcc_generated_files/../sit.h  \
-Sigfox/sfxProtocol.h  \
-mcc_generated_files/eusart1.h 
