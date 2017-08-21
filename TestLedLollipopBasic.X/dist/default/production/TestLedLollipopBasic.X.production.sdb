@@ -1,0 +1,1151 @@
+[p PRO_MODE GLOBOPT AUTOSTATIC IEEE_DBL LFSROK SPACEOPT EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18LF25K22 ]
+[d frameptr 4065 ]
+"54 C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/interrupt_manager.c
+[e E1 _uart_semaphore_t `uc
+NO_OWNER 0
+SFX_OWNER 1
+GPRS_OWNER 2
+]
+"35 C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+[e E6658 _taskStates_t `uc
+TASK_PARKED 0
+TASK_RESET_TASK 1
+TASK_INIT 2
+TASK_READY 3
+TASK_WAITING_DATA 4
+]
+"36
+[e E6679 _TaskCommManagerState_t `uc
+TASK_SEND_COMMAND_SM 0
+TASK_DETECT_TRANSACTION_END_SM 1
+]
+"37
+[e E6665 _taskResult_t `uc
+TASK_NO_SENSOR_FOUND 0
+TASK_ON_COURSE 1
+TASK_DATA_READY 2
+TASK_TO_ERR 3
+TASK_DATA_NOT_AVAILABLE 4
+]
+"173
+[e E6710 _SFX_TASK_COMMANDS_T `uc
+SFX_CMD_INITIALIZE 0
+SFX_CMD_SEND_MSG 1
+SFX_CMD_SEND_MSG_WAIT_ACK 2
+SFX_CMD_SEND_STATUS 3
+SFX_CMD_SET_SFX_MODE 4
+SFX_CMD_PWR_DOWN 5
+SFX_CMD_ADJ_PWR 6
+]
+"58 C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart1.c
+[e E6658 _taskStates_t `uc
+TASK_PARKED 0
+TASK_RESET_TASK 1
+TASK_INIT 2
+TASK_READY 3
+TASK_WAITING_DATA 4
+]
+"69
+[e E6679 _TaskCommManagerState_t `uc
+TASK_SEND_COMMAND_SM 0
+TASK_DETECT_TRANSACTION_END_SM 1
+]
+"70
+[e E6665 _taskResult_t `uc
+TASK_NO_SENSOR_FOUND 0
+TASK_ON_COURSE 1
+TASK_DATA_READY 2
+TASK_TO_ERR 3
+TASK_DATA_NOT_AVAILABLE 4
+]
+"728
+[e E6672 _dataQualifier_t `uc
+SENSOR_READ 0
+BORROWED 1
+CALCULATED 2
+NOT_AVAILABLE 3
+UNKNOWN_SENSOR 4
+]
+"18 C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\main.c
+[e E6681 _taskResult_t `uc
+TASK_NO_SENSOR_FOUND 0
+TASK_ON_COURSE 1
+TASK_DATA_READY 2
+TASK_TO_ERR 3
+TASK_DATA_NOT_AVAILABLE 4
+]
+"11 C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+[e E6668 _mainTaskStates_t `uc
+MAIN_TASK_PARKED 0
+POWERING_TASK 1
+MEASURING_TASK 2
+COMMUNICATING_TASK 3
+]
+"52
+[e E6688 _dataQualifier_t `uc
+SENSOR_READ 0
+BORROWED 1
+CALCULATED 2
+NOT_AVAILABLE 3
+UNKNOWN_SENSOR 4
+]
+"95
+[e E6699 _systemEvent_t `uc
+HW_WARNING_EV 0
+TIMER1_EV 1
+TIMER2_EV 2
+INPUT_EV 3
+MOTION_EV 4
+VARIABLE_ALARM_EV 5
+BATTERY_EV 6
+]
+"230
+[e E6681 _taskResult_t `uc
+TASK_NO_SENSOR_FOUND 0
+TASK_ON_COURSE 1
+TASK_DATA_READY 2
+TASK_TO_ERR 3
+TASK_DATA_NOT_AVAILABLE 4
+]
+"269
+[e E6835 _POWER_TASK_COMMANDS_T `uc
+PWR_CMD_INITIALIZE 0
+PWR_CMD_VDD_EN 1
+PWR_CMD_VDD_DIS 2
+PWR_CMD_VCC_EN 3
+PWR_CMD_VCC_DIS 4
+PWR_CMD_PWR_DOWN 5
+]
+"302
+[e E6726 _SFX_TASK_COMMANDS_T `uc
+SFX_CMD_INITIALIZE 0
+SFX_CMD_SEND_MSG 1
+SFX_CMD_SEND_MSG_WAIT_ACK 2
+SFX_CMD_SEND_STATUS 3
+SFX_CMD_SET_SFX_MODE 4
+SFX_CMD_PWR_DOWN 5
+SFX_CMD_ADJ_PWR 6
+]
+"17 C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+[e E6630 _taskStates_t `uc
+TASK_PARKED 0
+TASK_RESET_TASK 1
+TASK_INIT 2
+TASK_READY 3
+TASK_WAITING_DATA 4
+]
+"43
+[e E6637 _taskResult_t `uc
+TASK_NO_SENSOR_FOUND 0
+TASK_ON_COURSE 1
+TASK_DATA_READY 2
+TASK_TO_ERR 3
+TASK_DATA_NOT_AVAILABLE 4
+]
+"104
+[e E6682 _POWER_TASK_COMMANDS_T `uc
+PWR_CMD_INITIALIZE 0
+PWR_CMD_VDD_EN 1
+PWR_CMD_VDD_DIS 2
+PWR_CMD_VCC_EN 3
+PWR_CMD_VCC_DIS 4
+PWR_CMD_PWR_DOWN 5
+]
+"137
+[e E6644 _dataQualifier_t `uc
+SENSOR_READ 0
+BORROWED 1
+CALCULATED 2
+NOT_AVAILABLE 3
+UNKNOWN_SENSOR 4
+]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\almod.c
+[v ___almod __almod `(l  1 e 4 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"54 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+"20 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 3 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"11 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strcat.c
+[v _strcat strcat `(*.39uc  1 e 2 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strchr.c
+[v _strchr strchr `(*.39uc  1 e 2 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strcpy.c
+[v _strcpy strcpy `(*.39uc  1 e 2 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strlen.c
+[v _strlen strlen `(ui  1 e 2 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strncmp.c
+[v _strncmp strncmp `(i  1 e 2 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strstr.c
+[v _strstr strstr `(*.39uc  1 e 2 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"48 C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\gprs.c
+[v _EUSART2_GPRS_Transmit_ISR EUSART2_GPRS_Transmit_ISR `A(v  1 e 1 0 ]
+"22 C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\main.c
+[v _systemMainTimer systemMainTimer `A(v  1 e 1 0 ]
+"44
+[v _setLedStatus setLedStatus `A(v  1 e 1 0 ]
+"69
+[v _main main `A(v  1 e 1 0 ]
+"59 C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/adc.c
+[v _ADC_Initialize ADC_Initialize `A(v  1 e 1 0 ]
+"74 C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart1.c
+[v _gpsReceive gpsReceive `A(v  1 e 1 0 ]
+"728
+[v _gpsTaskGetVarValidity gpsTaskGetVarValidity `A(E6672  1 e 1 0 ]
+"61 C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+[v _SigfoxReceive SigfoxReceive `A(v  1 e 1 0 ]
+"77
+[v _EUSART2_Initialize EUSART2_Initialize `A(v  1 e 1 0 ]
+"98
+[v _EUSART2_Transmit_ISR EUSART2_Transmit_ISR `A(v  1 e 1 0 ]
+"120
+[v _EUSART2_Receive_ISR EUSART2_Receive_ISR `A(v  1 e 1 0 ]
+"167
+[v _SigfoxResponseParser SigfoxResponseParser `A(uc  1 e 1 0 ]
+"173
+[v _SigfoxCommandSelector SigfoxCommandSelector `A(v  1 e 1 0 ]
+"211
+[v _SigfoxTransmit SigfoxTransmit `A(v  1 e 1 0 ]
+"218
+[v _SigfoxTXReady SigfoxTXReady `A(uc  1 e 1 0 ]
+"229
+[v _SigfoxVerifyTransactionStatus SigfoxVerifyTransactionStatus `A(E6665  1 e 1 0 ]
+"249
+[v _SigfoxCommManager SigfoxCommManager `A(E6665  1 e 1 0 ]
+"282
+[v _SigfoxTaskTick SigfoxTaskTick `A(v  1 e 1 0 ]
+"290
+[v _SigfoxTaskReset SigfoxTaskReset `A(v  1 e 1 0 ]
+"305
+[v _SigfoxTaskPowerDown SigfoxTaskPowerDown `A(v  1 e 1 0 ]
+"314
+[v _SigfoxTask SigfoxTask `A(E6665  1 e 1 0 ]
+"420
+[v _SigfoxTaskLoadPayloadBuffer SigfoxTaskLoadPayloadBuffer `A(v  1 e 1 0 ]
+"431
+[v _SigfoxTaskNewTask SigfoxTaskNewTask `A(v  1 e 1 0 ]
+"56 C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_Initialize INTERRUPT_Initialize `A(v  1 e 1 0 ]
+"64
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `IIA(v  1 e 1 0 ]
+"105 C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `A(v  1 e 1 0 ]
+"117
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `A(v  1 e 1 0 ]
+"51 C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `A(v  1 e 1 0 ]
+"66 C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/tmr0.c
+[v _TMR0_Initialize TMR0_Initialize `A(v  1 e 1 0 ]
+"95
+[v _TMR0_StartTimer TMR0_StartTimer `A(v  1 e 1 0 ]
+"101
+[v _TMR0_ISR TMR0_ISR `A(v  1 e 1 0 ]
+"121
+[v _TMR0_SetInterruptHandler TMR0_SetInterruptHandler `A(v  1 e 1 0 ]
+"23 C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+[v _powerTaskPowerDown powerTaskPowerDown `A(v  1 e 1 0 ]
+"33
+[v _powerTaskReset powerTaskReset `A(v  1 e 1 0 ]
+"38
+[v _powerTaskTick powerTaskTick `A(v  1 e 1 0 ]
+"43
+[v _powerTask powerTask `A(E6681  1 e 1 0 ]
+"104
+[v _powerTaskNewTask powerTaskNewTask `A(v  1 e 1 0 ]
+"137
+[v _powerTaskGetVarValidity powerTaskGetVarValidity `A(E6688  1 e 1 0 ]
+"17 C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+[v _ProtocolSetNextMeasTime ProtocolSetNextMeasTime `A(uc  1 e 1 0 ]
+"38
+[v _ProtocolSetNextCommTime ProtocolSetNextCommTime `A(uc  1 e 1 0 ]
+"52
+[v _ProtocolGetValidity ProtocolGetValidity `A(E6688  1 e 1 0 ]
+"64
+[v _ProtocolAddFrameData ProtocolAddFrameData `A(v  1 e 1 0 ]
+"95
+[v _ProtocolTaskBuildFrame ProtocolTaskBuildFrame `A(uc  1 e 1 0 ]
+"186
+[v _ProtocolTaskTick ProtocolTaskTick `A(v  1 e 1 0 ]
+"230
+[v _ProtocolTaskExecute ProtocolTaskExecute `A(E6681  1 e 1 0 ]
+"243
+[v _ProtocolTaskPowerDown ProtocolTaskPowerDown `A(v  1 e 1 0 ]
+"253
+[v _ProtocolTask ProtocolTask `A(E6681  1 e 1 0 ]
+"49 C:\Program Files (x86)\Microchip\xc8\v1.41\include\pic18lf25k22.h
+[v _ANSELA ANSELA `VEuc  1 e 1 @3896 ]
+"93
+[v _ANSELB ANSELB `VEuc  1 e 1 @3897 ]
+"142
+[v _ANSELC ANSELC `VEuc  1 e 1 @3898 ]
+[s S1027 . 1 `uc 1 ADCMD 1 0 :1:0 
+`uc 1 CMP1MD 1 0 :1:1 
+`uc 1 CMP2MD 1 0 :1:2 
+`uc 1 CTMUMD 1 0 :1:3 
+]
+"205
+[u S1032 . 1 `S1027 1 . 1 0 ]
+[v _PMD2bits PMD2bits `VES1032  1 e 1 @3901 ]
+[s S570 . 1 `uc 1 TMR1MD 1 0 :1:0 
+`uc 1 TMR2MD 1 0 :1:1 
+`uc 1 TMR3MD 1 0 :1:2 
+`uc 1 TMR4MD 1 0 :1:3 
+`uc 1 TMR5MD 1 0 :1:4 
+`uc 1 TMR6MD 1 0 :1:5 
+`uc 1 UART1MD 1 0 :1:6 
+`uc 1 UART2MD 1 0 :1:7 
+]
+"315
+[s S579 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 SPI1MD 1 0 :1:1 
+`uc 1 SPI2MD 1 0 :1:2 
+]
+[u S583 . 1 `S570 1 . 1 0 `S579 1 . 1 0 ]
+[v _PMD0bits PMD0bits `VES583  1 e 1 @3903 ]
+"2567
+[v _WPUB WPUB `VEuc  1 e 1 @3937 ]
+"4120
+[v _BAUDCON2 BAUDCON2 `VEuc  1 e 1 @3952 ]
+"4381
+[v _RCSTA2 RCSTA2 `VEuc  1 e 1 @3953 ]
+[s S482 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 ADDEN 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+"4426
+[s S491 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 ADEN 1 0 :1:3 
+]
+[s S494 . 1 `uc 1 RX9D2 1 0 :1:0 
+`uc 1 OERR2 1 0 :1:1 
+`uc 1 FERR2 1 0 :1:2 
+`uc 1 ADDEN2 1 0 :1:3 
+`uc 1 CREN2 1 0 :1:4 
+`uc 1 SREN2 1 0 :1:5 
+`uc 1 RX92 1 0 :1:6 
+`uc 1 SPEN2 1 0 :1:7 
+]
+[s S503 . 1 `uc 1 RCD82 1 0 :1:0 
+`uc 1 . 1 0 :5:1 
+`uc 1 RC8_92 1 0 :1:6 
+]
+[s S507 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 RC92 1 0 :1:6 
+]
+[u S510 . 1 `S482 1 . 1 0 `S491 1 . 1 0 `S494 1 . 1 0 `S503 1 . 1 0 `S507 1 . 1 0 ]
+[v _RCSTA2bits RCSTA2bits `VES510  1 e 1 @3953 ]
+"4668
+[v _TXSTA2 TXSTA2 `VEuc  1 e 1 @3954 ]
+"4919
+[v _TXREG2 TXREG2 `VEuc  1 e 1 @3955 ]
+"4956
+[v _RCREG2 RCREG2 `VEuc  1 e 1 @3956 ]
+"4993
+[v _SPBRG2 SPBRG2 `VEuc  1 e 1 @3957 ]
+"5030
+[v _SPBRGH2 SPBRGH2 `VEuc  1 e 1 @3958 ]
+[s S1066 . 1 `uc 1 RA0 1 0 :1:0 
+`uc 1 RA1 1 0 :1:1 
+`uc 1 RA2 1 0 :1:2 
+`uc 1 RA3 1 0 :1:3 
+`uc 1 RA4 1 0 :1:4 
+`uc 1 RA5 1 0 :1:5 
+`uc 1 RA6 1 0 :1:6 
+`uc 1 RA7 1 0 :1:7 
+]
+"6182
+[s S1075 . 1 `uc 1 AN0 1 0 :1:0 
+`uc 1 AN1 1 0 :1:1 
+`uc 1 AN2 1 0 :1:2 
+`uc 1 AN3 1 0 :1:3 
+`uc 1 . 1 0 :1:4 
+`uc 1 AN4 1 0 :1:5 
+]
+[s S1082 . 1 `uc 1 C12IN0M 1 0 :1:0 
+`uc 1 C12IN1M 1 0 :1:1 
+`uc 1 C2INP 1 0 :1:2 
+`uc 1 C1INP 1 0 :1:3 
+`uc 1 C1OUT 1 0 :1:4 
+`uc 1 C2OUT 1 0 :1:5 
+]
+[s S1089 . 1 `uc 1 C12IN0N 1 0 :1:0 
+`uc 1 C12IN1N 1 0 :1:1 
+`uc 1 VREFM 1 0 :1:2 
+`uc 1 VREFP 1 0 :1:3 
+`uc 1 T0CKI 1 0 :1:4 
+`uc 1 SS 1 0 :1:5 
+]
+[s S1096 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 NOT_SS 1 0 :1:5 
+]
+[s S1099 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 VREFN 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 SRQ 1 0 :1:4 
+`uc 1 nSS 1 0 :1:5 
+]
+[s S1105 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 CVREF 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 CCP5 1 0 :1:4 
+`uc 1 LVDIN 1 0 :1:5 
+]
+[s S1111 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 DACOUT 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 HLVDIN 1 0 :1:5 
+]
+[s S1116 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 SS1 1 0 :1:5 
+]
+[s S1119 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 NOT_SS1 1 0 :1:5 
+]
+[s S1122 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 nSS1 1 0 :1:5 
+]
+[s S1125 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 SRNQ 1 0 :1:5 
+]
+[s S1128 . 1 `uc 1 ULPWUIN 1 0 :1:0 
+`uc 1 . 1 0 :6:1 
+`uc 1 RJPU 1 0 :1:7 
+]
+[u S1132 . 1 `S1066 1 . 1 0 `S1075 1 . 1 0 `S1082 1 . 1 0 `S1089 1 . 1 0 `S1096 1 . 1 0 `S1099 1 . 1 0 `S1105 1 . 1 0 `S1111 1 . 1 0 `S1116 1 . 1 0 `S1119 1 . 1 0 `S1122 1 . 1 0 `S1125 1 . 1 0 `S1128 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES1132  1 e 1 @3968 ]
+"7162
+[v _LATA LATA `VEuc  1 e 1 @3977 ]
+[s S1213 . 1 `uc 1 LATA0 1 0 :1:0 
+`uc 1 LATA1 1 0 :1:1 
+`uc 1 LATA2 1 0 :1:2 
+`uc 1 LATA3 1 0 :1:3 
+`uc 1 LATA4 1 0 :1:4 
+`uc 1 LATA5 1 0 :1:5 
+`uc 1 LATA6 1 0 :1:6 
+`uc 1 LATA7 1 0 :1:7 
+]
+"7189
+[s S1222 . 1 `uc 1 LA0 1 0 :1:0 
+`uc 1 LA1 1 0 :1:1 
+`uc 1 LA2 1 0 :1:2 
+`uc 1 LA3 1 0 :1:3 
+`uc 1 LA4 1 0 :1:4 
+`uc 1 LA5 1 0 :1:5 
+`uc 1 LA6 1 0 :1:6 
+`uc 1 LA7 1 0 :1:7 
+]
+[u S1231 . 1 `S1213 1 . 1 0 `S1222 1 . 1 0 ]
+[v _LATAbits LATAbits `VES1231  1 e 1 @3977 ]
+"7273
+[v _LATB LATB `VEuc  1 e 1 @3978 ]
+[s S651 . 1 `uc 1 LATB0 1 0 :1:0 
+`uc 1 LATB1 1 0 :1:1 
+`uc 1 LATB2 1 0 :1:2 
+`uc 1 LATB3 1 0 :1:3 
+`uc 1 LATB4 1 0 :1:4 
+`uc 1 LATB5 1 0 :1:5 
+`uc 1 LATB6 1 0 :1:6 
+`uc 1 LATB7 1 0 :1:7 
+]
+"7300
+[s S660 . 1 `uc 1 LB0 1 0 :1:0 
+`uc 1 LB1 1 0 :1:1 
+`uc 1 LB2 1 0 :1:2 
+`uc 1 LB3 1 0 :1:3 
+`uc 1 LB4 1 0 :1:4 
+`uc 1 LB5 1 0 :1:5 
+`uc 1 LB6 1 0 :1:6 
+`uc 1 LB7 1 0 :1:7 
+]
+[u S669 . 1 `S651 1 . 1 0 `S660 1 . 1 0 ]
+[v _LATBbits LATBbits `VES669  1 e 1 @3978 ]
+"7384
+[v _LATC LATC `VEuc  1 e 1 @3979 ]
+[s S1552 . 1 `uc 1 LATC0 1 0 :1:0 
+`uc 1 LATC1 1 0 :1:1 
+`uc 1 LATC2 1 0 :1:2 
+`uc 1 LATC3 1 0 :1:3 
+`uc 1 LATC4 1 0 :1:4 
+`uc 1 LATC5 1 0 :1:5 
+`uc 1 LATC6 1 0 :1:6 
+`uc 1 LATC7 1 0 :1:7 
+]
+"7411
+[s S1561 . 1 `uc 1 LC0 1 0 :1:0 
+`uc 1 LC1 1 0 :1:1 
+`uc 1 LC2 1 0 :1:2 
+`uc 1 LC3 1 0 :1:3 
+`uc 1 LC4 1 0 :1:4 
+`uc 1 LC5 1 0 :1:5 
+`uc 1 LC6 1 0 :1:6 
+`uc 1 LC7 1 0 :1:7 
+]
+[u S1570 . 1 `S1552 1 . 1 0 `S1561 1 . 1 0 ]
+[v _LATCbits LATCbits `VES1570  1 e 1 @3979 ]
+"7495
+[v _TRISA TRISA `VEuc  1 e 1 @3986 ]
+"7716
+[v _TRISB TRISB `VEuc  1 e 1 @3987 ]
+[s S1282 . 1 `uc 1 TRISB0 1 0 :1:0 
+`uc 1 TRISB1 1 0 :1:1 
+`uc 1 TRISB2 1 0 :1:2 
+`uc 1 TRISB3 1 0 :1:3 
+`uc 1 TRISB4 1 0 :1:4 
+`uc 1 TRISB5 1 0 :1:5 
+`uc 1 TRISB6 1 0 :1:6 
+`uc 1 TRISB7 1 0 :1:7 
+]
+"7748
+[s S1291 . 1 `uc 1 RB0 1 0 :1:0 
+`uc 1 RB1 1 0 :1:1 
+`uc 1 RB2 1 0 :1:2 
+`uc 1 RB3 1 0 :1:3 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
+]
+[u S1300 . 1 `S1282 1 . 1 0 `S1291 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES1300  1 e 1 @3987 ]
+"7937
+[v _TRISC TRISC `VEuc  1 e 1 @3988 ]
+"8178
+[v _OSCTUNE OSCTUNE `VEuc  1 e 1 @3995 ]
+[s S182 . 1 `uc 1 TMR1GIE 1 0 :1:0 
+`uc 1 TMR3GIE 1 0 :1:1 
+`uc 1 TMR5GIE 1 0 :1:2 
+`uc 1 CTMUIE 1 0 :1:3 
+`uc 1 TX2IE 1 0 :1:4 
+`uc 1 RC2IE 1 0 :1:5 
+`uc 1 BCL2IE 1 0 :1:6 
+`uc 1 SSP2IE 1 0 :1:7 
+]
+"9039
+[s S191 . 1 `uc 1 RXB0IE 1 0 :1:0 
+`uc 1 RXB1IE 1 0 :1:1 
+`uc 1 TXB0IE 1 0 :1:2 
+`uc 1 TXB1IE 1 0 :1:3 
+`uc 1 TXB2IE 1 0 :1:4 
+]
+[s S197 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 RXBNIE 1 0 :1:1 
+`uc 1 . 1 0 :2:2 
+`uc 1 TXBNIE 1 0 :1:4 
+]
+[u S202 . 1 `S182 1 . 1 0 `S191 1 . 1 0 `S197 1 . 1 0 ]
+[v _PIE3bits PIE3bits `VES202  1 e 1 @4003 ]
+[s S227 . 1 `uc 1 TMR1GIF 1 0 :1:0 
+`uc 1 TMR3GIF 1 0 :1:1 
+`uc 1 TMR5GIF 1 0 :1:2 
+`uc 1 CTMUIF 1 0 :1:3 
+`uc 1 TX2IF 1 0 :1:4 
+`uc 1 RC2IF 1 0 :1:5 
+`uc 1 BCL2IF 1 0 :1:6 
+`uc 1 SSP2IF 1 0 :1:7 
+]
+"9141
+[s S236 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 RXBNIF 1 0 :1:1 
+`uc 1 . 1 0 :2:2 
+`uc 1 TXBNIF 1 0 :1:4 
+]
+[u S241 . 1 `S227 1 . 1 0 `S236 1 . 1 0 ]
+[v _PIR3bits PIR3bits `VES241  1 e 1 @4004 ]
+[s S62 . 1 `uc 1 NOT_BOR 1 0 :1:0 
+]
+"14896
+[s S64 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 NOT_POR 1 0 :1:1 
+]
+[s S67 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_PD 1 0 :1:2 
+]
+[s S70 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 NOT_TO 1 0 :1:3 
+]
+[s S73 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 NOT_RI 1 0 :1:4 
+]
+[s S76 . 1 `uc 1 nBOR 1 0 :1:0 
+`uc 1 nPOR 1 0 :1:1 
+`uc 1 nPD 1 0 :1:2 
+`uc 1 nTO 1 0 :1:3 
+`uc 1 nRI 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 SBOREN 1 0 :1:6 
+`uc 1 IPEN 1 0 :1:7 
+]
+[s S85 . 1 `uc 1 BOR 1 0 :1:0 
+`uc 1 POR 1 0 :1:1 
+`uc 1 PD 1 0 :1:2 
+`uc 1 TO 1 0 :1:3 
+`uc 1 RI 1 0 :1:4 
+]
+[u S91 . 1 `S62 1 . 1 0 `S64 1 . 1 0 `S67 1 . 1 0 `S70 1 . 1 0 `S73 1 . 1 0 `S76 1 . 1 0 `S85 1 . 1 0 ]
+[v _RCONbits RCONbits `VES91  1 e 1 @4048 ]
+"15012
+[v _OSCCON2 OSCCON2 `VEuc  1 e 1 @4050 ]
+"15068
+[v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
+"15150
+[v _T0CON T0CON `VEuc  1 e 1 @4053 ]
+[s S364 . 1 `uc 1 T0PS 1 0 :3:0 
+`uc 1 PSA 1 0 :1:3 
+`uc 1 T0SE 1 0 :1:4 
+`uc 1 T0CS 1 0 :1:5 
+`uc 1 T08BIT 1 0 :1:6 
+`uc 1 TMR0ON 1 0 :1:7 
+]
+"15170
+[s S371 . 1 `uc 1 T0PS0 1 0 :1:0 
+`uc 1 T0PS1 1 0 :1:1 
+`uc 1 T0PS2 1 0 :1:2 
+]
+[u S375 . 1 `S364 1 . 1 0 `S371 1 . 1 0 ]
+[v _T0CONbits T0CONbits `VES375  1 e 1 @4053 ]
+"15225
+[v _TMR0L TMR0L `VEuc  1 e 1 @4054 ]
+"15244
+[v _TMR0H TMR0H `VEuc  1 e 1 @4055 ]
+[s S422 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 NOT_RBPU 1 0 :1:7 
+]
+"15870
+[s S425 . 1 `uc 1 RBIP 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 TMR0IP 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 INTEDG2 1 0 :1:4 
+`uc 1 INTEDG1 1 0 :1:5 
+`uc 1 INTEDG0 1 0 :1:6 
+`uc 1 nRBPU 1 0 :1:7 
+]
+[s S434 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 RBPU 1 0 :1:7 
+]
+[u S437 . 1 `S422 1 . 1 0 `S425 1 . 1 0 `S434 1 . 1 0 ]
+[v _INTCON2bits INTCON2bits `VES437  1 e 1 @4081 ]
+[s S129 . 1 `uc 1 RBIF 1 0 :1:0 
+`uc 1 INT0IF 1 0 :1:1 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 RBIE 1 0 :1:3 
+`uc 1 INT0IE 1 0 :1:4 
+`uc 1 TMR0IE 1 0 :1:5 
+`uc 1 PEIE_GIEL 1 0 :1:6 
+`uc 1 GIE_GIEH 1 0 :1:7 
+]
+"15946
+[s S138 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 INT0F 1 0 :1:1 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 INT0E 1 0 :1:4 
+`uc 1 T0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+[s S147 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 GIEL 1 0 :1:6 
+`uc 1 GIEH 1 0 :1:7 
+]
+[u S151 . 1 `S129 1 . 1 0 `S138 1 . 1 0 `S147 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES151  1 e 1 @4082 ]
+"17 C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\main.c
+[v _sessionTO sessionTO `Aui  1 e 2 0 ]
+"18
+[v _statusIndTimer statusIndTimer `Auc  1 s 1 statusIndTimer ]
+"19
+[v _ledTimer ledTimer `Auc  1 s 1 ledTimer ]
+"20
+[v _lastKnownResult lastKnownResult `AE6681  1 s 1 lastKnownResult ]
+"35 C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+[v _SFX_STATE SFX_STATE `AE6658  1 s 1 SFX_STATE ]
+"36
+[v _SigfoxCommManagerState SigfoxCommManagerState `AE6679  1 s 1 SigfoxCommManagerState ]
+"37
+[v _SigfoxTransactionResult SigfoxTransactionResult `AE6665  1 s 1 SigfoxTransactionResult ]
+"38
+[v _SigfoxMsgReceivedFlag SigfoxMsgReceivedFlag `Auc  1 e 1 0 ]
+"40
+[v _SigfoxScheduledMsgTaskFlag SigfoxScheduledMsgTaskFlag `Auc  1 s 1 SigfoxScheduledMsgTaskFlag ]
+"41
+[v _SigfoxScheduledMsgAckTaskFlag SigfoxScheduledMsgAckTaskFlag `Auc  1 s 1 SigfoxScheduledMsgAckTaskFlag ]
+"42
+[v _SigfoxScheduledPwrDownTaskFlag SigfoxScheduledPwrDownTaskFlag `Auc  1 s 1 SigfoxScheduledPwrDownTaskFlag ]
+"43
+[v _SigfoxScheduledInitTaskFlag SigfoxScheduledInitTaskFlag `Auc  1 s 1 SigfoxScheduledInitTaskFlag ]
+"44
+[v _SigfoxScheduledMsgStaTaskFlag SigfoxScheduledMsgStaTaskFlag `Auc  1 s 1 SigfoxScheduledMsgStaTaskFlag ]
+"46
+[v _SigfoxPayloadBuffer SigfoxPayloadBuffer `A[25]uc  1 e 25 0 ]
+"50
+[v _SigfoxTransactionAttemps SigfoxTransactionAttemps `Auc  1 e 1 0 ]
+"52
+[v _SigfoxTXBuffer SigfoxTXBuffer `A[35]uc  1 e 35 0 ]
+"53
+[v _SigfoxRXBuffer SigfoxRXBuffer `A[22]uc  1 e 22 0 ]
+"55
+[v _SigfoxTXBufferPtr SigfoxTXBufferPtr `Auc  1 e 1 0 ]
+"56
+[v _SigfoxRXBufferPtr SigfoxRXBufferPtr `Auc  1 e 1 0 ]
+"57
+[v _SigfoxTimeOutTimer SigfoxTimeOutTimer `Auc  1 e 1 0 ]
+"58
+[v _SigfoxTxDelay SigfoxTxDelay `Auc  1 e 1 0 ]
+"156
+[v _SigfoxCommandsDefinitions SigfoxCommandsDefinitions `CA[6][10]uc  1 e 60 0 ]
+"54 C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/interrupt_manager.c
+[v _usartSemaphore usartSemaphore `AE1  1 e 1 0 ]
+"57 C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/tmr0.c
+[v _TMR0_InterruptHandler TMR0_InterruptHandler `*.37A(v  1 e 2 0 ]
+"59
+[v _timer0ReloadVal timer0ReloadVal `VAEui  1 e 2 0 ]
+"17 C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+[v _PWR_STATE PWR_STATE `AE6630  1 s 1 PWR_STATE ]
+"18
+[v _powerTaskPwrReadyTimer powerTaskPwrReadyTimer `Aui  1 e 2 0 ]
+"19
+[v _pwrScheduledInitTaskFlag pwrScheduledInitTaskFlag `Auc  1 e 1 0 ]
+"20
+[v _pwrScheduledMeasPowerTaskFlag pwrScheduledMeasPowerTaskFlag `Auc  1 e 1 0 ]
+"21
+[v _pwrScheduledCommPowerTaskFlag pwrScheduledCommPowerTaskFlag `Auc  1 e 1 0 ]
+"8 C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+[v _protVarSystemSynchronizedFlag protVarSystemSynchronizedFlag `Auc  1 s 1 protVarSystemSynchronizedFlag ]
+"9
+[v _protVarMeasurementTimer protVarMeasurementTimer `Aul  1 e 4 0 ]
+"10
+[v _protVarCommunicationTimer protVarCommunicationTimer `Aul  1 e 4 0 ]
+"11
+[v _PROT_STATE PROT_STATE `AE6668  1 s 1 PROT_STATE ]
+"12
+[v _protDataShifter protDataShifter `A[12]uc  1 e 12 0 ]
+"14
+[v _SIT_FRAME_TRACKER_SF_ID_DESC SIT_FRAME_TRACKER_SF_ID_DESC `CA[8]uc  1 e 8 0 ]
+"15
+[v _SIT_FRAME_POWERUP_SF_DESC SIT_FRAME_POWERUP_SF_DESC `CA[5]uc  1 e 5 0 ]
+"85 C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\Sigfox\sfxProtocol.h
+[v _sysVarGpsValidFlag sysVarGpsValidFlag `Auc  1 e 1 0 ]
+"86
+[v _sysVarGpsLat sysVarGpsLat `Al  1 e 4 0 ]
+"87
+[v _sysVarGpsLong sysVarGpsLong `Al  1 e 4 0 ]
+"88
+[v _sysVarGpsSpeed sysVarGpsSpeed `Aui  1 e 2 0 ]
+"89
+[v _sysVarGpsCourse sysVarGpsCourse `Ai  1 e 2 0 ]
+"91
+[v _sysVarGpsDayTime sysVarGpsDayTime `Al  1 e 4 0 ]
+"93
+[v _sysVarGpsOdometer sysVarGpsOdometer `Aui  1 e 2 0 ]
+"96
+[v _sysVarBattery sysVarBattery `Auc  1 e 1 0 ]
+"99
+[v _sysVarMainInput sysVarMainInput `Auc  1 e 1 0 ]
+"69 C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\main.c
+[v _main main `A(v  1 e 1 0 ]
+{
+"71
+[v main@taskResult taskResult `E6681  1 a 1 38 ]
+"104
+} 0
+"44
+[v _setLedStatus setLedStatus `A(v  1 e 1 0 ]
+{
+[v setLedStatus@status status `E6681  1 a 1 wreg ]
+[v setLedStatus@status status `E6681  1 a 1 wreg ]
+[v setLedStatus@status status `E6681  1 a 1 5 ]
+"67
+} 0
+"121 C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/tmr0.c
+[v _TMR0_SetInterruptHandler TMR0_SetInterruptHandler `A(v  1 e 1 0 ]
+{
+[v TMR0_SetInterruptHandler@InterruptHandler InterruptHandler `*.2v  1 p 2 5 ]
+"123
+} 0
+"105 C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `A(v  1 e 1 0 ]
+{
+"115
+} 0
+"66 C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/tmr0.c
+[v _TMR0_Initialize TMR0_Initialize `A(v  1 e 1 0 ]
+{
+"93
+} 0
+"95
+[v _TMR0_StartTimer TMR0_StartTimer `A(v  1 e 1 0 ]
+{
+"99
+} 0
+"51 C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `A(v  1 e 1 0 ]
+{
+"79
+} 0
+"117 C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/mcc.c
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `A(v  1 e 1 0 ]
+{
+"125
+} 0
+"56 C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_Initialize INTERRUPT_Initialize `A(v  1 e 1 0 ]
+{
+"60
+} 0
+"59 C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/adc.c
+[v _ADC_Initialize ADC_Initialize `A(v  1 e 1 0 ]
+{
+"64
+} 0
+"253 C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+[v _ProtocolTask ProtocolTask `A(E6681  1 e 1 0 ]
+{
+"315
+} 0
+"104 C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+[v _powerTaskNewTask powerTaskNewTask `A(v  1 e 1 0 ]
+{
+[v powerTaskNewTask@command command `E6682  1 a 1 wreg ]
+[v powerTaskNewTask@command command `E6682  1 a 1 wreg ]
+[v powerTaskNewTask@command command `E6682  1 a 1 5 ]
+"136
+} 0
+"431 C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+[v _SigfoxTaskNewTask SigfoxTaskNewTask `A(v  1 e 1 0 ]
+{
+[v SigfoxTaskNewTask@command command `E6710  1 a 1 wreg ]
+[v SigfoxTaskNewTask@command command `E6710  1 a 1 wreg ]
+[v SigfoxTaskNewTask@command command `E6710  1 a 1 5 ]
+"460
+} 0
+"243 C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+[v _ProtocolTaskPowerDown ProtocolTaskPowerDown `A(v  1 e 1 0 ]
+{
+"252
+} 0
+"230
+[v _ProtocolTaskExecute ProtocolTaskExecute `A(E6681  1 e 1 0 ]
+{
+"232
+[v ProtocolTaskExecute@timeOut timeOut `ui  1 a 2 32 ]
+"231
+[v ProtocolTaskExecute@taskResult taskResult `E6681  1 a 1 34 ]
+"230
+[v ProtocolTaskExecute@taskPointer taskPointer `*.37(E6681  1 p 2 28 ]
+[v ProtocolTaskExecute@taskTimeOut taskTimeOut `ui  1 p 2 30 ]
+"242
+} 0
+"314 C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+[v _SigfoxTask SigfoxTask `A(E6665  1 e 1 0 ]
+{
+"315
+[v SigfoxTask@sigfoxInitCommandsROMList sigfoxInitCommandsROMList `C[3]uc  1 a 3 23 ]
+"319
+[v SigfoxTask@SigfoxInitCommandPtr SigfoxInitCommandPtr `*.39Cuc  1 a 2 26 ]
+"314
+[v SigfoxTask@F6887 F6887 `C[3]uc  1 s 3 F6887 ]
+"419
+} 0
+"43 C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+[v _powerTask powerTask `A(E6681  1 e 1 0 ]
+{
+"103
+} 0
+"33
+[v _powerTaskReset powerTaskReset `A(v  1 e 1 0 ]
+{
+"37
+} 0
+"23
+[v _powerTaskPowerDown powerTaskPowerDown `A(v  1 e 1 0 ]
+{
+"32
+} 0
+"290 C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+[v _SigfoxTaskReset SigfoxTaskReset `A(v  1 e 1 0 ]
+{
+"304
+} 0
+"77
+[v _EUSART2_Initialize EUSART2_Initialize `A(v  1 e 1 0 ]
+{
+"97
+} 0
+"305
+[v _SigfoxTaskPowerDown SigfoxTaskPowerDown `A(v  1 e 1 0 ]
+{
+"313
+} 0
+"167
+[v _SigfoxResponseParser SigfoxResponseParser `A(uc  1 e 1 0 ]
+{
+"168
+[v SigfoxResponseParser@dumyPtr dumyPtr `*.39uc  1 a 2 20 ]
+"172
+} 0
+"4 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strstr.c
+[v _strstr strstr `(*.39uc  1 e 2 0 ]
+{
+[v strstr@s1 s1 `*.39Cuc  1 p 2 16 ]
+[v strstr@s2 s2 `*.25Cuc  1 p 2 18 ]
+"12
+} 0
+"4 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strncmp.c
+[v _strncmp strncmp `(i  1 e 2 0 ]
+{
+[v strncmp@s1 s1 `*.39Cuc  1 p 2 9 ]
+[v strncmp@s2 s2 `*.25Cuc  1 p 2 11 ]
+[v strncmp@len len `ui  1 p 2 13 ]
+"14
+} 0
+"4 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strlen.c
+[v _strlen strlen `(ui  1 e 2 0 ]
+{
+"6
+[v strlen@cp cp `*.25Cuc  1 a 2 7 ]
+"4
+[v strlen@s s `*.25Cuc  1 p 2 5 ]
+"13
+} 0
+"4 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strchr.c
+[v _strchr strchr `(*.39uc  1 e 2 0 ]
+{
+[v strchr@ptr ptr `*.39Cuc  1 p 2 5 ]
+[v strchr@chr chr `i  1 p 2 7 ]
+"11
+} 0
+"249 C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+[v _SigfoxCommManager SigfoxCommManager `A(E6665  1 e 1 0 ]
+{
+[v SigfoxCommManager@SigfoxCommand SigfoxCommand `E6710  1 a 1 wreg ]
+[v SigfoxCommManager@SigfoxCommand SigfoxCommand `E6710  1 a 1 wreg ]
+"251
+[v SigfoxCommManager@SigfoxCommand SigfoxCommand `E6710  1 a 1 20 ]
+"277
+} 0
+"229
+[v _SigfoxVerifyTransactionStatus SigfoxVerifyTransactionStatus `A(E6665  1 e 1 0 ]
+{
+"248
+} 0
+"211
+[v _SigfoxTransmit SigfoxTransmit `A(v  1 e 1 0 ]
+{
+"216
+} 0
+"218
+[v _SigfoxTXReady SigfoxTXReady `A(uc  1 e 1 0 ]
+{
+"224
+} 0
+"173
+[v _SigfoxCommandSelector SigfoxCommandSelector `A(v  1 e 1 0 ]
+{
+[v SigfoxCommandSelector@SigfoxCommand SigfoxCommand `E6710  1 a 1 wreg ]
+"177
+[v SigfoxCommandSelector@SFX_COMMAND_TAIL_ACK_STR SFX_COMMAND_TAIL_ACK_STR `C[4]uc  1 a 4 11 ]
+"175
+[v SigfoxCommandSelector@SigfoxRomCommandStrPtr SigfoxRomCommandStrPtr `*.25Cuc  1 a 2 17 ]
+"176
+[v SigfoxCommandSelector@SFX_COMMAND_TAIL_STR SFX_COMMAND_TAIL_STR `C[2]uc  1 a 2 15 ]
+"173
+[v SigfoxCommandSelector@SigfoxCommand SigfoxCommand `E6710  1 a 1 wreg ]
+"175
+[v SigfoxCommandSelector@F6862 F6862 `C[2]uc  1 s 2 F6862 ]
+"176
+[v SigfoxCommandSelector@F6864 F6864 `C[4]uc  1 s 4 F6864 ]
+[v SigfoxCommandSelector@SigfoxCommand SigfoxCommand `E6710  1 a 1 19 ]
+"205
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strcpy.c
+[v _strcpy strcpy `(*.39uc  1 e 2 0 ]
+{
+"15
+[v strcpy@cp cp `*.39uc  1 a 2 9 ]
+"8
+[v strcpy@to to `*.39uc  1 p 2 5 ]
+[v strcpy@from from `*.25Cuc  1 p 2 7 ]
+"24
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strcat.c
+[v _strcat strcat `(*.39uc  1 e 2 0 ]
+{
+"15
+[v strcat@cp cp `*.39uc  1 a 2 9 ]
+"8
+[v strcat@to to `*.39uc  1 p 2 5 ]
+[v strcat@from from `*.39Cuc  1 p 2 7 ]
+"26
+} 0
+"95 C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+[v _ProtocolTaskBuildFrame ProtocolTaskBuildFrame `A(uc  1 e 1 0 ]
+{
+[v ProtocolTaskBuildFrame@EVENT EVENT `E6699  1 a 1 wreg ]
+"98
+[v ProtocolTaskBuildFrame@dataField dataField `ul  1 a 4 29 ]
+"100
+[v ProtocolTaskBuildFrame@protFrameDescPtr protFrameDescPtr `*.25Cuc  1 a 2 36 ]
+"97
+[v ProtocolTaskBuildFrame@totalBits totalBits `i  1 a 2 33 ]
+"99
+[v ProtocolTaskBuildFrame@dataSize dataSize `uc  1 a 1 35 ]
+"95
+[v ProtocolTaskBuildFrame@EVENT EVENT `E6699  1 a 1 wreg ]
+"97
+[v ProtocolTaskBuildFrame@EVENT EVENT `E6699  1 a 1 28 ]
+"184
+} 0
+"420 C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+[v _SigfoxTaskLoadPayloadBuffer SigfoxTaskLoadPayloadBuffer `A(v  1 e 1 0 ]
+{
+"421
+[v SigfoxTaskLoadPayloadBuffer@buffer buffer `uc  1 a 1 14 ]
+[v SigfoxTaskLoadPayloadBuffer@payloadBufferPtr payloadBufferPtr `uc  1 a 1 13 ]
+"420
+[v SigfoxTaskLoadPayloadBuffer@rawData rawData `*.39uc  1 p 2 5 ]
+"430
+} 0
+"52 C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+[v _ProtocolGetValidity ProtocolGetValidity `A(E6688  1 e 1 0 ]
+{
+[v ProtocolGetValidity@variableID variableID `uc  1 a 1 wreg ]
+"53
+[v ProtocolGetValidity@taskResponse taskResponse `E6688  1 a 1 7 ]
+"52
+[v ProtocolGetValidity@variableID variableID `uc  1 a 1 wreg ]
+"54
+[v ProtocolGetValidity@variableID variableID `uc  1 a 1 6 ]
+"63
+} 0
+"137 C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+[v _powerTaskGetVarValidity powerTaskGetVarValidity `A(E6688  1 e 1 0 ]
+{
+[v powerTaskGetVarValidity@variableID variableID `uc  1 a 1 wreg ]
+[v powerTaskGetVarValidity@variableID variableID `uc  1 a 1 wreg ]
+[v powerTaskGetVarValidity@variableID variableID `uc  1 a 1 5 ]
+"142
+} 0
+"728 C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart1.c
+[v _gpsTaskGetVarValidity gpsTaskGetVarValidity `A(E6672  1 e 1 0 ]
+{
+[v gpsTaskGetVarValidity@variableID variableID `uc  1 a 1 wreg ]
+[v gpsTaskGetVarValidity@variableID variableID `uc  1 a 1 wreg ]
+"730
+[v gpsTaskGetVarValidity@variableID variableID `uc  1 a 1 5 ]
+"742
+} 0
+"64 C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+[v _ProtocolAddFrameData ProtocolAddFrameData `A(v  1 e 1 0 ]
+{
+"66
+[v ProtocolAddFrameData@longMask longMask `ul  1 a 4 20 ]
+"65
+[v ProtocolAddFrameData@bytes bytes `uc  1 a 1 25 ]
+[v ProtocolAddFrameData@i i `uc  1 a 1 24 ]
+[v ProtocolAddFrameData@toLeft toLeft `uc  1 a 1 19 ]
+"64
+[v ProtocolAddFrameData@Data Data `ul  1 p 4 5 ]
+[v ProtocolAddFrameData@DataRepSize DataRepSize `uc  1 p 1 9 ]
+"94
+} 0
+"17
+[v _ProtocolSetNextMeasTime ProtocolSetNextMeasTime `A(uc  1 e 1 0 ]
+{
+"37
+} 0
+"38
+[v _ProtocolSetNextCommTime ProtocolSetNextCommTime `A(uc  1 e 1 0 ]
+{
+"51
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\almod.c
+[v ___almod __almod `(l  1 e 4 0 ]
+{
+"11
+[v ___almod@sign sign `uc  1 a 1 14 ]
+[v ___almod@counter counter `uc  1 a 1 13 ]
+"8
+[v ___almod@dividend dividend `l  1 p 4 5 ]
+[v ___almod@divisor divisor `l  1 p 4 9 ]
+"35
+} 0
+"64 C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `IIA(v  1 e 1 0 ]
+{
+"103
+} 0
+"101 C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/tmr0.c
+[v _TMR0_ISR TMR0_ISR `A(v  1 e 1 0 ]
+{
+"118
+} 0
+"22 C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\main.c
+[v _systemMainTimer systemMainTimer `A(v  1 e 1 0 ]
+{
+"23
+[v systemMainTimer@secondMultiplier secondMultiplier `uc  1 a 1 0 ]
+"42
+} 0
+"186 C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+[v _ProtocolTaskTick ProtocolTaskTick `A(v  1 e 1 0 ]
+{
+"187
+[v ProtocolTaskTick@_500msToSecond _500msToSecond `Auc  1 s 1 500msToSecond ]
+"211
+} 0
+"38 C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+[v _powerTaskTick powerTaskTick `A(v  1 e 1 0 ]
+{
+"42
+} 0
+"282 C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+[v _SigfoxTaskTick SigfoxTaskTick `A(v  1 e 1 0 ]
+{
+"289
+} 0
+"98
+[v _EUSART2_Transmit_ISR EUSART2_Transmit_ISR `A(v  1 e 1 0 ]
+{
+"119
+} 0
+"61
+[v _SigfoxReceive SigfoxReceive `A(v  1 e 1 0 ]
+{
+"72
+} 0
+"120
+[v _EUSART2_Receive_ISR EUSART2_Receive_ISR `A(v  1 e 1 0 ]
+{
+"121
+[v EUSART2_Receive_ISR@auxVar auxVar `uc  1 a 1 0 ]
+"143
+} 0
+"48 C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\gprs.c
+[v _EUSART2_GPRS_Transmit_ISR EUSART2_GPRS_Transmit_ISR `A(v  1 e 1 0 ]
+{
+"50
+} 0

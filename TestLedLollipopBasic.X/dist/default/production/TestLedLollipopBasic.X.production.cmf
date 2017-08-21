@@ -1,0 +1,1561 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$dist/default/production\TestLedLollipopBasic.X.production.obj
+cinit CODE 0 1132 1132 42 1
+text0 CODE 0 F3E F3E 6A 1
+text1 CODE 0 11B4 11B4 3A 1
+text2 CODE 0 152C 152C A 1
+text3 CODE 0 14AC 14AC 14 1
+text4 CODE 0 1328 1328 2C 1
+text5 CODE 0 1556 1556 4 1
+text6 CODE 0 13FC 13FC 24 1
+text7 CODE 0 14F6 14F6 E 1
+text8 CODE 0 155A 155A 4 1
+text9 CODE 0 1546 1546 6 1
+text10 CODE 0 B32 B32 CE 1
+text11 CODE 0 1174 1174 40 1
+text12 CODE 0 10EA 10EA 48 1
+text13 CODE 0 1520 1520 C 1
+text14 CODE 0 1262 1262 34 1
+text15 CODE 0 7F0 7F0 134 1
+text16 CODE 0 C9C C9C 9A 1
+text17 CODE 0 1536 1536 8 1
+text18 CODE 0 1480 1480 16 1
+text19 CODE 0 1420 1420 24 1
+text20 CODE 0 1464 1464 1C 1
+text21 CODE 0 1496 1496 16 1
+text22 CODE 0 1444 1444 20 1
+text23 CODE 0 E48 E48 7C 1
+text24 CODE 0 FA8 FA8 60 1
+text25 CODE 0 12CA 12CA 30 1
+text26 CODE 0 12FA 12FA 2E 1
+text27 CODE 0 1008 1008 4E 1
+text28 CODE 0 1354 1354 2C 1
+text29 CODE 0 153E 153E 8 1
+text30 CODE 0 1504 1504 E 1
+text31 CODE 0 A4E A4E E4 1
+text32 CODE 0 11EE 11EE 3A 1
+text33 CODE 0 1056 1056 4A 1
+text34 CODE 0 658 658 198 1
+text35 CODE 0 D36 D36 92 1
+text36 CODE 0 1380 1380 2C 1
+text37 CODE 0 1512 1512 E 1
+text38 CODE 0 154C 154C 6 1
+text39 CODE 0 924 924 12A 1
+text40 CODE 0 DC8 DC8 80 1
+text41 CODE 0 1228 1228 3A 1
+text42 CODE 0 C00 C00 9C 1
+text44 CODE 0 13D6 13D6 26 1
+text45 CODE 0 1296 1296 34 1
+text46 CODE 0 EC4 EC4 7A 1
+text47 CODE 0 14D4 14D4 12 1
+text48 CODE 0 14E6 14E6 10 1
+text49 CODE 0 13AC 13AC 2A 1
+text50 CODE 0 14C0 14C0 14 1
+text51 CODE 0 10A0 10A0 4A 1
+text52 CODE 0 155E 155E 2 1
+nvBANK0 BANK0 1 EB EB 5 1
+cstackBANK0 BANK0 1 C4 C4 27 1
+temp COMRAM 1 1 1 1 1
+bssBANK0 BANK0 1 60 60 64 1
+bssBANK1 BANK1 1 100 100 2F 1
+intcode CODE 0 8 8 5A 1
+smallconst SMALLCONST 0 600 600 58 1
+idataBANK0 CODE 0 1552 1552 4 1
+dataBANK0 BANK0 1 F0 F0 4 1
+$C:\Users\pedro\AppData\Local\Temp\s6s0.obj
+idloc IDLOC 0 200000 200000 8 1
+init CODE 0 62 62 4 1
+reset_vec CODE 0 0 0 4 1
+config CONFIG 0 300000 300000 E 1
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM F4-FF 1
+RAM 12F-5FF 1
+SFR F38-FFF 1
+BANK0 F4-FF 1
+BANK1 12F-1FF 1
+BANK2 200-2FF 1
+BANK3 300-3FF 1
+BANK4 400-4FF 1
+BANK5 500-5FF 1
+CONST 4-7 1
+CONST 66-5FF 1
+CONST 1560-7FFF 1
+STACK 12F-5FF 1
+SMALLCONST 1560-7FFF 1
+CODE 4-7 1
+CODE 66-5FF 1
+CODE 1560-7FFF 1
+BIGRAM 2-5F 1
+BIGRAM F4-FF 1
+BIGRAM 12F-5FF 1
+COMRAM 2-5F 1
+EEDATA F00000-F000FF 1
+MEDIUMCONST 1560-7FFF 1
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$dist/default/production\TestLedLollipopBasic.X.production.obj
+8 intcode CODE >35:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\almod.c
+8 intcode CODE >64:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/interrupt_manager.c
+1A intcode CODE >67:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/interrupt_manager.c
+20 intcode CODE >69:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/interrupt_manager.c
+24 intcode CODE >70:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/interrupt_manager.c
+26 intcode CODE >73:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/interrupt_manager.c
+30 intcode CODE >75:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/interrupt_manager.c
+36 intcode CODE >76:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/interrupt_manager.c
+3A intcode CODE >77:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/interrupt_manager.c
+3C intcode CODE >79:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/interrupt_manager.c
+42 intcode CODE >83:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/interrupt_manager.c
+4A intcode CODE >85:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/interrupt_manager.c
+4E intcode CODE >103:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/interrupt_manager.c
+155E text52 CODE >48:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\gprs.c
+155E text52 CODE >50:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\gprs.c
+10A0 text51 CODE >120:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+10A0 text51 CODE >123:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+10A4 text51 CODE >124:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+10A6 text51 CODE >125:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+10AA text51 CODE >127:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+10AC text51 CODE >128:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+10AE text51 CODE >129:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+10B2 text51 CODE >130:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+10B4 text51 CODE >132:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+10BC text51 CODE >134:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+10BE text51 CODE >137:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+10C8 text51 CODE >138:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+10CC text51 CODE >139:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+10CE text51 CODE >141:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+10D8 text51 CODE >142:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+10DA text51 CODE >143:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+14C0 text50 CODE >61:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+14C0 text50 CODE >63:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+14C2 text50 CODE >65:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+14C6 text50 CODE >66:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+14CA text50 CODE >67:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+14CE text50 CODE >69:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+14D0 text50 CODE >70:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+14D2 text50 CODE >72:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+13AC text49 CODE >98:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+13AC text49 CODE >99:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+13B4 text49 CODE >101:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+13B6 text49 CODE >102:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+13BA text49 CODE >103:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+13BC text49 CODE >106:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+13C2 text49 CODE >107:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+13C4 text49 CODE >109:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+13C6 text49 CODE >119:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+14E6 text48 CODE >282:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+14E6 text48 CODE >283:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+14EC text48 CODE >284:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+14EE text48 CODE >286:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+14F2 text48 CODE >287:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+14F4 text48 CODE >289:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+14D4 text47 CODE >38:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+14D4 text47 CODE >39:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+14DE text47 CODE >40:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+14E4 text47 CODE >42:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+EC4 text46 CODE >186:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+EC4 text46 CODE >189:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+ED0 text46 CODE >190:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+ED6 text46 CODE >191:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+EE0 text46 CODE >192:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+EF6 text46 CODE >193:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+F06 text46 CODE >194:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+F08 text46 CODE >195:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+F0A text46 CODE >196:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+F14 text46 CODE >197:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+F16 text46 CODE >198:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+F18 text46 CODE >199:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+F22 text46 CODE >202:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+F26 text46 CODE >208:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+1296 text45 CODE >22:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\main.c
+1296 text45 CODE >24:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\main.c
+129A text45 CODE >25:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\main.c
+129E text45 CODE >26:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\main.c
+12A4 text45 CODE >27:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\main.c
+12AA text45 CODE >30:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\main.c
+12B4 text45 CODE >32:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\main.c
+12B8 text45 CODE >33:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\main.c
+12BA text45 CODE >34:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\main.c
+12BE text45 CODE >35:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\main.c
+12C0 text45 CODE >37:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\main.c
+12C2 text45 CODE >38:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\main.c
+12C6 text45 CODE >39:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\main.c
+12C8 text45 CODE >42:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\main.c
+13D6 text44 CODE >101:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/tmr0.c
+13D6 text44 CODE >105:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/tmr0.c
+13D8 text44 CODE >109:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/tmr0.c
+13DC text44 CODE >110:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/tmr0.c
+13E0 text44 CODE >112:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/tmr0.c
+13EA text44 CODE >114:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/tmr0.c
+C00 text42 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\almod.c
+C00 text42 CODE >13:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\almod.c
+C04 text42 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\almod.c
+C08 text42 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\almod.c
+C0A text42 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\almod.c
+C0E text42 CODE >18:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\almod.c
+C12 text42 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\almod.c
+C22 text42 CODE >20:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\almod.c
+C2C text42 CODE >21:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\almod.c
+C30 text42 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\almod.c
+C32 text42 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\almod.c
+C3C text42 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\almod.c
+C3E text42 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\almod.c
+C42 text42 CODE >27:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\almod.c
+C54 text42 CODE >28:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\almod.c
+C64 text42 CODE >29:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\almod.c
+C6E text42 CODE >30:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\almod.c
+C72 text42 CODE >32:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\almod.c
+C78 text42 CODE >34:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\almod.c
+C88 text42 CODE >35:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\almod.c
+1228 text41 CODE >38:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+1228 text41 CODE >40:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+122E text41 CODE >42:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+1232 text41 CODE >43:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+1234 text41 CODE >46:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+123E text41 CODE >47:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+1244 text41 CODE >48:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+1246 text41 CODE >50:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+1246 text41 CODE >51:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+DC8 text40 CODE >17:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+DC8 text40 CODE >19:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+DCE text40 CODE >20:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+DD2 text40 CODE >21:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+DD6 text40 CODE >22:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+DE0 text40 CODE >23:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+DE8 text40 CODE >24:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+DEA text40 CODE >27:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+DF0 text40 CODE >28:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+DF4 text40 CODE >29:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+E00 text40 CODE >30:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+E02 text40 CODE >32:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+E0A text40 CODE >34:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+E0C text40 CODE >36:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+E0C text40 CODE >37:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+924 text39 CODE >64:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+924 text39 CODE >68:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+92E text39 CODE >69:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+932 text39 CODE >70:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+93C text39 CODE >71:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+94E text39 CODE >70:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+952 text39 CODE >73:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+956 text39 CODE >69:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+95E text39 CODE >75:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+964 text39 CODE >76:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+968 text39 CODE >77:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+972 text39 CODE >78:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+980 text39 CODE >79:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+986 text39 CODE >80:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+98A text39 CODE >81:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+98C text39 CODE >83:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+992 text39 CODE >77:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+996 text39 CODE >86:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+99C text39 CODE >76:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+9A4 text39 CODE >88:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+9AE text39 CODE >89:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+A04 text39 CODE >90:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+A10 text39 CODE >91:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+A20 text39 CODE >92:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+A2E text39 CODE >90:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+154C text38 CODE >728:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart1.c
+1550 text38 CODE >742:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart1.c
+1512 text37 CODE >137:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+1516 text37 CODE >138:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+151C text37 CODE >139:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+151E text37 CODE >141:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+151E text37 CODE >142:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+1380 text36 CODE >52:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+1384 text36 CODE >54:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+138E text36 CODE >55:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+1394 text36 CODE >56:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+1398 text36 CODE >58:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+13A0 text36 CODE >59:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+13A6 text36 CODE >60:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+13AA text36 CODE >62:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+13AA text36 CODE >63:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+D36 text35 CODE >420:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+D36 text35 CODE >423:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+D42 text35 CODE >424:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+D4C text35 CODE >425:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+D80 text35 CODE >426:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+D84 text35 CODE >427:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+DAE text35 CODE >423:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+DB2 text35 CODE >429:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+DB6 text35 CODE >430:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+658 text34 CODE >95:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+65C text34 CODE >97:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+662 text34 CODE >102:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+664 text34 CODE >104:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+66C text34 CODE >107:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+674 text34 CODE >108:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+676 text34 CODE >102:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+694 text34 CODE >116:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+6A0 text34 CODE >117:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+6A8 text34 CODE >118:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+6B4 text34 CODE >119:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+6BC text34 CODE >120:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+6C2 text34 CODE >124:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+6E0 text34 CODE >125:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+6E4 text34 CODE >128:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+6E8 text34 CODE >129:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+6EC text34 CODE >132:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+6F0 text34 CODE >133:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+6F4 text34 CODE >135:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+6F4 text34 CODE >136:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+704 text34 CODE >137:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+708 text34 CODE >138:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+70A text34 CODE >139:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+70A text34 CODE >140:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+71A text34 CODE >141:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+71E text34 CODE >144:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+72A text34 CODE >145:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+72E text34 CODE >148:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+740 text34 CODE >149:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+744 text34 CODE >152:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+750 text34 CODE >153:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+754 text34 CODE >122:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+776 text34 CODE >156:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+78E text34 CODE >157:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+796 text34 CODE >158:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+798 text34 CODE >159:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+79A text34 CODE >161:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+7A0 text34 CODE >162:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+7A2 text34 CODE >163:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+7AE text34 CODE >164:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+7BE text34 CODE >181:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+7CA text34 CODE >184:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+1056 text33 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strcat.c
+1056 text33 CODE >18:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strcat.c
+105E text33 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strcat.c
+1060 text33 CODE >20:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strcat.c
+1066 text33 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strcat.c
+1074 text33 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strcat.c
+107A text33 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strcat.c
+107E text33 CODE >21:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strcat.c
+1096 text33 CODE >25:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strcat.c
+109E text33 CODE >26:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strcat.c
+11EE text32 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strcpy.c
+11EE text32 CODE >18:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strcpy.c
+11F6 text32 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strcpy.c
+11F8 text32 CODE >20:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strcpy.c
+11FE text32 CODE >21:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strcpy.c
+1202 text32 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strcpy.c
+121E text32 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strcpy.c
+1226 text32 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strcpy.c
+A4E text31 CODE >173:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+A52 text31 CODE >176:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+A6A text31 CODE >177:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+A8E text31 CODE >179:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+A92 text31 CODE >180:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+AA2 text31 CODE >181:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+AA4 text31 CODE >183:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+AAC text31 CODE >188:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+AB2 text31 CODE >189:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+AB4 text31 CODE >192:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+ABA text31 CODE >193:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+ABE text31 CODE >194:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+AD4 text31 CODE >195:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+AD6 text31 CODE >181:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+AEE text31 CODE >197:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+AF6 text31 CODE >198:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+B04 text31 CODE >199:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+B06 text31 CODE >202:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+B14 text31 CODE >205:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1504 text30 CODE >218:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1504 text30 CODE >219:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+150A text30 CODE >221:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1510 text30 CODE >223:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1510 text30 CODE >224:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+153E text29 CODE >211:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+153E text29 CODE >213:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1542 text29 CODE >214:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1544 text29 CODE >216:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1354 text28 CODE >229:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1354 text28 CODE >231:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+135A text28 CODE >232:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+135C text28 CODE >233:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1360 text28 CODE >234:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1364 text28 CODE >235:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1366 text28 CODE >236:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1368 text28 CODE >238:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+136C text28 CODE >239:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+136E text28 CODE >241:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1372 text28 CODE >242:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1376 text28 CODE >243:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1378 text28 CODE >244:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+137A text28 CODE >246:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+137E text28 CODE >248:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1008 text27 CODE >249:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+100C text27 CODE >251:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1010 text27 CODE >252:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1012 text27 CODE >254:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+101A text27 CODE >255:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1020 text27 CODE >256:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1026 text27 CODE >257:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+102C text27 CODE >261:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1030 text27 CODE >262:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1032 text27 CODE >263:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1034 text27 CODE >264:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1038 text27 CODE >266:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+103C text27 CODE >267:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+103E text27 CODE >268:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1042 text27 CODE >271:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1042 text27 CODE >272:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1044 text27 CODE >273:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1048 text27 CODE >274:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+104A text27 CODE >252:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1054 text27 CODE >276:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1054 text27 CODE >277:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+12FA text26 CODE >4:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strchr.c
+12FA text26 CODE >7:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strchr.c
+1304 text26 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strchr.c
+130E text26 CODE >9:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strchr.c
+1318 text26 CODE >10:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strchr.c
+131C text26 CODE >11:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strchr.c
+12CA text25 CODE >4:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strlen.c
+12CA text25 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strlen.c
+12D2 text25 CODE >9:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strlen.c
+12D4 text25 CODE >10:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strlen.c
+12DA text25 CODE >9:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strlen.c
+12EA text25 CODE >12:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strlen.c
+12F8 text25 CODE >13:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strlen.c
+FA8 text24 CODE >4:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strncmp.c
+FA8 text24 CODE >6:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strncmp.c
+FAA text24 CODE >7:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strncmp.c
+FC0 text24 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strncmp.c
+FD2 text24 CODE >10:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strncmp.c
+FD6 text24 CODE >11:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strncmp.c
+FDA text24 CODE >6:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strncmp.c
+FEA text24 CODE >13:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strncmp.c
+FEE text24 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strncmp.c
+E48 text23 CODE >4:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strstr.c
+E48 text23 CODE >6:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strstr.c
+E4A text23 CODE >7:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strstr.c
+E78 text23 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strstr.c
+E82 text23 CODE >9:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strstr.c
+EAA text23 CODE >6:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strstr.c
+EBE text23 CODE >11:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strstr.c
+EC2 text23 CODE >12:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\strstr.c
+1444 text22 CODE >167:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1444 text22 CODE >169:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1462 text22 CODE >172:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1496 text21 CODE >305:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1496 text21 CODE >306:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+149A text21 CODE >307:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+149C text21 CODE >308:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+14A0 text21 CODE >309:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+14A2 text21 CODE >310:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+14A4 text21 CODE >311:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+14A6 text21 CODE >312:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+14AA text21 CODE >313:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1464 text20 CODE >77:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1464 text20 CODE >78:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1468 text20 CODE >80:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+146A text20 CODE >81:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+146C text20 CODE >86:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1470 text20 CODE >88:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1474 text20 CODE >90:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1478 text20 CODE >93:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+147C text20 CODE >96:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+147E text20 CODE >97:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1420 text19 CODE >290:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1420 text19 CODE >291:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1424 text19 CODE >292:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+142A text19 CODE >293:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+142E text19 CODE >294:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1430 text19 CODE >295:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1434 text19 CODE >296:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1438 text19 CODE >297:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+143A text19 CODE >299:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+143C text19 CODE >300:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+143E text19 CODE >301:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1440 text19 CODE >303:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1442 text19 CODE >304:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1480 text18 CODE >23:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+1480 text18 CODE >24:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+1484 text18 CODE >25:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+1488 text18 CODE >26:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+148A text18 CODE >27:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+148C text18 CODE >28:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+148E text18 CODE >29:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+1490 text18 CODE >30:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+1492 text18 CODE >31:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+1494 text18 CODE >32:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+1536 text17 CODE >33:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+1536 text17 CODE >34:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+1538 text17 CODE >35:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+153A text17 CODE >36:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+153C text17 CODE >37:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+C9C text16 CODE >43:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+C9C text16 CODE >44:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+C9E text16 CODE >46:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+CA4 text16 CODE >47:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+CA8 text16 CODE >48:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+CAA text16 CODE >52:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+CAE text16 CODE >53:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+CB0 text16 CODE >55:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+CB8 text16 CODE >59:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+CBC text16 CODE >60:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+CBE text16 CODE >63:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+CC4 text16 CODE >64:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+CC6 text16 CODE >65:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+CC6 text16 CODE >69:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+CC8 text16 CODE >70:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+CCC text16 CODE >71:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+CD6 text16 CODE >72:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+CD8 text16 CODE >74:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+CDA text16 CODE >76:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+CDE text16 CODE >77:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+CE0 text16 CODE >79:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+CE4 text16 CODE >80:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+CE6 text16 CODE >82:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+CF0 text16 CODE >83:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+CF4 text16 CODE >84:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+CFA text16 CODE >85:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+CFC text16 CODE >89:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+D04 text16 CODE >90:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+D08 text16 CODE >91:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+D0C text16 CODE >92:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+D0E text16 CODE >93:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+D10 text16 CODE >94:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+D14 text16 CODE >95:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+D16 text16 CODE >98:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+D18 text16 CODE >100:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+D1C text16 CODE >101:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+D1E text16 CODE >44:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+7F0 text15 CODE >314:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+7F0 text15 CODE >318:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+80E text15 CODE >321:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+810 text15 CODE >323:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+816 text15 CODE >324:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+818 text15 CODE >331:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+81C text15 CODE >332:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+820 text15 CODE >333:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+828 text15 CODE >334:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+82A text15 CODE >339:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+834 text15 CODE >340:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+83A text15 CODE >341:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+842 text15 CODE >342:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+846 text15 CODE >343:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+84A text15 CODE >344:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+84C text15 CODE >345:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+850 text15 CODE >346:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+854 text15 CODE >350:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+858 text15 CODE >351:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+85C text15 CODE >353:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+860 text15 CODE >337:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+866 text15 CODE >355:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+86A text15 CODE >356:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+86E text15 CODE >357:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+870 text15 CODE >358:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+880 text15 CODE >359:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+882 text15 CODE >361:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+884 text15 CODE >369:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+890 text15 CODE >370:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+894 text15 CODE >371:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+898 text15 CODE >372:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+89A text15 CODE >373:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+89C text15 CODE >375:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+8A2 text15 CODE >376:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+8A6 text15 CODE >377:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+8A8 text15 CODE >382:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+8AC text15 CODE >383:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+8B4 text15 CODE >385:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+8B8 text15 CODE >386:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+8C0 text15 CODE >390:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+8C8 text15 CODE >392:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+8CE text15 CODE >393:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+8D6 text15 CODE >394:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+8D8 text15 CODE >395:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+8DA text15 CODE >396:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+8DC text15 CODE >398:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+8E0 text15 CODE >399:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+8E2 text15 CODE >401:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+8E6 text15 CODE >402:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+8E8 text15 CODE >405:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+8EE text15 CODE >408:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+8F0 text15 CODE >409:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+8F2 text15 CODE >410:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+8F4 text15 CODE >411:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+8F8 text15 CODE >412:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+8FA text15 CODE >416:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+8FC text15 CODE >321:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1262 text14 CODE >230:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+1262 text14 CODE >234:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+126A text14 CODE >235:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+126C text14 CODE >236:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+1284 text14 CODE >237:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+1288 text14 CODE >238:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+128C text14 CODE >235:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+1294 text14 CODE >242:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+1520 text13 CODE >243:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+1520 text13 CODE >244:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+1524 text13 CODE >249:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+1528 text13 CODE >251:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+10EA text12 CODE >431:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+10EE text12 CODE >432:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+10F0 text12 CODE >434:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+10F4 text12 CODE >435:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+10F6 text12 CODE >437:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+10F6 text12 CODE >438:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+10F8 text12 CODE >439:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+10FC text12 CODE >440:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+10FE text12 CODE >441:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1100 text12 CODE >444:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1100 text12 CODE >445:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1102 text12 CODE >446:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1106 text12 CODE >447:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1108 text12 CODE >448:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+110A text12 CODE >450:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+110A text12 CODE >451:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+110C text12 CODE >452:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+110E text12 CODE >453:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1112 text12 CODE >454:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1114 text12 CODE >457:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1118 text12 CODE >458:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+111A text12 CODE >432:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1130 text12 CODE >460:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/eusart2.c
+1174 text11 CODE >104:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+1178 text11 CODE >105:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+117A text11 CODE >107:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+117E text11 CODE >108:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+1180 text11 CODE >110:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+1182 text11 CODE >112:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+1182 text11 CODE >113:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+1184 text11 CODE >120:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+1186 text11 CODE >123:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+1188 text11 CODE >105:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+11A6 text11 CODE >136:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\powerTask.c
+B32 text10 CODE >253:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+B32 text10 CODE >254:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+B34 text10 CODE >256:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+B3C text10 CODE >257:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+B44 text10 CODE >258:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+B46 text10 CODE >261:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+B50 text10 CODE >262:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+B5A text10 CODE >268:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+B62 text10 CODE >269:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+B68 text10 CODE >270:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+B6E text10 CODE >271:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+B74 text10 CODE >272:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+B78 text10 CODE >273:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+B7A text10 CODE >275:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+B82 text10 CODE >276:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+B88 text10 CODE >281:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+B90 text10 CODE >283:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+B94 text10 CODE >284:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+B9A text10 CODE >285:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+BA0 text10 CODE >286:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+BA2 text10 CODE >288:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+BA6 text10 CODE >289:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+BA8 text10 CODE >302:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+BAE text10 CODE >303:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+BB4 text10 CODE >305:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+BBA text10 CODE >306:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+BCC text10 CODE >308:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+BCE text10 CODE >310:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+BD2 text10 CODE >311:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+BD4 text10 CODE >254:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+BE8 text10 CODE >313:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\sfxProtocoll.c
+1546 text9 CODE >59:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/adc.c
+1546 text9 CODE >62:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/adc.c
+154A text9 CODE >64:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/adc.c
+155A text8 CODE >56:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/interrupt_manager.c
+155A text8 CODE >59:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/interrupt_manager.c
+155C text8 CODE >60:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/interrupt_manager.c
+14F6 text7 CODE >117:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/mcc.c
+14F6 text7 CODE >120:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/mcc.c
+14FA text7 CODE >122:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/mcc.c
+14FE text7 CODE >124:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/mcc.c
+1502 text7 CODE >125:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/mcc.c
+13FC text6 CODE >51:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/pin_manager.c
+13FC text6 CODE >56:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/pin_manager.c
+13FE text6 CODE >57:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/pin_manager.c
+1402 text6 CODE >58:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/pin_manager.c
+1406 text6 CODE >63:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/pin_manager.c
+140A text6 CODE >64:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/pin_manager.c
+140E text6 CODE >65:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/pin_manager.c
+1410 text6 CODE >70:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/pin_manager.c
+1414 text6 CODE >71:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/pin_manager.c
+1416 text6 CODE >72:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/pin_manager.c
+141A text6 CODE >77:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/pin_manager.c
+141C text6 CODE >78:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/pin_manager.c
+141E text6 CODE >79:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/pin_manager.c
+1556 text5 CODE >95:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/tmr0.c
+1556 text5 CODE >98:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/tmr0.c
+1558 text5 CODE >99:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/tmr0.c
+1328 text4 CODE >66:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/tmr0.c
+1328 text4 CODE >71:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/tmr0.c
+132C text4 CODE >74:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/tmr0.c
+1330 text4 CODE >77:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/tmr0.c
+1334 text4 CODE >80:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/tmr0.c
+134C text4 CODE >83:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/tmr0.c
+134E text4 CODE >86:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/tmr0.c
+1350 text4 CODE >92:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/tmr0.c
+14AC text3 CODE >105:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/mcc.c
+14AC text3 CODE >108:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/mcc.c
+14B0 text3 CODE >109:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/mcc.c
+14B4 text3 CODE >110:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/mcc.c
+14B8 text3 CODE >111:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/mcc.c
+14BC text3 CODE >112:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/mcc.c
+152C text2 CODE >121:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/tmr0.c
+152C text2 CODE >122:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/tmr0.c
+1534 text2 CODE >123:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\mcc_generated_files/tmr0.c
+11B4 text1 CODE >44:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\main.c
+11B8 text1 CODE >45:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\main.c
+11BE text1 CODE >51:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\main.c
+11C2 text1 CODE >54:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\main.c
+11C6 text1 CODE >57:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\main.c
+11CA text1 CODE >60:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\main.c
+11CE text1 CODE >61:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\main.c
+11D0 text1 CODE >46:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\main.c
+11E2 text1 CODE >63:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\main.c
+11E4 text1 CODE >64:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\main.c
+11E8 text1 CODE >66:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\main.c
+11EC text1 CODE >67:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\main.c
+F3E text0 CODE >69:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\main.c
+F3E text0 CODE >73:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\main.c
+F42 text0 CODE >74:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\main.c
+F50 text0 CODE >76:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\main.c
+F52 text0 CODE >77:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\main.c
+F54 text0 CODE >78:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\main.c
+F56 text0 CODE >80:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\main.c
+F5A text0 CODE >83:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\main.c
+F60 text0 CODE >84:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\main.c
+F68 text0 CODE >86:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\main.c
+F6E text0 CODE >87:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\main.c
+F74 text0 CODE >90:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\main.c
+F78 text0 CODE >92:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\main.c
+F7C text0 CODE >93:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\main.c
+F82 text0 CODE >94:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\main.c
+F88 text0 CODE >95:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\main.c
+F8E text0 CODE >97:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\main.c
+F94 text0 CODE >99:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\main.c
+F9A text0 CODE >100:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\main.c
+F9C text0 CODE >101:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\main.c
+F9E text0 CODE >100:C:\Users\pedro\MPLABXProjects\TestLedLollipopBasic.X\main.c
+1132 cinit CODE >5834:C:\Users\pedro\AppData\Local\Temp\s6s0.
+1132 cinit CODE >5836:C:\Users\pedro\AppData\Local\Temp\s6s0.
+1132 cinit CODE >5839:C:\Users\pedro\AppData\Local\Temp\s6s0.
+1132 cinit CODE >5975:C:\Users\pedro\AppData\Local\Temp\s6s0.
+1134 cinit CODE >5976:C:\Users\pedro\AppData\Local\Temp\s6s0.
+1136 cinit CODE >5977:C:\Users\pedro\AppData\Local\Temp\s6s0.
+1138 cinit CODE >5978:C:\Users\pedro\AppData\Local\Temp\s6s0.
+113A cinit CODE >5979:C:\Users\pedro\AppData\Local\Temp\s6s0.
+113C cinit CODE >5980:C:\Users\pedro\AppData\Local\Temp\s6s0.
+113E cinit CODE >5981:C:\Users\pedro\AppData\Local\Temp\s6s0.
+1142 cinit CODE >5982:C:\Users\pedro\AppData\Local\Temp\s6s0.
+1146 cinit CODE >5983:C:\Users\pedro\AppData\Local\Temp\s6s0.
+1146 cinit CODE >5984:C:\Users\pedro\AppData\Local\Temp\s6s0.
+1148 cinit CODE >5985:C:\Users\pedro\AppData\Local\Temp\s6s0.
+114C cinit CODE >5986:C:\Users\pedro\AppData\Local\Temp\s6s0.
+114E cinit CODE >5987:C:\Users\pedro\AppData\Local\Temp\s6s0.
+1150 cinit CODE >5988:C:\Users\pedro\AppData\Local\Temp\s6s0.
+1152 cinit CODE >5992:C:\Users\pedro\AppData\Local\Temp\s6s0.
+1156 cinit CODE >5993:C:\Users\pedro\AppData\Local\Temp\s6s0.
+1158 cinit CODE >5994:C:\Users\pedro\AppData\Local\Temp\s6s0.
+1158 cinit CODE >5995:C:\Users\pedro\AppData\Local\Temp\s6s0.
+115A cinit CODE >5996:C:\Users\pedro\AppData\Local\Temp\s6s0.
+115C cinit CODE >5997:C:\Users\pedro\AppData\Local\Temp\s6s0.
+115E cinit CODE >6000:C:\Users\pedro\AppData\Local\Temp\s6s0.
+1162 cinit CODE >6001:C:\Users\pedro\AppData\Local\Temp\s6s0.
+1164 cinit CODE >6002:C:\Users\pedro\AppData\Local\Temp\s6s0.
+1164 cinit CODE >6003:C:\Users\pedro\AppData\Local\Temp\s6s0.
+1166 cinit CODE >6004:C:\Users\pedro\AppData\Local\Temp\s6s0.
+1168 cinit CODE >6005:C:\Users\pedro\AppData\Local\Temp\s6s0.
+116A cinit CODE >6011:C:\Users\pedro\AppData\Local\Temp\s6s0.
+116A cinit CODE >6013:C:\Users\pedro\AppData\Local\Temp\s6s0.
+116C cinit CODE >6014:C:\Users\pedro\AppData\Local\Temp\s6s0.
+116E cinit CODE >6015:C:\Users\pedro\AppData\Local\Temp\s6s0.
+1170 cinit CODE >6016:C:\Users\pedro\AppData\Local\Temp\s6s0.
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+_SigfoxResponseParser 1444 0 CODE 0 text22 dist/default/production\TestLedLollipopBasic.X.production.obj
+__LdataBANK0 0 0 ABS 0 dataBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Lmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\TestLedLollipopBasic.X.production.obj
+systemMainTimer@secondMultiplier C4 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+_SigfoxScheduledPwrDownTaskFlag 8D 0 BANK0 1 bssBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Hspace_0 30000E 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__Hspace_1 12F 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__Hspace_2 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__CFG_IESO$OFF 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__HidataBANK0 0 0 ABS 0 idataBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+_powerTaskReset 1536 0 CODE 0 text17 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_SigfoxTaskLoadPayloadBuffer DB8 0 CODE 0 text35 dist/default/production\TestLedLollipopBasic.X.production.obj
+strncmp@s1 CD 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+strncmp@s2 CF 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_SigfoxTaskTick 14F6 0 CODE 0 text48 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Hibigdata 0 0 CODE 0 ibigdata dist/default/production\TestLedLollipopBasic.X.production.obj
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\pedro\AppData\Local\Temp\s6s0.obj
+__size_of_ProtocolTaskPowerDown 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\TestLedLollipopBasic.X.production.obj
+SigfoxTaskLoadPayloadBuffer@payloadBufferPtr D1 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+_PROT_STATE 82 0 BANK0 1 bssBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_INTERRUPT_Initialize 155E 0 CODE 0 text8 dist/default/production\TestLedLollipopBasic.X.production.obj
+PL2 E0E 0 CODE 0 text40 dist/default/production\TestLedLollipopBasic.X.production.obj
+PL4 A32 0 CODE 0 text39 dist/default/production\TestLedLollipopBasic.X.production.obj
+PL6 B16 0 CODE 0 text31 dist/default/production\TestLedLollipopBasic.X.production.obj
+PL8 1248 0 CODE 0 text41 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_SigfoxCommandSelector B16 0 CODE 0 text31 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Lsmallconst 600 0 SMALLCONST 0 smallconst dist/default/production\TestLedLollipopBasic.X.production.obj
+_LATA F89 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+_LATB F8A 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+_LATC F8B 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+_WPUB F61 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+___sp 0 0 STACK 2 stack C:\Users\pedro\AppData\Local\Temp\s6s0.obj
+_main F3E 0 CODE 0 text0 dist/default/production\TestLedLollipopBasic.X.production.obj
+btemp 1 0 COMRAM 1 temp dist/default/production\TestLedLollipopBasic.X.production.obj
+start 62 0 CODE 0 init C:\Users\pedro\AppData\Local\Temp\s6s0.obj
+__size_of_setLedStatus 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+_TMR0_InterruptHandler ED 0 BANK0 1 nvBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__size_of___almod 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__size_of_main 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__CFG_WDTEN$OFF 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_TMR0_SetInterruptHandler 1536 0 CODE 0 text2 dist/default/production\TestLedLollipopBasic.X.production.obj
+__CFG_DEBUG$OFF 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+SigfoxTask@SigfoxInitCommandPtr DE 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__size_of_powerTaskGetVarValidity 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__LidataBANK0 0 0 ABS 0 idataBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+_SigfoxMsgReceivedFlag 90 0 BANK0 1 bssBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__CFG_CCP2MX$PORTC1 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+_SigfoxCommandSelector A4E 0 CODE 0 text31 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Hpowerup 62 0 CODE 0 powerup dist/default/production\TestLedLollipopBasic.X.production.obj
+_ProtocolTaskBuildFrame 658 0 CODE 0 text34 dist/default/production\TestLedLollipopBasic.X.production.obj
+___almod@sign D2 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_ProtocolTaskExecute 1296 0 CODE 0 text14 dist/default/production\TestLedLollipopBasic.X.production.obj
+_EUSART2_Transmit_ISR 13AC 0 CODE 0 text49 dist/default/production\TestLedLollipopBasic.X.production.obj
+_T0CONbits FD5 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__CFG_CCP3MX$PORTB5 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__size_of_SYSTEM_Initialize 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+TMR0_SetInterruptHandler@InterruptHandler C9 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_ofSigfoxTask@F6887 608 0 SMALLCONST 0 smallconst dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_setLedStatus 11EE 0 CODE 0 text1 dist/default/production\TestLedLollipopBasic.X.production.obj
+__accesstop 60 0 ABS 0 - C:\Users\pedro\AppData\Local\Temp\s6s0.obj
+intlevel0 0 0 CODE 0 text C:\Users\pedro\AppData\Local\Temp\s6s0.obj
+intlevel1 0 0 CODE 0 text C:\Users\pedro\AppData\Local\Temp\s6s0.obj
+intlevel2 0 0 CODE 0 text C:\Users\pedro\AppData\Local\Temp\s6s0.obj
+intlevel3 0 0 CODE 0 text C:\Users\pedro\AppData\Local\Temp\s6s0.obj
+__end_of_powerTaskReset 153E 0 CODE 0 text17 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_EUSART2_Initialize 1480 0 CODE 0 text20 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_SigfoxCommandsDefinitions 646 0 SMALLCONST 0 smallconst dist/default/production\TestLedLollipopBasic.X.production.obj
+__size_of_systemMainTimer 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+strcat@from CB 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__size_of_ADC_Initialize 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\TestLedLollipopBasic.X.production.obj
+__CFG_EBTR0$OFF 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__CFG_EBTR1$OFF 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+_ledTimer 84 0 BANK0 1 bssBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__CFG_EBTRB$OFF 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__CFG_P2BMX$PORTB5 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__Hifardata 0 0 CODE 0 ifardata dist/default/production\TestLedLollipopBasic.X.production.obj
+ProtocolTaskBuildFrame@totalBits E5 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Hclrtext 0 0 ABS 0 clrtext dist/default/production\TestLedLollipopBasic.X.production.obj
+__size_of_SigfoxReceive 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+_sysVarGpsValidFlag 94 0 BANK0 1 bssBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__size_of_SigfoxTaskReset 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__CFG_PRICLKEN$ON 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+powerTaskNewTask@command C9 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__CFG_FOSC$INTIO67 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+_ANSELA F38 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+_ANSELB F39 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+_ANSELC F3A 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+_EUSART2_GPRS_Transmit_ISR 155E 0 CODE 0 text52 dist/default/production\TestLedLollipopBasic.X.production.obj
+___inthi_sp 0 0 STACK 2 stack C:\Users\pedro\AppData\Local\Temp\s6s0.obj
+_sysVarBattery F3 0 BANK0 1 dataBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+___intlo_sp 0 0 STACK 2 stack C:\Users\pedro\AppData\Local\Temp\s6s0.obj
+ProtocolGetValidity@variableID CA 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+_sysVarMainInput 93 0 BANK0 1 bssBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_INTERRUPT_InterruptManager 62 0 CODE 0 intcode dist/default/production\TestLedLollipopBasic.X.production.obj
+__size_of_ProtocolSetNextCommTime 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+_powerTaskTick 14D4 0 CODE 0 text47 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Hintcode_body 0 0 ABS 0 intcode_body dist/default/production\TestLedLollipopBasic.X.production.obj
+_SigfoxCommManagerState 91 0 BANK0 1 bssBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Hpa_nodes0 0 0 ABS 0 pa_nodes0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Hpa_nodes1 0 0 ABS 0 pa_nodes1 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Hpa_nodes2 0 0 ABS 0 pa_nodes2 dist/default/production\TestLedLollipopBasic.X.production.obj
+_EUSART2_Initialize 1464 0 CODE 0 text20 dist/default/production\TestLedLollipopBasic.X.production.obj
+ProtocolAddFrameData@Data C9 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\TestLedLollipopBasic.X.production.obj
+ProtocolTaskExecute@timeOut E4 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\TestLedLollipopBasic.X.production.obj
+SigfoxTask@F6887 605 0 SMALLCONST 0 smallconst dist/default/production\TestLedLollipopBasic.X.production.obj
+__LnvBANK0 0 0 ABS 0 nvBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Hintcodelo 62 0 CODE 0 intcodelo dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_SigfoxReceive 14D4 0 CODE 0 text50 dist/default/production\TestLedLollipopBasic.X.production.obj
+SigfoxCommandSelector@SigfoxRomCommandStrPtr D5 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of___almod C8A 0 CODE 0 text42 dist/default/production\TestLedLollipopBasic.X.production.obj
+_SIT_FRAME_POWERUP_SF_DESC 64E 0 SMALLCONST 0 smallconst dist/default/production\TestLedLollipopBasic.X.production.obj
+__size_of_ProtocolAddFrameData 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+_SigfoxTask 7F0 0 CODE 0 text15 dist/default/production\TestLedLollipopBasic.X.production.obj
+?_strcat C9 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+?_strchr C9 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+?_strcpy C9 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+?_strlen C9 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+?_strstr D4 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__size_of_powerTaskPowerDown 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__size_of_strncmp 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+ProtocolAddFrameData@i DC 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+setLedStatus@status C9 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Lpa_nodes0 0 0 ABS 0 pa_nodes0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Lpa_nodes1 0 0 ABS 0 pa_nodes1 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Lpa_nodes2 0 0 ABS 0 pa_nodes2 dist/default/production\TestLedLollipopBasic.X.production.obj
+_statusIndTimer 85 0 BANK0 1 bssBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+_INTCON2bits FF1 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__Lintcodelo 62 0 CODE 0 intcodelo dist/default/production\TestLedLollipopBasic.X.production.obj
+__CFG_FCMEN$OFF 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+_PIN_MANAGER_Initialize 13FC 0 CODE 0 text6 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_ProtocolAddFrameData A32 0 CODE 0 text39 dist/default/production\TestLedLollipopBasic.X.production.obj
+start_initialization 1132 0 CODE 0 cinit dist/default/production\TestLedLollipopBasic.X.production.obj
+__CFG_PBADEN$ON 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+_SigfoxVerifyTransactionStatus 1354 0 CODE 0 text28 dist/default/production\TestLedLollipopBasic.X.production.obj
+ProtocolGetValidity@taskResponse CB 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+_OSCCON FD3 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\TestLedLollipopBasic.X.production.obj
+SigfoxCommandSelector@SFX_COMMAND_TAIL_ACK_STR CF 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__size_of_ProtocolSetNextMeasTime 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+_sysVarGpsLat 70 0 BANK0 1 bssBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+ProtocolTaskBuildFrame@dataSize E7 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+_TRISBbits F93 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+_powerTaskPwrReadyTimer 74 0 BANK0 1 bssBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+___rparam_used 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+_RCREG2 F74 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+_RCSTA2 F71 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_ofPL2 E2E 0 CODE 0 text40 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_ofPL4 A40 0 CODE 0 text39 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_ofPL6 B28 0 CODE 0 text31 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_ofPL8 1262 0 CODE 0 text41 dist/default/production\TestLedLollipopBasic.X.production.obj
+_ProtocolTask B32 0 CODE 0 text10 dist/default/production\TestLedLollipopBasic.X.production.obj
+___almod@dividend C9 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_SYSTEM_Initialize 14C0 0 CODE 0 text3 dist/default/production\TestLedLollipopBasic.X.production.obj
+_SigfoxTransactionAttemps 8A 0 BANK0 1 bssBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+ProtocolTaskTick@_500msToSecond 81 0 BANK0 1 bssBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+_SPBRG2 F75 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__pcstackBANK0 C4 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+_usartSemaphore 92 0 BANK0 1 bssBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_gpsTaskGetVarValidity 1552 0 CODE 0 text38 dist/default/production\TestLedLollipopBasic.X.production.obj
+__size_of_SigfoxTaskNewTask 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+_TXREG2 F73 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+_TXSTA2 F72 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__size_of_EUSART2_Receive_ISR 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_ofSigfoxCommandSelector@F6862 60A 0 SMALLCONST 0 smallconst dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_ofSigfoxCommandSelector@F6864 605 0 SMALLCONST 0 smallconst dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_SigfoxTask 914 0 CODE 0 text15 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Hbank0 0 0 ABS 0 bank0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Hbank1 0 0 ABS 0 bank1 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Hbank2 0 0 ABS 0 bank2 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Hbank3 0 0 ABS 0 bank3 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Hbank4 0 0 ABS 0 bank4 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Hbank5 0 0 ABS 0 bank5 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Hcinit 0 0 ABS 0 cinit dist/default/production\TestLedLollipopBasic.X.production.obj
+__Hconst 0 0 CONST 0 const dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_strcat 10A0 0 CODE 0 text33 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_strchr 131E 0 CODE 0 text26 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_strcpy 1228 0 CODE 0 text32 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_strlen 12FA 0 CODE 0 text25 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_strstr EC4 0 CODE 0 text23 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Hidata 0 0 CODE 0 idata dist/default/production\TestLedLollipopBasic.X.production.obj
+__Hidloc 200008 0 IDLOC 0 idloc dist/default/production\TestLedLollipopBasic.X.production.obj
+__size_of_SigfoxTransmit 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__Hnvbit 0 0 COMRAM 1 nvbit dist/default/production\TestLedLollipopBasic.X.production.obj
+__Hparam 0 0 BANK0 1 param0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__size_of_OSCILLATOR_Initialize 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__Hrdata 0 0 COMRAM 1 rdata dist/default/production\TestLedLollipopBasic.X.production.obj
+__size_of_powerTaskTick 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_ProtocolTaskBuildFrame 7CC 0 CODE 0 text34 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Hstack 0 0 STACK 2 stack dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext0 0 0 ABS 0 text0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext1 0 0 ABS 0 text1 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext2 0 0 ABS 0 text2 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext3 0 0 ABS 0 text3 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext4 0 0 ABS 0 text4 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext5 0 0 ABS 0 text5 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext6 0 0 ABS 0 text6 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext7 0 0 ABS 0 text7 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext8 0 0 ABS 0 text8 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext9 0 0 ABS 0 text9 dist/default/production\TestLedLollipopBasic.X.production.obj
+ProtocolTaskBuildFrame@EVENT E0 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+_gpsTaskGetVarValidity 154C 0 CODE 0 text38 dist/default/production\TestLedLollipopBasic.X.production.obj
+_sysVarGpsDayTime 68 0 BANK0 1 bssBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\TestLedLollipopBasic.X.production.obj
+__Hbigram 0 0 ABS 0 bigram dist/default/production\TestLedLollipopBasic.X.production.obj
+__smallconst 600 0 SMALLCONST 0 smallconst C:\Users\pedro\AppData\Local\Temp\s6s0.obj
+_BAUDCON2 F70 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+_SFX_STATE F2 0 BANK0 1 dataBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Hcomram 0 0 ABS 0 comram dist/default/production\TestLedLollipopBasic.X.production.obj
+__Hconfig 30000E 0 CONFIG 0 config dist/default/production\TestLedLollipopBasic.X.production.obj
+_lastKnownResult F0 0 BANK0 1 dataBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Lbank0 0 0 ABS 0 bank0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Lbank1 0 0 ABS 0 bank1 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Lbank2 0 0 ABS 0 bank2 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Lbank3 0 0 ABS 0 bank3 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Lbank4 0 0 ABS 0 bank4 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Lbank5 0 0 ABS 0 bank5 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Lcinit 0 0 ABS 0 cinit dist/default/production\TestLedLollipopBasic.X.production.obj
+__Lconst 0 0 CONST 0 const dist/default/production\TestLedLollipopBasic.X.production.obj
+__Lidata 0 0 CODE 0 idata dist/default/production\TestLedLollipopBasic.X.production.obj
+__Lidloc 200000 0 IDLOC 0 idloc dist/default/production\TestLedLollipopBasic.X.production.obj
+__Lnvbit 0 0 COMRAM 1 nvbit dist/default/production\TestLedLollipopBasic.X.production.obj
+__Lparam 0 0 BANK0 1 param0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__size_of_ProtocolTask 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__Lrdata 0 0 COMRAM 1 rdata dist/default/production\TestLedLollipopBasic.X.production.obj
+__Lstack 0 0 STACK 2 stack dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext0 0 0 ABS 0 text0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext1 0 0 ABS 0 text1 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext2 0 0 ABS 0 text2 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext3 0 0 ABS 0 text3 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext4 0 0 ABS 0 text4 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext5 0 0 ABS 0 text5 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext6 0 0 ABS 0 text6 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext7 0 0 ABS 0 text7 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext8 0 0 ABS 0 text8 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext9 0 0 ABS 0 text9 dist/default/production\TestLedLollipopBasic.X.production.obj
+_SigfoxTXReady 1504 0 CODE 0 text30 dist/default/production\TestLedLollipopBasic.X.production.obj
+powerTaskGetVarValidity@variableID C9 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Hfarbss 0 0 FARRAM 0 farbss dist/default/production\TestLedLollipopBasic.X.production.obj
+__Lintcode_body 0 0 ABS 0 intcode_body dist/default/production\TestLedLollipopBasic.X.production.obj
+_PORTAbits F80 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__size_of_SigfoxTaskTick 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__CFG_T3CMX$PORTC0 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_strncmp FF0 0 CODE 0 text24 dist/default/production\TestLedLollipopBasic.X.production.obj
+_SigfoxTaskLoadPayloadBuffer D36 0 CODE 0 text35 dist/default/production\TestLedLollipopBasic.X.production.obj
+_INTCONbits FF2 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+_INTERRUPT_Initialize 155A 0 CODE 0 text8 dist/default/production\TestLedLollipopBasic.X.production.obj
+_SIT_FRAME_TRACKER_SF_ID_DESC 646 0 SMALLCONST 0 smallconst dist/default/production\TestLedLollipopBasic.X.production.obj
+__Habs1 0 0 ABS 0 abs1 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Hdata 0 0 ABS 0 data dist/default/production\TestLedLollipopBasic.X.production.obj
+__Hinit 66 0 CODE 0 init dist/default/production\TestLedLollipopBasic.X.production.obj
+__Hrbit 0 0 COMRAM 1 rbit dist/default/production\TestLedLollipopBasic.X.production.obj
+__Hrbss 0 0 COMRAM 1 rbss dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htemp 2 0 COMRAM 1 temp dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext 0 0 ABS 0 text dist/default/production\TestLedLollipopBasic.X.production.obj
+__Labs1 0 0 ABS 0 abs1 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ldata 0 0 ABS 0 data dist/default/production\TestLedLollipopBasic.X.production.obj
+__Linit 62 0 CODE 0 init dist/default/production\TestLedLollipopBasic.X.production.obj
+__Lrbit 0 0 COMRAM 1 rbit dist/default/production\TestLedLollipopBasic.X.production.obj
+__Lrbss 0 0 COMRAM 1 rbss dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltemp 1 0 COMRAM 1 temp dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext 0 0 ABS 0 text dist/default/production\TestLedLollipopBasic.X.production.obj
+__CFG_XINST$OFF 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__pnvBANK0 EB 0 BANK0 1 nvBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__LcstackBANK0 0 0 ABS 0 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+int$flags 1 0 COMRAM 1 temp dist/default/production\TestLedLollipopBasic.X.production.obj
+__size_of_INTERRUPT_InterruptManager 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__Hintret 0 0 ABS 0 intret dist/default/production\TestLedLollipopBasic.X.production.obj
+__Hirdata 0 0 CODE 0 irdata dist/default/production\TestLedLollipopBasic.X.production.obj
+__size_of_ProtocolGetValidity 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+PL10 E2E 0 CODE 0 text40 dist/default/production\TestLedLollipopBasic.X.production.obj
+PL12 7CC 0 CODE 0 text34 dist/default/production\TestLedLollipopBasic.X.production.obj
+PL14 DB8 0 CODE 0 text35 dist/default/production\TestLedLollipopBasic.X.production.obj
+PL16 BEA 0 CODE 0 text10 dist/default/production\TestLedLollipopBasic.X.production.obj
+PL18 10DC 0 CODE 0 text51 dist/default/production\TestLedLollipopBasic.X.production.obj
+PL20 A40 0 CODE 0 text39 dist/default/production\TestLedLollipopBasic.X.production.obj
+PL22 13C8 0 CODE 0 text49 dist/default/production\TestLedLollipopBasic.X.production.obj
+PL24 7DC 0 CODE 0 text34 dist/default/production\TestLedLollipopBasic.X.production.obj
+PL26 7E6 0 CODE 0 text34 dist/default/production\TestLedLollipopBasic.X.production.obj
+PL28 914 0 CODE 0 text15 dist/default/production\TestLedLollipopBasic.X.production.obj
+PL30 F2A 0 CODE 0 text46 dist/default/production\TestLedLollipopBasic.X.production.obj
+PL32 B28 0 CODE 0 text31 dist/default/production\TestLedLollipopBasic.X.production.obj
+PL34 F34 0 CODE 0 text46 dist/default/production\TestLedLollipopBasic.X.production.obj
+PL36 BFA 0 CODE 0 text10 dist/default/production\TestLedLollipopBasic.X.production.obj
+PL38 11A8 0 CODE 0 text11 dist/default/production\TestLedLollipopBasic.X.production.obj
+PL40 91E 0 CODE 0 text15 dist/default/production\TestLedLollipopBasic.X.production.obj
+PL42 11AE 0 CODE 0 text11 dist/default/production\TestLedLollipopBasic.X.production.obj
+PL45 FF0 0 CODE 0 text24 dist/default/production\TestLedLollipopBasic.X.production.obj
+PL47 C8A 0 CODE 0 text42 dist/default/production\TestLedLollipopBasic.X.production.obj
+PL49 131E 0 CODE 0 text26 dist/default/production\TestLedLollipopBasic.X.production.obj
+__S0 30000E 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__S1 12F 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__S2 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__size_of_TMR0_ISR 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_powerTaskTick 14E6 0 CODE 0 text47 dist/default/production\TestLedLollipopBasic.X.production.obj
+___almod@counter D1 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+_EUSART2_Receive_ISR 10A0 0 CODE 0 text51 dist/default/production\TestLedLollipopBasic.X.production.obj
+SigfoxCommandSelector@SigfoxCommand D7 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+ProtocolAddFrameData@longMask D8 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+ProtocolAddFrameData@bytes DD 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+gpsTaskGetVarValidity@variableID C9 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+_protVarCommunicationTimer 60 0 BANK0 1 bssBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__size_of_SigfoxCommManager 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+SigfoxTaskLoadPayloadBuffer@rawData C9 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_ProtocolTask BEA 0 CODE 0 text10 dist/default/production\TestLedLollipopBasic.X.production.obj
+_SigfoxCommandsDefinitions 60A 0 SMALLCONST 0 smallconst dist/default/production\TestLedLollipopBasic.X.production.obj
+_SigfoxScheduledInitTaskFlag 8C 0 BANK0 1 bssBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__size_of_SigfoxCommandSelector 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+_powerTaskNewTask 1174 0 CODE 0 text11 dist/default/production\TestLedLollipopBasic.X.production.obj
+SigfoxCommandSelector@SFX_COMMAND_TAIL_STR D3 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Lbigdata 0 0 BIGRAM 1 bigdata dist/default/production\TestLedLollipopBasic.X.production.obj
+__size_of_SigfoxResponseParser 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__Hnvrram 0 0 COMRAM 1 nvrram dist/default/production\TestLedLollipopBasic.X.production.obj
+strcat@cp CD 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+strcat@to C9 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+_SYSTEM_Initialize 14AC 0 CODE 0 text3 dist/default/production\TestLedLollipopBasic.X.production.obj
+strcpy@cp CD 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+strcpy@to C9 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_ofPL10 E48 0 CODE 0 text40 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_ofPL12 7DC 0 CODE 0 text34 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_ofPL14 DC8 0 CODE 0 text35 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_ofPL16 BFA 0 CODE 0 text10 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_ofPL18 10EA 0 CODE 0 text51 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_ofPL20 A4E 0 CODE 0 text39 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_ofPL22 13D6 0 CODE 0 text49 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_ofPL24 7E6 0 CODE 0 text34 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_ofPL26 7F0 0 CODE 0 text34 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_ofPL28 91E 0 CODE 0 text15 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_ofPL30 F34 0 CODE 0 text46 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_ofPL32 B32 0 CODE 0 text31 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_ofPL34 F3E 0 CODE 0 text46 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_ofPL36 C00 0 CODE 0 text10 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_ofPL38 11AE 0 CODE 0 text11 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_ofPL40 924 0 CODE 0 text15 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_ofPL42 11B4 0 CODE 0 text11 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_ofPL45 1008 0 CODE 0 text24 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_ofPL47 C9C 0 CODE 0 text42 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_ofPL49 1328 0 CODE 0 text26 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Hparam0 0 0 BANK0 1 param0 dist/default/production\TestLedLollipopBasic.X.production.obj
+_pwrScheduledMeasPowerTaskFlag 7F 0 BANK0 1 bssBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+main@taskResult EA 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__CFG_BORV$190 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+_pwrScheduledCommPowerTaskFlag 7E 0 BANK0 1 bssBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__HnvBANK0 0 0 ABS 0 nvBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Lintentry 0 0 ABS 0 intentry dist/default/production\TestLedLollipopBasic.X.production.obj
+__Hramtop 600 0 RAM 0 ramtop dist/default/production\TestLedLollipopBasic.X.production.obj
+strlen@s C9 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__size_of_powerTaskReset 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_ProtocolTaskPowerDown 152C 0 CODE 0 text13 dist/default/production\TestLedLollipopBasic.X.production.obj
+__pdataBANK0 F0 0 BANK0 1 dataBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__activetblptr 3 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+SigfoxCommManager@SigfoxCommand D8 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Hstruct 0 0 COMRAM 1 struct dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_SigfoxResponseParser 1464 0 CODE 0 text22 dist/default/production\TestLedLollipopBasic.X.production.obj
+__size_of_SigfoxTaskPowerDown 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__LbssBANK0 0 0 ABS 0 bssBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__LbssBANK1 0 0 ABS 0 bssBANK1 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext10 0 0 ABS 0 text10 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext11 0 0 ABS 0 text11 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext12 0 0 ABS 0 text12 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext13 0 0 ABS 0 text13 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext14 0 0 ABS 0 text14 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext15 0 0 ABS 0 text15 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext16 0 0 ABS 0 text16 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext17 0 0 ABS 0 text17 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext18 0 0 ABS 0 text18 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext19 0 0 ABS 0 text19 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext20 0 0 ABS 0 text20 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext21 0 0 ABS 0 text21 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext22 0 0 ABS 0 text22 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext23 0 0 ABS 0 text23 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext24 0 0 ABS 0 text24 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext25 0 0 ABS 0 text25 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext26 0 0 ABS 0 text26 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext27 0 0 ABS 0 text27 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext28 0 0 ABS 0 text28 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext29 0 0 ABS 0 text29 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext30 0 0 ABS 0 text30 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext31 0 0 ABS 0 text31 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext32 0 0 ABS 0 text32 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext33 0 0 ABS 0 text33 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext34 0 0 ABS 0 text34 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext35 0 0 ABS 0 text35 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext36 0 0 ABS 0 text36 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext37 0 0 ABS 0 text37 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext38 0 0 ABS 0 text38 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext39 0 0 ABS 0 text39 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext40 0 0 ABS 0 text40 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext41 0 0 ABS 0 text41 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext42 0 0 ABS 0 text42 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext44 0 0 ABS 0 text44 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext45 0 0 ABS 0 text45 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext46 0 0 ABS 0 text46 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext47 0 0 ABS 0 text47 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext48 0 0 ABS 0 text48 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext49 0 0 ABS 0 text49 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext50 0 0 ABS 0 text50 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext51 0 0 ABS 0 text51 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext52 0 0 ABS 0 text52 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Htext53 0 0 ABS 0 text53 dist/default/production\TestLedLollipopBasic.X.production.obj
+__size_of_EUSART2_Initialize 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+_SigfoxScheduledMsgAckTaskFlag 8E 0 BANK0 1 bssBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+_INTERRUPT_InterruptManager 8 0 CODE 0 intcode dist/default/production\TestLedLollipopBasic.X.production.obj
+_ADC_Initialize 1546 0 CODE 0 text9 dist/default/production\TestLedLollipopBasic.X.production.obj
+_ProtocolGetValidity 1380 0 CODE 0 text36 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_SigfoxTaskNewTask 1132 0 CODE 0 text12 dist/default/production\TestLedLollipopBasic.X.production.obj
+_PIE3bits FA3 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__CFG_HFOFST$ON 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+_ProtocolTaskTick EC4 0 CODE 0 text46 dist/default/production\TestLedLollipopBasic.X.production.obj
+_powerTaskGetVarValidity 1512 0 CODE 0 text37 dist/default/production\TestLedLollipopBasic.X.production.obj
+_TMR0_ISR 13D6 0 CODE 0 text44 dist/default/production\TestLedLollipopBasic.X.production.obj
+__ptext10 B32 0 CODE 0 text10 dist/default/production\TestLedLollipopBasic.X.production.obj
+__ptext11 1174 0 CODE 0 text11 dist/default/production\TestLedLollipopBasic.X.production.obj
+__ptext12 10EA 0 CODE 0 text12 dist/default/production\TestLedLollipopBasic.X.production.obj
+__ptext13 1520 0 CODE 0 text13 dist/default/production\TestLedLollipopBasic.X.production.obj
+__ptext14 1262 0 CODE 0 text14 dist/default/production\TestLedLollipopBasic.X.production.obj
+__ptext15 7F0 0 CODE 0 text15 dist/default/production\TestLedLollipopBasic.X.production.obj
+__ptext16 C9C 0 CODE 0 text16 dist/default/production\TestLedLollipopBasic.X.production.obj
+__ptext17 1536 0 CODE 0 text17 dist/default/production\TestLedLollipopBasic.X.production.obj
+__ptext18 1480 0 CODE 0 text18 dist/default/production\TestLedLollipopBasic.X.production.obj
+__ptext19 1420 0 CODE 0 text19 dist/default/production\TestLedLollipopBasic.X.production.obj
+__ptext20 1464 0 CODE 0 text20 dist/default/production\TestLedLollipopBasic.X.production.obj
+__ptext21 1496 0 CODE 0 text21 dist/default/production\TestLedLollipopBasic.X.production.obj
+__ptext22 1444 0 CODE 0 text22 dist/default/production\TestLedLollipopBasic.X.production.obj
+__ptext23 E48 0 CODE 0 text23 dist/default/production\TestLedLollipopBasic.X.production.obj
+__ptext24 FA8 0 CODE 0 text24 dist/default/production\TestLedLollipopBasic.X.production.obj
+__ptext25 12CA 0 CODE 0 text25 dist/default/production\TestLedLollipopBasic.X.production.obj
+__ptext26 12FA 0 CODE 0 text26 dist/default/production\TestLedLollipopBasic.X.production.obj
+__ptext27 1008 0 CODE 0 text27 dist/default/production\TestLedLollipopBasic.X.production.obj
+__ptext28 1354 0 CODE 0 text28 dist/default/production\TestLedLollipopBasic.X.production.obj
+__ptext29 153E 0 CODE 0 text29 dist/default/production\TestLedLollipopBasic.X.production.obj
+__ptext30 1504 0 CODE 0 text30 dist/default/production\TestLedLollipopBasic.X.production.obj
+__ptext31 A4E 0 CODE 0 text31 dist/default/production\TestLedLollipopBasic.X.production.obj
+__ptext32 11EE 0 CODE 0 text32 dist/default/production\TestLedLollipopBasic.X.production.obj
+__ptext33 1056 0 CODE 0 text33 dist/default/production\TestLedLollipopBasic.X.production.obj
+__ptext34 658 0 CODE 0 text34 dist/default/production\TestLedLollipopBasic.X.production.obj
+__ptext35 D36 0 CODE 0 text35 dist/default/production\TestLedLollipopBasic.X.production.obj
+__ptext36 1380 0 CODE 0 text36 dist/default/production\TestLedLollipopBasic.X.production.obj
+__ptext37 1512 0 CODE 0 text37 dist/default/production\TestLedLollipopBasic.X.production.obj
+__ptext38 154C 0 CODE 0 text38 dist/default/production\TestLedLollipopBasic.X.production.obj
+__ptext39 924 0 CODE 0 text39 dist/default/production\TestLedLollipopBasic.X.production.obj
+__ptext40 DC8 0 CODE 0 text40 dist/default/production\TestLedLollipopBasic.X.production.obj
+__ptext41 1228 0 CODE 0 text41 dist/default/production\TestLedLollipopBasic.X.production.obj
+__ptext42 C00 0 CODE 0 text42 dist/default/production\TestLedLollipopBasic.X.production.obj
+__ptext44 13D6 0 CODE 0 text44 dist/default/production\TestLedLollipopBasic.X.production.obj
+__ptext45 1296 0 CODE 0 text45 dist/default/production\TestLedLollipopBasic.X.production.obj
+__ptext46 EC4 0 CODE 0 text46 dist/default/production\TestLedLollipopBasic.X.production.obj
+__ptext47 14D4 0 CODE 0 text47 dist/default/production\TestLedLollipopBasic.X.production.obj
+__ptext48 14E6 0 CODE 0 text48 dist/default/production\TestLedLollipopBasic.X.production.obj
+__ptext49 13AC 0 CODE 0 text49 dist/default/production\TestLedLollipopBasic.X.production.obj
+__ptext50 14C0 0 CODE 0 text50 dist/default/production\TestLedLollipopBasic.X.production.obj
+__ptext51 10A0 0 CODE 0 text51 dist/default/production\TestLedLollipopBasic.X.production.obj
+__ptext52 155E 0 CODE 0 text52 dist/default/production\TestLedLollipopBasic.X.production.obj
+__ptext53 0 0 CODE 0 text53 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_PIN_MANAGER_Initialize 1420 0 CODE 0 text6 dist/default/production\TestLedLollipopBasic.X.production.obj
+___almod C00 0 CODE 0 text42 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_TMR0_Initialize 1354 0 CODE 0 text4 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_TMR0_StartTimer 155A 0 CODE 0 text5 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_powerTaskGetVarValidity 1520 0 CODE 0 text37 dist/default/production\TestLedLollipopBasic.X.production.obj
+strlen@cp CB 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Lbigbss 0 0 BIGRAM 1 bigbss dist/default/production\TestLedLollipopBasic.X.production.obj
+__Lbigram 0 0 ABS 0 bigram dist/default/production\TestLedLollipopBasic.X.production.obj
+_ProtocolTaskPowerDown 1520 0 CODE 0 text13 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Lcomram 0 0 ABS 0 comram dist/default/production\TestLedLollipopBasic.X.production.obj
+__Lconfig 300000 0 CONFIG 0 config dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_TMR0_ISR 13FC 0 CODE 0 text44 dist/default/production\TestLedLollipopBasic.X.production.obj
+_LATAbits F89 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+_LATBbits F8A 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+_LATCbits F8B 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__size_of_EUSART2_Transmit_ISR 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__size_of_SigfoxTXReady 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+_RCSTA2bits F71 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__Lfarbss 0 0 FARRAM 0 farbss dist/default/production\TestLedLollipopBasic.X.production.obj
+_strcat 1056 0 CODE 0 text33 dist/default/production\TestLedLollipopBasic.X.production.obj
+_strchr 12FA 0 CODE 0 text26 dist/default/production\TestLedLollipopBasic.X.production.obj
+_strcpy 11EE 0 CODE 0 text32 dist/default/production\TestLedLollipopBasic.X.production.obj
+_strlen 12CA 0 CODE 0 text25 dist/default/production\TestLedLollipopBasic.X.production.obj
+_strstr E48 0 CODE 0 text23 dist/default/production\TestLedLollipopBasic.X.production.obj
+_TMR0_SetInterruptHandler 152C 0 CODE 0 text2 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Lfardata 0 0 FARRAM 0 fardata dist/default/production\TestLedLollipopBasic.X.production.obj
+ProtocolAddFrameData@DataRepSize CD 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_SigfoxVerifyTransactionStatus 1380 0 CODE 0 text28 dist/default/production\TestLedLollipopBasic.X.production.obj
+_SigfoxScheduledMsgStaTaskFlag 8B 0 BANK0 1 bssBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+stackhi 5FF 0 ABS 0 - C:\Users\pedro\AppData\Local\Temp\s6s0.obj
+stacklo 12F 0 ABS 0 - C:\Users\pedro\AppData\Local\Temp\s6s0.obj
+__Lintcode 8 0 CODE 0 intcode dist/default/production\TestLedLollipopBasic.X.production.obj
+_SigfoxTaskPowerDown 1496 0 CODE 0 text21 dist/default/production\TestLedLollipopBasic.X.production.obj
+_OSCCON2 FD2 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+_OSCTUNE F9B 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__Lintret 0 0 ABS 0 intret dist/default/production\TestLedLollipopBasic.X.production.obj
+strstr@s1 D4 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+strstr@s2 D6 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+_sysVarGpsOdometer 78 0 BANK0 1 bssBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Lirdata 0 0 CODE 0 irdata dist/default/production\TestLedLollipopBasic.X.production.obj
+ProtocolAddFrameData@toLeft D7 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_EUSART2_Transmit_ISR 13C8 0 CODE 0 text49 dist/default/production\TestLedLollipopBasic.X.production.obj
+__CFG_LVP$OFF 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+EUSART2_Receive_ISR@auxVar C4 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+SigfoxTaskLoadPayloadBuffer@buffer D2 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_EUSART2_Receive_ISR 10DC 0 CODE 0 text51 dist/default/production\TestLedLollipopBasic.X.production.obj
+strcpy@from CB 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Lspace_0 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__Lspace_1 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__Lspace_2 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_powerTaskNewTask 11A8 0 CODE 0 text11 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_ADC_Initialize 154C 0 CODE 0 text9 dist/default/production\TestLedLollipopBasic.X.production.obj
+__HcstackBANK0 0 0 ABS 0 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__size_of_SigfoxTask 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+ProtocolTaskExecute@taskPointer E0 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+_PIR3bits FA4 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+_ProtocolSetNextCommTime 1228 0 CODE 0 text41 dist/default/production\TestLedLollipopBasic.X.production.obj
+_SigfoxTimeOutTimer 87 0 BANK0 1 bssBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_SigfoxTXReady 1512 0 CODE 0 text30 dist/default/production\TestLedLollipopBasic.X.production.obj
+__size_of_powerTaskNewTask 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__size_of_ProtocolTaskBuildFrame 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+end_of_initialization 116A 0 CODE 0 cinit dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_ProtocolSetNextCommTime 1248 0 CODE 0 text41 dist/default/production\TestLedLollipopBasic.X.production.obj
+_TMR0_Initialize 1328 0 CODE 0 text4 dist/default/production\TestLedLollipopBasic.X.production.obj
+_TMR0_StartTimer 1556 0 CODE 0 text5 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_SigfoxCommManager 1056 0 CODE 0 text27 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Lnvrram 0 0 COMRAM 1 nvrram dist/default/production\TestLedLollipopBasic.X.production.obj
+__Hintentry 0 0 ABS 0 intentry dist/default/production\TestLedLollipopBasic.X.production.obj
+__CFG_STVREN$ON 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+_RCONbits FD0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+___almod@divisor CD 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+_SigfoxTxDelay 86 0 BANK0 1 bssBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+_SigfoxPayloadBuffer 100 0 BANK1 1 bssBANK1 dist/default/production\TestLedLollipopBasic.X.production.obj
+_ProtocolAddFrameData 924 0 CODE 0 text39 dist/default/production\TestLedLollipopBasic.X.production.obj
+?___almod C9 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Lparam0 0 0 BANK0 1 param0 dist/default/production\TestLedLollipopBasic.X.production.obj
+_SigfoxRXBufferPtr 88 0 BANK0 1 bssBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+_SigfoxTaskLoadPayloadBuffer$800 CD 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+_SigfoxTaskLoadPayloadBuffer$801 CF 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Hreset_vec 4 0 CODE 0 reset_vec dist/default/production\TestLedLollipopBasic.X.production.obj
+_SigfoxTXBuffer 95 0 BANK0 1 bssBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__HbssBANK0 0 0 ABS 0 bssBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__HbssBANK1 0 0 ABS 0 bssBANK1 dist/default/production\TestLedLollipopBasic.X.production.obj
+strchr@chr CB 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+strchr@ptr C9 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Lramtop 600 0 RAM 0 ramtop dist/default/production\TestLedLollipopBasic.X.production.obj
+__size_of_strcat 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__size_of_strchr 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__size_of_strcpy 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__size_of_strlen 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__size_of_strstr 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__pcinit 1132 0 CODE 0 cinit dist/default/production\TestLedLollipopBasic.X.production.obj
+SigfoxCommandSelector@F6862 608 0 SMALLCONST 0 smallconst dist/default/production\TestLedLollipopBasic.X.production.obj
+SigfoxCommandSelector@F6864 601 0 SMALLCONST 0 smallconst dist/default/production\TestLedLollipopBasic.X.production.obj
+__ptext0 F3E 0 CODE 0 text0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__ptext1 11B4 0 CODE 0 text1 dist/default/production\TestLedLollipopBasic.X.production.obj
+__ptext2 152C 0 CODE 0 text2 dist/default/production\TestLedLollipopBasic.X.production.obj
+__ptext3 14AC 0 CODE 0 text3 dist/default/production\TestLedLollipopBasic.X.production.obj
+__ptext4 1328 0 CODE 0 text4 dist/default/production\TestLedLollipopBasic.X.production.obj
+__ptext5 1556 0 CODE 0 text5 dist/default/production\TestLedLollipopBasic.X.production.obj
+__ptext6 13FC 0 CODE 0 text6 dist/default/production\TestLedLollipopBasic.X.production.obj
+__ptext7 14F6 0 CODE 0 text7 dist/default/production\TestLedLollipopBasic.X.production.obj
+__ptext8 155A 0 CODE 0 text8 dist/default/production\TestLedLollipopBasic.X.production.obj
+__ptext9 1546 0 CODE 0 text9 dist/default/production\TestLedLollipopBasic.X.production.obj
+_SigfoxTaskNewTask 10EA 0 CODE 0 text12 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_ProtocolTaskTick F2A 0 CODE 0 text46 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Lstruct 0 0 COMRAM 1 struct dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_SIT_FRAME_TRACKER_SF_ID_DESC 64E 0 SMALLCONST 0 smallconst dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext10 0 0 ABS 0 text10 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext11 0 0 ABS 0 text11 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext12 0 0 ABS 0 text12 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext13 0 0 ABS 0 text13 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext14 0 0 ABS 0 text14 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext15 0 0 ABS 0 text15 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext16 0 0 ABS 0 text16 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext17 0 0 ABS 0 text17 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext18 0 0 ABS 0 text18 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext19 0 0 ABS 0 text19 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext20 0 0 ABS 0 text20 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext21 0 0 ABS 0 text21 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext22 0 0 ABS 0 text22 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext23 0 0 ABS 0 text23 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext24 0 0 ABS 0 text24 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext25 0 0 ABS 0 text25 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext26 0 0 ABS 0 text26 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext27 0 0 ABS 0 text27 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext28 0 0 ABS 0 text28 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext29 0 0 ABS 0 text29 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext30 0 0 ABS 0 text30 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext31 0 0 ABS 0 text31 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext32 0 0 ABS 0 text32 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext33 0 0 ABS 0 text33 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext34 0 0 ABS 0 text34 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext35 0 0 ABS 0 text35 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext36 0 0 ABS 0 text36 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext37 0 0 ABS 0 text37 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext38 0 0 ABS 0 text38 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext39 0 0 ABS 0 text39 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext40 0 0 ABS 0 text40 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext41 0 0 ABS 0 text41 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext42 0 0 ABS 0 text42 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext44 0 0 ABS 0 text44 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext45 0 0 ABS 0 text45 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext46 0 0 ABS 0 text46 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext47 0 0 ABS 0 text47 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext48 0 0 ABS 0 text48 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext49 0 0 ABS 0 text49 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext50 0 0 ABS 0 text50 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext51 0 0 ABS 0 text51 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext52 0 0 ABS 0 text52 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Ltext53 0 0 ABS 0 text53 dist/default/production\TestLedLollipopBasic.X.production.obj
+__ramtop 600 0 RAM 0 ramtop C:\Users\pedro\AppData\Local\Temp\s6s0.obj
+_SigfoxTXBufferPtr 89 0 BANK0 1 bssBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_powerTask D36 0 CODE 0 text16 dist/default/production\TestLedLollipopBasic.X.production.obj
+_PMD0bits F3F 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+_sysVarGpsSpeed 7C 0 BANK0 1 bssBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_ProtocolGetValidity 13AC 0 CODE 0 text36 dist/default/production\TestLedLollipopBasic.X.production.obj
+_PMD2bits F3D 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+SigfoxTask@sigfoxInitCommandsROMList DB 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+ProtocolTaskExecute@taskResult E6 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Lpowerup 62 0 CODE 0 powerup dist/default/production\TestLedLollipopBasic.X.production.obj
+__CFG_WDTPS$8192 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__size_of_powerTask 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\TestLedLollipopBasic.X.production.obj
+__size_of_ProtocolTaskTick 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+ProtocolTaskBuildFrame@protFrameDescPtr E8 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+_SigfoxScheduledMsgTaskFlag 8F 0 BANK0 1 bssBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__size_of_ProtocolTaskExecute 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__psmallconst 600 0 SMALLCONST 0 smallconst dist/default/production\TestLedLollipopBasic.X.production.obj
+__Lreset_vec 0 0 CODE 0 reset_vec dist/default/production\TestLedLollipopBasic.X.production.obj
+SigfoxTaskNewTask@command C9 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_EUSART2_GPRS_Transmit_ISR 1560 0 CODE 0 text52 dist/default/production\TestLedLollipopBasic.X.production.obj
+__size_of_gpsTaskGetVarValidity 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+_strncmp FA8 0 CODE 0 text24 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_powerTaskPowerDown 1496 0 CODE 0 text18 dist/default/production\TestLedLollipopBasic.X.production.obj
+_ProtocolSetNextMeasTime DC8 0 CODE 0 text40 dist/default/production\TestLedLollipopBasic.X.production.obj
+___param_bank 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_systemMainTimer 12CA 0 CODE 0 text45 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Hbigdata 0 0 BIGRAM 1 bigdata dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of__initialization 116A 0 CODE 0 cinit dist/default/production\TestLedLollipopBasic.X.production.obj
+_sysVarGpsLong 6C 0 BANK0 1 bssBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__CFG_WRT0$OFF 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+strncmp@len D1 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__CFG_WRT1$OFF 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+_protVarSystemSynchronizedFlag 83 0 BANK0 1 bssBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+_powerTask C9C 0 CODE 0 text16 dist/default/production\TestLedLollipopBasic.X.production.obj
+__CFG_WRTB$OFF 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_ProtocolSetNextMeasTime E0E 0 CODE 0 text40 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Libigdata 0 0 CODE 0 ibigdata dist/default/production\TestLedLollipopBasic.X.production.obj
+__CFG_WRTC$OFF 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__CFG_WRTD$OFF 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+_timer0ReloadVal EB 0 BANK0 1 nvBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__pidataBANK0 1552 0 CODE 0 idataBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+_SigfoxTransmit 153E 0 CODE 0 text29 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Lclrtext 0 0 ABS 0 clrtext dist/default/production\TestLedLollipopBasic.X.production.obj
+_SPBRGH2 F76 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+ProtocolTaskExecute@taskTimeOut E2 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_SigfoxTaskReset 1444 0 CODE 0 text19 dist/default/production\TestLedLollipopBasic.X.production.obj
+_protDataShifter B8 0 BANK0 1 bssBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_SigfoxTaskPowerDown 14AC 0 CODE 0 text21 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_SIT_FRAME_POWERUP_SF_DESC 653 0 SMALLCONST 0 smallconst dist/default/production\TestLedLollipopBasic.X.production.obj
+__size_of_TMR0_SetInterruptHandler 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__CFG_BOREN$SBORDIS 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+_sessionTO 76 0 BANK0 1 bssBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_main FA8 0 CODE 0 text0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__pintcode 8 0 CODE 0 intcode dist/default/production\TestLedLollipopBasic.X.production.obj
+_SigfoxTaskTick 14E6 0 CODE 0 text48 dist/default/production\TestLedLollipopBasic.X.production.obj
+_powerTaskPowerDown 1480 0 CODE 0 text18 dist/default/production\TestLedLollipopBasic.X.production.obj
+_SigfoxRXBuffer 119 0 BANK1 1 bssBANK1 dist/default/production\TestLedLollipopBasic.X.production.obj
+_ProtocolTaskExecute 1262 0 CODE 0 text14 dist/default/production\TestLedLollipopBasic.X.production.obj
+_SigfoxCommManager 1008 0 CODE 0 text27 dist/default/production\TestLedLollipopBasic.X.production.obj
+_T0CON FD5 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+_TMR0H FD7 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+_TMR0L FD6 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+_TRISA F92 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+_TRISB F93 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+_TRISC F94 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__size_of_TMR0_Initialize 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__size_of_TMR0_StartTimer 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__CFG_CP0$OFF 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__CFG_CP1$OFF 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__HRAM 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__Hbss 0 0 RAM 1 bss dist/default/production\TestLedLollipopBasic.X.production.obj
+__Hram 0 0 ABS 0 ram dist/default/production\TestLedLollipopBasic.X.production.obj
+__Hsfr 0 0 ABS 0 sfr dist/default/production\TestLedLollipopBasic.X.production.obj
+__LRAM 1 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__Lbss 0 0 RAM 1 bss dist/default/production\TestLedLollipopBasic.X.production.obj
+__Lram 0 0 ABS 0 ram dist/default/production\TestLedLollipopBasic.X.production.obj
+__Lsfr 0 0 ABS 0 sfr dist/default/production\TestLedLollipopBasic.X.production.obj
+SigfoxResponseParser@dumyPtr D8 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__CFG_PLLCFG$OFF 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__CFG_CPB$OFF 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__CFG_CPD$OFF 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__size_of_PIN_MANAGER_Initialize 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__HdataBANK0 0 0 ABS 0 dataBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__size_of_SigfoxVerifyTransactionStatus 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_OSCILLATOR_Initialize 1504 0 CODE 0 text7 dist/default/production\TestLedLollipopBasic.X.production.obj
+_sysVarGpsCourse 7A 0 BANK0 1 bssBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+_PWR_STATE EF 0 BANK0 1 nvBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+_SigfoxTransactionResult F1 0 BANK0 1 dataBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+_systemMainTimer 1296 0 CODE 0 text45 dist/default/production\TestLedLollipopBasic.X.production.obj
+ProtocolTaskBuildFrame@dataField E1 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+?_strncmp CD 0 BANK0 1 cstackBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__initialization 1132 0 CODE 0 cinit dist/default/production\TestLedLollipopBasic.X.production.obj
+__CFG_PWRTEN$ON 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__size_of_SigfoxTaskLoadPayloadBuffer 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__pbssBANK0 60 0 BANK0 1 bssBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__pbssBANK1 100 0 BANK1 1 bssBANK1 dist/default/production\TestLedLollipopBasic.X.production.obj
+_setLedStatus 11B4 0 CODE 0 text1 dist/default/production\TestLedLollipopBasic.X.production.obj
+_pwrScheduledInitTaskFlag 80 0 BANK0 1 bssBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Hfardata 0 0 FARRAM 0 fardata dist/default/production\TestLedLollipopBasic.X.production.obj
+__Hsmallconst 658 0 SMALLCONST 0 smallconst dist/default/production\TestLedLollipopBasic.X.production.obj
+_SigfoxReceive 14C0 0 CODE 0 text50 dist/default/production\TestLedLollipopBasic.X.production.obj
+__end_of_SigfoxTransmit 1546 0 CODE 0 text29 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Lifardata 0 0 CODE 0 ifardata dist/default/production\TestLedLollipopBasic.X.production.obj
+_protVarMeasurementTimer 64 0 BANK0 1 bssBANK0 dist/default/production\TestLedLollipopBasic.X.production.obj
+__size_of_EUSART2_GPRS_Transmit_ISR 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+_SigfoxTaskReset 1420 0 CODE 0 text19 dist/default/production\TestLedLollipopBasic.X.production.obj
+__Hintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\TestLedLollipopBasic.X.production.obj
+__CFG_MCLRE$EXTMCLR 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+__Hintcode 62 0 CODE 0 intcode dist/default/production\TestLedLollipopBasic.X.production.obj
+__size_of_INTERRUPT_Initialize 0 0 ABS 0 - dist/default/production\TestLedLollipopBasic.X.production.obj
+_OSCILLATOR_Initialize 14F6 0 CODE 0 text7 dist/default/production\TestLedLollipopBasic.X.production.obj
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+idloc 0 200000 200000 8 1
+text34 0 658 658 F08 1
+temp 1 1 1 1 1
+reset_vec 0 0 0 4 1
+bssBANK0 1 60 60 94 1
+bssBANK1 1 100 100 2F 1
+intcode 0 8 8 5E 1
+smallconst 0 600 600 58 1
+config 0 300000 300000 E 1
