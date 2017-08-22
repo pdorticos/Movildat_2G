@@ -14,6 +14,10 @@ typedef enum _GPRS_TASK_COMMANDS_T {
     GPRS_CMD_INITIALIZE,
     GPRS_CMD_SEND_MSG,
     GPRS_CMD_PWR_DOWN,
+    GPRS_CMD_GET_EPO,
+    GPRS_CMD_FLUSH,
+    GPRS_GET_FTP_CFG,
+    GRPS_SET_FTP
 } GPRS_TASK_COMMANDS_T;
 
 ///////////////////////////////////////////////
