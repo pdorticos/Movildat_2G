@@ -39,9 +39,18 @@ uint8_t gprsTimeOutTimer;
 uint8_t gprsTxDelay;
 ////////////////////////////////////////////////////////////////////////////
 
-/*
- VERIFICAR
- */
+void gprsReceive(void){
+#ifndef UART2_SIMULATE
+    RCSTA2bits.CREN = 0;
+    
+    SigfoxRXBufferPtr = 0;
+    SigfoxRXBuffer[0] = 0;
+    SigfoxMsgReceivedFlag = false;
+    // enable receive interrupt
+    RCSTA2bits.CREN = 1;
+    PIE3bits.RC2IE = 1;
+#endif
+}
 
 bool gprsScheduledMsgTaskFlag = false, 
      gprsScheduledMsgStaTaskFlag=false,
@@ -68,11 +77,53 @@ void EUSART2_GPRS_Initialize(void){
     // Baud Rate = 19200; 
     SPBRGH2 = 0x00;   
 }
+/*VERIFICAR*/
 void EUSART2_GPRS_Transmit_ISR(void){
+    if(gprsTxBuffer[gprsTXBufferPtr] == 0)
+    {
+        PIE3bits.TX2IE = 0;
+        gprsReceive();
+    }
+    else
+    {
+        TXREG2 = gprsTxBuffer[SigfoxTXBufferPtr];
+        gprsTXBufferPtr++;
+    }
+    PIR3bits.TX2IF = 0;
     
+//    TXREG2 = SigfoxTXBuffer[SigfoxTXBufferPtr];
+//    PIR3bits.TX2IF = 0;
+//    // add your EUSART1 interrupt custom code
+//    if(SigfoxTXBuffer[SigfoxTXBufferPtr] == 0)
+//    {
+//        PIE3bits.TX2IE = 0;
+//        SigfoxReceive();       
+//    }
 }
+//VERIFICAR
 void EUSART2_GPRS_Receive_ISR(void){
  
+    uint8_t auxVar;
+    auxVar = RCREG2;
+    PIR3bits.RC2IF = 0;
+    if(1 == RCSTA2bits.OERR)
+    {
+        RCSTA2bits.CREN = 0;
+        RCSTA2bits.CREN = 1;
+        gprsRXBufferPtr = 0;
+        auxVar = 0;
+    }
+    if(gprsRXBufferPtr >= (GPRS_RX_BUFFER_SIZE-1))
+    {
+        gprsRXBufferPtr = 0;
+    }
+
+    if((auxVar == 0x0d)&&(gprsRXBufferPtr > 0)){
+        SigfoxMsgReceivedFlag = true;
+        PIE3bits.RC2IE = 0;
+    }
+    gprsRxBuffer[gprsRXBufferPtr++] = auxVar;
+    gprsRxBuffer[gprsRXBufferPtr] = 0;
 }
 void gprsTaskTick(void){
     if(gprsTimeOutTimer){
