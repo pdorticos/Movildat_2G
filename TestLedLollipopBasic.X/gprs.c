@@ -39,6 +39,8 @@ uint8_t gprsTimeOutTimer;
 uint8_t gprsTxDelay;
 ////////////////////////////////////////////////////////////////////////////
 
+void gprsTaskPowerDown(void){}
+
 void gprsReceive(void){
 #ifndef UART2_SIMULATE
     RCSTA2bits.CREN = 0;
@@ -318,7 +320,7 @@ taskResult_t gprsTask(void){
                     continue;
                 }
                 if(GPRS_TransactionResult == TASK_NO_SENSOR_FOUND){
-                    SigfoxTaskPowerDown();
+                    gprsTaskPowerDown();
                 }
                 return(GPRS_TransactionResult);
             }
@@ -351,7 +353,7 @@ taskResult_t gprsTask(void){
             }*/
             //VERIFICAR
             if(gprsScheduledPwrDownTaskFlag){
-                SigfoxTaskPowerDown();
+                gprsTaskPowerDown();
                 return(TASK_NO_SENSOR_FOUND);
             }
             return(TASK_DATA_READY);
@@ -372,7 +374,6 @@ taskResult_t gprsTask(void){
                     gprsScheduledMsgTaskFlag = false;
                     gprsScheduledMsgAckTaskFlag = false;
                     gprsScheduledMsgStaTaskFlag = false;
-                    
                     gprsTaskState = TASK_READY;
                     return(TASK_ON_COURSE);
                 }
