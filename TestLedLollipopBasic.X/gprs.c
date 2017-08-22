@@ -42,7 +42,6 @@ uint8_t gprsTxDelay;
 void gprsReceive(void){
 #ifndef UART2_SIMULATE
     RCSTA2bits.CREN = 0;
-    
     SigfoxRXBufferPtr = 0;
     SigfoxRXBuffer[0] = 0;
     SigfoxMsgReceivedFlag = false;
@@ -162,8 +161,24 @@ taskResult_t GPRS_VerifyTransactionStatus(void){
     return(TASK_ON_COURSE);
 }
 //IMPLEMENTAR
-void gprsCommandSelector(SFX_TASK_COMMANDS_T command){
+void gprsCommandSelector(SFX_TASK_COMMANDS_T gprsCommand){
+    const char *gprsRomCommandStrPtr;
+    const char gprsCOMMAND_TAIL_STR[] = {0x0d, 0};
+    const char gprsCOMMAND_TAIL_ACK_STR[] = {',','1',0x0d, 0};
     
+    gprsTimeOutTimer = GPRS_TO_COMMAND;
+    //gprsRomCommandStrPtr = gprsCommandsDefinitions[SigfoxCommand];
+    switch(gprsCommand){
+        case GPRS_CMD_INITIALIZE:
+        break;
+        
+        case GPRS_CMD_SEND_MSG:
+        break;
+        
+        
+        default:
+        break;
+    }    
 }
 
 
