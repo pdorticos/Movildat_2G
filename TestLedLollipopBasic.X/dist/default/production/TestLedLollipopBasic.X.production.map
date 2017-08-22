@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=/opt/microchip/xc8/v1.42/dat/en_msgs.txt -cs \
   -h+dist/default/production/TestLedLollipopBasic.X.production.sym \
   --cmf=dist/default/production/TestLedLollipopBasic.X.production.cmf -z \
-  -Q18LF25K22 -o/tmp/xcXjo6odK \
+  -Q18LF25K22 -o/tmp/xcXRTtJLM \
   -Mdist/default/production/TestLedLollipopBasic.X.production.map -E1 \
   -ver=XC8 --acfsm=1493 -ASTACK=0193h-05ffh -pstack=STACK -ACODE=00h-07FFFh \
   -ACONST=00h-07FFFh -ASMALLCONST=0600h-06FFhx122 \
@@ -22,7 +22,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -pparam0=BANK0 \
-  /tmp/xcX6uUGju.obj \
+  /tmp/xcXnvi6ul.obj \
   dist/default/production/TestLedLollipopBasic.X.production.obj 
 
 Object code version is 3.11
@@ -35,7 +35,7 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-/tmp/xcX6uUGju.obj
+/tmp/xcXnvi6ul.obj
                 init                                 62       62        4        4       0
                 reset_vec                             0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
