@@ -7,10 +7,11 @@
 #define GPRS_COMMAND_LIST_END           0xFF
 #define GPRS_TX_BUFFER_SIZE             100
 #define GPRS_RX_BUFFER_SIZE             100
-
-#define GPRS_TO_COMMAND                 8
-#define GPRS_POWERUP_TIME               5
-#define GPRS_INTERMSG_TIME              2
+#define GPRS_RX_PAYLOAD_BUFFER_SIZE      17
+#define GPRS_TX_PAYLOAD_BUFFER_SIZE      25
+#define GPRS_TO_COMMAND                   8
+#define GPRS_POWERUP_TIME                 5
+#define GPRS_INTERMSG_TIME                2
 #endif // Application Constants
 
 ////////////////////////////////////////////////////////////////////////////
@@ -22,6 +23,8 @@ static taskResult_t gprsTransactionResult = TASK_ON_COURSE;
 static TaskCommManagerState_t gprsCommManagerState = TASK_SEND_COMMAND_SM;
 
 static taskStates_t gprsTaskState = TASK_RESET_TASK;
+
+uint8_t gprsPayloadBuffer[GPRS_TX_PAYLOAD_BUFFER_SIZE];
 
 char gprsTxBuffer[GPRS_TX_BUFFER_SIZE];
 uint8_t gprsTXBufferPtr;
@@ -289,10 +292,47 @@ taskResult_t gprsTask(void){
             return(TASK_ON_COURSE);
     }
 }
-
-//gprsTaskLoadPayloadBuffer
-//gprsTaskNewTask
-
+void gprsTaskLoadPayloadBuffer(uint8_t *rawData){
+    uint8_t payloadBufferPtr, buffer;
+    
+    for(payloadBufferPtr = 0; payloadBufferPtr < 12; payloadBufferPtr++){
+        buffer = (rawData[payloadBufferPtr] >> 4) & 0x0F;
+        gprsPayloadBuffer[2 * payloadBufferPtr] = (buffer < 10)? (buffer + '0'): (buffer - 10 + 'A');
+        buffer = rawData[payloadBufferPtr] & 0x0F;
+        gprsPayloadBuffer[2 * payloadBufferPtr + 1] = (buffer < 10)? (buffer + '0'): (buffer - 10 + 'A');    
+    }
+    gprsPayloadBuffer[24] = 0;
+}
+void gprsTaskNewTask(GPRS_TASK_COMMANDS_T command){
+    switch(command){
+        case GPRS_CMD_INITIALIZE:
+            gprsScheduledInitTaskFlag = true;
+            break;
+            
+        case GPRS_CMD_SEND_MSG:       
+            gprsScheduledMsgAckTaskFlag = false;
+            gprsScheduledMsgTaskFlag = true;
+            gprsScheduledMsgStaTaskFlag = false;
+            break;
+        /*    
+            
+        case GPRS_CMD_SEND_MSG_WAIT_ACK:
+            gprsScheduledMsgTaskFlag = false;
+            gprsScheduledMsgAckTaskFlag = true;
+            gprsScheduledMsgStaTaskFlag = false;
+            break;
+            
+        case GPRS_CMD_SEND_STATUS:
+            gprsScheduledMsgTaskFlag = false;
+            gprsScheduledMsgAckTaskFlag = false;
+            gprsScheduledMsgStaTaskFlag = true;
+            break;
+        */    
+        case GPRS_CMD_PWR_DOWN:
+            gprsScheduledPwrDownTaskFlag = true;
+            break;
+    }
+}
 /*
  EUSART2_GPRS_FUNCTIONS
  */
@@ -342,7 +382,6 @@ void EUSART2_GPRS_Transmit_ISR(void){
 }
 //VERIFICAR
 void EUSART2_GPRS_Receive_ISR(void){
- 
     uint8_t auxVar;
     auxVar = RCREG2;
     PIR3bits.RC2IF = 0;
@@ -357,7 +396,6 @@ void EUSART2_GPRS_Receive_ISR(void){
     {
         gprsRXBufferPtr = 0;
     }
-
     if((auxVar == 0x0d)&&(gprsRXBufferPtr > 0)){
         SigfoxMsgReceivedFlag = true;
         PIE3bits.RC2IE = 0;
@@ -365,7 +403,3 @@ void EUSART2_GPRS_Receive_ISR(void){
     gprsRxBuffer[gprsRXBufferPtr++] = auxVar;
     gprsRxBuffer[gprsRXBufferPtr] = 0;
 }
-
-
-
-
