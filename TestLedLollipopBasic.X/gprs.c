@@ -33,13 +33,14 @@ bool gprsMsgReceivedFlag;
 static taskResult_t GPRS_TransactionResult = TASK_ON_COURSE;
 uint8_t gprsTransactionAttemps=3;
         
-bool gprsScheduledInitTaskFlag;
-bool gprsScheduledPwrDownTaskFlag;
+bool gprsScheduledInitTaskFlag=false;
+bool gprsScheduledPwrDownTaskFlag=false;
 uint8_t gprsTimeOutTimer;
 uint8_t gprsTxDelay;
+bool gprsScheduledMsgTaskFlag = false, 
+     gprsScheduledMsgStaTaskFlag=false,
+     gprsScheduledMsgAckTaskFlag;
 ////////////////////////////////////////////////////////////////////////////
-
-void gprsTaskPowerDown(void){}
 
 void gprsReceive(void){
 #ifndef UART2_SIMULATE
@@ -53,10 +54,248 @@ void gprsReceive(void){
 #endif
 }
 
-bool gprsScheduledMsgTaskFlag = false, 
-     gprsScheduledMsgStaTaskFlag=false,
-     gprsScheduledMsgAckTaskFlag;
+/*
+ ¿IFDEF?
+ */
 
+/*
+ 
+ DEFINIR AQUÍ COMANDOS
+ 
+ */
+
+//const char [][] gprsCommandsDefinitions[][] =
+
+bool gprsResponseParser(void){
+    char * dumyPtr;
+    dumyPtr = strstr(gprsRxBuffer,"OK");
+//    return(!dumyPtr);
+     return(true);
+}
+
+void gprsCommandSelector(SFX_TASK_COMMANDS_T gprsCommand){
+    const char *gprsRomCommandStrPtr;
+    const char gprsCOMMAND_TAIL_STR[] = {0x0d, 0};
+    const char gprsCOMMAND_TAIL_ACK_STR[] = {',','1',0x0d, 0};
+    
+    gprsTimeOutTimer = GPRS_TO_COMMAND;
+    //gprsRomCommandStrPtr = gprsCommandsDefinitions[SigfoxCommand];
+    switch(gprsCommand){
+        case GPRS_CMD_INITIALIZE:
+        break;
+        
+        case GPRS_CMD_SEND_MSG:
+        break;
+        
+        
+        default:
+        break;
+    }    
+}
+/*
+ LOW LEVEL
+ */
+
+void gprsTransmit(void){
+#ifndef UART2_SIMULATE
+    gprsTXBufferPtr = 0;
+    PIE3bits.TX2IE = 1;
+#endif
+}
+bool gprsTXReady(void){
+    if(!gprsTxDelay){
+//        return((!PIE3bits.TX2IE) && (MOSI_RTS_GetValue() == 0));
+        return(!PIE3bits.TX2IE);
+    }
+    return(false);
+}
+taskResult_t gprsVerifyTransactionStatus(void){
+    
+    gprsTxDelay = GPRS_INTERMSG_TIME;
+    gprsCommManagerState = TASK_SEND_COMMAND_SM;
+    if(gprsMsgReceivedFlag){
+        gprsTransactionResult = TASK_DATA_READY;
+        gprsMsgReceivedFlag = false;        
+        return(TASK_DATA_READY);
+    }
+    if(gprsTransactionAttemps){
+        gprsTransactionAttemps--;
+    }
+    if(gprsTransactionAttemps == 0){
+        gprsTaskState = TASK_RESET_TASK;
+        gprsTransactionResult = TASK_NO_SENSOR_FOUND;
+        return(TASK_NO_SENSOR_FOUND);
+    }
+    gprsTransactionResult = TASK_ON_COURSE;
+    return(TASK_ON_COURSE);
+}
+taskResult_t gprsCommManager(SFX_TASK_COMMANDS_T gprsCommand){
+    
+    gprsTransactionResult = TASK_ON_COURSE;
+    switch(gprsCommManagerState){
+    case TASK_SEND_COMMAND_SM:
+        if(gprsTXReady()){
+            gprsCommandSelector(gprsCommand);
+            gprsCommManagerState = TASK_DETECT_TRANSACTION_END_SM;
+            gprsTransmit();
+        }
+        break;      
+    case TASK_DETECT_TRANSACTION_END_SM:     
+        if(gprsTimeOutTimer == 0){
+            PIE3bits.TX2IE = 0;
+            PIE3bits.RC2IE = 0;
+            return(gprsVerifyTransactionStatus());
+        }
+        if(gprsMsgReceivedFlag){
+            gprsTimeOutTimer = 0;
+            return(gprsVerifyTransactionStatus());
+        }
+        break;
+    default:
+        gprsCommManagerState = TASK_SEND_COMMAND_SM;
+        gprsTxDelay = GPRS_INTERMSG_TIME;
+        break;
+    }
+    return(TASK_ON_COURSE);
+}
+/*
+ Public tasks
+ */
+
+void gprsTaskTick(void){
+    if(gprsTimeOutTimer){
+        gprsTimeOutTimer--;
+    }
+    if(gprsTxDelay){
+        gprsTxDelay--;
+    }
+}
+void gprsTaskReset(void){
+    EUSART2_GPRS_Initialize();
+    gprsTaskState=TASK_RESET_TASK;
+    gprsTxDelay=GPRS_POWERUP_TIME;
+    gprsCommManagerState=TASK_SEND_COMMAND_SM;
+    gprsTransactionResult=TASK_ON_COURSE;
+    gprsTransactionAttemps=3;
+    gprsTimeOutTimer=0;
+    
+    gprsMsgReceivedFlag=false;
+//    MODPWREN_SetHigh();
+//    MODCS_SetLow();
+    MISO_CTS_SetLow();
+}
+void gprsTaskPowerDown(void){
+    gprsScheduledInitTaskFlag=false;
+    gprsScheduledPwrDownTaskFlag=false;
+    //PMD0bits.UART2MD = 1;    ????
+//    MISO_CTS_SetHigh();
+//    MODPWREN_SetLow();
+//    MODCS_SetHigh();
+    gprsTaskState=TASK_PARKED;
+}
+taskResult_t gprsTask(void){
+    const uint8_t gprsInitCommandsROMList[3] = {GPRS_COMMAND_LIST_END};
+    const char *gprsInitCommandPtr;
+    
+    switch(gprsTaskState){
+        case TASK_PARKED:
+            if(gprsScheduledInitTaskFlag){
+                gprsTaskState = TASK_RESET_TASK;
+                return(TASK_ON_COURSE);
+            }           
+            return(TASK_NO_SENSOR_FOUND);
+            
+        case TASK_RESET_TASK:
+            gprsTaskReset();
+            gprsTaskState = TASK_INIT;
+            gprsInitCommandPtr = gprsInitCommandsROMList;
+            return(TASK_ON_COURSE);
+            
+        case TASK_INIT:
+            while(gprsInitCommandPtr[0] != GPRS_COMMAND_LIST_END)
+            {
+                GPRS_TransactionResult = gprsCommManager(gprsInitCommandPtr[0]);
+                if(GPRS_TransactionResult == TASK_DATA_READY){
+                    if(gprsResponseParser()){
+                        gprsInitCommandPtr++;
+                        gprsTransactionAttemps=3;
+                    }
+                    else if(gprsTransactionAttemps){
+                        gprsTransactionAttemps--;
+                    }
+                    continue;
+                }
+                if(GPRS_TransactionResult == TASK_NO_SENSOR_FOUND){
+                    gprsTaskPowerDown();
+                }
+                return(GPRS_TransactionResult);
+            }
+            GPRS_TransactionResult = TASK_DATA_READY;
+            gprsTaskState = TASK_READY;
+            gprsScheduledInitTaskFlag = false;
+                    if(gprsScheduledMsgTaskFlag || gprsScheduledMsgStaTaskFlag){
+                return(TASK_ON_COURSE);
+            }
+            return(TASK_DATA_READY);
+        case TASK_READY:
+                if(gprsScheduledMsgTaskFlag || gprsScheduledMsgAckTaskFlag || gprsScheduledMsgStaTaskFlag){
+                gprsTransactionAttemps = 3;
+                gprsTaskState = TASK_WAITING_DATA;                
+                GPRS_CommManagerState = TASK_SEND_COMMAND_SM;
+                return(TASK_ON_COURSE);
+            }
+            //VERIFICAR
+            if(gprsScheduledPwrDownTaskFlag){
+                gprsTaskPowerDown();
+                return(TASK_NO_SENSOR_FOUND);
+            }
+            return(TASK_DATA_READY);
+            
+        case TASK_WAITING_DATA:
+            if(gprsScheduledMsgAckTaskFlag){
+                gprsTransactionResult = gprsCommManager(SFX_CMD_SEND_MSG_WAIT_ACK);                
+            }
+            else if(gprsScheduledMsgStaTaskFlag){
+                 gprsTransactionResult = gprsCommManager(SFX_CMD_SEND_STATUS);
+            }
+            else
+            {
+                gprsTransactionResult = gprsCommManager(SFX_CMD_SEND_MSG);
+            }
+            if(gprsTransactionResult == TASK_DATA_READY){
+                if(gprsResponseParser()){                   
+                    gprsScheduledMsgTaskFlag = false;
+                    gprsScheduledMsgAckTaskFlag = false;
+                    gprsScheduledMsgStaTaskFlag = false;
+                    gprsTaskState = TASK_READY;
+                    return(TASK_ON_COURSE);
+                }
+                else if(gprsTransactionAttemps){
+                    gprsTransactionAttemps--;        
+                }    
+            }
+            if(GPRS_TransactionResult == TASK_NO_SENSOR_FOUND){
+//                SigfoxTaskPowerDown();
+//                return(TASK_NO_SENSOR_FOUND);
+                gprsScheduledMsgStaTaskFlag = false;
+                gprsScheduledMsgTaskFlag = false;
+                gprsScheduledMsgAckTaskFlag = false;
+                gprsTaskState = TASK_READY;
+                return(TASK_DATA_NOT_AVAILABLE);
+            }
+            return(TASK_ON_COURSE);
+        default:
+            gprsTaskState = TASK_RESET_TASK;    
+            return(TASK_ON_COURSE);
+    }
+}
+
+//gprsTaskLoadPayloadBuffer
+//gprsTaskNewTask
+
+/*
+ EUSART2_GPRS_FUNCTIONS
+ */
 void EUSART2_GPRS_Initialize(void){
     PMD0bits.UART2MD = 0;
     // disable interrupts before changing states
@@ -126,273 +365,7 @@ void EUSART2_GPRS_Receive_ISR(void){
     gprsRxBuffer[gprsRXBufferPtr++] = auxVar;
     gprsRxBuffer[gprsRXBufferPtr] = 0;
 }
-void gprsTaskTick(void){
-    if(gprsTimeOutTimer){
-        gprsTimeOutTimer--;
-    }
-    if(gprsTxDelay){
-        gprsTxDelay--;
-    }
-}
-void gprsTransmit(void){
-#ifndef UART2_SIMULATE
-    gprsTXBufferPtr = 0;
-    PIE3bits.TX2IE = 1;
-#endif
-}
-//////////////////////////////////////////////////////////////////
-// Low level Communication Protocol functions
-//////////////////////////////////////////////////////////////////
-taskResult_t GPRS_VerifyTransactionStatus(void){
-    gprsTxDelay = GPRS_INTERMSG_TIME;
-    GPRS_CommManagerState = TASK_SEND_COMMAND_SM;
-    if(gprsMsgReceivedFlag){
-        GPRS_TransactionResult = TASK_DATA_READY;
-        gprsMsgReceivedFlag = false;        
-        return(TASK_DATA_READY);
-    }
-    if(gprsTransactionAttemps){
-        gprsTransactionAttemps--;
-    }
-    if(gprsTransactionAttemps == 0){
-        gprsTaskState = TASK_RESET_TASK;
-        GPRS_TransactionResult = TASK_NO_SENSOR_FOUND;
-        return(TASK_NO_SENSOR_FOUND);
-    }
-    GPRS_TransactionResult = TASK_ON_COURSE;
-    return(TASK_ON_COURSE);
-}
-//IMPLEMENTAR
-void gprsCommandSelector(SFX_TASK_COMMANDS_T gprsCommand){
-    const char *gprsRomCommandStrPtr;
-    const char gprsCOMMAND_TAIL_STR[] = {0x0d, 0};
-    const char gprsCOMMAND_TAIL_ACK_STR[] = {',','1',0x0d, 0};
-    
-    gprsTimeOutTimer = GPRS_TO_COMMAND;
-    //gprsRomCommandStrPtr = gprsCommandsDefinitions[SigfoxCommand];
-    switch(gprsCommand){
-        case GPRS_CMD_INITIALIZE:
-        break;
-        
-        case GPRS_CMD_SEND_MSG:
-        break;
-        
-        
-        default:
-        break;
-    }    
-}
-
-
-
-// TODO
-bool gprsTXReady(void){
-    if(!gprsTxDelay){
-//        return((!PIE3bits.TX2IE) && (MOSI_RTS_GetValue() == 0));
-        return(!PIE3bits.TX2IE);
-    }
-    return(false);
-}
-
-bool gprsResponseParser(void){
-    char * dumyPtr;
-    dumyPtr = strstr(gprsRxBuffer,"OK");
-//    return(!dumyPtr);
-     return(true);
-}
-
-taskResult_t gprsVerifyTransactionStatus(void){
-    
-    gprsTxDelay = GPRS_INTERMSG_TIME;
-    gprsCommManagerState = TASK_SEND_COMMAND_SM;
-    if(gprsMsgReceivedFlag){
-        gprsTransactionResult = TASK_DATA_READY;
-        gprsMsgReceivedFlag = false;        
-        return(TASK_DATA_READY);
-    }
-    if(gprsTransactionAttemps){
-        gprsTransactionAttemps--;
-    }
-    if(gprsTransactionAttemps == 0){
-        gprsTaskState = TASK_RESET_TASK;
-        gprsTransactionResult = TASK_NO_SENSOR_FOUND;
-        return(TASK_NO_SENSOR_FOUND);
-    }
-    gprsTransactionResult = TASK_ON_COURSE;
-    return(TASK_ON_COURSE);
-}
-
-taskResult_t GPRS_CommManager(SFX_TASK_COMMANDS_T GPRS_Command){
-    
-    GPRS_TransactionResult = TASK_ON_COURSE;
-    switch(GPRS_CommManagerState){
-    case TASK_SEND_COMMAND_SM:
-        if(gprsTXReady()){
-            gprsCommandSelector(GPRS_Command);
-            GPRS_CommManagerState = TASK_DETECT_TRANSACTION_END_SM;
-            gprsTransmit();
-        }
-        break;      
-    case TASK_DETECT_TRANSACTION_END_SM:     
-        if(gprsTimeOutTimer == 0){
-            PIE3bits.TX2IE = 0;
-            PIE3bits.RC2IE = 0;
-            return(GPRS_VerifyTransactionStatus());
-        }
-        if(gprsMsgReceivedFlag){
-            gprsTimeOutTimer = 0;
-            return(GPRS_VerifyTransactionStatus());
-        }
-        break;
-    default:
-        GPRS_CommManagerState = TASK_SEND_COMMAND_SM;
-        gprsTxDelay = GPRS_INTERMSG_TIME;
-        break;
-    }
-    return(TASK_ON_COURSE);
-}
-void gprsTaskReset(void){
-    
-}
-taskResult_t gprsCommManager(SFX_TASK_COMMANDS_T gprsCommand){
-    
-    gprsTransactionResult = TASK_ON_COURSE;
-    switch(gprsCommManagerState){
-    case TASK_SEND_COMMAND_SM:
-        if(gprsTXReady()){
-            gprsCommandSelector(gprsCommand);
-            gprsCommManagerState = TASK_DETECT_TRANSACTION_END_SM;
-            gprsTransmit();
-        }
-        break;      
-    case TASK_DETECT_TRANSACTION_END_SM:     
-        if(gprsTimeOutTimer == 0){
-            PIE3bits.TX2IE = 0;
-            PIE3bits.RC2IE = 0;
-            return(gprsVerifyTransactionStatus());
-        }
-        if(gprsMsgReceivedFlag){
-            gprsTimeOutTimer = 0;
-            return(gprsVerifyTransactionStatus());
-        }
-        break;
-    default:
-        gprsCommManagerState = TASK_SEND_COMMAND_SM;
-        gprsTxDelay = GPRS_INTERMSG_TIME;
-        break;
-    }
-    return(TASK_ON_COURSE);
-}
 
 
 
 
-taskResult_t gprsTask(void){
-    const uint8_t gprsInitCommandsROMList[3] = {GPRS_COMMAND_LIST_END};
-    const char *gprsInitCommandPtr;
-    
-    switch(gprsTaskState){
-        case TASK_PARKED:
-            if(gprsScheduledInitTaskFlag){
-                gprsTaskState = TASK_RESET_TASK;
-                return(TASK_ON_COURSE);
-            }           
-            return(TASK_NO_SENSOR_FOUND);
-            
-        case TASK_RESET_TASK:
-            gprsTaskReset();
-            gprsTaskState = TASK_INIT;
-            gprsInitCommandPtr = gprsInitCommandsROMList;
-            return(TASK_ON_COURSE);
-            
-        case TASK_INIT:
-            while(gprsInitCommandPtr[0] != GPRS_COMMAND_LIST_END)
-            {
-                GPRS_TransactionResult = GPRS_CommManager(gprsInitCommandPtr[0]);
-                if(GPRS_TransactionResult == TASK_DATA_READY){
-                    if(gprsResponseParser()){
-                        gprsInitCommandPtr++;
-                        gprsTransactionAttemps=3;
-                    }
-                    else if(gprsTransactionAttemps){
-                        gprsTransactionAttemps--;
-                    }
-                    continue;
-                }
-                if(GPRS_TransactionResult == TASK_NO_SENSOR_FOUND){
-                    gprsTaskPowerDown();
-                }
-                return(GPRS_TransactionResult);
-            }
-            GPRS_TransactionResult = TASK_DATA_READY;
-            gprsTaskState = TASK_READY;
-            
-            gprsScheduledInitTaskFlag = false;
-            //FUNCION O CTE?
-            //EXISTEN LAS FUNCIONES DE CLASE?
-            if(gprsScheduledMsgTaskFlag || gprsScheduledMsgStaTaskFlag){
-                return(TASK_ON_COURSE);
-            }
-            return(TASK_DATA_READY);
-            
-        case TASK_READY:
-    
-//            if(gprsScheduledInitTaskFlag){
-//                GPRS_TASK_STATE = TASK_RESET_TASK;
-//                return(TASK_ON_COURSE);
-//            }
-            if(gprsScheduledMsgTaskFlag || gprsScheduledMsgAckTaskFlag || gprsScheduledMsgStaTaskFlag){
-                gprsTransactionAttemps = 3;
-                gprsTaskState = TASK_WAITING_DATA;                
-                GPRS_CommManagerState = TASK_SEND_COMMAND_SM;
-                return(TASK_ON_COURSE);
-            }
-            /*if(){gprsScheduledPwrDownTaskFlag
-                SigfoxTaskPowerDown();
-                return(TASK_NO_SENSOR_FOUND);
-            }*/
-            //VERIFICAR
-            if(gprsScheduledPwrDownTaskFlag){
-                gprsTaskPowerDown();
-                return(TASK_NO_SENSOR_FOUND);
-            }
-            return(TASK_DATA_READY);
-            
-        case TASK_WAITING_DATA:
-            if(gprsScheduledMsgAckTaskFlag){
-                gprsTransactionResult = gprsCommManager(SFX_CMD_SEND_MSG_WAIT_ACK);                
-            }
-            else if(gprsScheduledMsgStaTaskFlag){
-                 gprsTransactionResult = gprsCommManager(SFX_CMD_SEND_STATUS);
-            }
-            else
-            {
-                gprsTransactionResult = gprsCommManager(SFX_CMD_SEND_MSG);
-            }
-            if(gprsTransactionResult == TASK_DATA_READY){
-                if(gprsResponseParser()){                   
-                    gprsScheduledMsgTaskFlag = false;
-                    gprsScheduledMsgAckTaskFlag = false;
-                    gprsScheduledMsgStaTaskFlag = false;
-                    gprsTaskState = TASK_READY;
-                    return(TASK_ON_COURSE);
-                }
-                else if(gprsTransactionAttemps){
-                    gprsTransactionAttemps--;        
-                }    
-            }
-            if(GPRS_TransactionResult == TASK_NO_SENSOR_FOUND){
-//                SigfoxTaskPowerDown();
-//                return(TASK_NO_SENSOR_FOUND);
-                gprsScheduledMsgStaTaskFlag = false;
-                gprsScheduledMsgTaskFlag = false;
-                gprsScheduledMsgAckTaskFlag = false;
-                gprsTaskState = TASK_READY;
-                return(TASK_DATA_NOT_AVAILABLE);
-            }
-            return(TASK_ON_COURSE);
-        default:
-            gprsTaskState = TASK_RESET_TASK;    
-            return(TASK_ON_COURSE);
-    }
-}
