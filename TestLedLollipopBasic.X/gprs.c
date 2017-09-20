@@ -2,7 +2,7 @@
 #include <string.h>
 #include "sit.h"
 #include "mcc_generated_files/gprs.h"
-
+#define GPRS_AT_CMD_T char
 typedef struct _GPRS_AT_CMD_STRUCT_T  {
     uint8_t index;
     const char atCmdStr[21];
@@ -15,6 +15,21 @@ bool gprsOKParser(void){
     return gprsRxBuffer[gprsRXBufferPtr-1] == '0';    
 }
 
+bool gprsInternetAccessParser(void){
+    if (strstr(gprsRxBuffer, "+CGREG:")==NULL)
+        return false;
+    char * ptr=strchr(gprsRxBuffer,',');
+    if(ptr==NULL)
+        return false;
+    return (ptr[1]=='1'||ptr[1]=='2');
+}
+
+bool gprsConnectParser(void){
+    return gprsRxBuffer[gprsRXBufferPtr-1] == '1';
+}
+bool gprsEmptyParser(void){
+    return true;
+}
 
 const GPRS_AT_CMD_STRUCT_T gprsAtCommands[]={
     {GPRS_AT_CMD_ATENTION_INDEX,"AT",gprsOKParser,2},
@@ -25,8 +40,10 @@ const GPRS_AT_CMD_STRUCT_T gprsAtCommands[]={
     {GPRS_AT_CMD_SAVE_INDEX,"AT&W",gprsOKParser,2},
     {GPRS_AT_CMD_GET_ICID_INDEX,"AT#CCID",gprsOKParser,2},
     {GPRS_AT_CMD_GET_IMEI_INDEX,"AT#CGSN",gprsOKParser,2},
-    {GPRS_AT_CMD_SOCKET_DIAL_INDEX,"AT#SD=1,1,",gprsOKParser,2},
-    {GPRS_COMMAND_LIST_END,"",0,0}
+    {GPRS_AT_CMD_SOCKET_DIAL_INDEX,"AT#SD=1,1,",gprsConnectParser,2},
+    {GPRS_AT_CMD_GET_REG_STAT_STR_INDEX,"AT+CGREG?",gprsInternetAccessParser,2},
+    {GPRS_COMMAND_LIST_END,}
+
 };
 
 //  Section: Macro Declarations
@@ -54,11 +71,7 @@ char gprsTxBuffer[GPRS_TX_BUFFER_SIZE];
 uint8_t gprsTXBufferPtr;
 char gprsRxBuffer[GPRS_RX_BUFFER_SIZE];
 uint8_t gprsRXBufferPtr;
-
 uint8_t gprsTransactionAttemps=3;
-        
-bool gprsScheduledInitTaskFlag=false;
-bool gprsScheduledPwrDownTaskFlag=false;
 uint8_t gprsTimeOutTimer;
 uint8_t gprsTxDelay;
 
@@ -73,7 +86,8 @@ bool gprsScheduledMsgTaskFlag = false,
     gprsScheduledGetFTPConfFlag=false,
     gprsScheduledSetFTPConfFlag=false,
     gprsMsgReceivedFlag=false;
-
+bool gprsScheduledInitTaskFlag=false;
+bool gprsScheduledPwrDownTaskFlag=false;
      
 ////////////////////////////////////////////////////////////////////////////
 
@@ -109,6 +123,8 @@ void gprsReceive(void){
 #define GPRS_AT_CMD_GET_IMEI_STR "AT#CGSN"
 #define GPRS_AT_CMD_SOCKET_DIAL_STR "AT#SD=1,1,"
 #define GPRS_AT_CMD_GET_REG_STAT_STR "AT+CGREG?"
+#define GPRS_AT_CMD_SEND_MSG_STR ""
+#define GPRS_AT_CMD_SCAPE_SEQ_STR "+++"
 
 ///command content VUELTA
 
@@ -122,9 +138,9 @@ void gprsReceive(void){
 #define GPRS_AT_CMD_GET_ICID_INDEX          7
 #define GPRS_AT_CMD_GET_IMEI_INDEX          8
 #define GPRS_AT_CMD_SOCKET_DIAL_INDEX       9
-#define GPRS_AT_CMD_GET_REG_STAT_STR_INDEX 10
-
-
+#define GPRS_AT_CMD_GET_REG_STAT_STR_INDEX  10
+#define GPRS_AT_CMD_SEND_MSG_INDEX          11    
+#define GPRS_AT_CMD_SCAPE_SEQ_INDEX         12
 /************************************************************************
  * This routine sets a rom pointer to the string 
  ***********************************************************************/
@@ -222,7 +238,6 @@ void gprsTaskReset(void){
     gprsTransactionAttemps=3;
     gprsTimeOutTimer=0;
     gprsScheduledMsgTaskFlag = false; 
-    gprsScheduledMsgStaTaskFlag=false;
     gprsScheduledGetEpoFlag=false;
     gprsScheduledFlushFlag=false;
     gprsScheduledGetFTPConfFlag=false;
@@ -249,16 +264,17 @@ taskResult_t gprsTask(void){
         GPRS_AT_CMD_NUM_RESPONSE_INDEX,
         GPRS_AT_CMD_ECHO_OFF_INDEX,
         GPRS_AT_CMD_CTXT_CONFIG_INDEX ,
-        GPRS_AT_CMD_CTXT_ACTIVATION_INDEX,
-        GPRS_AT_CMD_TURN_ON_INDEX,
-        GPRS_AT_CMD_GET_ICID_INDEX,
         GPRS_AT_CMD_GET_IMEI_INDEX,
         GPRS_AT_CMD_SAVE_INDEX,
         GPRS_COMMAND_LIST_END
     };
     const uint8_t gprsSendMsgCommandROMList[] {
-        GPRS_AT_CMD_GET_REG_STAT_STR_INDEX;
-    }
+        GPRS_AT_CMD_CTXT_ACTIVATION_INDEX,
+        GPRS_AT_CMD_GET_REG_STAT_STR_INDEX,
+        GPRS_AT_CMD_SOCKET_DIAL_INDEX,
+        
+        
+    };
     const char *gprsInitCommandPtr;
     bool parserRusultFlag;  
     switch(gprsTaskState){
@@ -311,7 +327,7 @@ taskResult_t gprsTask(void){
             }
             return(TASK_DATA_READY);
         case TASK_READY:
-                if(gprsScheduledMsgTaskFlag || gprsScheduledMsgStaTaskFlag){
+                if(gprsScheduledMsgTaskFlag){
                 gprsTransactionAttemps = 3;
                 gprsTaskState = TASK_WAITING_DATA;                
                 gprsCommManagerState = TASK_SEND_COMMAND_SM;
@@ -325,13 +341,8 @@ taskResult_t gprsTask(void){
             return(TASK_DATA_READY);
             
         case TASK_WAITING_DATA:
-            if(gprsScheduledMsgStaTaskFlag){
-                 gprsTransactionResult = gprsCommManager(SFX_CMD_SEND_STATUS);
-            }
-            else
-            {
-                gprsTransactionResult = gprsCommManager(SFX_CMD_SEND_MSG);
-            }
+
+            gprsTransactionResult = gprsCommManager(SFX_CMD_SEND_MSG);
             if(gprsTransactionResult == TASK_DATA_READY){
                 if(gprsResponseParser()){                   
                     gprsScheduledMsgTaskFlag = false;
@@ -382,7 +393,19 @@ void gprsTaskNewTask(GPRS_TASK_COMMANDS_T command){
         case GPRS_TASK_GET_EPO:
             gprsScheduledGetEpoFlag = true;
             break;
-        case GPRS_CMD_FLUSH:
+        case GPRS_TASK_PWR_DOWN:
+            gprsScheduledPwrDownTaskFlag = true;
+            break;
+          
+        case GPRS_TASK_FLUSH:
+            break;
+        
+        case GPRS_TASK_GET_FTP_CFG:
+            break;   
+        case GRPS_TASK_SET_FTP:
+            break;
+        default : break;
+        /*case GPRS_CMD_FLUSH:
             gprsScheduledFlushFlag=true;
             break;
   
@@ -392,11 +415,8 @@ void gprsTaskNewTask(GPRS_TASK_COMMANDS_T command){
   
         case GRPS_SET_FTP:
             gprsScheduledSetFTPConfFlag=true;
-            break;
-  
-        case GPRS_TASK_PWR_DOWN:
-            gprsScheduledPwrDownTaskFlag = true;
-            break;
+            break;*/
+
     }
 }
 /*
