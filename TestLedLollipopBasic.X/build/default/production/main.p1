@@ -1,8 +1,11 @@
 Version 3.2 HI-TECH Software Intermediate Code
+"9 /opt/microchip/xc8/v1.42/include/time.h
+[s S821 `i 1 `i 1 `i 1 `i 1 `i 1 `i 1 `i 1 `i 1 `i 1 ]
+[n S821 tm tm_sec tm_min tm_hour tm_mday tm_mon tm_year tm_wday tm_yday tm_isdst ]
 "18 main.c
-[c E6679 0 1 2 3 4 .. ]
-[n E6679 _taskResult_t TASK_NO_SENSOR_FOUND TASK_ON_COURSE TASK_DATA_READY TASK_TO_ERR TASK_DATA_NOT_AVAILABLE  ]
-"103 Sigfox/sfxProtocol.h
+[c E6711 0 1 2 3 4 .. ]
+[n E6711 _taskResult_t TASK_NO_SENSOR_FOUND TASK_ON_COURSE TASK_DATA_READY TASK_TO_ERR TASK_DATA_NOT_AVAILABLE  ]
+"116 Sigfox/sfxProtocol.h
 [v _ProtocolTaskTick `(v ~T0 @X0 0 ef ]
 "6178 /opt/microchip/xc8/v1.42/include/pic18lf25k22.h
 [s S323 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -89,10 +92,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S380 . . . ]
 "7832
 [v _TRISBbits `VS380 ~T0 @X0 0 e@3987 ]
-"105 Sigfox/sfxProtocol.h
+"118 Sigfox/sfxProtocol.h
 [v _ProtocolTaskPowerDown `(v ~T0 @X0 0 ef ]
-"104
-[v _ProtocolTask `(E6679 ~T0 @X0 0 ef ]
+"117
+[v _ProtocolTask `(E6711 ~T0 @X0 0 ef ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -6397,92 +6400,186 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;interrupt_manager.h: 53: void setSemaphore(uart_semaphore_t semaphore);
 [; ;interrupt_manager.h: 113: void interrupt INTERRUPT_InterruptManager(void);
 [; ;interrupt_manager.h: 125: void INTERRUPT_Initialize (void);
-[; ;sfxProtocol.h: 34: typedef enum _mainTaskStates_t {
-[; ;sfxProtocol.h: 35: MAIN_TASK_PARKED,
-[; ;sfxProtocol.h: 36: POWERING_TASK,
-[; ;sfxProtocol.h: 37: MEASURING_TASK,
-[; ;sfxProtocol.h: 38: COMMUNICATING_TASK
-[; ;sfxProtocol.h: 39: }mainTaskStates_t;
-[; ;sfxProtocol.h: 41: typedef enum _taskStates_t {
-[; ;sfxProtocol.h: 42: TASK_PARKED,
-[; ;sfxProtocol.h: 43: TASK_RESET_TASK,
-[; ;sfxProtocol.h: 44: TASK_INIT,
-[; ;sfxProtocol.h: 45: TASK_READY,
-[; ;sfxProtocol.h: 46: TASK_WAITING_DATA
-[; ;sfxProtocol.h: 47: }taskStates_t;
-[; ;sfxProtocol.h: 49: typedef enum _taskResult_t {
-[; ;sfxProtocol.h: 50: TASK_NO_SENSOR_FOUND,
-[; ;sfxProtocol.h: 51: TASK_ON_COURSE,
-[; ;sfxProtocol.h: 52: TASK_DATA_READY,
-[; ;sfxProtocol.h: 53: TASK_TO_ERR,
-[; ;sfxProtocol.h: 54: TASK_DATA_NOT_AVAILABLE
-[; ;sfxProtocol.h: 55: }taskResult_t;
-[; ;sfxProtocol.h: 57: typedef enum _dataQualifier_t {
-[; ;sfxProtocol.h: 58: SENSOR_READ,
-[; ;sfxProtocol.h: 59: BORROWED,
-[; ;sfxProtocol.h: 60: CALCULATED,
-[; ;sfxProtocol.h: 61: NOT_AVAILABLE,
-[; ;sfxProtocol.h: 62: UNKNOWN_SENSOR
-[; ;sfxProtocol.h: 63: }dataQualifier_t;
-[; ;sfxProtocol.h: 65: typedef enum _TaskCommManagerState_t {
-[; ;sfxProtocol.h: 66: TASK_SEND_COMMAND_SM = 0,
-[; ;sfxProtocol.h: 67: TASK_DETECT_TRANSACTION_END_SM
-[; ;sfxProtocol.h: 68: } TaskCommManagerState_t;
-[; ;sfxProtocol.h: 70: typedef enum _systemEvent_t {
-[; ;sfxProtocol.h: 71: HW_WARNING_EV,
-[; ;sfxProtocol.h: 72: TIMER1_EV,
-[; ;sfxProtocol.h: 73: TIMER2_EV,
-[; ;sfxProtocol.h: 74: INPUT_EV,
-[; ;sfxProtocol.h: 75: MOTION_EV,
-[; ;sfxProtocol.h: 76: VARIABLE_ALARM_EV,
-[; ;sfxProtocol.h: 77: BATTERY_EV
-[; ;sfxProtocol.h: 78: }systemEvent_t;
-"85 Sigfox/sfxProtocol.h
+[; ;__size_t.h: 4: typedef unsigned size_t;
+[; ;time.h: 8: typedef long time_t;
+[; ;time.h: 9: struct tm {
+[; ;time.h: 10: int tm_sec;
+[; ;time.h: 11: int tm_min;
+[; ;time.h: 12: int tm_hour;
+[; ;time.h: 13: int tm_mday;
+[; ;time.h: 14: int tm_mon;
+[; ;time.h: 15: int tm_year;
+[; ;time.h: 16: int tm_wday;
+[; ;time.h: 17: int tm_yday;
+[; ;time.h: 18: int tm_isdst;
+[; ;time.h: 19: };
+[; ;time.h: 25: extern int time_zone;
+[; ;time.h: 30: extern time_t time(time_t *);
+[; ;time.h: 31: extern int stime(time_t *);
+[; ;time.h: 47: extern char * asctime(const struct tm *) ;
+[; ;time.h: 48: extern char * ctime(const time_t *) ;
+[; ;time.h: 49: extern struct tm * gmtime(const time_t *) ;
+[; ;time.h: 50: extern struct tm * localtime(const time_t *) ;
+[; ;time.h: 51: extern size_t strftime(char *, size_t, const char *, const struct tm *) ;
+[; ;time.h: 52: extern time_t mktime(struct tm *);
+[; ;sfxProtocol.h: 35: typedef enum _mainTaskStates_t {
+[; ;sfxProtocol.h: 36: MAIN_TASK_PARKED,
+[; ;sfxProtocol.h: 37: POWERING_TASK,
+[; ;sfxProtocol.h: 38: MEASURING_TASK,
+[; ;sfxProtocol.h: 39: COMMUNICATING_TASK
+[; ;sfxProtocol.h: 40: }mainTaskStates_t;
+[; ;sfxProtocol.h: 42: typedef enum _taskStates_t {
+[; ;sfxProtocol.h: 43: TASK_PARKED,
+[; ;sfxProtocol.h: 44: TASK_RESET_TASK,
+[; ;sfxProtocol.h: 45: TASK_INIT,
+[; ;sfxProtocol.h: 46: TASK_READY,
+[; ;sfxProtocol.h: 47: TASK_WAITING_DATA
+[; ;sfxProtocol.h: 48: }taskStates_t;
+[; ;sfxProtocol.h: 50: typedef enum _taskResult_t {
+[; ;sfxProtocol.h: 51: TASK_NO_SENSOR_FOUND,
+[; ;sfxProtocol.h: 52: TASK_ON_COURSE,
+[; ;sfxProtocol.h: 53: TASK_DATA_READY,
+[; ;sfxProtocol.h: 54: TASK_TO_ERR,
+[; ;sfxProtocol.h: 55: TASK_DATA_NOT_AVAILABLE
+[; ;sfxProtocol.h: 56: }taskResult_t;
+[; ;sfxProtocol.h: 58: typedef enum _dataQualifier_t {
+[; ;sfxProtocol.h: 59: SENSOR_READ,
+[; ;sfxProtocol.h: 60: BORROWED,
+[; ;sfxProtocol.h: 61: CALCULATED,
+[; ;sfxProtocol.h: 62: NOT_AVAILABLE,
+[; ;sfxProtocol.h: 63: UNKNOWN_SENSOR
+[; ;sfxProtocol.h: 64: }dataQualifier_t;
+[; ;sfxProtocol.h: 66: typedef enum _TaskCommManagerState_t {
+[; ;sfxProtocol.h: 67: TASK_SEND_COMMAND_SM = 0,
+[; ;sfxProtocol.h: 68: TASK_DETECT_TRANSACTION_END_SM
+[; ;sfxProtocol.h: 69: } TaskCommManagerState_t;
+[; ;sfxProtocol.h: 71: typedef enum _systemEvent_t {
+[; ;sfxProtocol.h: 72: HW_WARNING_EV,
+[; ;sfxProtocol.h: 73: TIMER1_EV,
+[; ;sfxProtocol.h: 74: TIMER2_EV,
+[; ;sfxProtocol.h: 75: INPUT_EV,
+[; ;sfxProtocol.h: 76: MOTION_EV,
+[; ;sfxProtocol.h: 77: VARIABLE_ALARM_EV,
+[; ;sfxProtocol.h: 78: BATTERY_EV
+[; ;sfxProtocol.h: 79: }systemEvent_t;
+"88 Sigfox/sfxProtocol.h
+[v _sysVarAPN `AEuc ~T0 @X0 -> 32 `i e ]
+[i _sysVarAPN
+:U ..
+-> 34 `c
+-> 119 `c
+-> 108 `c
+-> 97 `c
+-> 112 `c
+-> 110 `c
+-> 46 `c
+-> 99 `c
+-> 111 `c
+-> 109 `c
+-> 34 `c
+-> 0 `c
+..
+]
+[; ;sfxProtocol.h: 88: eeprom char sysVarAPN[32] = "\"wlapn.com\"";
+"89
+[v _sysVarDestPORT `AEuc ~T0 @X0 -> 8 `i e ]
+[i _sysVarDestPORT
+:U ..
+-> 54 `c
+-> 48 `c
+-> 48 `c
+-> 48 `c
+-> 0 `c
+..
+]
+[; ;sfxProtocol.h: 89: eeprom char sysVarDestPORT[8] = "6000";
+"90
+[v _sysVarDestADDRESS `AEuc ~T0 @X0 -> 32 `i e ]
+[i _sysVarDestADDRESS
+:U ..
+-> 53 `c
+-> 50 `c
+-> 46 `c
+-> 56 `c
+-> 56 `c
+-> 46 `c
+-> 50 `c
+-> 52 `c
+-> 46 `c
+-> 55 `c
+-> 52 `c
+-> 0 `c
+..
+]
+[; ;sfxProtocol.h: 90: eeprom char sysVarDestADDRESS[32] = "52.88.24.74";
+"93
 [v _sysVarGpsValidFlag `Auc ~T0 @X0 1 e ]
 [i _sysVarGpsValidFlag
 -> -> 0 `i `uc
 ]
-[; ;sfxProtocol.h: 85: bool sysVarGpsValidFlag = 0;
-"86
+[; ;sfxProtocol.h: 93: bool sysVarGpsValidFlag = 0;
+"94
 [v _sysVarGpsLat `Al ~T0 @X0 1 e ]
-[; ;sfxProtocol.h: 86: long sysVarGpsLat;
-"87
+[; ;sfxProtocol.h: 94: long sysVarGpsLat;
+"95
 [v _sysVarGpsLong `Al ~T0 @X0 1 e ]
-[; ;sfxProtocol.h: 87: long sysVarGpsLong;
-"88
+[; ;sfxProtocol.h: 95: long sysVarGpsLong;
+"96
 [v _sysVarGpsSpeed `Aui ~T0 @X0 1 e ]
-[; ;sfxProtocol.h: 88: unsigned int sysVarGpsSpeed;
-"89
+[; ;sfxProtocol.h: 96: unsigned int sysVarGpsSpeed;
+"97
 [v _sysVarGpsCourse `Ai ~T0 @X0 1 e ]
-[; ;sfxProtocol.h: 89: int sysVarGpsCourse;
-"90
+[; ;sfxProtocol.h: 97: int sysVarGpsCourse;
+"98
 [v _sysVarGpsAlt `Aui ~T0 @X0 1 e ]
 [i _sysVarGpsAlt
 -> -> 6000 `i `ui
 ]
-[; ;sfxProtocol.h: 90: unsigned int sysVarGpsAlt = 6000;
-"91
+[; ;sfxProtocol.h: 98: unsigned int sysVarGpsAlt = 6000;
+"99
+[v _sysVarGPS `AS821 ~T0 @X0 1 e ]
+[; ;sfxProtocol.h: 99: struct tm sysVarGPS;
+"100
 [v _sysVarGpsDayTime `Al ~T0 @X0 1 e ]
-[; ;sfxProtocol.h: 91: long sysVarGpsDayTime;
-"93
+[; ;sfxProtocol.h: 100: long sysVarGpsDayTime;
+"101
+[v _sysVarUNIXDayTime `Al ~T0 @X0 1 e ]
+[; ;sfxProtocol.h: 101: time_t sysVarUNIXDayTime;
+"103
 [v _sysVarGpsOdometer `Aui ~T0 @X0 1 e ]
-[; ;sfxProtocol.h: 93: unsigned int sysVarGpsOdometer;
-"96
+[; ;sfxProtocol.h: 103: unsigned int sysVarGpsOdometer;
+"106
+[v _sysVarCCID `Auc ~T0 @X0 -> 20 `i e ]
+[i _sysVarCCID
+:U ..
+-> 0 `c
+..
+]
+[; ;sfxProtocol.h: 106: char sysVarCCID[20] = "";
+"107
+[v _sysVarIMEI `Auc ~T0 @X0 -> 20 `i e ]
+[i _sysVarIMEI
+:U ..
+-> 0 `c
+..
+]
+[; ;sfxProtocol.h: 107: char sysVarIMEI[20] = "";
+"109
 [v _sysVarBattery `Auc ~T0 @X0 1 e ]
 [i _sysVarBattery
 -> -> 100 `i `uc
 ]
-[; ;sfxProtocol.h: 96: unsigned char sysVarBattery = 100;
-"99
+[; ;sfxProtocol.h: 109: unsigned char sysVarBattery = 100;
+"112
 [v _sysVarMainInput `Auc ~T0 @X0 1 e ]
 [i _sysVarMainInput
 -> -> 0 `i `uc
 ]
-[; ;sfxProtocol.h: 99: bool sysVarMainInput = 0;
-[; ;sfxProtocol.h: 102: void ProtocolTaskSleepTimeUpdate(unsigned int watchDogSleepingTime);
-[; ;sfxProtocol.h: 103: void ProtocolTaskTick(void);
-[; ;sfxProtocol.h: 104: taskResult_t ProtocolTask(void);
-[; ;sfxProtocol.h: 105: void ProtocolTaskPowerDown(void);
+[; ;sfxProtocol.h: 112: bool sysVarMainInput = 0;
+[; ;sfxProtocol.h: 115: void ProtocolTaskSleepTimeUpdate(unsigned int watchDogSleepingTime);
+[; ;sfxProtocol.h: 116: void ProtocolTaskTick(void);
+[; ;sfxProtocol.h: 117: taskResult_t ProtocolTask(void);
+[; ;sfxProtocol.h: 118: void ProtocolTaskPowerDown(void);
 [; ;eusart2.h: 12: typedef enum _SFX_TASK_COMMANDS_T {
 [; ;eusart2.h: 13: SFX_CMD_INITIALIZE,
 [; ;eusart2.h: 14: SFX_CMD_SEND_MSG,
@@ -6567,24 +6664,24 @@ Version 3.2 HI-TECH Software Intermediate Code
 "18
 [v _statusIndTimer `Auc ~T0 @X0 1 s ]
 [i _statusIndTimer
--> . `E6679 0 `uc
+-> . `E6711 0 `uc
 ]
 [; ;main.c: 18: static unsigned char statusIndTimer = TASK_NO_SENSOR_FOUND;
 "19
 [v _ledTimer `Auc ~T0 @X0 1 s ]
 [i _ledTimer
--> . `E6679 0 `uc
+-> . `E6711 0 `uc
 ]
 [; ;main.c: 19: static unsigned char ledTimer = TASK_NO_SENSOR_FOUND;
 "20
-[v _lastKnownResult `AE6679 ~T0 @X0 1 s ]
+[v _lastKnownResult `AE6711 ~T0 @X0 1 s ]
 [i _lastKnownResult
-. `E6679 4
+. `E6711 4
 ]
 [; ;main.c: 20: static taskResult_t lastKnownResult = TASK_DATA_NOT_AVAILABLE;
-[v F6839 `(v ~T0 @X0 1 tf ]
+[v F6878 `(v ~T0 @X0 1 tf ]
 "22
-[v _systemMainTimer `AF6839 ~T0 @X0 1 e ]
+[v _systemMainTimer `AF6878 ~T0 @X0 1 e ]
 {
 [; ;main.c: 22: void systemMainTimer(void){
 [e :U _systemMainTimer ]
@@ -6597,21 +6694,21 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _ProtocolTaskTick ..  ]
 [; ;main.c: 25: if(secondMultiplier){
 "25
-[e $ ! != -> _secondMultiplier `i -> -> -> 0 `i `uc `i 823  ]
+[e $ ! != -> _secondMultiplier `i -> -> -> 0 `i `uc `i 824  ]
 {
 [; ;main.c: 26: if(sessionTO){
 "26
-[e $ ! != _sessionTO -> -> 0 `i `Aui 824  ]
+[e $ ! != _sessionTO -> -> 0 `i `Aui 825  ]
 {
 [; ;main.c: 27: sessionTO--;
 "27
 [e -- _sessionTO -> -> 1 `i `ui ]
 "28
 }
-[e :U 824 ]
+[e :U 825 ]
 "29
 }
-[e :U 823 ]
+[e :U 824 ]
 [; ;main.c: 28: }
 [; ;main.c: 29: }
 [; ;main.c: 30: secondMultiplier = !secondMultiplier;
@@ -6619,24 +6716,24 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _secondMultiplier -> -> ! != -> _secondMultiplier `i -> -> -> 0 `i `uc `i `i `uc ]
 [; ;main.c: 32: if(PORTAbits.RA2 == 0){
 "32
-[e $ ! == -> . . _PORTAbits 0 2 `i -> 0 `i 825  ]
+[e $ ! == -> . . _PORTAbits 0 2 `i -> 0 `i 826  ]
 {
 [; ;main.c: 33: do { LATAbits.LATA2 = 1; } while(0);
 "33
-[e :U 828 ]
+[e :U 829 ]
 {
 [e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
 }
-[e :U 827 ]
+[e :U 828 ]
 [; ;main.c: 34: ledTimer = statusIndTimer;
 "34
 [e = _ledTimer _statusIndTimer ]
 "35
 }
 [; ;main.c: 35: }
-[e $U 829  ]
+[e $U 830  ]
 "36
-[e :U 825 ]
+[e :U 826 ]
 [; ;main.c: 36: else{
 {
 [; ;main.c: 37: ledTimer--;
@@ -6644,126 +6741,126 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e -- _ledTimer -> -> 1 `i `uc ]
 [; ;main.c: 38: if(ledTimer == 0){
 "38
-[e $ ! == -> _ledTimer `i -> 0 `i 830  ]
+[e $ ! == -> _ledTimer `i -> 0 `i 831  ]
 {
 [; ;main.c: 39: do { LATAbits.LATA2 = 0; } while(0);
 "39
-[e :U 833 ]
+[e :U 834 ]
 {
 [e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
 }
-[e :U 832 ]
+[e :U 833 ]
 "40
 }
-[e :U 830 ]
+[e :U 831 ]
 "41
 }
-[e :U 829 ]
+[e :U 830 ]
 [; ;main.c: 40: }
 [; ;main.c: 41: }
 [; ;main.c: 42: }
 "42
-[e :UE 822 ]
+[e :UE 823 ]
 }
-[v F6843 `(v ~T0 @X0 1 tf1`E6679 ]
+[v F6882 `(v ~T0 @X0 1 tf1`E6711 ]
 "44
-[v _setLedStatus `AF6843 ~T0 @X0 1 e ]
+[v _setLedStatus `AF6882 ~T0 @X0 1 e ]
 {
 [; ;main.c: 44: void setLedStatus(taskResult_t status){
 [e :U _setLedStatus ]
-[v _status `E6679 ~T0 @X0 1 r1 ]
+[v _status `E6711 ~T0 @X0 1 r1 ]
 [f ]
 [; ;main.c: 45: if(status != lastKnownResult){
 "45
-[e $ ! != -> _status `i -> _lastKnownResult `i 835  ]
+[e $ ! != -> _status `i -> _lastKnownResult `i 836  ]
 {
 [; ;main.c: 46: switch(status){
 "46
-[e $U 837  ]
+[e $U 838  ]
 {
 [; ;main.c: 47: case TASK_NO_SENSOR_FOUND:
 "47
-[e :U 838 ]
+[e :U 839 ]
 [; ;main.c: 48: statusIndTimer = 15;
 "48
 [e = _statusIndTimer -> -> 15 `i `uc ]
 [; ;main.c: 49: break;
 "49
-[e $U 836  ]
+[e $U 837  ]
 [; ;main.c: 50: case TASK_ON_COURSE:
 "50
-[e :U 839 ]
+[e :U 840 ]
 [; ;main.c: 51: statusIndTimer = 1;
 "51
 [e = _statusIndTimer -> -> 1 `i `uc ]
 [; ;main.c: 52: break;
 "52
-[e $U 836  ]
+[e $U 837  ]
 [; ;main.c: 53: case TASK_DATA_READY:
 "53
-[e :U 840 ]
+[e :U 841 ]
 [; ;main.c: 54: statusIndTimer = 2;
 "54
 [e = _statusIndTimer -> -> 2 `i `uc ]
 [; ;main.c: 55: break;
 "55
-[e $U 836  ]
+[e $U 837  ]
 [; ;main.c: 56: case TASK_DATA_NOT_AVAILABLE:
 "56
-[e :U 841 ]
+[e :U 842 ]
 [; ;main.c: 57: statusIndTimer = 4;
 "57
 [e = _statusIndTimer -> -> 4 `i `uc ]
 [; ;main.c: 58: break;
 "58
-[e $U 836  ]
+[e $U 837  ]
 [; ;main.c: 59: default:
 "59
-[e :U 842 ]
+[e :U 843 ]
 [; ;main.c: 60: statusIndTimer = 15;
 "60
 [e = _statusIndTimer -> -> 15 `i `uc ]
 [; ;main.c: 61: break;
 "61
-[e $U 836  ]
+[e $U 837  ]
 "62
 }
 [; ;main.c: 62: }
-[e $U 836  ]
+[e $U 837  ]
 "46
-[e :U 837 ]
-[e [\ _status , $ . `E6679 0 838
- , $ . `E6679 1 839
- , $ . `E6679 2 840
- , $ . `E6679 4 841
- 842 ]
+[e :U 838 ]
+[e [\ _status , $ . `E6711 0 839
+ , $ . `E6711 1 840
+ , $ . `E6711 2 841
+ , $ . `E6711 4 842
+ 843 ]
 "62
-[e :U 836 ]
+[e :U 837 ]
 [; ;main.c: 63: do { LATAbits.LATA2 = 1; } while(0);
 "63
-[e :U 845 ]
+[e :U 846 ]
 {
 [e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
 }
-[e :U 844 ]
+[e :U 845 ]
 [; ;main.c: 64: ledTimer = statusIndTimer;
 "64
 [e = _ledTimer _statusIndTimer ]
 "65
 }
-[e :U 835 ]
+[e :U 836 ]
 [; ;main.c: 65: }
 [; ;main.c: 66: lastKnownResult = status;
 "66
 [e = _lastKnownResult _status ]
 [; ;main.c: 67: }
 "67
-[e :UE 834 ]
+[e :UE 835 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-[v F6846 `(v ~T0 @X0 1 tf ]
+[v F6885 `(v ~T0 @X0 1 tf ]
 "69
-[v _main `AF6846 ~T0 @X0 1 e ]
+[v _main `AF6885 ~T0 @X0 1 e ]
 "70
 {
 [; ;main.c: 69: void main(void)
@@ -6771,7 +6868,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U _main ]
 [f ]
 "71
-[v _taskResult `E6679 ~T0 @X0 1 a ]
+[v _taskResult `E6711 ~T0 @X0 1 a ]
 [; ;main.c: 71: taskResult_t taskResult;
 [; ;main.c: 73: SYSTEM_Initialize();
 "73
@@ -6793,87 +6890,87 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _ProtocolTaskPowerDown ..  ]
 [; ;main.c: 82: while(1){
 "82
-[e :U 848 ]
+[e :U 849 ]
 {
 [; ;main.c: 83: setLedStatus(TASK_ON_COURSE);
 "83
-[e ( _setLedStatus (1 . `E6679 1 ]
+[e ( _setLedStatus (1 . `E6711 1 ]
 [; ;main.c: 84: sessionTO = 50 + 360 + 60;
 "84
 [e = _sessionTO -> + + -> 50 `i -> 360 `i -> 60 `i `ui ]
 [; ;main.c: 85: do{
 "85
-[e :U 852 ]
+[e :U 853 ]
 {
 [; ;main.c: 86: taskResult = ProtocolTask();
 "86
 [e = _taskResult ( _ProtocolTask ..  ]
 [; ;main.c: 87: if(!sessionTO){
 "87
-[e $ ! ! != _sessionTO -> -> 0 `i `Aui 853  ]
+[e $ ! ! != _sessionTO -> -> 0 `i `Aui 854  ]
 {
 [; ;main.c: 88: break;
 "88
-[e $U 851  ]
+[e $U 852  ]
 "89
 }
-[e :U 853 ]
+[e :U 854 ]
 "90
 }
 [; ;main.c: 89: }
 [; ;main.c: 90: }while(taskResult!=TASK_NO_SENSOR_FOUND);
-[e $ != -> _taskResult `i -> . `E6679 0 `i 852  ]
-[e :U 851 ]
+[e $ != -> _taskResult `i -> . `E6711 0 `i 853  ]
+[e :U 852 ]
 [; ;main.c: 92: if(sysVarGpsValidFlag){
 "92
-[e $ ! != -> _sysVarGpsValidFlag `i -> -> -> 0 `i `Auc `i 854  ]
+[e $ ! != -> _sysVarGpsValidFlag `i -> -> -> 0 `i `Auc `i 855  ]
 {
 [; ;main.c: 93: setLedStatus(TASK_DATA_READY);
 "93
-[e ( _setLedStatus (1 . `E6679 2 ]
+[e ( _setLedStatus (1 . `E6711 2 ]
 [; ;main.c: 94: sessionTO = 15;
 "94
 [e = _sessionTO -> -> 15 `i `ui ]
 [; ;main.c: 95: while(sessionTO);
 "95
-[e $U 855  ]
-[e :U 856 ]
-[e :U 855 ]
-[e $ != _sessionTO -> -> 0 `i `Aui 856  ]
+[e $U 856  ]
 [e :U 857 ]
+[e :U 856 ]
+[e $ != _sessionTO -> -> 0 `i `Aui 857  ]
+[e :U 858 ]
 "96
 }
-[e :U 854 ]
+[e :U 855 ]
 [; ;main.c: 96: }
 [; ;main.c: 97: sessionTO = 60;
 "97
 [e = _sessionTO -> -> 60 `i `ui ]
 [; ;main.c: 99: setLedStatus(TASK_NO_SENSOR_FOUND);
 "99
-[e ( _setLedStatus (1 . `E6679 0 ]
+[e ( _setLedStatus (1 . `E6711 0 ]
 [; ;main.c: 100: while (sessionTO){
 "100
-[e $U 858  ]
-[e :U 859 ]
+[e $U 859  ]
+[e :U 860 ]
 {
 [; ;main.c: 101: asm(" clrwdt");
 "101
 [; <"  clrwdt ;# ">
 "102
 }
-[e :U 858 ]
+[e :U 859 ]
 "100
-[e $ != _sessionTO -> -> 0 `i `Aui 859  ]
-[e :U 860 ]
+[e $ != _sessionTO -> -> 0 `i `Aui 860  ]
+[e :U 861 ]
 "103
 }
-[e :U 847 ]
+[e :U 848 ]
 "82
-[e $U 848  ]
-[e :U 849 ]
+[e $U 849  ]
+[e :U 850 ]
 [; ;main.c: 102: }
 [; ;main.c: 103: }
 [; ;main.c: 104: }
 "104
-[e :UE 846 ]
+[e :UE 847 ]
 }

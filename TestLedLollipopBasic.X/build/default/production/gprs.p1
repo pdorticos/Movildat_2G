@@ -1,24 +1,56 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"21 gprs.c
-[c E6679 0 1 2 3 4 .. ]
-[n E6679 _taskResult_t TASK_NO_SENSOR_FOUND TASK_ON_COURSE TASK_DATA_READY TASK_TO_ERR TASK_DATA_NOT_AVAILABLE  ]
-"22
-[c E6693 0 1 .. ]
-[n E6693 _TaskCommManagerState_t TASK_SEND_COMMAND_SM TASK_DETECT_TRANSACTION_END_SM  ]
-"24
-[c E6672 0 1 2 3 4 .. ]
-[n E6672 _taskStates_t TASK_PARKED TASK_RESET_TASK TASK_INIT TASK_READY TASK_WAITING_DATA  ]
-"305 /opt/microchip/xc8/v1.42/include/pic18lf25k22.h
-[s S13 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S13 . TMR1MD TMR2MD TMR3MD TMR4MD TMR5MD TMR6MD UART1MD UART2MD ]
-"315
-[s S14 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S14 . . SPI1MD SPI2MD ]
-"304
-[u S12 `S13 1 `S14 1 ]
-[n S12 . . . ]
-"321
-[v _PMD0bits `VS12 ~T0 @X0 0 e@3903 ]
+"9 /opt/microchip/xc8/v1.42/include/time.h
+[s S821 `i 1 `i 1 `i 1 `i 1 `i 1 `i 1 `i 1 `i 1 `i 1 ]
+[n S821 tm tm_sec tm_min tm_hour tm_mday tm_mon tm_year tm_wday tm_yday tm_isdst ]
+[v F7049 `(uc ~T0 @X0 0 tf ]
+"16 gprs.c
+[s S824 `uc 1 `Cuc -> 21 `i `*F7049 1 `uc 1 `uc 1 ]
+[n S824 _GPRS_AT_CMD_STRUCT_T index atCmdStr gprsParserPtr atCmdTimeOut cmdRepeatAttemps ]
+"7
+[v _gprsOKParser `(uc ~T0 @X0 0 ef ]
+"8
+[v _gprsCCIDParser `(uc ~T0 @X0 0 ef ]
+"11
+[v _gprsCGSNParser `(uc ~T0 @X0 0 ef ]
+"12
+[v _gprsConnectParser `(uc ~T0 @X0 0 ef ]
+"10
+[v _gprsInternetAccessParser `(uc ~T0 @X0 0 ef ]
+"89
+[c E6711 0 1 2 3 4 .. ]
+[n E6711 _taskResult_t TASK_NO_SENSOR_FOUND TASK_ON_COURSE TASK_DATA_READY TASK_TO_ERR TASK_DATA_NOT_AVAILABLE  ]
+"90
+[c E6725 0 1 .. ]
+[n E6725 _TaskCommManagerState_t TASK_SEND_COMMAND_SM TASK_DETECT_TRANSACTION_END_SM  ]
+"91
+[c E6704 0 1 2 3 4 .. ]
+[n E6704 _taskStates_t TASK_PARKED TASK_RESET_TASK TASK_INIT TASK_READY TASK_WAITING_DATA  ]
+"53 /opt/microchip/xc8/v1.42/include/string.h
+[v _strstr `(*uc ~T0 @X0 0 ef2`*Cuc`*Cuc ]
+"57
+[v _strchr `(*uc ~T0 @X0 0 ef2`*Cuc`i ]
+"37
+[v _strcpy `(*uc ~T0 @X0 0 ef2`*uc`*Cuc ]
+"4453 /opt/microchip/xc8/v1.42/include/pic18lf25k22.h
+[s S209 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S209 . RX9D OERR FERR ADDEN CREN SREN RX9 SPEN ]
+"4463
+[s S210 :3 `uc 1 :1 `uc 1 ]
+[n S210 . . ADEN ]
+"4467
+[s S211 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S211 . RX9D2 OERR2 FERR2 ADDEN2 CREN2 SREN2 RX92 SPEN2 ]
+"4477
+[s S212 :1 `uc 1 :5 `uc 1 :1 `uc 1 ]
+[n S212 . RCD82 . RC8_92 ]
+"4482
+[s S213 :6 `uc 1 :1 `uc 1 ]
+[n S213 . . RC92 ]
+"4452
+[u S208 `S209 1 `S210 1 `S211 1 `S212 1 `S213 1 ]
+[n S208 . . . . . . ]
+"4487
+[v _RCSTA2bits `VS208 ~T0 @X0 0 e@3953 ]
 "9110
 [s S429 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S429 . TMR1GIE TMR3GIE TMR5GIE CTMUIE TX2IE RC2IE BCL2IE SSP2IE ]
@@ -33,7 +65,27 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S428 . . . . ]
 "9134
 [v _PIE3bits `VS428 ~T0 @X0 0 e@4003 ]
-"4180
+"36 /opt/microchip/xc8/v1.42/include/string.h
+[v _strcat `(*uc ~T0 @X0 0 ef2`*uc`*Cuc ]
+"194 /opt/microchip/xc8/v1.42/include/stdio.h
+[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
+"305 /opt/microchip/xc8/v1.42/include/pic18lf25k22.h
+[s S13 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S13 . TMR1MD TMR2MD TMR3MD TMR4MD TMR5MD TMR6MD UART1MD UART2MD ]
+"315
+[s S14 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S14 . . SPI1MD SPI2MD ]
+"304
+[u S12 `S13 1 `S14 1 ]
+[n S12 . . . ]
+"321
+[v _PMD0bits `VS12 ~T0 @X0 0 e@3903 ]
+"290 gprs.c
+[c E6654 0 1 2 .. ]
+[n E6654 _uart_semaphore_t NO_OWNER SFX_OWNER GPRS_OWNER  ]
+"53 mcc_generated_files/interrupt_manager.h
+[v _setSemaphore `(v ~T0 @X0 0 ef1`E6654 ]
+"4180 /opt/microchip/xc8/v1.42/include/pic18lf25k22.h
 [v _BAUDCON2 `Vuc ~T0 @X0 0 e@3952 ]
 "4442
 [v _RCSTA2 `Vuc ~T0 @X0 0 e@3953 ]
@@ -43,13 +95,35 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _SPBRG2 `Vuc ~T0 @X0 0 e@3957 ]
 "5096
 [v _SPBRGH2 `Vuc ~T0 @X0 0 e@3958 ]
-"114 gprs.c
-[c E6724 0 1 2 3 4 5 6 .. ]
-[n E6724 _SFX_TASK_COMMANDS_T SFX_CMD_INITIALIZE SFX_CMD_SEND_MSG SFX_CMD_SEND_MSG_WAIT_ACK SFX_CMD_SEND_STATUS SFX_CMD_SET_SFX_MODE SFX_CMD_PWR_DOWN SFX_CMD_ADJ_PWR  ]
-"53 /opt/microchip/xc8/v1.42/include/string.h
-[v _strstr `(*uc ~T0 @X0 0 ef2`*Cuc`*Cuc ]
-"28 mcc_generated_files/eusart2.h
-[v _SigfoxTaskPowerDown `(v ~T0 @X0 0 ef ]
+"7360
+[s S369 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S369 . LATB0 LATB1 LATB2 LATB3 LATB4 LATB5 LATB6 LATB7 ]
+"7370
+[s S370 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S370 . LB0 LB1 LB2 LB3 LB4 LB5 LB6 LB7 ]
+"7359
+[u S368 `S369 1 `S370 1 ]
+[n S368 . . . ]
+"7381
+[v _LATBbits `VS368 ~T0 @X0 0 e@3978 ]
+"471 gprs.c
+[c E6956 0 1 2 3 4 5 6 .. ]
+[n E6956 _GPRS_TASK_COMMANDS_T GPRS_TASK_INITIALIZE GPRS_TASK_SEND_MSG GPRS_TASK_PWR_DOWN GPRS_TASK_GET_EPO GPRS_TASK_FLUSH GPRS_TASK_GET_FTP_CFG GRPS_TASK_SET_FTP  ]
+"4982 /opt/microchip/xc8/v1.42/include/pic18lf25k22.h
+[v _TXREG2 `Vuc ~T0 @X0 0 e@3955 ]
+"9220
+[s S433 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S433 . TMR1GIF TMR3GIF TMR5GIF CTMUIF TX2IF RC2IF BCL2IF SSP2IF ]
+"9230
+[s S434 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S434 . . RXBNIF . TXBNIF ]
+"9219
+[u S432 `S433 1 `S434 1 ]
+[n S432 . . . ]
+"9237
+[v _PIR3bits `VS432 ~T0 @X0 0 e@4004 ]
+"5020
+[v _RCREG2 `Vuc ~T0 @X0 0 e@3956 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -6354,92 +6428,186 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;interrupt_manager.h: 53: void setSemaphore(uart_semaphore_t semaphore);
 [; ;interrupt_manager.h: 113: void interrupt INTERRUPT_InterruptManager(void);
 [; ;interrupt_manager.h: 125: void INTERRUPT_Initialize (void);
-[; ;sfxProtocol.h: 34: typedef enum _mainTaskStates_t {
-[; ;sfxProtocol.h: 35: MAIN_TASK_PARKED,
-[; ;sfxProtocol.h: 36: POWERING_TASK,
-[; ;sfxProtocol.h: 37: MEASURING_TASK,
-[; ;sfxProtocol.h: 38: COMMUNICATING_TASK
-[; ;sfxProtocol.h: 39: }mainTaskStates_t;
-[; ;sfxProtocol.h: 41: typedef enum _taskStates_t {
-[; ;sfxProtocol.h: 42: TASK_PARKED,
-[; ;sfxProtocol.h: 43: TASK_RESET_TASK,
-[; ;sfxProtocol.h: 44: TASK_INIT,
-[; ;sfxProtocol.h: 45: TASK_READY,
-[; ;sfxProtocol.h: 46: TASK_WAITING_DATA
-[; ;sfxProtocol.h: 47: }taskStates_t;
-[; ;sfxProtocol.h: 49: typedef enum _taskResult_t {
-[; ;sfxProtocol.h: 50: TASK_NO_SENSOR_FOUND,
-[; ;sfxProtocol.h: 51: TASK_ON_COURSE,
-[; ;sfxProtocol.h: 52: TASK_DATA_READY,
-[; ;sfxProtocol.h: 53: TASK_TO_ERR,
-[; ;sfxProtocol.h: 54: TASK_DATA_NOT_AVAILABLE
-[; ;sfxProtocol.h: 55: }taskResult_t;
-[; ;sfxProtocol.h: 57: typedef enum _dataQualifier_t {
-[; ;sfxProtocol.h: 58: SENSOR_READ,
-[; ;sfxProtocol.h: 59: BORROWED,
-[; ;sfxProtocol.h: 60: CALCULATED,
-[; ;sfxProtocol.h: 61: NOT_AVAILABLE,
-[; ;sfxProtocol.h: 62: UNKNOWN_SENSOR
-[; ;sfxProtocol.h: 63: }dataQualifier_t;
-[; ;sfxProtocol.h: 65: typedef enum _TaskCommManagerState_t {
-[; ;sfxProtocol.h: 66: TASK_SEND_COMMAND_SM = 0,
-[; ;sfxProtocol.h: 67: TASK_DETECT_TRANSACTION_END_SM
-[; ;sfxProtocol.h: 68: } TaskCommManagerState_t;
-[; ;sfxProtocol.h: 70: typedef enum _systemEvent_t {
-[; ;sfxProtocol.h: 71: HW_WARNING_EV,
-[; ;sfxProtocol.h: 72: TIMER1_EV,
-[; ;sfxProtocol.h: 73: TIMER2_EV,
-[; ;sfxProtocol.h: 74: INPUT_EV,
-[; ;sfxProtocol.h: 75: MOTION_EV,
-[; ;sfxProtocol.h: 76: VARIABLE_ALARM_EV,
-[; ;sfxProtocol.h: 77: BATTERY_EV
-[; ;sfxProtocol.h: 78: }systemEvent_t;
-"85 Sigfox/sfxProtocol.h
+[; ;__size_t.h: 4: typedef unsigned size_t;
+[; ;time.h: 8: typedef long time_t;
+[; ;time.h: 9: struct tm {
+[; ;time.h: 10: int tm_sec;
+[; ;time.h: 11: int tm_min;
+[; ;time.h: 12: int tm_hour;
+[; ;time.h: 13: int tm_mday;
+[; ;time.h: 14: int tm_mon;
+[; ;time.h: 15: int tm_year;
+[; ;time.h: 16: int tm_wday;
+[; ;time.h: 17: int tm_yday;
+[; ;time.h: 18: int tm_isdst;
+[; ;time.h: 19: };
+[; ;time.h: 25: extern int time_zone;
+[; ;time.h: 30: extern time_t time(time_t *);
+[; ;time.h: 31: extern int stime(time_t *);
+[; ;time.h: 47: extern char * asctime(const struct tm *) ;
+[; ;time.h: 48: extern char * ctime(const time_t *) ;
+[; ;time.h: 49: extern struct tm * gmtime(const time_t *) ;
+[; ;time.h: 50: extern struct tm * localtime(const time_t *) ;
+[; ;time.h: 51: extern size_t strftime(char *, size_t, const char *, const struct tm *) ;
+[; ;time.h: 52: extern time_t mktime(struct tm *);
+[; ;sfxProtocol.h: 35: typedef enum _mainTaskStates_t {
+[; ;sfxProtocol.h: 36: MAIN_TASK_PARKED,
+[; ;sfxProtocol.h: 37: POWERING_TASK,
+[; ;sfxProtocol.h: 38: MEASURING_TASK,
+[; ;sfxProtocol.h: 39: COMMUNICATING_TASK
+[; ;sfxProtocol.h: 40: }mainTaskStates_t;
+[; ;sfxProtocol.h: 42: typedef enum _taskStates_t {
+[; ;sfxProtocol.h: 43: TASK_PARKED,
+[; ;sfxProtocol.h: 44: TASK_RESET_TASK,
+[; ;sfxProtocol.h: 45: TASK_INIT,
+[; ;sfxProtocol.h: 46: TASK_READY,
+[; ;sfxProtocol.h: 47: TASK_WAITING_DATA
+[; ;sfxProtocol.h: 48: }taskStates_t;
+[; ;sfxProtocol.h: 50: typedef enum _taskResult_t {
+[; ;sfxProtocol.h: 51: TASK_NO_SENSOR_FOUND,
+[; ;sfxProtocol.h: 52: TASK_ON_COURSE,
+[; ;sfxProtocol.h: 53: TASK_DATA_READY,
+[; ;sfxProtocol.h: 54: TASK_TO_ERR,
+[; ;sfxProtocol.h: 55: TASK_DATA_NOT_AVAILABLE
+[; ;sfxProtocol.h: 56: }taskResult_t;
+[; ;sfxProtocol.h: 58: typedef enum _dataQualifier_t {
+[; ;sfxProtocol.h: 59: SENSOR_READ,
+[; ;sfxProtocol.h: 60: BORROWED,
+[; ;sfxProtocol.h: 61: CALCULATED,
+[; ;sfxProtocol.h: 62: NOT_AVAILABLE,
+[; ;sfxProtocol.h: 63: UNKNOWN_SENSOR
+[; ;sfxProtocol.h: 64: }dataQualifier_t;
+[; ;sfxProtocol.h: 66: typedef enum _TaskCommManagerState_t {
+[; ;sfxProtocol.h: 67: TASK_SEND_COMMAND_SM = 0,
+[; ;sfxProtocol.h: 68: TASK_DETECT_TRANSACTION_END_SM
+[; ;sfxProtocol.h: 69: } TaskCommManagerState_t;
+[; ;sfxProtocol.h: 71: typedef enum _systemEvent_t {
+[; ;sfxProtocol.h: 72: HW_WARNING_EV,
+[; ;sfxProtocol.h: 73: TIMER1_EV,
+[; ;sfxProtocol.h: 74: TIMER2_EV,
+[; ;sfxProtocol.h: 75: INPUT_EV,
+[; ;sfxProtocol.h: 76: MOTION_EV,
+[; ;sfxProtocol.h: 77: VARIABLE_ALARM_EV,
+[; ;sfxProtocol.h: 78: BATTERY_EV
+[; ;sfxProtocol.h: 79: }systemEvent_t;
+"88 Sigfox/sfxProtocol.h
+[v _sysVarAPN `AEuc ~T0 @X0 -> 32 `i e ]
+[i _sysVarAPN
+:U ..
+-> 34 `c
+-> 119 `c
+-> 108 `c
+-> 97 `c
+-> 112 `c
+-> 110 `c
+-> 46 `c
+-> 99 `c
+-> 111 `c
+-> 109 `c
+-> 34 `c
+-> 0 `c
+..
+]
+[; ;sfxProtocol.h: 88: eeprom char sysVarAPN[32] = "\"wlapn.com\"";
+"89
+[v _sysVarDestPORT `AEuc ~T0 @X0 -> 8 `i e ]
+[i _sysVarDestPORT
+:U ..
+-> 54 `c
+-> 48 `c
+-> 48 `c
+-> 48 `c
+-> 0 `c
+..
+]
+[; ;sfxProtocol.h: 89: eeprom char sysVarDestPORT[8] = "6000";
+"90
+[v _sysVarDestADDRESS `AEuc ~T0 @X0 -> 32 `i e ]
+[i _sysVarDestADDRESS
+:U ..
+-> 53 `c
+-> 50 `c
+-> 46 `c
+-> 56 `c
+-> 56 `c
+-> 46 `c
+-> 50 `c
+-> 52 `c
+-> 46 `c
+-> 55 `c
+-> 52 `c
+-> 0 `c
+..
+]
+[; ;sfxProtocol.h: 90: eeprom char sysVarDestADDRESS[32] = "52.88.24.74";
+"93
 [v _sysVarGpsValidFlag `Auc ~T0 @X0 1 e ]
 [i _sysVarGpsValidFlag
 -> -> 0 `i `uc
 ]
-[; ;sfxProtocol.h: 85: bool sysVarGpsValidFlag = 0;
-"86
+[; ;sfxProtocol.h: 93: bool sysVarGpsValidFlag = 0;
+"94
 [v _sysVarGpsLat `Al ~T0 @X0 1 e ]
-[; ;sfxProtocol.h: 86: long sysVarGpsLat;
-"87
+[; ;sfxProtocol.h: 94: long sysVarGpsLat;
+"95
 [v _sysVarGpsLong `Al ~T0 @X0 1 e ]
-[; ;sfxProtocol.h: 87: long sysVarGpsLong;
-"88
+[; ;sfxProtocol.h: 95: long sysVarGpsLong;
+"96
 [v _sysVarGpsSpeed `Aui ~T0 @X0 1 e ]
-[; ;sfxProtocol.h: 88: unsigned int sysVarGpsSpeed;
-"89
+[; ;sfxProtocol.h: 96: unsigned int sysVarGpsSpeed;
+"97
 [v _sysVarGpsCourse `Ai ~T0 @X0 1 e ]
-[; ;sfxProtocol.h: 89: int sysVarGpsCourse;
-"90
+[; ;sfxProtocol.h: 97: int sysVarGpsCourse;
+"98
 [v _sysVarGpsAlt `Aui ~T0 @X0 1 e ]
 [i _sysVarGpsAlt
 -> -> 6000 `i `ui
 ]
-[; ;sfxProtocol.h: 90: unsigned int sysVarGpsAlt = 6000;
-"91
+[; ;sfxProtocol.h: 98: unsigned int sysVarGpsAlt = 6000;
+"99
+[v _sysVarGPS `AS821 ~T0 @X0 1 e ]
+[; ;sfxProtocol.h: 99: struct tm sysVarGPS;
+"100
 [v _sysVarGpsDayTime `Al ~T0 @X0 1 e ]
-[; ;sfxProtocol.h: 91: long sysVarGpsDayTime;
-"93
+[; ;sfxProtocol.h: 100: long sysVarGpsDayTime;
+"101
+[v _sysVarUNIXDayTime `Al ~T0 @X0 1 e ]
+[; ;sfxProtocol.h: 101: time_t sysVarUNIXDayTime;
+"103
 [v _sysVarGpsOdometer `Aui ~T0 @X0 1 e ]
-[; ;sfxProtocol.h: 93: unsigned int sysVarGpsOdometer;
-"96
+[; ;sfxProtocol.h: 103: unsigned int sysVarGpsOdometer;
+"106
+[v _sysVarCCID `Auc ~T0 @X0 -> 20 `i e ]
+[i _sysVarCCID
+:U ..
+-> 0 `c
+..
+]
+[; ;sfxProtocol.h: 106: char sysVarCCID[20] = "";
+"107
+[v _sysVarIMEI `Auc ~T0 @X0 -> 20 `i e ]
+[i _sysVarIMEI
+:U ..
+-> 0 `c
+..
+]
+[; ;sfxProtocol.h: 107: char sysVarIMEI[20] = "";
+"109
 [v _sysVarBattery `Auc ~T0 @X0 1 e ]
 [i _sysVarBattery
 -> -> 100 `i `uc
 ]
-[; ;sfxProtocol.h: 96: unsigned char sysVarBattery = 100;
-"99
+[; ;sfxProtocol.h: 109: unsigned char sysVarBattery = 100;
+"112
 [v _sysVarMainInput `Auc ~T0 @X0 1 e ]
 [i _sysVarMainInput
 -> -> 0 `i `uc
 ]
-[; ;sfxProtocol.h: 99: bool sysVarMainInput = 0;
-[; ;sfxProtocol.h: 102: void ProtocolTaskSleepTimeUpdate(unsigned int watchDogSleepingTime);
-[; ;sfxProtocol.h: 103: void ProtocolTaskTick(void);
-[; ;sfxProtocol.h: 104: taskResult_t ProtocolTask(void);
-[; ;sfxProtocol.h: 105: void ProtocolTaskPowerDown(void);
+[; ;sfxProtocol.h: 112: bool sysVarMainInput = 0;
+[; ;sfxProtocol.h: 115: void ProtocolTaskSleepTimeUpdate(unsigned int watchDogSleepingTime);
+[; ;sfxProtocol.h: 116: void ProtocolTaskTick(void);
+[; ;sfxProtocol.h: 117: taskResult_t ProtocolTask(void);
+[; ;sfxProtocol.h: 118: void ProtocolTaskPowerDown(void);
 [; ;eusart2.h: 12: typedef enum _SFX_TASK_COMMANDS_T {
 [; ;eusart2.h: 13: SFX_CMD_INITIALIZE,
 [; ;eusart2.h: 14: SFX_CMD_SEND_MSG,
@@ -6518,7 +6686,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;tmr0.h: 344: void TMR0_DefaultInterruptHandler(void);
 [; ;mcc.h: 72: void SYSTEM_Initialize(void);
 [; ;mcc.h: 85: void OSCILLATOR_Initialize(void);
-[; ;__size_t.h: 4: typedef unsigned size_t;
 [; ;string.h: 14: extern void * memcpy(void *, const void *, size_t);
 [; ;string.h: 15: extern void * memmove(void *, const void *, size_t);
 [; ;string.h: 16: extern void * memset(void *, int, size_t);
@@ -6545,963 +6712,1724 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;string.h: 58: extern char * strichr(const char *, int);
 [; ;string.h: 59: extern char * strrchr(const char *, int);
 [; ;string.h: 60: extern char * strrichr(const char *, int);
-"21 gprs.c
-[v _gprsTransactionResult `AE6679 ~T0 @X0 1 s ]
+[; ;gprs.h: 13: typedef enum _GPRS_TASK_COMMANDS_T {
+[; ;gprs.h: 14: GPRS_TASK_INITIALIZE,
+[; ;gprs.h: 15: GPRS_TASK_SEND_MSG,
+[; ;gprs.h: 16: GPRS_TASK_PWR_DOWN,
+[; ;gprs.h: 17: GPRS_TASK_GET_EPO,
+[; ;gprs.h: 18: GPRS_TASK_FLUSH,
+[; ;gprs.h: 19: GPRS_TASK_GET_FTP_CFG,
+[; ;gprs.h: 20: GRPS_TASK_SET_FTP
+[; ;gprs.h: 21: } GPRS_TASK_COMMANDS_T;
+[; ;gprs.h: 24: void gprsTaskTick(void);
+[; ;gprs.h: 25: void EUSART2_GPRS_Transmit_ISR(void);
+[; ;gprs.h: 26: void EUSART2_GPRS_Receive_ISR(void);
+[; ;stdarg.h: 7: typedef void * va_list[1];
+[; ;stdarg.h: 10: extern void * __va_start(void);
+[; ;stdarg.h: 13: extern void * __va_arg(void *, ...);
+[; ;stdio.h: 43: struct __prbuf
+[; ;stdio.h: 44: {
+[; ;stdio.h: 45: char * ptr;
+[; ;stdio.h: 46: void (* func)(char);
+[; ;stdio.h: 47: };
+[; ;errno.h: 29: extern int errno;
+[; ;conio.h: 12: extern void init_uart(void);
+[; ;conio.h: 14: extern char getch(void);
+[; ;conio.h: 15: extern char getche(void);
+[; ;conio.h: 16: extern void putch(char);
+[; ;conio.h: 17: extern void ungetch(char);
+[; ;conio.h: 19: extern __bit kbhit(void);
+[; ;conio.h: 23: extern char * cgets(char *);
+[; ;conio.h: 24: extern void cputs(const char *);
+[; ;stdio.h: 88: extern int cprintf(char *, ...);
+[; ;stdio.h: 93: extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+[; ;stdio.h: 183: extern char * gets(char *);
+[; ;stdio.h: 184: extern int puts(const char *);
+[; ;stdio.h: 185: extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+[; ;stdio.h: 186: extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+[; ;stdio.h: 187: extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+[; ;stdio.h: 188: extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+[; ;stdio.h: 189: extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+[; ;stdio.h: 190: extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+[; ;stdio.h: 194: extern int sprintf(char *, const char *, ...);
+[; ;stdio.h: 195: extern int printf(const char *, ...);
+[; ;gprs.c: 7: bool gprsOKParser(void);
+[; ;gprs.c: 8: bool gprsCCIDParser(void);
+[; ;gprs.c: 9: bool gprsCCIDParser(void);
+[; ;gprs.c: 10: bool gprsInternetAccessParser(void);
+[; ;gprs.c: 11: bool gprsCGSNParser(void);
+[; ;gprs.c: 12: bool gprsConnectParser(void);
+[; ;gprs.c: 13: bool gprsEmptyParser(void);
+[; ;gprs.c: 16: typedef struct _GPRS_AT_CMD_STRUCT_T {
+[; ;gprs.c: 17: uint8_t index;
+[; ;gprs.c: 18: const char atCmdStr[21];
+[; ;gprs.c: 19: bool (* gprsParserPtr) (void);
+[; ;gprs.c: 20: uint8_t atCmdTimeOut;
+[; ;gprs.c: 21: uint8_t cmdRepeatAttemps;
+[; ;gprs.c: 22: }GPRS_AT_CMD_STRUCT_T;
+"58 gprs.c
+[v _gprsAtCommands `CAS824 ~T0 @X0 -> 0 `x e ]
+[i _gprsAtCommands
+:U ..
+:U ..
+"59
+-> -> 0 `i `uc
+:U ..
+-> 65 `c
+-> 84 `c
+-> 0 `c
+..
+&U _gprsOKParser
+-> -> 2 `i `uc
+..
+:U ..
+"60
+-> -> 1 `i `uc
+:U ..
+-> 65 `c
+-> 84 `c
+-> 86 `c
+-> 48 `c
+-> 0 `c
+..
+&U _gprsOKParser
+-> -> 2 `i `uc
+..
+:U ..
+"61
+-> -> 2 `i `uc
+:U ..
+-> 65 `c
+-> 84 `c
+-> 69 `c
+-> 48 `c
+-> 0 `c
+..
+&U _gprsOKParser
+-> -> 2 `i `uc
+..
+:U ..
+"62
+-> -> 3 `i `uc
+:U ..
+-> 65 `c
+-> 84 `c
+-> 43 `c
+-> 67 `c
+-> 71 `c
+-> 68 `c
+-> 67 `c
+-> 79 `c
+-> 78 `c
+-> 84 `c
+-> 61 `c
+-> 49 `c
+-> 44 `c
+-> 34 `c
+-> 73 `c
+-> 80 `c
+-> 34 `c
+-> 44 `c
+-> 0 `c
+..
+&U _gprsOKParser
+-> -> 2 `i `uc
+..
+:U ..
+"63
+-> -> 5 `i `uc
+:U ..
+-> 65 `c
+-> 84 `c
+-> 35 `c
+-> 71 `c
+-> 80 `c
+-> 82 `c
+-> 83 `c
+-> 61 `c
+-> 49 `c
+-> 0 `c
+..
+&U _gprsOKParser
+-> -> 2 `i `uc
+..
+:U ..
+"64
+-> -> 6 `i `uc
+:U ..
+-> 65 `c
+-> 84 `c
+-> 38 `c
+-> 87 `c
+-> 0 `c
+..
+&U _gprsOKParser
+-> -> 2 `i `uc
+..
+:U ..
+"65
+-> -> 7 `i `uc
+:U ..
+-> 65 `c
+-> 84 `c
+-> 35 `c
+-> 67 `c
+-> 67 `c
+-> 73 `c
+-> 68 `c
+-> 0 `c
+..
+&U _gprsCCIDParser
+-> -> 2 `i `uc
+..
+:U ..
+"66
+-> -> 8 `i `uc
+:U ..
+-> 65 `c
+-> 84 `c
+-> 35 `c
+-> 67 `c
+-> 71 `c
+-> 83 `c
+-> 78 `c
+-> 0 `c
+..
+&U _gprsCGSNParser
+-> -> 2 `i `uc
+..
+:U ..
+"67
+-> -> 9 `i `uc
+:U ..
+-> 65 `c
+-> 84 `c
+-> 35 `c
+-> 83 `c
+-> 68 `c
+-> 61 `c
+-> 49 `c
+-> 44 `c
+-> 49 `c
+-> 44 `c
+-> 0 `c
+..
+&U _gprsConnectParser
+-> -> 2 `i `uc
+..
+:U ..
+"68
+-> -> 10 `i `uc
+:U ..
+-> 65 `c
+-> 84 `c
+-> 43 `c
+-> 67 `c
+-> 71 `c
+-> 82 `c
+-> 69 `c
+-> 71 `c
+-> 63 `c
+-> 0 `c
+..
+&U _gprsInternetAccessParser
+-> -> 2 `i `uc
+..
+:U ..
+"69
+-> -> 255 `i `uc
+:U ..
+-> 0 `c
+..
+-> -> 0 `i `*F7049
+-> -> 0 `i `uc
+..
+..
+]
+[; ;gprs.c: 58: const GPRS_AT_CMD_STRUCT_T gprsAtCommands[]={
+[; ;gprs.c: 59: {0,"AT",gprsOKParser,2},
+[; ;gprs.c: 60: {1,"ATV0",gprsOKParser,2},
+[; ;gprs.c: 61: {2,"ATE0",gprsOKParser,2},
+[; ;gprs.c: 62: {3,"AT+CGDCONT=1,\"IP\",",gprsOKParser,2},
+[; ;gprs.c: 63: {5,"AT#GPRS=1",gprsOKParser,2},
+[; ;gprs.c: 64: {6,"AT&W",gprsOKParser,2},
+[; ;gprs.c: 65: {7,"AT#CCID",gprsCCIDParser,2},
+[; ;gprs.c: 66: {8,"AT#CGSN",gprsCGSNParser,2},
+[; ;gprs.c: 67: {9,"AT#SD=1,1,",gprsConnectParser,2},
+[; ;gprs.c: 68: {10,"AT+CGREG?",gprsInternetAccessParser,2},
+[; ;gprs.c: 69: {0xFF,"",(0),0}
+[; ;gprs.c: 70: };
+"89
+[v _gprsTransactionResult `AE6711 ~T0 @X0 1 s ]
 [i _gprsTransactionResult
-. `E6679 1
+. `E6711 1
 ]
-[; ;gprs.c: 21: static taskResult_t gprsTransactionResult = TASK_ON_COURSE;
-"22
-[v _gprsCommManagerState `AE6693 ~T0 @X0 1 s ]
+[; ;gprs.c: 89: static taskResult_t gprsTransactionResult = TASK_ON_COURSE;
+"90
+[v _gprsCommManagerState `AE6725 ~T0 @X0 1 s ]
 [i _gprsCommManagerState
-. `E6693 0
+. `E6725 0
 ]
-[; ;gprs.c: 22: static TaskCommManagerState_t gprsCommManagerState = TASK_SEND_COMMAND_SM;
-"24
-[v _gprsTaskState `AE6672 ~T0 @X0 1 s ]
+[; ;gprs.c: 90: static TaskCommManagerState_t gprsCommManagerState = TASK_SEND_COMMAND_SM;
+"91
+[v _gprsTaskState `AE6704 ~T0 @X0 1 s ]
 [i _gprsTaskState
-. `E6672 1
+. `E6704 1
 ]
-[; ;gprs.c: 24: static taskStates_t gprsTaskState = TASK_RESET_TASK;
-"26
-[v _gprsTxBuffer `Auc ~T0 @X0 -> 100 `i e ]
-[; ;gprs.c: 26: char gprsTxBuffer[100];
-"27
+[; ;gprs.c: 91: static taskStates_t gprsTaskState = TASK_RESET_TASK;
+"92
+[v _gprsPayloadBuffer `Auc ~T0 @X0 -> 240 `i e ]
+[; ;gprs.c: 92: uint8_t gprsPayloadBuffer[240];
+"93
+[v _gprsTxBuffer `Auc ~T0 @X0 -> 250 `i e ]
+[; ;gprs.c: 93: char gprsTxBuffer[250];
+"94
 [v _gprsTXBufferPtr `Auc ~T0 @X0 1 e ]
-[; ;gprs.c: 27: uint8_t gprsTXBufferPtr;
-"28
-[v _gprsRxBuffer `Auc ~T0 @X0 -> 100 `i e ]
-[; ;gprs.c: 28: char gprsRxBuffer[100];
-"29
+[; ;gprs.c: 94: uint8_t gprsTXBufferPtr;
+"95
+[v _gprsRxBuffer `Auc ~T0 @X0 -> 180 `i e ]
+[; ;gprs.c: 95: char gprsRxBuffer[180];
+"96
 [v _gprsRXBufferPtr `Auc ~T0 @X0 1 e ]
-[; ;gprs.c: 29: uint8_t gprsRXBufferPtr;
-"31
-[v _GPRS_CommManagerState `AE6693 ~T0 @X0 1 s ]
-[i _GPRS_CommManagerState
-. `E6693 0
-]
-[; ;gprs.c: 31: static TaskCommManagerState_t GPRS_CommManagerState = TASK_SEND_COMMAND_SM;
-"32
-[v _gprsMsgReceivedFlag `Auc ~T0 @X0 1 e ]
-[; ;gprs.c: 32: bool gprsMsgReceivedFlag;
-"33
-[v _GPRS_TransactionResult `AE6679 ~T0 @X0 1 s ]
-[i _GPRS_TransactionResult
-. `E6679 1
-]
-[; ;gprs.c: 33: static taskResult_t GPRS_TransactionResult = TASK_ON_COURSE;
-"34
+[; ;gprs.c: 96: uint8_t gprsRXBufferPtr;
+"97
 [v _gprsTransactionAttemps `Auc ~T0 @X0 1 e ]
 [i _gprsTransactionAttemps
 -> -> 3 `i `uc
 ]
-[; ;gprs.c: 34: uint8_t gprsTransactionAttemps=3;
-"36
-[v _gprsScheduledInitTaskFlag `Auc ~T0 @X0 1 e ]
-[; ;gprs.c: 36: bool gprsScheduledInitTaskFlag;
-"37
-[v _gprsScheduledPwrDownTaskFlag `Auc ~T0 @X0 1 e ]
-[; ;gprs.c: 37: bool gprsScheduledPwrDownTaskFlag;
-"38
+[; ;gprs.c: 97: uint8_t gprsTransactionAttemps=3;
+"98
 [v _gprsTimeOutTimer `Auc ~T0 @X0 1 e ]
-[; ;gprs.c: 38: uint8_t gprsTimeOutTimer;
-"39
+[; ;gprs.c: 98: uint8_t gprsTimeOutTimer;
+"99
 [v _gprsTxDelay `Auc ~T0 @X0 1 e ]
-[; ;gprs.c: 39: uint8_t gprsTxDelay;
-"46
+[; ;gprs.c: 99: uint8_t gprsTxDelay;
+"106
 [v _gprsScheduledMsgTaskFlag `Auc ~T0 @X0 1 e ]
 [i _gprsScheduledMsgTaskFlag
 -> -> 0 `i `uc
 ]
-"47
-[v _gprsScheduledMsgStaTaskFlag `Auc ~T0 @X0 1 e ]
-[i _gprsScheduledMsgStaTaskFlag
+"107
+[v _gprsScheduledGetEpoFlag `Auc ~T0 @X0 1 e ]
+[i _gprsScheduledGetEpoFlag
 -> -> 0 `i `uc
 ]
-"48
-[v _gprsScheduledMsgAckTaskFlag `Auc ~T0 @X0 1 e ]
-[; ;gprs.c: 46: bool gprsScheduledMsgTaskFlag = 0,
-[; ;gprs.c: 47: gprsScheduledMsgStaTaskFlag=0,
-[; ;gprs.c: 48: gprsScheduledMsgAckTaskFlag;
-[v F6938 `(v ~T0 @X0 1 tf ]
-"50
-[v _EUSART2_GPRS_Initialize `AF6938 ~T0 @X0 1 e ]
+"108
+[v _gprsScheduledFlushFlag `Auc ~T0 @X0 1 e ]
+[i _gprsScheduledFlushFlag
+-> -> 0 `i `uc
+]
+"109
+[v _gprsScheduledGetFTPConfFlag `Auc ~T0 @X0 1 e ]
+[i _gprsScheduledGetFTPConfFlag
+-> -> 0 `i `uc
+]
+"110
+[v _gprsScheduledSetFTPConfFlag `Auc ~T0 @X0 1 e ]
+[i _gprsScheduledSetFTPConfFlag
+-> -> 0 `i `uc
+]
+"111
+[v _gprsMsgReceivedFlag `Auc ~T0 @X0 1 e ]
+[i _gprsMsgReceivedFlag
+-> -> 0 `i `uc
+]
+[; ;gprs.c: 106: bool gprsScheduledMsgTaskFlag = 0,
+[; ;gprs.c: 107: gprsScheduledGetEpoFlag=0,
+[; ;gprs.c: 108: gprsScheduledFlushFlag=0,
+[; ;gprs.c: 109: gprsScheduledGetFTPConfFlag=0,
+[; ;gprs.c: 110: gprsScheduledSetFTPConfFlag=0,
+[; ;gprs.c: 111: gprsMsgReceivedFlag=0;
+"112
+[v _gprsScheduledInitTaskFlag `Auc ~T0 @X0 1 e ]
+[i _gprsScheduledInitTaskFlag
+-> -> 0 `i `uc
+]
+[; ;gprs.c: 112: bool gprsScheduledInitTaskFlag=0;
+"113
+[v _gprsScheduledPwrDownTaskFlag `Auc ~T0 @X0 1 e ]
+[i _gprsScheduledPwrDownTaskFlag
+-> -> 0 `i `uc
+]
+[; ;gprs.c: 113: bool gprsScheduledPwrDownTaskFlag=0;
+[v F7085 `(uc ~T0 @X0 1 tf ]
+"117
+[v _gprsOKParser `AF7085 ~T0 @X0 1 e ]
 {
-[; ;gprs.c: 50: void EUSART2_GPRS_Initialize(void){
-[e :U _EUSART2_GPRS_Initialize ]
+[; ;gprs.c: 117: bool gprsOKParser(void){
+[e :U _gprsOKParser ]
 [f ]
-[; ;gprs.c: 51: PMD0bits.UART2MD = 0;
-"51
-[e = . . _PMD0bits 0 7 -> -> 0 `i `uc ]
-[; ;gprs.c: 53: PIE3bits.RC2IE = 0;
-"53
-[e = . . _PIE3bits 0 5 -> -> 0 `i `uc ]
-[; ;gprs.c: 54: PIE3bits.TX2IE = 0;
-"54
-[e = . . _PIE3bits 0 4 -> -> 0 `i `uc ]
-[; ;gprs.c: 59: BAUDCON2 = 0x08;
-"59
-[e = _BAUDCON2 -> -> 8 `i `uc ]
-[; ;gprs.c: 61: RCSTA2 = 0x90;
-"61
-[e = _RCSTA2 -> -> 144 `i `uc ]
-[; ;gprs.c: 63: TXSTA2 = 0x24;
-"63
-[e = _TXSTA2 -> -> 36 `i `uc ]
-[; ;gprs.c: 66: SPBRG2 = 0x67;
-"66
-[e = _SPBRG2 -> -> 103 `i `uc ]
-[; ;gprs.c: 69: SPBRGH2 = 0x00;
-"69
-[e = _SPBRGH2 -> -> 0 `i `uc ]
-[; ;gprs.c: 70: }
-"70
-[e :UE 822 ]
-}
-[v F6941 `(v ~T0 @X0 1 tf ]
-"71
-[v _EUSART2_GPRS_Transmit_ISR `AF6941 ~T0 @X0 1 e ]
-{
-[; ;gprs.c: 71: void EUSART2_GPRS_Transmit_ISR(void){
-[e :U _EUSART2_GPRS_Transmit_ISR ]
-[f ]
-[; ;gprs.c: 73: }
-"73
-[e :UE 823 ]
-}
-[v F6944 `(v ~T0 @X0 1 tf ]
-"74
-[v _EUSART2_GPRS_Receive_ISR `AF6944 ~T0 @X0 1 e ]
-{
-[; ;gprs.c: 74: void EUSART2_GPRS_Receive_ISR(void){
-[e :U _EUSART2_GPRS_Receive_ISR ]
-[f ]
-[; ;gprs.c: 76: }
-"76
-[e :UE 824 ]
-}
-[v F6947 `(v ~T0 @X0 1 tf ]
-"77
-[v _gprsTaskTick `AF6947 ~T0 @X0 1 e ]
-{
-[; ;gprs.c: 77: void gprsTaskTick(void){
-[e :U _gprsTaskTick ]
-[f ]
-[; ;gprs.c: 78: if(gprsTimeOutTimer){
-"78
-[e $ ! != -> _gprsTimeOutTimer `i -> -> -> 0 `i `Auc `i 826  ]
-{
-[; ;gprs.c: 79: gprsTimeOutTimer--;
-"79
-[e -- _gprsTimeOutTimer -> -> 1 `i `uc ]
-"80
-}
-[e :U 826 ]
-[; ;gprs.c: 80: }
-[; ;gprs.c: 81: if(gprsTxDelay){
-"81
-[e $ ! != -> _gprsTxDelay `i -> -> -> 0 `i `Auc `i 827  ]
-{
-[; ;gprs.c: 82: gprsTxDelay--;
-"82
-[e -- _gprsTxDelay -> -> 1 `i `uc ]
-"83
-}
-[e :U 827 ]
-[; ;gprs.c: 83: }
-[; ;gprs.c: 84: }
-"84
+[; ;gprs.c: 118: return (gprsRxBuffer[gprsRXBufferPtr-1] == '0');
+"118
+[e ) -> -> == -> *U + &U _gprsRxBuffer * -> -> - -> _gprsRXBufferPtr `i -> 1 `i `ui `ux -> -> # *U &U _gprsRxBuffer `ui `ux `ui -> 48 `ui `i `uc ]
+[e $UE 825  ]
+[; ;gprs.c: 119: }
+"119
 [e :UE 825 ]
 }
-[v F6950 `(v ~T0 @X0 1 tf ]
-"85
-[v _gprsTransmit `AF6950 ~T0 @X0 1 e ]
+[v F7087 `(uc ~T0 @X0 1 tf ]
+"120
+[v _gprsCCIDParser `AF7087 ~T0 @X0 1 e ]
 {
-[; ;gprs.c: 85: void gprsTransmit(void){
-[e :U _gprsTransmit ]
+[; ;gprs.c: 120: bool gprsCCIDParser(void){
+[e :U _gprsCCIDParser ]
 [f ]
-[; ;gprs.c: 87: gprsTXBufferPtr = 0;
-"87
-[e = _gprsTXBufferPtr -> -> 0 `i `uc ]
-[; ;gprs.c: 88: PIE3bits.TX2IE = 1;
-"88
-[e = . . _PIE3bits 0 4 -> -> 1 `i `uc ]
-[; ;gprs.c: 90: }
-"90
-[e :UE 828 ]
+[v F7089 `Cuc ~T0 @X0 -> 0 `x s ]
+[i F7089
+:U ..
+-> 43 `c
+-> 67 `c
+-> 67 `c
+-> 73 `c
+-> 68 `c
+-> 58 `c
+-> 0 `c
+..
+]
+"121
+[v _ccidStr `Cuc ~T0 @X0 7  a ]
+[; ;gprs.c: 121: const char ccidStr[] = "+CCID:";
+[e = _ccidStr F7089 ]
+[; ;gprs.c: 123: if (strstr(gprsRxBuffer, ccidStr)== (0))
+"123
+[e $ ! == ( _strstr (2 , -> &U _gprsRxBuffer `*Cuc &U _ccidStr -> -> 0 `i `*uc 827  ]
+[; ;gprs.c: 124: return(0);
+"124
+[e ) -> -> 0 `i `uc ]
+[e $UE 826  ]
+[e :U 827 ]
+"125
+[v _ptr `*uc ~T0 @X0 1 a ]
+[; ;gprs.c: 125: char * ptr=strchr(gprsRxBuffer,(int)':');
+[e = _ptr ( _strchr (2 , -> &U _gprsRxBuffer `*Cuc -> -> 58 `ui `i ]
+[; ;gprs.c: 126: if(ptr==(0))
+"126
+[e $ ! == _ptr -> -> 0 `i `*uc 828  ]
+[; ;gprs.c: 127: return 0;
+"127
+[e ) -> -> 0 `i `uc ]
+[e $UE 826  ]
+[e :U 828 ]
+[; ;gprs.c: 128: strcpy(sysVarCCID,ptr+1);
+"128
+[e ( _strcpy (2 , &U _sysVarCCID -> + _ptr * -> -> 1 `i `x -> -> # *U _ptr `i `x `*Cuc ]
+[; ;gprs.c: 129: return 1;
+"129
+[e ) -> -> 1 `i `uc ]
+[e $UE 826  ]
+[; ;gprs.c: 130: }
+"130
+[e :UE 826 ]
 }
-[v F6953 `(E6679 ~T0 @X0 1 tf ]
-"94
-[v _GPRS_VerifyTransactionStatus `AF6953 ~T0 @X0 1 e ]
+[v F7093 `(uc ~T0 @X0 1 tf ]
+"131
+[v _gprsInternetAccessParser `AF7093 ~T0 @X0 1 e ]
 {
-[; ;gprs.c: 94: taskResult_t GPRS_VerifyTransactionStatus(void){
-[e :U _GPRS_VerifyTransactionStatus ]
+[; ;gprs.c: 131: bool gprsInternetAccessParser(void){
+[e :U _gprsInternetAccessParser ]
 [f ]
-[; ;gprs.c: 95: gprsTxDelay = 2;
-"95
-[e = _gprsTxDelay -> -> 2 `i `uc ]
-[; ;gprs.c: 96: GPRS_CommManagerState = TASK_SEND_COMMAND_SM;
-"96
-[e = _GPRS_CommManagerState . `E6693 0 ]
-[; ;gprs.c: 97: if(gprsMsgReceivedFlag){
-"97
-[e $ ! != -> _gprsMsgReceivedFlag `i -> -> -> 0 `i `Auc `i 830  ]
-{
-[; ;gprs.c: 98: GPRS_TransactionResult = TASK_DATA_READY;
-"98
-[e = _GPRS_TransactionResult . `E6679 2 ]
-[; ;gprs.c: 99: gprsMsgReceivedFlag = 0;
-"99
-[e = _gprsMsgReceivedFlag -> -> 0 `i `uc ]
-[; ;gprs.c: 100: return(TASK_DATA_READY);
-"100
-[e ) . `E6679 2 ]
+[; ;gprs.c: 132: if (strstr(gprsRxBuffer, "+CGREG:")==(0))
+"132
+[e $ ! == ( _strstr (2 , -> &U _gprsRxBuffer `*Cuc :s 1C -> -> 0 `i `*uc 830  ]
+[; ;gprs.c: 133: return 0;
+"133
+[e ) -> -> 0 `i `uc ]
 [e $UE 829  ]
-"101
-}
 [e :U 830 ]
-[; ;gprs.c: 101: }
-[; ;gprs.c: 102: if(gprsTransactionAttemps){
-"102
-[e $ ! != -> _gprsTransactionAttemps `i -> -> -> 0 `i `Auc `i 831  ]
-{
-[; ;gprs.c: 103: gprsTransactionAttemps--;
-"103
-[e -- _gprsTransactionAttemps -> -> 1 `i `uc ]
-"104
-}
+"134
+[v _ptr `*uc ~T0 @X0 1 a ]
+[; ;gprs.c: 134: char * ptr=strchr(gprsRxBuffer,',');
+[e = _ptr ( _strchr (2 , -> &U _gprsRxBuffer `*Cuc -> -> 44 `ui `i ]
+[; ;gprs.c: 135: if(ptr==(0))
+"135
+[e $ ! == _ptr -> -> 0 `i `*uc 831  ]
+[; ;gprs.c: 136: return 0;
+"136
+[e ) -> -> 0 `i `uc ]
+[e $UE 829  ]
 [e :U 831 ]
-[; ;gprs.c: 104: }
-[; ;gprs.c: 105: if(gprsTransactionAttemps == 0){
-"105
-[e $ ! == -> _gprsTransactionAttemps `i -> 0 `i 832  ]
-{
-[; ;gprs.c: 106: gprsTaskState = TASK_RESET_TASK;
-"106
-[e = _gprsTaskState . `E6672 1 ]
-[; ;gprs.c: 107: GPRS_TransactionResult = TASK_NO_SENSOR_FOUND;
-"107
-[e = _GPRS_TransactionResult . `E6679 0 ]
-[; ;gprs.c: 108: return(TASK_NO_SENSOR_FOUND);
-"108
-[e ) . `E6679 0 ]
+[; ;gprs.c: 137: return (ptr[1]=='1'||ptr[1]=='2');
+"137
+[e ) -> -> || == -> *U + _ptr * -> -> 1 `i `x -> -> # *U _ptr `i `x `ui -> 49 `ui == -> *U + _ptr * -> -> 1 `i `x -> -> # *U _ptr `i `x `ui -> 50 `ui `i `uc ]
 [e $UE 829  ]
-"109
-}
-[e :U 832 ]
-[; ;gprs.c: 109: }
-[; ;gprs.c: 110: GPRS_TransactionResult = TASK_ON_COURSE;
-"110
-[e = _GPRS_TransactionResult . `E6679 1 ]
-[; ;gprs.c: 111: return(TASK_ON_COURSE);
-"111
-[e ) . `E6679 1 ]
-[e $UE 829  ]
-[; ;gprs.c: 112: }
-"112
+[; ;gprs.c: 138: }
+"138
 [e :UE 829 ]
 }
-[v F6956 `(v ~T0 @X0 1 tf1`E6724 ]
-"114
-[v _gprsCommandSelector `AF6956 ~T0 @X0 1 e ]
+[v F7096 `(uc ~T0 @X0 1 tf ]
+"139
+[v _gprsCGSNParser `AF7096 ~T0 @X0 1 e ]
 {
-[; ;gprs.c: 114: void gprsCommandSelector(SFX_TASK_COMMANDS_T command){
-[e :U _gprsCommandSelector ]
-[v _command `E6724 ~T0 @X0 1 r1 ]
+[; ;gprs.c: 139: bool gprsCGSNParser(void){
+[e :U _gprsCGSNParser ]
 [f ]
-[; ;gprs.c: 116: }
-"116
-[e :UE 833 ]
-}
-[v F6959 `(uc ~T0 @X0 1 tf ]
-"121
-[v _gprsTXReady `AF6959 ~T0 @X0 1 e ]
-{
-[; ;gprs.c: 121: bool gprsTXReady(void){
-[e :U _gprsTXReady ]
-[f ]
-[; ;gprs.c: 122: if(!gprsTxDelay){
-"122
-[e $ ! ! != -> _gprsTxDelay `i -> -> -> 0 `i `Auc `i 835  ]
-{
-[; ;gprs.c: 124: return(!PIE3bits.TX2IE);
-"124
-[e ) -> -> ! != -> . . _PIE3bits 0 4 `i -> -> -> 0 `i `Vuc `i `i `uc ]
-[e $UE 834  ]
-"125
-}
-[e :U 835 ]
-[; ;gprs.c: 125: }
-[; ;gprs.c: 126: return(0);
-"126
+[; ;gprs.c: 140: if (strstr(gprsRxBuffer, "#CGSN:")==(0))
+"140
+[e $ ! == ( _strstr (2 , -> &U _gprsRxBuffer `*Cuc :s 2C -> -> 0 `i `*uc 833  ]
+[; ;gprs.c: 141: return 0;
+"141
 [e ) -> -> 0 `i `uc ]
-[e $UE 834  ]
-[; ;gprs.c: 127: }
-"127
-[e :UE 834 ]
+[e $UE 832  ]
+[e :U 833 ]
+"142
+[v _ptr `*uc ~T0 @X0 1 a ]
+[; ;gprs.c: 142: char * ptr=strchr(gprsRxBuffer,':');
+[e = _ptr ( _strchr (2 , -> &U _gprsRxBuffer `*Cuc -> -> 58 `ui `i ]
+[; ;gprs.c: 143: if(ptr==(0))
+"143
+[e $ ! == _ptr -> -> 0 `i `*uc 834  ]
+[; ;gprs.c: 144: return 0;
+"144
+[e ) -> -> 0 `i `uc ]
+[e $UE 832  ]
+[e :U 834 ]
+[; ;gprs.c: 145: strcpy(sysVarIMEI,ptr+1);
+"145
+[e ( _strcpy (2 , &U _sysVarIMEI -> + _ptr * -> -> 1 `i `x -> -> # *U _ptr `i `x `*Cuc ]
+[; ;gprs.c: 146: return 1;
+"146
+[e ) -> -> 1 `i `uc ]
+[e $UE 832  ]
+[; ;gprs.c: 147: }
+"147
+[e :UE 832 ]
 }
-[v F6962 `(uc ~T0 @X0 1 tf ]
-"129
-[v _gprsResponseParser `AF6962 ~T0 @X0 1 e ]
+[v F7099 `(uc ~T0 @X0 1 tf ]
+"148
+[v _gprsConnectParser `AF7099 ~T0 @X0 1 e ]
 {
-[; ;gprs.c: 129: bool gprsResponseParser(void){
-[e :U _gprsResponseParser ]
+[; ;gprs.c: 148: bool gprsConnectParser(void){
+[e :U _gprsConnectParser ]
 [f ]
-"130
-[v _dumyPtr `*uc ~T0 @X0 1 a ]
-[; ;gprs.c: 130: char * dumyPtr;
-[; ;gprs.c: 131: dumyPtr = strstr(gprsRxBuffer,"OK");
-"131
-[e = _dumyPtr ( _strstr (2 , -> &U _gprsRxBuffer `*Cuc :s 1C ]
-[; ;gprs.c: 133: return(1);
-"133
+[; ;gprs.c: 149: return gprsRxBuffer[gprsRXBufferPtr-1] == '1';
+"149
+[e ) -> -> == -> *U + &U _gprsRxBuffer * -> -> - -> _gprsRXBufferPtr `i -> 1 `i `ui `ux -> -> # *U &U _gprsRxBuffer `ui `ux `ui -> 49 `ui `i `uc ]
+[e $UE 835  ]
+[; ;gprs.c: 150: }
+"150
+[e :UE 835 ]
+}
+[v F7101 `(uc ~T0 @X0 1 tf ]
+"151
+[v _gprsEmptyParser `AF7101 ~T0 @X0 1 e ]
+{
+[; ;gprs.c: 151: bool gprsEmptyParser(void){
+[e :U _gprsEmptyParser ]
+[f ]
+[; ;gprs.c: 152: return 1;
+"152
 [e ) -> -> 1 `i `uc ]
 [e $UE 836  ]
-[; ;gprs.c: 134: }
-"134
+[; ;gprs.c: 153: }
+"153
 [e :UE 836 ]
 }
-[v F6966 `(E6679 ~T0 @X0 1 tf ]
-"136
-[v _gprsVerifyTransactionStatus `AF6966 ~T0 @X0 1 e ]
-{
-[; ;gprs.c: 136: taskResult_t gprsVerifyTransactionStatus(void){
-[e :U _gprsVerifyTransactionStatus ]
-[f ]
-[; ;gprs.c: 138: gprsTxDelay = 2;
-"138
-[e = _gprsTxDelay -> -> 2 `i `uc ]
-[; ;gprs.c: 139: gprsCommManagerState = TASK_SEND_COMMAND_SM;
-"139
-[e = _gprsCommManagerState . `E6693 0 ]
-[; ;gprs.c: 140: if(gprsMsgReceivedFlag){
-"140
-[e $ ! != -> _gprsMsgReceivedFlag `i -> -> -> 0 `i `Auc `i 838  ]
-{
-[; ;gprs.c: 141: gprsTransactionResult = TASK_DATA_READY;
-"141
-[e = _gprsTransactionResult . `E6679 2 ]
-[; ;gprs.c: 142: gprsMsgReceivedFlag = 0;
-"142
-[e = _gprsMsgReceivedFlag -> -> 0 `i `uc ]
-[; ;gprs.c: 143: return(TASK_DATA_READY);
-"143
-[e ) . `E6679 2 ]
-[e $UE 837  ]
-"144
-}
-[e :U 838 ]
-[; ;gprs.c: 144: }
-[; ;gprs.c: 145: if(gprsTransactionAttemps){
-"145
-[e $ ! != -> _gprsTransactionAttemps `i -> -> -> 0 `i `Auc `i 839  ]
-{
-[; ;gprs.c: 146: gprsTransactionAttemps--;
-"146
-[e -- _gprsTransactionAttemps -> -> 1 `i `uc ]
-"147
-}
-[e :U 839 ]
-[; ;gprs.c: 147: }
-[; ;gprs.c: 148: if(gprsTransactionAttemps == 0){
-"148
-[e $ ! == -> _gprsTransactionAttemps `i -> 0 `i 840  ]
-{
-[; ;gprs.c: 149: gprsTaskState = TASK_RESET_TASK;
-"149
-[e = _gprsTaskState . `E6672 1 ]
-[; ;gprs.c: 150: gprsTransactionResult = TASK_NO_SENSOR_FOUND;
-"150
-[e = _gprsTransactionResult . `E6679 0 ]
-[; ;gprs.c: 151: return(TASK_NO_SENSOR_FOUND);
-"151
-[e ) . `E6679 0 ]
-[e $UE 837  ]
-"152
-}
-[e :U 840 ]
-[; ;gprs.c: 152: }
-[; ;gprs.c: 153: gprsTransactionResult = TASK_ON_COURSE;
-"153
-[e = _gprsTransactionResult . `E6679 1 ]
-[; ;gprs.c: 154: return(TASK_ON_COURSE);
-"154
-[e ) . `E6679 1 ]
-[e $UE 837  ]
-[; ;gprs.c: 155: }
+[v F7104 `(v ~T0 @X0 1 tf ]
 "155
+[v _gprsReceive `AF7104 ~T0 @X0 1 e ]
+{
+[; ;gprs.c: 155: void gprsReceive(void){
+[e :U _gprsReceive ]
+[f ]
+[; ;gprs.c: 157: RCSTA2bits.CREN = 0;
+"157
+[e = . . _RCSTA2bits 0 4 -> -> 0 `i `uc ]
+[; ;gprs.c: 158: gprsRXBufferPtr = 0;
+"158
+[e = _gprsRXBufferPtr -> -> 0 `i `uc ]
+[; ;gprs.c: 159: gprsRxBuffer[0] = 0;
+"159
+[e = *U + &U _gprsRxBuffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _gprsRxBuffer `ui `ux -> -> 0 `i `uc ]
+[; ;gprs.c: 160: gprsMsgReceivedFlag = 0;
+"160
+[e = _gprsMsgReceivedFlag -> -> 0 `i `uc ]
+[; ;gprs.c: 162: RCSTA2bits.CREN = 1;
+"162
+[e = . . _RCSTA2bits 0 4 -> -> 1 `i `uc ]
+[; ;gprs.c: 163: PIE3bits.RC2IE = 1;
+"163
+[e = . . _PIE3bits 0 5 -> -> 1 `i `uc ]
+[; ;gprs.c: 165: }
+"165
 [e :UE 837 ]
 }
-[v F6969 `(E6679 ~T0 @X0 1 tf1`E6724 ]
-"157
-[v _GPRS_CommManager `AF6969 ~T0 @X0 1 e ]
+[v F7107 `(v ~T0 @X0 1 tf1`uc ]
+"178
+[v _gprsCommandSelector `AF7107 ~T0 @X0 1 e ]
 {
-[; ;gprs.c: 157: taskResult_t GPRS_CommManager(SFX_TASK_COMMANDS_T GPRS_Command){
-[e :U _GPRS_CommManager ]
-[v _GPRS_Command `E6724 ~T0 @X0 1 r1 ]
+[; ;gprs.c: 178: void gprsCommandSelector(char gprsCommand){
+[e :U _gprsCommandSelector ]
+[v _gprsCommand `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;gprs.c: 159: GPRS_TransactionResult = TASK_ON_COURSE;
-"159
-[e = _GPRS_TransactionResult . `E6679 1 ]
-[; ;gprs.c: 160: switch(GPRS_CommManagerState){
-"160
-[e $U 843  ]
+[v F7109 `Cuc ~T0 @X0 -> 0 `x s ]
+[i F7109
+:U ..
+"179
+-> -> 13 `i `uc
+-> -> 10 `i `uc
+-> -> 0 `i `uc
+..
+]
+[v _gprsCOMMAND_TAIL_STR `Cuc ~T0 @X0 3  a ]
+[; ;gprs.c: 179: const char gprsCOMMAND_TAIL_STR[] = {0x0d, 0x0A, 0};
+[e = _gprsCOMMAND_TAIL_STR F7109 ]
+"181
+[v _gprsCommandPtr `*CS824 ~T0 @X0 1 a ]
+[; ;gprs.c: 181: const GPRS_AT_CMD_STRUCT_T * gprsCommandPtr=&gprsAtCommands[gprsCommand];
+[e = _gprsCommandPtr &U *U + &U _gprsAtCommands * -> _gprsCommand `ux -> -> # *U &U _gprsAtCommands `ui `ux ]
+"182
+[v _epromPtr `*Euc ~T0 @X0 1 a ]
+[; ;gprs.c: 182: eeprom char *epromPtr;
+[; ;gprs.c: 184: gprsTimeOutTimer = gprsCommandPtr->atCmdTimeOut;
+"184
+[e = _gprsTimeOutTimer . *U _gprsCommandPtr 3 ]
+[; ;gprs.c: 185: strcpy(gprsTxBuffer,gprsCommandPtr->atCmdStr);
+"185
+[e ( _strcpy (2 , &U _gprsTxBuffer &U . *U _gprsCommandPtr 1 ]
+[; ;gprs.c: 186: switch(gprsCommand){
+"186
+[e $U 840  ]
 {
-[; ;gprs.c: 161: case TASK_SEND_COMMAND_SM:
-"161
+[; ;gprs.c: 187: case 3:
+"187
+[e :U 841 ]
+[; ;gprs.c: 188: epromPtr = sysVarAPN;
+"188
+[e = _epromPtr &U _sysVarAPN ]
+[; ;gprs.c: 189: strcat(gprsTxBuffer,epromPtr);
+"189
+[e ( _strcat (2 , &U _gprsTxBuffer -> _epromPtr `*Cuc ]
+[; ;gprs.c: 190: break;
+"190
+[e $U 839  ]
+[; ;gprs.c: 191: case 9:
+"191
+[e :U 842 ]
+[; ;gprs.c: 192: epromPtr=sysVarDestPORT;
+"192
+[e = _epromPtr &U _sysVarDestPORT ]
+[; ;gprs.c: 193: strcat(gprsTxBuffer,epromPtr);
+"193
+[e ( _strcat (2 , &U _gprsTxBuffer -> _epromPtr `*Cuc ]
+[; ;gprs.c: 194: strcat(gprsTxBuffer,",");
+"194
+[e ( _strcat (2 , &U _gprsTxBuffer :s 3C ]
+[; ;gprs.c: 195: epromPtr=sysVarDestADDRESS;
+"195
+[e = _epromPtr &U _sysVarDestADDRESS ]
+[; ;gprs.c: 196: strcat(gprsTxBuffer,epromPtr);
+"196
+[e ( _strcat (2 , &U _gprsTxBuffer -> _epromPtr `*Cuc ]
+[; ;gprs.c: 197: break;
+"197
+[e $U 839  ]
+[; ;gprs.c: 198: case 11:
+"198
+[e :U 843 ]
+[; ;gprs.c: 199: sprintf(gprsTxBuffer,"%4.4X",sysVarUNIXDayTime);
+"199
+[e ( _sprintf (1 , (. , &U _gprsTxBuffer :s 4C _sysVarUNIXDayTime ]
+[; ;gprs.c: 200: break;
+"200
+[e $U 839  ]
+[; ;gprs.c: 201: case 12:
+"201
 [e :U 844 ]
-[; ;gprs.c: 162: if(gprsTXReady()){
-"162
-[e $ ! != -> ( _gprsTXReady ..  `i -> -> -> 0 `i `uc `i 845  ]
-{
-[; ;gprs.c: 163: gprsCommandSelector(GPRS_Command);
-"163
-[e ( _gprsCommandSelector (1 _GPRS_Command ]
-[; ;gprs.c: 164: GPRS_CommManagerState = TASK_DETECT_TRANSACTION_END_SM;
-"164
-[e = _GPRS_CommManagerState . `E6693 1 ]
-[; ;gprs.c: 165: gprsTransmit();
-"165
-[e ( _gprsTransmit ..  ]
-"166
+[; ;gprs.c: 202: return;
+"202
+[e $UE 838  ]
+"203
 }
-[e :U 845 ]
-[; ;gprs.c: 166: }
-[; ;gprs.c: 167: break;
-"167
-[e $U 842  ]
-[; ;gprs.c: 168: case TASK_DETECT_TRANSACTION_END_SM:
-"168
-[e :U 846 ]
-[; ;gprs.c: 169: if(gprsTimeOutTimer == 0){
-"169
-[e $ ! == -> _gprsTimeOutTimer `i -> 0 `i 847  ]
+[; ;gprs.c: 203: }
+[e $U 839  ]
+"186
+[e :U 840 ]
+[e [\ _gprsCommand , $ -> -> 3 `i `uc 841
+ , $ -> -> 9 `i `uc 842
+ , $ -> -> 11 `i `uc 843
+ , $ -> -> 12 `i `uc 844
+ 839 ]
+"203
+[e :U 839 ]
+[; ;gprs.c: 204: strcat(gprsCommandPtr,gprsCOMMAND_TAIL_STR);
+"204
+[e ( _strcat (2 , -> _gprsCommandPtr `*uc &U _gprsCOMMAND_TAIL_STR ]
+[; ;gprs.c: 205: }
+"205
+[e :UE 838 ]
+}
+[v F7115 `(v ~T0 @X0 1 tf ]
+"210
+[v _gprsTransmit `AF7115 ~T0 @X0 1 e ]
 {
-[; ;gprs.c: 170: PIE3bits.TX2IE = 0;
-"170
-[e = . . _PIE3bits 0 4 -> -> 0 `i `uc ]
-[; ;gprs.c: 171: PIE3bits.RC2IE = 0;
-"171
-[e = . . _PIE3bits 0 5 -> -> 0 `i `uc ]
-[; ;gprs.c: 172: return(GPRS_VerifyTransactionStatus());
-"172
-[e ) ( _GPRS_VerifyTransactionStatus ..  ]
-[e $UE 841  ]
-"173
+[; ;gprs.c: 210: void gprsTransmit(void){
+[e :U _gprsTransmit ]
+[f ]
+[; ;gprs.c: 212: gprsTXBufferPtr = 0;
+"212
+[e = _gprsTXBufferPtr -> -> 0 `i `uc ]
+[; ;gprs.c: 213: PIE3bits.TX2IE = 1;
+"213
+[e = . . _PIE3bits 0 4 -> -> 1 `i `uc ]
+[; ;gprs.c: 215: }
+"215
+[e :UE 845 ]
+}
+[v F7118 `(uc ~T0 @X0 1 tf ]
+"216
+[v _gprsTXReady `AF7118 ~T0 @X0 1 e ]
+{
+[; ;gprs.c: 216: bool gprsTXReady(void){
+[e :U _gprsTXReady ]
+[f ]
+[; ;gprs.c: 217: if(!gprsTxDelay){
+"217
+[e $ ! ! != -> _gprsTxDelay `i -> -> -> 0 `i `Auc `i 847  ]
+{
+[; ;gprs.c: 219: return(!PIE3bits.TX2IE);
+"219
+[e ) -> -> ! != -> . . _PIE3bits 0 4 `i -> -> -> 0 `i `Vuc `i `i `uc ]
+[e $UE 846  ]
+"220
 }
 [e :U 847 ]
-[; ;gprs.c: 173: }
-[; ;gprs.c: 174: if(gprsMsgReceivedFlag){
-"174
-[e $ ! != -> _gprsMsgReceivedFlag `i -> -> -> 0 `i `Auc `i 848  ]
-{
-[; ;gprs.c: 175: gprsTimeOutTimer = 0;
-"175
-[e = _gprsTimeOutTimer -> -> 0 `i `uc ]
-[; ;gprs.c: 176: return(GPRS_VerifyTransactionStatus());
-"176
-[e ) ( _GPRS_VerifyTransactionStatus ..  ]
-[e $UE 841  ]
-"177
+[; ;gprs.c: 220: }
+[; ;gprs.c: 221: return(0);
+"221
+[e ) -> -> 0 `i `uc ]
+[e $UE 846  ]
+[; ;gprs.c: 222: }
+"222
+[e :UE 846 ]
 }
-[e :U 848 ]
-[; ;gprs.c: 177: }
-[; ;gprs.c: 178: break;
-"178
-[e $U 842  ]
-[; ;gprs.c: 179: default:
-"179
-[e :U 849 ]
-[; ;gprs.c: 180: GPRS_CommManagerState = TASK_SEND_COMMAND_SM;
-"180
-[e = _GPRS_CommManagerState . `E6693 0 ]
-[; ;gprs.c: 181: gprsTxDelay = 2;
-"181
+[v F7121 `(E6711 ~T0 @X0 1 tf ]
+"223
+[v _gprsVerifyTransactionStatus `AF7121 ~T0 @X0 1 e ]
+{
+[; ;gprs.c: 223: taskResult_t gprsVerifyTransactionStatus(void){
+[e :U _gprsVerifyTransactionStatus ]
+[f ]
+[; ;gprs.c: 225: gprsTxDelay = 2;
+"225
 [e = _gprsTxDelay -> -> 2 `i `uc ]
-[; ;gprs.c: 182: break;
-"182
-[e $U 842  ]
-"183
-}
-[; ;gprs.c: 183: }
-[e $U 842  ]
-"160
-[e :U 843 ]
-[e [\ _GPRS_CommManagerState , $ . `E6693 0 844
- , $ . `E6693 1 846
- 849 ]
-"183
-[e :U 842 ]
-[; ;gprs.c: 184: return(TASK_ON_COURSE);
-"184
-[e ) . `E6679 1 ]
-[e $UE 841  ]
-[; ;gprs.c: 185: }
-"185
-[e :UE 841 ]
-}
-[v F6972 `(v ~T0 @X0 1 tf ]
-"186
-[v _gprsTaskReset `AF6972 ~T0 @X0 1 e ]
+[; ;gprs.c: 226: gprsCommManagerState = TASK_SEND_COMMAND_SM;
+"226
+[e = _gprsCommManagerState . `E6725 0 ]
+[; ;gprs.c: 227: if(gprsMsgReceivedFlag){
+"227
+[e $ ! != -> _gprsMsgReceivedFlag `i -> -> -> 0 `i `Auc `i 849  ]
 {
-[; ;gprs.c: 186: void gprsTaskReset(void){
-[e :U _gprsTaskReset ]
-[f ]
-[; ;gprs.c: 188: }
-"188
-[e :UE 850 ]
+[; ;gprs.c: 228: gprsTransactionResult = TASK_DATA_READY;
+"228
+[e = _gprsTransactionResult . `E6711 2 ]
+[; ;gprs.c: 229: gprsMsgReceivedFlag = 0;
+"229
+[e = _gprsMsgReceivedFlag -> -> 0 `i `uc ]
+[; ;gprs.c: 230: return(TASK_DATA_READY);
+"230
+[e ) . `E6711 2 ]
+[e $UE 848  ]
+"231
 }
-[v F6975 `(E6679 ~T0 @X0 1 tf1`E6724 ]
-"189
-[v _gprsCommManager `AF6975 ~T0 @X0 1 e ]
+[e :U 849 ]
+[; ;gprs.c: 231: }
+[; ;gprs.c: 232: if(gprsTransactionAttemps){
+"232
+[e $ ! != -> _gprsTransactionAttemps `i -> -> -> 0 `i `Auc `i 850  ]
 {
-[; ;gprs.c: 189: taskResult_t gprsCommManager(SFX_TASK_COMMANDS_T gprsCommand){
+[; ;gprs.c: 233: gprsTransactionAttemps--;
+"233
+[e -- _gprsTransactionAttemps -> -> 1 `i `uc ]
+"234
+}
+[e :U 850 ]
+[; ;gprs.c: 234: }
+[; ;gprs.c: 235: if(gprsTransactionAttemps == 0){
+"235
+[e $ ! == -> _gprsTransactionAttemps `i -> 0 `i 851  ]
+{
+[; ;gprs.c: 236: gprsTransactionResult = TASK_NO_SENSOR_FOUND;
+"236
+[e = _gprsTransactionResult . `E6711 0 ]
+[; ;gprs.c: 237: return(TASK_NO_SENSOR_FOUND);
+"237
+[e ) . `E6711 0 ]
+[e $UE 848  ]
+"238
+}
+[e :U 851 ]
+[; ;gprs.c: 238: }
+[; ;gprs.c: 239: gprsTransactionResult = TASK_ON_COURSE;
+"239
+[e = _gprsTransactionResult . `E6711 1 ]
+[; ;gprs.c: 240: return(TASK_ON_COURSE);
+"240
+[e ) . `E6711 1 ]
+[e $UE 848  ]
+[; ;gprs.c: 241: }
+"241
+[e :UE 848 ]
+}
+[v F7124 `(E6711 ~T0 @X0 1 tf1`uc ]
+"242
+[v _gprsCommManager `AF7124 ~T0 @X0 1 e ]
+{
+[; ;gprs.c: 242: taskResult_t gprsCommManager(char gprsCommand){
 [e :U _gprsCommManager ]
-[v _gprsCommand `E6724 ~T0 @X0 1 r1 ]
+[v _gprsCommand `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;gprs.c: 191: gprsTransactionResult = TASK_ON_COURSE;
-"191
-[e = _gprsTransactionResult . `E6679 1 ]
-[; ;gprs.c: 192: switch(gprsCommManagerState){
-"192
-[e $U 853  ]
+[; ;gprs.c: 244: gprsTransactionResult = TASK_ON_COURSE;
+"244
+[e = _gprsTransactionResult . `E6711 1 ]
+[; ;gprs.c: 245: switch(gprsCommManagerState){
+"245
+[e $U 854  ]
 {
-[; ;gprs.c: 193: case TASK_SEND_COMMAND_SM:
-"193
-[e :U 854 ]
-[; ;gprs.c: 194: if(gprsTXReady()){
-"194
-[e $ ! != -> ( _gprsTXReady ..  `i -> -> -> 0 `i `uc `i 855  ]
-{
-[; ;gprs.c: 195: gprsCommandSelector(gprsCommand);
-"195
-[e ( _gprsCommandSelector (1 _gprsCommand ]
-[; ;gprs.c: 196: gprsCommManagerState = TASK_DETECT_TRANSACTION_END_SM;
-"196
-[e = _gprsCommManagerState . `E6693 1 ]
-[; ;gprs.c: 197: gprsTransmit();
-"197
-[e ( _gprsTransmit ..  ]
-"198
-}
+[; ;gprs.c: 246: case TASK_SEND_COMMAND_SM:
+"246
 [e :U 855 ]
-[; ;gprs.c: 198: }
-[; ;gprs.c: 199: break;
-"199
-[e $U 852  ]
-[; ;gprs.c: 200: case TASK_DETECT_TRANSACTION_END_SM:
-"200
-[e :U 856 ]
-[; ;gprs.c: 201: if(gprsTimeOutTimer == 0){
-"201
-[e $ ! == -> _gprsTimeOutTimer `i -> 0 `i 857  ]
+[; ;gprs.c: 247: if(gprsTXReady()){
+"247
+[e $ ! != -> ( _gprsTXReady ..  `i -> -> -> 0 `i `uc `i 856  ]
 {
-[; ;gprs.c: 202: PIE3bits.TX2IE = 0;
-"202
-[e = . . _PIE3bits 0 4 -> -> 0 `i `uc ]
-[; ;gprs.c: 203: PIE3bits.RC2IE = 0;
-"203
-[e = . . _PIE3bits 0 5 -> -> 0 `i `uc ]
-[; ;gprs.c: 204: return(gprsVerifyTransactionStatus());
-"204
-[e ) ( _gprsVerifyTransactionStatus ..  ]
-[e $UE 851  ]
-"205
+[; ;gprs.c: 248: gprsCommandSelector(gprsCommand);
+"248
+[e ( _gprsCommandSelector (1 _gprsCommand ]
+[; ;gprs.c: 249: gprsCommManagerState = TASK_DETECT_TRANSACTION_END_SM;
+"249
+[e = _gprsCommManagerState . `E6725 1 ]
+[; ;gprs.c: 250: gprsTransmit();
+"250
+[e ( _gprsTransmit ..  ]
+"251
 }
+[e :U 856 ]
+[; ;gprs.c: 251: }
+[; ;gprs.c: 252: break;
+"252
+[e $U 853  ]
+[; ;gprs.c: 253: case TASK_DETECT_TRANSACTION_END_SM:
+"253
 [e :U 857 ]
-[; ;gprs.c: 205: }
-[; ;gprs.c: 206: if(gprsMsgReceivedFlag){
-"206
-[e $ ! != -> _gprsMsgReceivedFlag `i -> -> -> 0 `i `Auc `i 858  ]
+[; ;gprs.c: 254: if(gprsTimeOutTimer == 0){
+"254
+[e $ ! == -> _gprsTimeOutTimer `i -> 0 `i 858  ]
 {
-[; ;gprs.c: 207: gprsTimeOutTimer = 0;
-"207
-[e = _gprsTimeOutTimer -> -> 0 `i `uc ]
-[; ;gprs.c: 208: return(gprsVerifyTransactionStatus());
-"208
+[; ;gprs.c: 255: PIE3bits.TX2IE = 0;
+"255
+[e = . . _PIE3bits 0 4 -> -> 0 `i `uc ]
+[; ;gprs.c: 256: PIE3bits.RC2IE = 0;
+"256
+[e = . . _PIE3bits 0 5 -> -> 0 `i `uc ]
+[; ;gprs.c: 257: return(gprsVerifyTransactionStatus());
+"257
 [e ) ( _gprsVerifyTransactionStatus ..  ]
-[e $UE 851  ]
-"209
+[e $UE 852  ]
+"258
 }
 [e :U 858 ]
-[; ;gprs.c: 209: }
-[; ;gprs.c: 210: break;
-"210
-[e $U 852  ]
-[; ;gprs.c: 211: default:
-"211
-[e :U 859 ]
-[; ;gprs.c: 212: gprsCommManagerState = TASK_SEND_COMMAND_SM;
-"212
-[e = _gprsCommManagerState . `E6693 0 ]
-[; ;gprs.c: 213: gprsTxDelay = 2;
-"213
-[e = _gprsTxDelay -> -> 2 `i `uc ]
-[; ;gprs.c: 214: break;
-"214
-[e $U 852  ]
-"215
-}
-[; ;gprs.c: 215: }
-[e $U 852  ]
-"192
-[e :U 853 ]
-[e [\ _gprsCommManagerState , $ . `E6693 0 854
- , $ . `E6693 1 856
- 859 ]
-"215
-[e :U 852 ]
-[; ;gprs.c: 216: return(TASK_ON_COURSE);
-"216
-[e ) . `E6679 1 ]
-[e $UE 851  ]
-[; ;gprs.c: 217: }
-"217
-[e :UE 851 ]
-}
-[v F6978 `(E6679 ~T0 @X0 1 tf ]
-"222
-[v _gprsTask `AF6978 ~T0 @X0 1 e ]
+[; ;gprs.c: 258: }
+[; ;gprs.c: 259: if(gprsMsgReceivedFlag){
+"259
+[e $ ! != -> _gprsMsgReceivedFlag `i -> -> -> 0 `i `Auc `i 859  ]
 {
-[; ;gprs.c: 222: taskResult_t gprsTask(void){
+[; ;gprs.c: 260: gprsTimeOutTimer = 0;
+"260
+[e = _gprsTimeOutTimer -> -> 0 `i `uc ]
+[; ;gprs.c: 261: return(gprsVerifyTransactionStatus());
+"261
+[e ) ( _gprsVerifyTransactionStatus ..  ]
+[e $UE 852  ]
+"262
+}
+[e :U 859 ]
+[; ;gprs.c: 262: }
+[; ;gprs.c: 263: break;
+"263
+[e $U 853  ]
+[; ;gprs.c: 264: default:
+"264
+[e :U 860 ]
+[; ;gprs.c: 265: gprsCommManagerState = TASK_SEND_COMMAND_SM;
+"265
+[e = _gprsCommManagerState . `E6725 0 ]
+[; ;gprs.c: 266: gprsTxDelay = 2;
+"266
+[e = _gprsTxDelay -> -> 2 `i `uc ]
+[; ;gprs.c: 267: break;
+"267
+[e $U 853  ]
+"268
+}
+[; ;gprs.c: 268: }
+[e $U 853  ]
+"245
+[e :U 854 ]
+[e [\ _gprsCommManagerState , $ . `E6725 0 855
+ , $ . `E6725 1 857
+ 860 ]
+"268
+[e :U 853 ]
+[; ;gprs.c: 269: return(TASK_ON_COURSE);
+"269
+[e ) . `E6711 1 ]
+[e $UE 852  ]
+[; ;gprs.c: 270: }
+"270
+[e :UE 852 ]
+}
+[v F7126 `(v ~T0 @X0 1 tf ]
+"275
+[v _gprsTaskTick `AF7126 ~T0 @X0 1 e ]
+{
+[; ;gprs.c: 275: void gprsTaskTick(void){
+[e :U _gprsTaskTick ]
+[f ]
+[; ;gprs.c: 276: if(gprsTimeOutTimer){
+"276
+[e $ ! != -> _gprsTimeOutTimer `i -> -> -> 0 `i `Auc `i 862  ]
+{
+[; ;gprs.c: 277: gprsTimeOutTimer--;
+"277
+[e -- _gprsTimeOutTimer -> -> 1 `i `uc ]
+"278
+}
+[e :U 862 ]
+[; ;gprs.c: 278: }
+[; ;gprs.c: 279: if(gprsTxDelay){
+"279
+[e $ ! != -> _gprsTxDelay `i -> -> -> 0 `i `Auc `i 863  ]
+{
+[; ;gprs.c: 280: gprsTxDelay--;
+"280
+[e -- _gprsTxDelay -> -> 1 `i `uc ]
+"281
+}
+[e :U 863 ]
+[; ;gprs.c: 281: }
+[; ;gprs.c: 282: }
+"282
+[e :UE 861 ]
+}
+[v F7129 `(v ~T0 @X0 1 tf ]
+"284
+[v _EUSART2_GPRS_Initialize `AF7129 ~T0 @X0 1 e ]
+{
+[; ;gprs.c: 284: void EUSART2_GPRS_Initialize(void){
+[e :U _EUSART2_GPRS_Initialize ]
+[f ]
+[; ;gprs.c: 285: PMD0bits.UART2MD = 0;
+"285
+[e = . . _PMD0bits 0 7 -> -> 0 `i `uc ]
+[; ;gprs.c: 287: PIE3bits.RC2IE = 0;
+"287
+[e = . . _PIE3bits 0 5 -> -> 0 `i `uc ]
+[; ;gprs.c: 288: PIE3bits.TX2IE = 0;
+"288
+[e = . . _PIE3bits 0 4 -> -> 0 `i `uc ]
+[; ;gprs.c: 290: setSemaphore(GPRS_OWNER);
+"290
+[e ( _setSemaphore (1 . `E6654 2 ]
+[; ;gprs.c: 295: BAUDCON2 = 0x08;
+"295
+[e = _BAUDCON2 -> -> 8 `i `uc ]
+[; ;gprs.c: 297: RCSTA2 = 0x90;
+"297
+[e = _RCSTA2 -> -> 144 `i `uc ]
+[; ;gprs.c: 299: TXSTA2 = 0x24;
+"299
+[e = _TXSTA2 -> -> 36 `i `uc ]
+[; ;gprs.c: 302: SPBRG2 = 0x67;
+"302
+[e = _SPBRG2 -> -> 103 `i `uc ]
+[; ;gprs.c: 305: SPBRGH2 = 0x00;
+"305
+[e = _SPBRGH2 -> -> 0 `i `uc ]
+[; ;gprs.c: 306: }
+"306
+[e :UE 864 ]
+}
+[v F7132 `(v ~T0 @X0 1 tf ]
+"308
+[v _gprsTaskReset `AF7132 ~T0 @X0 1 e ]
+{
+[; ;gprs.c: 308: void gprsTaskReset(void){
+[e :U _gprsTaskReset ]
+[f ]
+[; ;gprs.c: 309: EUSART2_GPRS_Initialize();
+"309
+[e ( _EUSART2_GPRS_Initialize ..  ]
+[; ;gprs.c: 310: gprsTaskState=TASK_RESET_TASK;
+"310
+[e = _gprsTaskState . `E6704 1 ]
+[; ;gprs.c: 311: gprsTxDelay=5;
+"311
+[e = _gprsTxDelay -> -> 5 `i `uc ]
+[; ;gprs.c: 312: gprsCommManagerState=TASK_SEND_COMMAND_SM;
+"312
+[e = _gprsCommManagerState . `E6725 0 ]
+[; ;gprs.c: 313: gprsTransactionResult=TASK_ON_COURSE;
+"313
+[e = _gprsTransactionResult . `E6711 1 ]
+[; ;gprs.c: 314: gprsTransactionAttemps=3;
+"314
+[e = _gprsTransactionAttemps -> -> 3 `i `uc ]
+[; ;gprs.c: 315: gprsTimeOutTimer=0;
+"315
+[e = _gprsTimeOutTimer -> -> 0 `i `uc ]
+[; ;gprs.c: 316: gprsScheduledMsgTaskFlag = 0;
+"316
+[e = _gprsScheduledMsgTaskFlag -> -> 0 `i `uc ]
+[; ;gprs.c: 317: gprsScheduledGetEpoFlag=0;
+"317
+[e = _gprsScheduledGetEpoFlag -> -> 0 `i `uc ]
+[; ;gprs.c: 318: gprsScheduledFlushFlag=0;
+"318
+[e = _gprsScheduledFlushFlag -> -> 0 `i `uc ]
+[; ;gprs.c: 319: gprsScheduledGetFTPConfFlag=0;
+"319
+[e = _gprsScheduledGetFTPConfFlag -> -> 0 `i `uc ]
+[; ;gprs.c: 320: gprsScheduledSetFTPConfFlag=0;
+"320
+[e = _gprsScheduledSetFTPConfFlag -> -> 0 `i `uc ]
+[; ;gprs.c: 321: gprsMsgReceivedFlag=0;
+"321
+[e = _gprsMsgReceivedFlag -> -> 0 `i `uc ]
+[; ;gprs.c: 324: do { LATBbits.LATB2 = 0; } while(0);
+"324
+[e :U 868 ]
+{
+[e = . . _LATBbits 0 2 -> -> 0 `i `uc ]
+}
+[e :U 867 ]
+[; ;gprs.c: 325: }
+"325
+[e :UE 865 ]
+}
+[v F7135 `(v ~T0 @X0 1 tf ]
+"326
+[v _gprsTaskPowerDown `AF7135 ~T0 @X0 1 e ]
+{
+[; ;gprs.c: 326: void gprsTaskPowerDown(void){
+[e :U _gprsTaskPowerDown ]
+[f ]
+[; ;gprs.c: 327: gprsScheduledInitTaskFlag=0;
+"327
+[e = _gprsScheduledInitTaskFlag -> -> 0 `i `uc ]
+[; ;gprs.c: 328: gprsScheduledPwrDownTaskFlag=0;
+"328
+[e = _gprsScheduledPwrDownTaskFlag -> -> 0 `i `uc ]
+[; ;gprs.c: 334: gprsTaskState=TASK_PARKED;
+"334
+[e = _gprsTaskState . `E6704 0 ]
+[; ;gprs.c: 335: setSemaphore(NO_OWNER);
+"335
+[e ( _setSemaphore (1 . `E6654 0 ]
+[; ;gprs.c: 336: }
+"336
+[e :UE 869 ]
+}
+[v F7138 `(E6711 ~T0 @X0 1 tf ]
+"337
+[v _gprsTask `AF7138 ~T0 @X0 1 e ]
+{
+[; ;gprs.c: 337: taskResult_t gprsTask(void){
 [e :U _gprsTask ]
 [f ]
-[v F6980 `Cuc ~T0 @X0 -> 3 `i s ]
-[i F6980
+[v F7140 `Cuc ~T0 @X0 -> 0 `x s ]
+[i F7140
 :U ..
-"223
+"339
+-> -> 0 `i `uc
+"340
+-> -> 1 `i `uc
+"341
+-> -> 2 `i `uc
+"342
+-> -> 3 `i `uc
+"343
+-> -> 8 `i `uc
+"344
+-> -> 6 `i `uc
+"346
 -> -> 255 `i `uc
 ..
 ]
-[v _gprsInitCommandsROMList `Cuc ~T0 @X0 -> 3 `i a ]
-[; ;gprs.c: 223: const uint8_t gprsInitCommandsROMList[3] = {0xFF};
-[e = _gprsInitCommandsROMList F6980 ]
-"224
-[v _gprsInitCommandPtr `*Cuc ~T0 @X0 1 a ]
-[; ;gprs.c: 224: const char *gprsInitCommandPtr;
-[; ;gprs.c: 226: switch(gprsTaskState){
-"226
-[e $U 862  ]
-{
-[; ;gprs.c: 227: case TASK_PARKED:
-"227
-[e :U 863 ]
-[; ;gprs.c: 228: if(gprsScheduledInitTaskFlag){
-"228
-[e $ ! != -> _gprsScheduledInitTaskFlag `i -> -> -> 0 `i `Auc `i 864  ]
-{
-[; ;gprs.c: 229: gprsTaskState = TASK_RESET_TASK;
-"229
-[e = _gprsTaskState . `E6672 1 ]
-[; ;gprs.c: 230: return(TASK_ON_COURSE);
-"230
-[e ) . `E6679 1 ]
-[e $UE 860  ]
-"231
-}
-[e :U 864 ]
-[; ;gprs.c: 231: }
-[; ;gprs.c: 232: return(TASK_NO_SENSOR_FOUND);
-"232
-[e ) . `E6679 0 ]
-[e $UE 860  ]
-[; ;gprs.c: 234: case TASK_RESET_TASK:
-"234
-[e :U 865 ]
-[; ;gprs.c: 235: gprsTaskReset();
-"235
-[e ( _gprsTaskReset ..  ]
-[; ;gprs.c: 236: gprsTaskState = TASK_INIT;
-"236
-[e = _gprsTaskState . `E6672 2 ]
-[; ;gprs.c: 237: gprsInitCommandPtr = gprsInitCommandsROMList;
-"237
-[e = _gprsInitCommandPtr &U _gprsInitCommandsROMList ]
-[; ;gprs.c: 238: return(TASK_ON_COURSE);
-"238
-[e ) . `E6679 1 ]
-[e $UE 860  ]
-[; ;gprs.c: 240: case TASK_INIT:
-"240
-[e :U 866 ]
-[; ;gprs.c: 241: while(gprsInitCommandPtr[0] != 0xFF)
-"241
-[e $U 867  ]
-[e :U 868 ]
-[; ;gprs.c: 242: {
-"242
-{
-[; ;gprs.c: 243: GPRS_TransactionResult = GPRS_CommManager(gprsInitCommandPtr[0]);
-"243
-[e = _GPRS_TransactionResult ( _GPRS_CommManager (1 -> *U + _gprsInitCommandPtr * -> -> 0 `i `x -> -> # *U _gprsInitCommandPtr `i `x `E6724 ]
-[; ;gprs.c: 244: if(GPRS_TransactionResult == TASK_DATA_READY){
-"244
-[e $ ! == -> _GPRS_TransactionResult `i -> . `E6679 2 `i 870  ]
-{
-[; ;gprs.c: 245: if(gprsResponseParser()){
-"245
-[e $ ! != -> ( _gprsResponseParser ..  `i -> -> -> 0 `i `uc `i 871  ]
-{
-[; ;gprs.c: 246: gprsInitCommandPtr++;
-"246
-[e ++ _gprsInitCommandPtr * -> -> 1 `i `x -> -> # *U _gprsInitCommandPtr `i `x ]
-[; ;gprs.c: 247: gprsTransactionAttemps=3;
-"247
-[e = _gprsTransactionAttemps -> -> 3 `i `uc ]
-"248
-}
-[; ;gprs.c: 248: }
+"338
+[v _gprsInitCommandsROMList `Cuc ~T0 @X0 7  a ]
+[; ;gprs.c: 338: const uint8_t gprsInitCommandsROMList[] = {
+[; ;gprs.c: 339: 0,
+[; ;gprs.c: 340: 1,
+[; ;gprs.c: 341: 2,
+[; ;gprs.c: 342: 3 ,
+[; ;gprs.c: 343: 8,
+[; ;gprs.c: 344: 6,
+[; ;gprs.c: 345: 0xFF
+[; ;gprs.c: 346: };
+"346
+[e = _gprsInitCommandsROMList F7140 ]
+[v F7142 `Cuc ~T0 @X0 -> 0 `x s ]
+[i F7142
+:U ..
+"348
+-> -> 4 `i `uc
+"349
+-> -> 10 `i `uc
+"350
+-> -> 9 `i `uc
+"351
+-> -> 11 `i `uc
+"352
+-> -> 12 `i `uc
+"354
+-> -> 255 `i `uc
+..
+]
+"347
+[v _gprsSendMsgCommandROMList `Cuc ~T0 @X0 6  a ]
+[; ;gprs.c: 347: const uint8_t gprsSendMsgCommandROMList[] = {
+[; ;gprs.c: 348: 4,
+[; ;gprs.c: 349: 10,
+[; ;gprs.c: 350: 9,
+[; ;gprs.c: 351: 11,
+[; ;gprs.c: 352: 12,
+[; ;gprs.c: 353: 0xFF
+[; ;gprs.c: 354: };
+"354
+[e = _gprsSendMsgCommandROMList F7142 ]
+[v F7144 `*CS824 ~T0 @X0 1 t ]
+"355
+[v F7143 `A*CS824 ~T0 @X0 1 s gprsRomCommandPtr ]
+[v F7146 `*Cuc ~T0 @X0 1 t ]
+"356
+[v F7145 `A*Cuc ~T0 @X0 1 s gprsFlashCommandPtr ]
+"358
+[v _parserRusultFlag `uc ~T0 @X0 1 a ]
+[; ;gprs.c: 355: static const GPRS_AT_CMD_STRUCT_T * gprsRomCommandPtr;
+[; ;gprs.c: 356: static const char *gprsFlashCommandPtr;
+[; ;gprs.c: 358: bool parserRusultFlag;
+[; ;gprs.c: 359: switch(gprsTaskState){
+"359
 [e $U 872  ]
-"249
-[e :U 871 ]
-[; ;gprs.c: 249: else if(gprsTransactionAttemps){
-[e $ ! != -> _gprsTransactionAttemps `i -> -> -> 0 `i `Auc `i 873  ]
 {
-[; ;gprs.c: 250: gprsTransactionAttemps--;
-"250
-[e -- _gprsTransactionAttemps -> -> 1 `i `uc ]
-"251
-}
+[; ;gprs.c: 360: case TASK_PARKED:
+"360
 [e :U 873 ]
-"252
-[e :U 872 ]
-[; ;gprs.c: 251: }
-[; ;gprs.c: 252: continue;
-[e $U 867  ]
-"253
-}
-[e :U 870 ]
-[; ;gprs.c: 253: }
-[; ;gprs.c: 254: if(GPRS_TransactionResult == TASK_NO_SENSOR_FOUND){
-"254
-[e $ ! == -> _GPRS_TransactionResult `i -> . `E6679 0 `i 874  ]
+[; ;gprs.c: 361: if(gprsScheduledInitTaskFlag){
+"361
+[e $ ! != -> _gprsScheduledInitTaskFlag `i -> -> -> 0 `i `Auc `i 874  ]
 {
-[; ;gprs.c: 255: SigfoxTaskPowerDown();
-"255
-[e ( _SigfoxTaskPowerDown ..  ]
-"256
+[; ;gprs.c: 362: gprsTaskState = TASK_RESET_TASK;
+"362
+[e = _gprsTaskState . `E6704 1 ]
+[; ;gprs.c: 363: return(TASK_ON_COURSE);
+"363
+[e ) . `E6711 1 ]
+[e $UE 870  ]
+"364
 }
 [e :U 874 ]
-[; ;gprs.c: 256: }
-[; ;gprs.c: 257: return(GPRS_TransactionResult);
-"257
-[e ) _GPRS_TransactionResult ]
-[e $UE 860  ]
-"258
-}
-[e :U 867 ]
-"241
-[e $ != -> *U + _gprsInitCommandPtr * -> -> 0 `i `x -> -> # *U _gprsInitCommandPtr `i `x `i -> 255 `i 868  ]
-[e :U 869 ]
-[; ;gprs.c: 258: }
-[; ;gprs.c: 259: GPRS_TransactionResult = TASK_DATA_READY;
-"259
-[e = _GPRS_TransactionResult . `E6679 2 ]
-[; ;gprs.c: 260: gprsTaskState = TASK_READY;
-"260
-[e = _gprsTaskState . `E6672 3 ]
-[; ;gprs.c: 262: gprsScheduledInitTaskFlag = 0;
-"262
-[e = _gprsScheduledInitTaskFlag -> -> 0 `i `uc ]
-[; ;gprs.c: 265: if(gprsScheduledMsgTaskFlag || gprsScheduledMsgStaTaskFlag){
-"265
-[e $ ! || != -> _gprsScheduledMsgTaskFlag `i -> -> -> 0 `i `Auc `i != -> _gprsScheduledMsgStaTaskFlag `i -> -> -> 0 `i `Auc `i 875  ]
-{
-[; ;gprs.c: 266: return(TASK_ON_COURSE);
-"266
-[e ) . `E6679 1 ]
-[e $UE 860  ]
-"267
-}
+[; ;gprs.c: 364: }
+[; ;gprs.c: 365: return(TASK_NO_SENSOR_FOUND);
+"365
+[e ) . `E6711 0 ]
+[e $UE 870  ]
+[; ;gprs.c: 367: case TASK_RESET_TASK:
+"367
 [e :U 875 ]
-[; ;gprs.c: 267: }
-[; ;gprs.c: 268: return(TASK_DATA_READY);
-"268
-[e ) . `E6679 2 ]
-[e $UE 860  ]
-[; ;gprs.c: 270: case TASK_READY:
-"270
-[e :U 876 ]
-[; ;gprs.c: 276: if(gprsScheduledMsgTaskFlag || gprsScheduledMsgAckTaskFlag || gprsScheduledMsgStaTaskFlag){
-"276
-[e $ ! || || != -> _gprsScheduledMsgTaskFlag `i -> -> -> 0 `i `Auc `i != -> _gprsScheduledMsgAckTaskFlag `i -> -> -> 0 `i `Auc `i != -> _gprsScheduledMsgStaTaskFlag `i -> -> -> 0 `i `Auc `i 877  ]
-{
-[; ;gprs.c: 277: gprsTransactionAttemps = 3;
-"277
-[e = _gprsTransactionAttemps -> -> 3 `i `uc ]
-[; ;gprs.c: 278: gprsTaskState = TASK_WAITING_DATA;
-"278
-[e = _gprsTaskState . `E6672 4 ]
-[; ;gprs.c: 279: GPRS_CommManagerState = TASK_SEND_COMMAND_SM;
-"279
-[e = _GPRS_CommManagerState . `E6693 0 ]
-[; ;gprs.c: 280: return(TASK_ON_COURSE);
-"280
-[e ) . `E6679 1 ]
-[e $UE 860  ]
-"281
-}
+[; ;gprs.c: 368: gprsTaskReset();
+"368
+[e ( _gprsTaskReset ..  ]
+[; ;gprs.c: 369: gprsTaskState = TASK_INIT;
+"369
+[e = _gprsTaskState . `E6704 2 ]
+[; ;gprs.c: 370: gprsFlashCommandPtr = gprsInitCommandsROMList;
+"370
+[e = F7145 &U _gprsInitCommandsROMList ]
+[; ;gprs.c: 372: while(gprsFlashCommandPtr[0] != 0xFF)
+"372
+[e $U 876  ]
 [e :U 877 ]
-[; ;gprs.c: 281: }
-[; ;gprs.c: 287: if(gprsScheduledPwrDownTaskFlag){
-"287
-[e $ ! != -> _gprsScheduledPwrDownTaskFlag `i -> -> -> 0 `i `Auc `i 878  ]
+[; ;gprs.c: 373: {
+"373
 {
-[; ;gprs.c: 288: SigfoxTaskPowerDown();
-"288
-[e ( _SigfoxTaskPowerDown ..  ]
-[; ;gprs.c: 289: return(TASK_NO_SENSOR_FOUND);
-"289
-[e ) . `E6679 0 ]
-[e $UE 860  ]
-"290
-}
-[e :U 878 ]
-[; ;gprs.c: 290: }
-[; ;gprs.c: 291: return(TASK_DATA_READY);
-"291
-[e ) . `E6679 2 ]
-[e $UE 860  ]
-[; ;gprs.c: 293: case TASK_WAITING_DATA:
-"293
-[e :U 879 ]
-[; ;gprs.c: 294: if(gprsScheduledMsgAckTaskFlag){
-"294
-[e $ ! != -> _gprsScheduledMsgAckTaskFlag `i -> -> -> 0 `i `Auc `i 880  ]
+[; ;gprs.c: 374: gprsTransactionResult = gprsCommManager(gprsFlashCommandPtr[0]);
+"374
+[e = _gprsTransactionResult ( _gprsCommManager (1 *U + F7145 * -> -> 0 `i `x -> -> # *U F7145 `i `x ]
+[; ;gprs.c: 376: if(gprsTransactionResult == TASK_DATA_READY){
+"376
+[e $ ! == -> _gprsTransactionResult `i -> . `E6711 2 `i 879  ]
 {
-[; ;gprs.c: 295: gprsTransactionResult = gprsCommManager(SFX_CMD_SEND_MSG_WAIT_ACK);
-"295
-[e = _gprsTransactionResult ( _gprsCommManager (1 . `E6724 2 ]
-"296
+[; ;gprs.c: 377: parserRusultFlag = gprsRomCommandPtr->gprsParserPtr();
+"377
+[e = _parserRusultFlag ( *U . *U F7143 2 ..  ]
+[; ;gprs.c: 378: if((parserRusultFlag) || (gprsRomCommandPtr->index == 0))
+"378
+[e $ ! || != -> _parserRusultFlag `i -> -> -> 0 `i `uc `i == -> . *U F7143 0 `i -> 0 `i 880  ]
+[; ;gprs.c: 379: {
+"379
+{
+[; ;gprs.c: 380: gprsFlashCommandPtr++;
+"380
+[e ++ F7145 * -> -> 1 `i `x -> -> # *U F7145 `i `x ]
+[; ;gprs.c: 381: gprsRomCommandPtr = &gprsAtCommands[gprsFlashCommandPtr[0]];
+"381
+[e = F7143 &U *U + &U _gprsAtCommands * -> *U + F7145 * -> -> 0 `i `x -> -> # *U F7145 `i `x `ux -> -> # *U &U _gprsAtCommands `ui `ux ]
+[; ;gprs.c: 382: gprsTransactionAttemps = gprsRomCommandPtr->cmdRepeatAttemps;
+"382
+[e = _gprsTransactionAttemps . *U F7143 4 ]
+[; ;gprs.c: 383: continue;
+"383
+[e $U 876  ]
+"384
 }
-[; ;gprs.c: 296: }
+[; ;gprs.c: 384: }
 [e $U 881  ]
-"297
+"385
 [e :U 880 ]
-[; ;gprs.c: 297: else if(gprsScheduledMsgStaTaskFlag){
-[e $ ! != -> _gprsScheduledMsgStaTaskFlag `i -> -> -> 0 `i `Auc `i 882  ]
+[; ;gprs.c: 385: else if(gprsTransactionAttemps){
+[e $ ! != -> _gprsTransactionAttemps `i -> -> -> 0 `i `Auc `i 882  ]
 {
-[; ;gprs.c: 298: gprsTransactionResult = gprsCommManager(SFX_CMD_SEND_STATUS);
-"298
-[e = _gprsTransactionResult ( _gprsCommManager (1 . `E6724 3 ]
-"299
-}
-[; ;gprs.c: 299: }
-[e $U 883  ]
-"300
-[e :U 882 ]
-[; ;gprs.c: 300: else
-[; ;gprs.c: 301: {
-"301
-{
-[; ;gprs.c: 302: gprsTransactionResult = gprsCommManager(SFX_CMD_SEND_MSG);
-"302
-[e = _gprsTransactionResult ( _gprsCommManager (1 . `E6724 1 ]
-"303
-}
-[e :U 883 ]
-[e :U 881 ]
-[; ;gprs.c: 303: }
-[; ;gprs.c: 304: if(gprsTransactionResult == TASK_DATA_READY){
-"304
-[e $ ! == -> _gprsTransactionResult `i -> . `E6679 2 `i 884  ]
-{
-[; ;gprs.c: 305: if(gprsResponseParser()){
-"305
-[e $ ! != -> ( _gprsResponseParser ..  `i -> -> -> 0 `i `uc `i 885  ]
-{
-[; ;gprs.c: 306: gprsScheduledMsgTaskFlag = 0;
-"306
-[e = _gprsScheduledMsgTaskFlag -> -> 0 `i `uc ]
-[; ;gprs.c: 307: gprsScheduledMsgAckTaskFlag = 0;
-"307
-[e = _gprsScheduledMsgAckTaskFlag -> -> 0 `i `uc ]
-[; ;gprs.c: 308: gprsScheduledMsgStaTaskFlag = 0;
-"308
-[e = _gprsScheduledMsgStaTaskFlag -> -> 0 `i `uc ]
-[; ;gprs.c: 310: gprsTaskState = TASK_READY;
-"310
-[e = _gprsTaskState . `E6672 3 ]
-[; ;gprs.c: 311: return(TASK_ON_COURSE);
-"311
-[e ) . `E6679 1 ]
-[e $UE 860  ]
-"312
-}
-[; ;gprs.c: 312: }
-[e $U 886  ]
-"313
-[e :U 885 ]
-[; ;gprs.c: 313: else if(gprsTransactionAttemps){
-[e $ ! != -> _gprsTransactionAttemps `i -> -> -> 0 `i `Auc `i 887  ]
-{
-[; ;gprs.c: 314: gprsTransactionAttemps--;
-"314
+[; ;gprs.c: 386: gprsTransactionAttemps--;
+"386
 [e -- _gprsTransactionAttemps -> -> 1 `i `uc ]
-"315
+"387
 }
-[e :U 887 ]
-"316
-[e :U 886 ]
+[e :U 882 ]
+"388
+[e :U 881 ]
+}
+[e :U 879 ]
+[; ;gprs.c: 387: }
+[; ;gprs.c: 388: }
+[; ;gprs.c: 389: if(gprsTransactionResult == TASK_NO_SENSOR_FOUND){
+"389
+[e $ ! == -> _gprsTransactionResult `i -> . `E6711 0 `i 883  ]
+{
+[; ;gprs.c: 390: if(gprsRomCommandPtr->index == 0){
+"390
+[e $ ! == -> . *U F7143 0 `i -> 0 `i 884  ]
+{
+[; ;gprs.c: 391: break;
+"391
+[e $U 878  ]
+"392
 }
 [e :U 884 ]
-[; ;gprs.c: 315: }
-[; ;gprs.c: 316: }
-[; ;gprs.c: 317: if(GPRS_TransactionResult == TASK_NO_SENSOR_FOUND){
-"317
-[e $ ! == -> _GPRS_TransactionResult `i -> . `E6679 0 `i 888  ]
+[; ;gprs.c: 392: }
+[; ;gprs.c: 393: gprsTaskPowerDown();
+"393
+[e ( _gprsTaskPowerDown ..  ]
+"394
+}
+[e :U 883 ]
+[; ;gprs.c: 394: }
+[; ;gprs.c: 395: return(gprsTransactionResult);
+"395
+[e ) _gprsTransactionResult ]
+[e $UE 870  ]
+"396
+}
+[e :U 876 ]
+"372
+[e $ != -> *U + F7145 * -> -> 0 `i `x -> -> # *U F7145 `i `x `i -> 255 `i 877  ]
+[e :U 878 ]
+[; ;gprs.c: 396: }
+[; ;gprs.c: 397: gprsTransactionResult = TASK_DATA_READY;
+"397
+[e = _gprsTransactionResult . `E6711 2 ]
+[; ;gprs.c: 398: gprsTaskState = TASK_READY;
+"398
+[e = _gprsTaskState . `E6704 3 ]
+[; ;gprs.c: 399: gprsScheduledInitTaskFlag = 0;
+"399
+[e = _gprsScheduledInitTaskFlag -> -> 0 `i `uc ]
+[; ;gprs.c: 400: if(gprsScheduledMsgTaskFlag
+[; ;gprs.c: 401: ||gprsScheduledGetEpoFlag
+[; ;gprs.c: 402: ||gprsScheduledFlushFlag
+[; ;gprs.c: 403: ||gprsScheduledGetFTPConfFlag){
+"403
+[e $ ! || || || != -> _gprsScheduledMsgTaskFlag `i -> -> -> 0 `i `Auc `i != -> _gprsScheduledGetEpoFlag `i -> -> -> 0 `i `Auc `i != -> _gprsScheduledFlushFlag `i -> -> -> 0 `i `Auc `i != -> _gprsScheduledGetFTPConfFlag `i -> -> -> 0 `i `Auc `i 885  ]
 {
-[; ;gprs.c: 320: gprsScheduledMsgStaTaskFlag = 0;
-"320
-[e = _gprsScheduledMsgStaTaskFlag -> -> 0 `i `uc ]
-[; ;gprs.c: 321: gprsScheduledMsgTaskFlag = 0;
-"321
-[e = _gprsScheduledMsgTaskFlag -> -> 0 `i `uc ]
-[; ;gprs.c: 322: gprsScheduledMsgAckTaskFlag = 0;
-"322
-[e = _gprsScheduledMsgAckTaskFlag -> -> 0 `i `uc ]
-[; ;gprs.c: 323: gprsTaskState = TASK_READY;
-"323
-[e = _gprsTaskState . `E6672 3 ]
-[; ;gprs.c: 324: return(TASK_DATA_NOT_AVAILABLE);
-"324
-[e ) . `E6679 4 ]
-[e $UE 860  ]
-"325
+[; ;gprs.c: 404: return(TASK_ON_COURSE);
+"404
+[e ) . `E6711 1 ]
+[e $UE 870  ]
+"405
+}
+[e :U 885 ]
+[; ;gprs.c: 405: }
+[; ;gprs.c: 406: return(TASK_DATA_READY);
+"406
+[e ) . `E6711 2 ]
+[e $UE 870  ]
+[; ;gprs.c: 407: case TASK_READY:
+"407
+[e :U 886 ]
+[; ;gprs.c: 408: if(gprsScheduledMsgTaskFlag){
+"408
+[e $ ! != -> _gprsScheduledMsgTaskFlag `i -> -> -> 0 `i `Auc `i 887  ]
+{
+[; ;gprs.c: 409: gprsTransactionAttemps = 3;
+"409
+[e = _gprsTransactionAttemps -> -> 3 `i `uc ]
+[; ;gprs.c: 410: gprsTaskState = TASK_WAITING_DATA;
+"410
+[e = _gprsTaskState . `E6704 4 ]
+[; ;gprs.c: 411: gprsCommManagerState = TASK_SEND_COMMAND_SM;
+"411
+[e = _gprsCommManagerState . `E6725 0 ]
+[; ;gprs.c: 412: gprsFlashCommandPtr = gprsSendMsgCommandROMList;
+"412
+[e = F7145 &U _gprsSendMsgCommandROMList ]
+[; ;gprs.c: 413: return(TASK_ON_COURSE);
+"413
+[e ) . `E6711 1 ]
+[e $UE 870  ]
+"414
+}
+[e :U 887 ]
+[; ;gprs.c: 414: }
+[; ;gprs.c: 416: if(gprsScheduledPwrDownTaskFlag){
+"416
+[e $ ! != -> _gprsScheduledPwrDownTaskFlag `i -> -> -> 0 `i `Auc `i 888  ]
+{
+[; ;gprs.c: 417: gprsTaskPowerDown();
+"417
+[e ( _gprsTaskPowerDown ..  ]
+[; ;gprs.c: 418: return(TASK_NO_SENSOR_FOUND);
+"418
+[e ) . `E6711 0 ]
+[e $UE 870  ]
+"419
 }
 [e :U 888 ]
-[; ;gprs.c: 325: }
-[; ;gprs.c: 326: return(TASK_ON_COURSE);
-"326
-[e ) . `E6679 1 ]
-[e $UE 860  ]
-[; ;gprs.c: 327: default:
-"327
+[; ;gprs.c: 419: }
+[; ;gprs.c: 420: return(TASK_DATA_READY);
+"420
+[e ) . `E6711 2 ]
+[e $UE 870  ]
+[; ;gprs.c: 422: case TASK_WAITING_DATA:
+"422
 [e :U 889 ]
-[; ;gprs.c: 328: gprsTaskState = TASK_RESET_TASK;
-"328
-[e = _gprsTaskState . `E6672 1 ]
-[; ;gprs.c: 329: return(TASK_ON_COURSE);
-"329
-[e ) . `E6679 1 ]
-[e $UE 860  ]
-"330
+[; ;gprs.c: 423: while(gprsFlashCommandPtr[0] != 0xFF){
+"423
+[e $U 890  ]
+[e :U 891 ]
+{
+[; ;gprs.c: 424: gprsTransactionResult = gprsCommManager(gprsFlashCommandPtr[0]);
+"424
+[e = _gprsTransactionResult ( _gprsCommManager (1 *U + F7145 * -> -> 0 `i `x -> -> # *U F7145 `i `x ]
+[; ;gprs.c: 426: if(gprsTransactionResult == TASK_DATA_READY){
+"426
+[e $ ! == -> _gprsTransactionResult `i -> . `E6711 2 `i 893  ]
+{
+[; ;gprs.c: 427: if(gprsRomCommandPtr->gprsParserPtr()){
+"427
+[e $ ! != -> ( *U . *U F7143 2 ..  `i -> -> -> 0 `i `uc `i 894  ]
+{
+[; ;gprs.c: 428: gprsRomCommandPtr = &gprsAtCommands[gprsFlashCommandPtr[0]];
+"428
+[e = F7143 &U *U + &U _gprsAtCommands * -> *U + F7145 * -> -> 0 `i `x -> -> # *U F7145 `i `x `ux -> -> # *U &U _gprsAtCommands `ui `ux ]
+[; ;gprs.c: 429: gprsTransactionAttemps = gprsRomCommandPtr->cmdRepeatAttemps;
+"429
+[e = _gprsTransactionAttemps . *U F7143 4 ]
+[; ;gprs.c: 430: continue;
+"430
+[e $U 890  ]
+"431
 }
-[; ;gprs.c: 330: }
-[e $U 861  ]
-"226
-[e :U 862 ]
-[e [\ _gprsTaskState , $ . `E6672 0 863
- , $ . `E6672 1 865
- , $ . `E6672 2 866
- , $ . `E6672 3 876
- , $ . `E6672 4 879
- 889 ]
-"330
-[e :U 861 ]
-[; ;gprs.c: 331: }
-"331
-[e :UE 860 ]
+[e :U 894 ]
+[; ;gprs.c: 431: }
+[; ;gprs.c: 432: if(gprsTransactionAttemps){
+"432
+[e $ ! != -> _gprsTransactionAttemps `i -> -> -> 0 `i `Auc `i 895  ]
+{
+[; ;gprs.c: 433: gprsTransactionAttemps--;
+"433
+[e -- _gprsTransactionAttemps -> -> 1 `i `uc ]
+"434
 }
-[a 1C 79 75 0 ]
-
+[e :U 895 ]
+[; ;gprs.c: 434: }
+[; ;gprs.c: 435: if(!gprsTransactionAttemps){
+"435
+[e $ ! ! != -> _gprsTransactionAttemps `i -> -> -> 0 `i `Auc `i 896  ]
+{
+[; ;gprs.c: 436: gprsTransactionResult = TASK_NO_SENSOR_FOUND;
+"436
+[e = _gprsTransactionResult . `E6711 0 ]
+"437
+}
+[e :U 896 ]
+"438
+}
+[e :U 893 ]
+[; ;gprs.c: 437: }
+[; ;gprs.c: 438: }
+[; ;gprs.c: 440: if(gprsTransactionResult == TASK_NO_SENSOR_FOUND){
+"440
+[e $ ! == -> _gprsTransactionResult `i -> . `E6711 0 `i 897  ]
+{
+[; ;gprs.c: 441: gprsScheduledMsgTaskFlag = 0;
+"441
+[e = _gprsScheduledMsgTaskFlag -> -> 0 `i `uc ]
+[; ;gprs.c: 442: gprsTaskState = TASK_READY;
+"442
+[e = _gprsTaskState . `E6704 3 ]
+[; ;gprs.c: 443: return(TASK_DATA_NOT_AVAILABLE);
+"443
+[e ) . `E6711 4 ]
+[e $UE 870  ]
+"444
+}
+[e :U 897 ]
+[; ;gprs.c: 444: }
+[; ;gprs.c: 445: return(TASK_ON_COURSE);
+"445
+[e ) . `E6711 1 ]
+[e $UE 870  ]
+"446
+}
+[e :U 890 ]
+"423
+[e $ != -> *U + F7145 * -> -> 0 `i `x -> -> # *U F7145 `i `x `i -> 255 `i 891  ]
+[e :U 892 ]
+[; ;gprs.c: 446: }
+[; ;gprs.c: 447: if(gprsScheduledMsgTaskFlag){
+"447
+[e $ ! != -> _gprsScheduledMsgTaskFlag `i -> -> -> 0 `i `Auc `i 898  ]
+{
+[; ;gprs.c: 448: gprsScheduledMsgTaskFlag = 0;
+"448
+[e = _gprsScheduledMsgTaskFlag -> -> 0 `i `uc ]
+"449
+}
+[; ;gprs.c: 449: }
+[e $U 899  ]
+"450
+[e :U 898 ]
+[; ;gprs.c: 450: else if(gprsScheduledGetEpoFlag){
+[e $ ! != -> _gprsScheduledGetEpoFlag `i -> -> -> 0 `i `Auc `i 900  ]
+{
+[; ;gprs.c: 451: gprsScheduledGetEpoFlag = 0;
+"451
+[e = _gprsScheduledGetEpoFlag -> -> 0 `i `uc ]
+"452
+}
+[e :U 900 ]
+"453
+[e :U 899 ]
+[; ;gprs.c: 452: }
+[; ;gprs.c: 453: gprsTaskState = TASK_READY;
+[e = _gprsTaskState . `E6704 3 ]
+[; ;gprs.c: 454: return(TASK_ON_COURSE);
+"454
+[e ) . `E6711 1 ]
+[e $UE 870  ]
+[; ;gprs.c: 455: default:
+"455
+[e :U 901 ]
+[; ;gprs.c: 456: gprsTaskState = TASK_RESET_TASK;
+"456
+[e = _gprsTaskState . `E6704 1 ]
+[; ;gprs.c: 457: return(TASK_ON_COURSE);
+"457
+[e ) . `E6711 1 ]
+[e $UE 870  ]
+"458
+}
+[; ;gprs.c: 458: }
+[e $U 871  ]
+"359
+[e :U 872 ]
+[e [\ _gprsTaskState , $ . `E6704 0 873
+ , $ . `E6704 1 875
+ , $ . `E6704 3 886
+ , $ . `E6704 4 889
+ 901 ]
+"458
+[e :U 871 ]
+[; ;gprs.c: 459: }
+"459
+[e :UE 870 ]
+}
+[v F7152 `(v ~T0 @X0 1 tf1`*uc ]
+"460
+[v _gprsTaskLoadPayloadBuffer `AF7152 ~T0 @X0 1 e ]
+{
+[; ;gprs.c: 460: void gprsTaskLoadPayloadBuffer(uint8_t *rawData){
+[e :U _gprsTaskLoadPayloadBuffer ]
+[v _rawData `*uc ~T0 @X0 1 r1 ]
+[f ]
+"461
+[v _payloadBufferPtr `uc ~T0 @X0 1 a ]
+[v _buffer `uc ~T0 @X0 1 a ]
+[; ;gprs.c: 461: uint8_t payloadBufferPtr, buffer;
+[; ;gprs.c: 463: for(payloadBufferPtr = 0; payloadBufferPtr < 12; payloadBufferPtr++){
+"463
+{
+[e = _payloadBufferPtr -> -> 0 `i `uc ]
+[e $ < -> _payloadBufferPtr `i -> 12 `i 903  ]
+[e $U 904  ]
+[e :U 903 ]
+{
+[; ;gprs.c: 464: buffer = (rawData[payloadBufferPtr] >> 4) & 0x0F;
+"464
+[e = _buffer -> & >> -> *U + _rawData * -> _payloadBufferPtr `ux -> -> # *U _rawData `ui `ux `i -> 4 `i -> 15 `i `uc ]
+[; ;gprs.c: 465: gprsPayloadBuffer[2 * payloadBufferPtr] = (buffer < 10)? (buffer + '0'): (buffer - 10 + 'A');
+"465
+[e = *U + &U _gprsPayloadBuffer * -> -> * -> 2 `i -> _payloadBufferPtr `i `ui `ux -> -> # *U &U _gprsPayloadBuffer `ui `ux -> ? < -> _buffer `i -> 10 `i : + -> _buffer `ui -> 48 `ui + -> - -> _buffer `i -> 10 `i `ui -> 65 `ui `uc ]
+[; ;gprs.c: 466: buffer = rawData[payloadBufferPtr] & 0x0F;
+"466
+[e = _buffer -> & -> *U + _rawData * -> _payloadBufferPtr `ux -> -> # *U _rawData `ui `ux `i -> 15 `i `uc ]
+[; ;gprs.c: 467: gprsPayloadBuffer[2 * payloadBufferPtr + 1] = (buffer < 10)? (buffer + '0'): (buffer - 10 + 'A');
+"467
+[e = *U + &U _gprsPayloadBuffer * -> -> + * -> 2 `i -> _payloadBufferPtr `i -> 1 `i `ui `ux -> -> # *U &U _gprsPayloadBuffer `ui `ux -> ? < -> _buffer `i -> 10 `i : + -> _buffer `ui -> 48 `ui + -> - -> _buffer `i -> 10 `i `ui -> 65 `ui `uc ]
+"468
+}
+"463
+[e ++ _payloadBufferPtr -> -> 1 `i `uc ]
+[e $ < -> _payloadBufferPtr `i -> 12 `i 903  ]
+[e :U 904 ]
+"468
+}
+[; ;gprs.c: 468: }
+[; ;gprs.c: 469: gprsPayloadBuffer[24] = 0;
+"469
+[e = *U + &U _gprsPayloadBuffer * -> -> -> 24 `i `ui `ux -> -> # *U &U _gprsPayloadBuffer `ui `ux -> -> 0 `i `uc ]
+[; ;gprs.c: 470: }
+"470
+[e :UE 902 ]
+}
+[v F7157 `(v ~T0 @X0 1 tf1`E6956 ]
+"471
+[v _gprsTaskNewTask `AF7157 ~T0 @X0 1 e ]
+{
+[; ;gprs.c: 471: void gprsTaskNewTask(GPRS_TASK_COMMANDS_T command){
+[e :U _gprsTaskNewTask ]
+[v _command `E6956 ~T0 @X0 1 r1 ]
+[f ]
+[; ;gprs.c: 472: switch(command){
+"472
+[e $U 908  ]
+{
+[; ;gprs.c: 473: case GPRS_TASK_INITIALIZE:
+"473
+[e :U 909 ]
+[; ;gprs.c: 474: gprsScheduledInitTaskFlag = 1;
+"474
+[e = _gprsScheduledInitTaskFlag -> -> 1 `i `uc ]
+[; ;gprs.c: 475: break;
+"475
+[e $U 907  ]
+[; ;gprs.c: 477: case GPRS_TASK_SEND_MSG:
+"477
+[e :U 910 ]
+[; ;gprs.c: 478: gprsScheduledMsgTaskFlag = 1;
+"478
+[e = _gprsScheduledMsgTaskFlag -> -> 1 `i `uc ]
+[; ;gprs.c: 480: break;
+"480
+[e $U 907  ]
+[; ;gprs.c: 482: case GPRS_TASK_GET_EPO:
+"482
+[e :U 911 ]
+[; ;gprs.c: 483: gprsScheduledGetEpoFlag = 1;
+"483
+[e = _gprsScheduledGetEpoFlag -> -> 1 `i `uc ]
+[; ;gprs.c: 484: break;
+"484
+[e $U 907  ]
+[; ;gprs.c: 485: case GPRS_TASK_PWR_DOWN:
+"485
+[e :U 912 ]
+[; ;gprs.c: 486: gprsScheduledPwrDownTaskFlag = 1;
+"486
+[e = _gprsScheduledPwrDownTaskFlag -> -> 1 `i `uc ]
+[; ;gprs.c: 487: break;
+"487
+[e $U 907  ]
+[; ;gprs.c: 489: case GPRS_TASK_FLUSH:
+"489
+[e :U 913 ]
+[; ;gprs.c: 490: break;
+"490
+[e $U 907  ]
+[; ;gprs.c: 492: case GPRS_TASK_GET_FTP_CFG:
+"492
+[e :U 914 ]
+[; ;gprs.c: 493: break;
+"493
+[e $U 907  ]
+[; ;gprs.c: 494: case GRPS_TASK_SET_FTP:
+"494
+[e :U 915 ]
+[; ;gprs.c: 495: break;
+"495
+[e $U 907  ]
+[; ;gprs.c: 496: default : break;
+"496
+[e :U 916 ]
+[e $U 907  ]
+"509
+}
+[; ;gprs.c: 509: }
+[e $U 907  ]
+"472
+[e :U 908 ]
+[e [\ _command , $ . `E6956 0 909
+ , $ . `E6956 1 910
+ , $ . `E6956 3 911
+ , $ . `E6956 2 912
+ , $ . `E6956 4 913
+ , $ . `E6956 5 914
+ , $ . `E6956 6 915
+ 916 ]
+"509
+[e :U 907 ]
+[; ;gprs.c: 510: }
+"510
+[e :UE 906 ]
+}
+[v F7159 `(v ~T0 @X0 1 tf ]
+"516
+[v _EUSART2_GPRS_Transmit_ISR `AF7159 ~T0 @X0 1 e ]
+{
+[; ;gprs.c: 516: void EUSART2_GPRS_Transmit_ISR(void){
+[e :U _EUSART2_GPRS_Transmit_ISR ]
+[f ]
+[; ;gprs.c: 517: if(gprsTxBuffer[gprsTXBufferPtr] == 0)
+"517
+[e $ ! == -> *U + &U _gprsTxBuffer * -> _gprsTXBufferPtr `ux -> -> # *U &U _gprsTxBuffer `ui `ux `i -> 0 `i 918  ]
+[; ;gprs.c: 518: {
+"518
+{
+[; ;gprs.c: 519: PIE3bits.TX2IE = 0;
+"519
+[e = . . _PIE3bits 0 4 -> -> 0 `i `uc ]
+[; ;gprs.c: 520: gprsReceive();
+"520
+[e ( _gprsReceive ..  ]
+"521
+}
+[; ;gprs.c: 521: }
+[e $U 919  ]
+"522
+[e :U 918 ]
+[; ;gprs.c: 522: else
+[; ;gprs.c: 523: {
+"523
+{
+[; ;gprs.c: 524: TXREG2 = gprsTxBuffer[gprsTXBufferPtr];
+"524
+[e = _TXREG2 *U + &U _gprsTxBuffer * -> _gprsTXBufferPtr `ux -> -> # *U &U _gprsTxBuffer `ui `ux ]
+[; ;gprs.c: 525: gprsTXBufferPtr++;
+"525
+[e ++ _gprsTXBufferPtr -> -> 1 `i `uc ]
+"526
+}
+[e :U 919 ]
+[; ;gprs.c: 526: }
+[; ;gprs.c: 527: PIR3bits.TX2IF = 0;
+"527
+[e = . . _PIR3bits 0 4 -> -> 0 `i `uc ]
+[; ;gprs.c: 537: }
+"537
+[e :UE 917 ]
+}
+[v F7161 `(v ~T0 @X0 1 tf ]
+"539
+[v _EUSART2_GPRS_Receive_ISR `AF7161 ~T0 @X0 1 e ]
+{
+[; ;gprs.c: 539: void EUSART2_GPRS_Receive_ISR(void){
+[e :U _EUSART2_GPRS_Receive_ISR ]
+[f ]
+"540
+[v _auxVar `uc ~T0 @X0 1 a ]
+"541
+[v F7163 `Auc ~T0 @X0 1 s lastReceivedB ]
+[; ;gprs.c: 540: uint8_t auxVar;
+[; ;gprs.c: 541: static uint8_t lastReceivedB;
+[; ;gprs.c: 542: auxVar = RCREG2;
+"542
+[e = _auxVar _RCREG2 ]
+[; ;gprs.c: 543: PIR3bits.RC2IF = 0;
+"543
+[e = . . _PIR3bits 0 5 -> -> 0 `i `uc ]
+[; ;gprs.c: 544: if(1 == RCSTA2bits.OERR)
+"544
+[e $ ! == -> 1 `i -> . . _RCSTA2bits 0 1 `i 921  ]
+[; ;gprs.c: 545: {
+"545
+{
+[; ;gprs.c: 546: RCSTA2bits.CREN = 0;
+"546
+[e = . . _RCSTA2bits 0 4 -> -> 0 `i `uc ]
+[; ;gprs.c: 547: RCSTA2bits.CREN = 1;
+"547
+[e = . . _RCSTA2bits 0 4 -> -> 1 `i `uc ]
+[; ;gprs.c: 548: gprsRXBufferPtr = 0;
+"548
+[e = _gprsRXBufferPtr -> -> 0 `i `uc ]
+[; ;gprs.c: 549: auxVar = 0;
+"549
+[e = _auxVar -> -> 0 `i `uc ]
+[; ;gprs.c: 550: lastReceivedB=0;
+"550
+[e = F7163 -> -> 0 `i `uc ]
+"551
+}
+[e :U 921 ]
+[; ;gprs.c: 551: }
+[; ;gprs.c: 552: if(gprsRXBufferPtr >= (180-1))
+"552
+[e $ ! >= -> _gprsRXBufferPtr `i - -> 180 `i -> 1 `i 922  ]
+[; ;gprs.c: 553: {
+"553
+{
+[; ;gprs.c: 554: lastReceivedB=0;
+"554
+[e = F7163 -> -> 0 `i `uc ]
+[; ;gprs.c: 555: gprsRXBufferPtr = 0;
+"555
+[e = _gprsRXBufferPtr -> -> 0 `i `uc ]
+"556
+}
+[e :U 922 ]
+[; ;gprs.c: 556: }
+[; ;gprs.c: 557: if((auxVar == '4'||auxVar=='0')&&(gprsRXBufferPtr > 0)&&(lastReceivedB==0x0d)){
+"557
+[e $ ! && && || == -> _auxVar `ui -> 52 `ui == -> _auxVar `ui -> 48 `ui > -> _gprsRXBufferPtr `i -> 0 `i == -> F7163 `i -> 13 `i 923  ]
+{
+[; ;gprs.c: 558: gprsMsgReceivedFlag = 1;
+"558
+[e = _gprsMsgReceivedFlag -> -> 1 `i `uc ]
+[; ;gprs.c: 559: lastReceivedB=0;
+"559
+[e = F7163 -> -> 0 `i `uc ]
+[; ;gprs.c: 560: PIE3bits.RC2IE = 0;
+"560
+[e = . . _PIE3bits 0 5 -> -> 0 `i `uc ]
+"561
+}
+[e :U 923 ]
+[; ;gprs.c: 561: }
+[; ;gprs.c: 562: lastReceivedB=auxVar;
+"562
+[e = F7163 _auxVar ]
+[; ;gprs.c: 563: gprsRxBuffer[gprsRXBufferPtr++] = auxVar;
+"563
+[e = *U + &U _gprsRxBuffer * -> ++ _gprsRXBufferPtr -> -> 1 `i `uc `ux -> -> # *U &U _gprsRxBuffer `ui `ux _auxVar ]
+[; ;gprs.c: 564: gprsRxBuffer[gprsRXBufferPtr] = 0;
+"564
+[e = *U + &U _gprsRxBuffer * -> _gprsRXBufferPtr `ux -> -> # *U &U _gprsRxBuffer `ui `ux -> -> 0 `i `uc ]
+[; ;gprs.c: 565: }
+"565
+[e :UE 920 ]
+}
+[p f _sprintf 10584064 ]
+[a 4C 37 52 46 52 88 0 ]
+[a 2C 35 67 71 83 78 58 0 ]
+[a 1C 43 67 71 82 69 71 58 0 ]
+[a 3C 44 0 ]

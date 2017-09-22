@@ -1,4 +1,7 @@
 Version 3.2 HI-TECH Software Intermediate Code
+"9 /opt/microchip/xc8/v1.42/include/time.h
+[s S821 `i 1 `i 1 `i 1 `i 1 `i 1 `i 1 `i 1 `i 1 `i 1 ]
+[n S821 tm tm_sec tm_min tm_hour tm_mday tm_mon tm_year tm_wday tm_yday tm_isdst ]
 "54 mcc_generated_files/interrupt_manager.c
 [c E1 0 1 2 .. ]
 [n E1 _uart_semaphore_t NO_OWNER SFX_OWNER GPRS_OWNER  ]
@@ -71,7 +74,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _PIR3bits `VS432 ~T0 @X0 0 e@4004 ]
 "35 mcc_generated_files/eusart2.h
 [v _EUSART2_Transmit_ISR `(v ~T0 @X0 0 ef ]
-"21 mcc_generated_files/gprs.h
+"25 mcc_generated_files/gprs.h
 [v _EUSART2_GPRS_Transmit_ISR `(v ~T0 @X0 0 ef ]
 "36 mcc_generated_files/eusart2.h
 [v _EUSART2_Receive_ISR `(v ~T0 @X0 0 ef ]
@@ -6379,92 +6382,186 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 222: typedef int16_t intptr_t;
 [; ;stdint.h: 227: typedef uint16_t uintptr_t;
 [; ;stdbool.h: 12: typedef unsigned char bool;
-[; ;sfxProtocol.h: 34: typedef enum _mainTaskStates_t {
-[; ;sfxProtocol.h: 35: MAIN_TASK_PARKED,
-[; ;sfxProtocol.h: 36: POWERING_TASK,
-[; ;sfxProtocol.h: 37: MEASURING_TASK,
-[; ;sfxProtocol.h: 38: COMMUNICATING_TASK
-[; ;sfxProtocol.h: 39: }mainTaskStates_t;
-[; ;sfxProtocol.h: 41: typedef enum _taskStates_t {
-[; ;sfxProtocol.h: 42: TASK_PARKED,
-[; ;sfxProtocol.h: 43: TASK_RESET_TASK,
-[; ;sfxProtocol.h: 44: TASK_INIT,
-[; ;sfxProtocol.h: 45: TASK_READY,
-[; ;sfxProtocol.h: 46: TASK_WAITING_DATA
-[; ;sfxProtocol.h: 47: }taskStates_t;
-[; ;sfxProtocol.h: 49: typedef enum _taskResult_t {
-[; ;sfxProtocol.h: 50: TASK_NO_SENSOR_FOUND,
-[; ;sfxProtocol.h: 51: TASK_ON_COURSE,
-[; ;sfxProtocol.h: 52: TASK_DATA_READY,
-[; ;sfxProtocol.h: 53: TASK_TO_ERR,
-[; ;sfxProtocol.h: 54: TASK_DATA_NOT_AVAILABLE
-[; ;sfxProtocol.h: 55: }taskResult_t;
-[; ;sfxProtocol.h: 57: typedef enum _dataQualifier_t {
-[; ;sfxProtocol.h: 58: SENSOR_READ,
-[; ;sfxProtocol.h: 59: BORROWED,
-[; ;sfxProtocol.h: 60: CALCULATED,
-[; ;sfxProtocol.h: 61: NOT_AVAILABLE,
-[; ;sfxProtocol.h: 62: UNKNOWN_SENSOR
-[; ;sfxProtocol.h: 63: }dataQualifier_t;
-[; ;sfxProtocol.h: 65: typedef enum _TaskCommManagerState_t {
-[; ;sfxProtocol.h: 66: TASK_SEND_COMMAND_SM = 0,
-[; ;sfxProtocol.h: 67: TASK_DETECT_TRANSACTION_END_SM
-[; ;sfxProtocol.h: 68: } TaskCommManagerState_t;
-[; ;sfxProtocol.h: 70: typedef enum _systemEvent_t {
-[; ;sfxProtocol.h: 71: HW_WARNING_EV,
-[; ;sfxProtocol.h: 72: TIMER1_EV,
-[; ;sfxProtocol.h: 73: TIMER2_EV,
-[; ;sfxProtocol.h: 74: INPUT_EV,
-[; ;sfxProtocol.h: 75: MOTION_EV,
-[; ;sfxProtocol.h: 76: VARIABLE_ALARM_EV,
-[; ;sfxProtocol.h: 77: BATTERY_EV
-[; ;sfxProtocol.h: 78: }systemEvent_t;
-"85 Sigfox/sfxProtocol.h
+[; ;__size_t.h: 4: typedef unsigned size_t;
+[; ;time.h: 8: typedef long time_t;
+[; ;time.h: 9: struct tm {
+[; ;time.h: 10: int tm_sec;
+[; ;time.h: 11: int tm_min;
+[; ;time.h: 12: int tm_hour;
+[; ;time.h: 13: int tm_mday;
+[; ;time.h: 14: int tm_mon;
+[; ;time.h: 15: int tm_year;
+[; ;time.h: 16: int tm_wday;
+[; ;time.h: 17: int tm_yday;
+[; ;time.h: 18: int tm_isdst;
+[; ;time.h: 19: };
+[; ;time.h: 25: extern int time_zone;
+[; ;time.h: 30: extern time_t time(time_t *);
+[; ;time.h: 31: extern int stime(time_t *);
+[; ;time.h: 47: extern char * asctime(const struct tm *) ;
+[; ;time.h: 48: extern char * ctime(const time_t *) ;
+[; ;time.h: 49: extern struct tm * gmtime(const time_t *) ;
+[; ;time.h: 50: extern struct tm * localtime(const time_t *) ;
+[; ;time.h: 51: extern size_t strftime(char *, size_t, const char *, const struct tm *) ;
+[; ;time.h: 52: extern time_t mktime(struct tm *);
+[; ;sfxProtocol.h: 35: typedef enum _mainTaskStates_t {
+[; ;sfxProtocol.h: 36: MAIN_TASK_PARKED,
+[; ;sfxProtocol.h: 37: POWERING_TASK,
+[; ;sfxProtocol.h: 38: MEASURING_TASK,
+[; ;sfxProtocol.h: 39: COMMUNICATING_TASK
+[; ;sfxProtocol.h: 40: }mainTaskStates_t;
+[; ;sfxProtocol.h: 42: typedef enum _taskStates_t {
+[; ;sfxProtocol.h: 43: TASK_PARKED,
+[; ;sfxProtocol.h: 44: TASK_RESET_TASK,
+[; ;sfxProtocol.h: 45: TASK_INIT,
+[; ;sfxProtocol.h: 46: TASK_READY,
+[; ;sfxProtocol.h: 47: TASK_WAITING_DATA
+[; ;sfxProtocol.h: 48: }taskStates_t;
+[; ;sfxProtocol.h: 50: typedef enum _taskResult_t {
+[; ;sfxProtocol.h: 51: TASK_NO_SENSOR_FOUND,
+[; ;sfxProtocol.h: 52: TASK_ON_COURSE,
+[; ;sfxProtocol.h: 53: TASK_DATA_READY,
+[; ;sfxProtocol.h: 54: TASK_TO_ERR,
+[; ;sfxProtocol.h: 55: TASK_DATA_NOT_AVAILABLE
+[; ;sfxProtocol.h: 56: }taskResult_t;
+[; ;sfxProtocol.h: 58: typedef enum _dataQualifier_t {
+[; ;sfxProtocol.h: 59: SENSOR_READ,
+[; ;sfxProtocol.h: 60: BORROWED,
+[; ;sfxProtocol.h: 61: CALCULATED,
+[; ;sfxProtocol.h: 62: NOT_AVAILABLE,
+[; ;sfxProtocol.h: 63: UNKNOWN_SENSOR
+[; ;sfxProtocol.h: 64: }dataQualifier_t;
+[; ;sfxProtocol.h: 66: typedef enum _TaskCommManagerState_t {
+[; ;sfxProtocol.h: 67: TASK_SEND_COMMAND_SM = 0,
+[; ;sfxProtocol.h: 68: TASK_DETECT_TRANSACTION_END_SM
+[; ;sfxProtocol.h: 69: } TaskCommManagerState_t;
+[; ;sfxProtocol.h: 71: typedef enum _systemEvent_t {
+[; ;sfxProtocol.h: 72: HW_WARNING_EV,
+[; ;sfxProtocol.h: 73: TIMER1_EV,
+[; ;sfxProtocol.h: 74: TIMER2_EV,
+[; ;sfxProtocol.h: 75: INPUT_EV,
+[; ;sfxProtocol.h: 76: MOTION_EV,
+[; ;sfxProtocol.h: 77: VARIABLE_ALARM_EV,
+[; ;sfxProtocol.h: 78: BATTERY_EV
+[; ;sfxProtocol.h: 79: }systemEvent_t;
+"88 Sigfox/sfxProtocol.h
+[v _sysVarAPN `AEuc ~T0 @X0 -> 32 `i e ]
+[i _sysVarAPN
+:U ..
+-> 34 `c
+-> 119 `c
+-> 108 `c
+-> 97 `c
+-> 112 `c
+-> 110 `c
+-> 46 `c
+-> 99 `c
+-> 111 `c
+-> 109 `c
+-> 34 `c
+-> 0 `c
+..
+]
+[; ;sfxProtocol.h: 88: eeprom char sysVarAPN[32] = "\"wlapn.com\"";
+"89
+[v _sysVarDestPORT `AEuc ~T0 @X0 -> 8 `i e ]
+[i _sysVarDestPORT
+:U ..
+-> 54 `c
+-> 48 `c
+-> 48 `c
+-> 48 `c
+-> 0 `c
+..
+]
+[; ;sfxProtocol.h: 89: eeprom char sysVarDestPORT[8] = "6000";
+"90
+[v _sysVarDestADDRESS `AEuc ~T0 @X0 -> 32 `i e ]
+[i _sysVarDestADDRESS
+:U ..
+-> 53 `c
+-> 50 `c
+-> 46 `c
+-> 56 `c
+-> 56 `c
+-> 46 `c
+-> 50 `c
+-> 52 `c
+-> 46 `c
+-> 55 `c
+-> 52 `c
+-> 0 `c
+..
+]
+[; ;sfxProtocol.h: 90: eeprom char sysVarDestADDRESS[32] = "52.88.24.74";
+"93
 [v _sysVarGpsValidFlag `Auc ~T0 @X0 1 e ]
 [i _sysVarGpsValidFlag
 -> -> 0 `i `uc
 ]
-[; ;sfxProtocol.h: 85: bool sysVarGpsValidFlag = 0;
-"86
+[; ;sfxProtocol.h: 93: bool sysVarGpsValidFlag = 0;
+"94
 [v _sysVarGpsLat `Al ~T0 @X0 1 e ]
-[; ;sfxProtocol.h: 86: long sysVarGpsLat;
-"87
+[; ;sfxProtocol.h: 94: long sysVarGpsLat;
+"95
 [v _sysVarGpsLong `Al ~T0 @X0 1 e ]
-[; ;sfxProtocol.h: 87: long sysVarGpsLong;
-"88
+[; ;sfxProtocol.h: 95: long sysVarGpsLong;
+"96
 [v _sysVarGpsSpeed `Aui ~T0 @X0 1 e ]
-[; ;sfxProtocol.h: 88: unsigned int sysVarGpsSpeed;
-"89
+[; ;sfxProtocol.h: 96: unsigned int sysVarGpsSpeed;
+"97
 [v _sysVarGpsCourse `Ai ~T0 @X0 1 e ]
-[; ;sfxProtocol.h: 89: int sysVarGpsCourse;
-"90
+[; ;sfxProtocol.h: 97: int sysVarGpsCourse;
+"98
 [v _sysVarGpsAlt `Aui ~T0 @X0 1 e ]
 [i _sysVarGpsAlt
 -> -> 6000 `i `ui
 ]
-[; ;sfxProtocol.h: 90: unsigned int sysVarGpsAlt = 6000;
-"91
+[; ;sfxProtocol.h: 98: unsigned int sysVarGpsAlt = 6000;
+"99
+[v _sysVarGPS `AS821 ~T0 @X0 1 e ]
+[; ;sfxProtocol.h: 99: struct tm sysVarGPS;
+"100
 [v _sysVarGpsDayTime `Al ~T0 @X0 1 e ]
-[; ;sfxProtocol.h: 91: long sysVarGpsDayTime;
-"93
+[; ;sfxProtocol.h: 100: long sysVarGpsDayTime;
+"101
+[v _sysVarUNIXDayTime `Al ~T0 @X0 1 e ]
+[; ;sfxProtocol.h: 101: time_t sysVarUNIXDayTime;
+"103
 [v _sysVarGpsOdometer `Aui ~T0 @X0 1 e ]
-[; ;sfxProtocol.h: 93: unsigned int sysVarGpsOdometer;
-"96
+[; ;sfxProtocol.h: 103: unsigned int sysVarGpsOdometer;
+"106
+[v _sysVarCCID `Auc ~T0 @X0 -> 20 `i e ]
+[i _sysVarCCID
+:U ..
+-> 0 `c
+..
+]
+[; ;sfxProtocol.h: 106: char sysVarCCID[20] = "";
+"107
+[v _sysVarIMEI `Auc ~T0 @X0 -> 20 `i e ]
+[i _sysVarIMEI
+:U ..
+-> 0 `c
+..
+]
+[; ;sfxProtocol.h: 107: char sysVarIMEI[20] = "";
+"109
 [v _sysVarBattery `Auc ~T0 @X0 1 e ]
 [i _sysVarBattery
 -> -> 100 `i `uc
 ]
-[; ;sfxProtocol.h: 96: unsigned char sysVarBattery = 100;
-"99
+[; ;sfxProtocol.h: 109: unsigned char sysVarBattery = 100;
+"112
 [v _sysVarMainInput `Auc ~T0 @X0 1 e ]
 [i _sysVarMainInput
 -> -> 0 `i `uc
 ]
-[; ;sfxProtocol.h: 99: bool sysVarMainInput = 0;
-[; ;sfxProtocol.h: 102: void ProtocolTaskSleepTimeUpdate(unsigned int watchDogSleepingTime);
-[; ;sfxProtocol.h: 103: void ProtocolTaskTick(void);
-[; ;sfxProtocol.h: 104: taskResult_t ProtocolTask(void);
-[; ;sfxProtocol.h: 105: void ProtocolTaskPowerDown(void);
+[; ;sfxProtocol.h: 112: bool sysVarMainInput = 0;
+[; ;sfxProtocol.h: 115: void ProtocolTaskSleepTimeUpdate(unsigned int watchDogSleepingTime);
+[; ;sfxProtocol.h: 116: void ProtocolTaskTick(void);
+[; ;sfxProtocol.h: 117: taskResult_t ProtocolTask(void);
+[; ;sfxProtocol.h: 118: void ProtocolTaskPowerDown(void);
 [; ;eusart2.h: 12: typedef enum _SFX_TASK_COMMANDS_T {
 [; ;eusart2.h: 13: SFX_CMD_INITIALIZE,
 [; ;eusart2.h: 14: SFX_CMD_SEND_MSG,
@@ -6544,22 +6641,26 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;mcc.h: 72: void SYSTEM_Initialize(void);
 [; ;mcc.h: 85: void OSCILLATOR_Initialize(void);
 [; ;gprs.h: 13: typedef enum _GPRS_TASK_COMMANDS_T {
-[; ;gprs.h: 14: GPRS_CMD_INITIALIZE,
-[; ;gprs.h: 15: GPRS_CMD_SEND_MSG,
-[; ;gprs.h: 16: GPRS_CMD_PWR_DOWN,
-[; ;gprs.h: 17: } GPRS_TASK_COMMANDS_T;
-[; ;gprs.h: 20: void gprsTaskTick(void);
-[; ;gprs.h: 21: void EUSART2_GPRS_Transmit_ISR(void);
-[; ;gprs.h: 22: void EUSART2_GPRS_Receive_ISR(void);
+[; ;gprs.h: 14: GPRS_TASK_INITIALIZE,
+[; ;gprs.h: 15: GPRS_TASK_SEND_MSG,
+[; ;gprs.h: 16: GPRS_TASK_PWR_DOWN,
+[; ;gprs.h: 17: GPRS_TASK_GET_EPO,
+[; ;gprs.h: 18: GPRS_TASK_FLUSH,
+[; ;gprs.h: 19: GPRS_TASK_GET_FTP_CFG,
+[; ;gprs.h: 20: GRPS_TASK_SET_FTP
+[; ;gprs.h: 21: } GPRS_TASK_COMMANDS_T;
+[; ;gprs.h: 24: void gprsTaskTick(void);
+[; ;gprs.h: 25: void EUSART2_GPRS_Transmit_ISR(void);
+[; ;gprs.h: 26: void EUSART2_GPRS_Receive_ISR(void);
 "54 mcc_generated_files/interrupt_manager.c
 [v _usartSemaphore `AE1 ~T0 @X0 1 e ]
 [i _usartSemaphore
 . `E1 0
 ]
 [; ;interrupt_manager.c: 54: uart_semaphore_t usartSemaphore = NO_OWNER;
-[v F6846 `(v ~T0 @X0 1 tf ]
+[v F6889 `(v ~T0 @X0 1 tf ]
 "56
-[v _INTERRUPT_Initialize `AF6846 ~T0 @X0 1 e ]
+[v _INTERRUPT_Initialize `AF6889 ~T0 @X0 1 e ]
 "57
 {
 [; ;interrupt_manager.c: 56: void INTERRUPT_Initialize (void)
@@ -6571,11 +6672,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . . _RCONbits 5 7 -> -> 0 `i `uc ]
 [; ;interrupt_manager.c: 60: }
 "60
-[e :UE 822 ]
+[e :UE 823 ]
 }
-[v F6848 `(v ~T0 @X0 1 tf1`E1 ]
+[v F6891 `(v ~T0 @X0 1 tf1`E1 ]
 "61
-[v _setSemaphore `AF6848 ~T0 @X0 1 e ]
+[v _setSemaphore `AF6891 ~T0 @X0 1 e ]
 {
 [; ;interrupt_manager.c: 61: void setSemaphore(uart_semaphore_t semaphore){
 [e :U _setSemaphore ]
@@ -6586,7 +6687,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _usartSemaphore _semaphore ]
 [; ;interrupt_manager.c: 63: }
 "63
-[e :UE 823 ]
+[e :UE 824 ]
 }
 [v $root$_INTERRUPT_InterruptManager `(v ~T0 @X0 0 e ]
 [v F10 `(v ~T0 @X0 1 tf ]
@@ -6600,7 +6701,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [f ]
 [; ;interrupt_manager.c: 67: if(INTCONbits.TMR0IE == 1 && INTCONbits.TMR0IF == 1)
 "67
-[e $ ! && == -> . . _INTCONbits 0 5 `i -> 1 `i == -> . . _INTCONbits 0 2 `i -> 1 `i 825  ]
+[e $ ! && == -> . . _INTCONbits 0 5 `i -> 1 `i == -> . . _INTCONbits 0 2 `i -> 1 `i 826  ]
 [; ;interrupt_manager.c: 68: {
 "68
 {
@@ -6610,17 +6711,17 @@ Version 3.2 HI-TECH Software Intermediate Code
 "70
 }
 [; ;interrupt_manager.c: 70: }
-[e $U 826  ]
+[e $U 827  ]
 "73
-[e :U 825 ]
+[e :U 826 ]
 [; ;interrupt_manager.c: 73: else if(INTCONbits.PEIE == 1 && PIE3bits.TX2IE == 1 && PIR3bits.TX2IF == 1)
-[e $ ! && && == -> . . _INTCONbits 1 6 `i -> 1 `i == -> . . _PIE3bits 0 4 `i -> 1 `i == -> . . _PIR3bits 0 4 `i -> 1 `i 827  ]
+[e $ ! && && == -> . . _INTCONbits 1 6 `i -> 1 `i == -> . . _PIE3bits 0 4 `i -> 1 `i == -> . . _PIR3bits 0 4 `i -> 1 `i 828  ]
 [; ;interrupt_manager.c: 74: {
 "74
 {
 [; ;interrupt_manager.c: 75: if(usartSemaphore == SFX_OWNER){
 "75
-[e $ ! == -> _usartSemaphore `i -> . `E1 1 `i 828  ]
+[e $ ! == -> _usartSemaphore `i -> . `E1 1 `i 829  ]
 {
 [; ;interrupt_manager.c: 76: EUSART2_Transmit_ISR();
 "76
@@ -6628,9 +6729,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "77
 }
 [; ;interrupt_manager.c: 77: }
-[e $U 829  ]
+[e $U 830  ]
 "78
-[e :U 828 ]
+[e :U 829 ]
 [; ;interrupt_manager.c: 78: else{
 {
 [; ;interrupt_manager.c: 79: EUSART2_GPRS_Transmit_ISR();
@@ -6638,16 +6739,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _EUSART2_GPRS_Transmit_ISR ..  ]
 "80
 }
-[e :U 829 ]
+[e :U 830 ]
 "81
 }
 [; ;interrupt_manager.c: 80: }
 [; ;interrupt_manager.c: 81: }
-[e $U 830  ]
+[e $U 831  ]
 "83
-[e :U 827 ]
+[e :U 828 ]
 [; ;interrupt_manager.c: 83: else if(INTCONbits.PEIE == 1 && PIE3bits.RC2IE == 1 && PIR3bits.RC2IF == 1)
-[e $ ! && && == -> . . _INTCONbits 1 6 `i -> 1 `i == -> . . _PIE3bits 0 5 `i -> 1 `i == -> . . _PIR3bits 0 5 `i -> 1 `i 831  ]
+[e $ ! && && == -> . . _INTCONbits 1 6 `i -> 1 `i == -> . . _PIE3bits 0 5 `i -> 1 `i == -> . . _PIR3bits 0 5 `i -> 1 `i 832  ]
 [; ;interrupt_manager.c: 84: {
 "84
 {
@@ -6657,20 +6758,20 @@ Version 3.2 HI-TECH Software Intermediate Code
 "86
 }
 [; ;interrupt_manager.c: 86: }
-[e $U 832  ]
+[e $U 833  ]
 "99
-[e :U 831 ]
+[e :U 832 ]
 [; ;interrupt_manager.c: 99: else
 [; ;interrupt_manager.c: 100: {
 "100
 {
 "102
 }
-[e :U 832 ]
-[e :U 830 ]
-[e :U 826 ]
+[e :U 833 ]
+[e :U 831 ]
+[e :U 827 ]
 [; ;interrupt_manager.c: 102: }
 [; ;interrupt_manager.c: 103: }
 "103
-[e :UE 824 ]
+[e :UE 825 ]
 }

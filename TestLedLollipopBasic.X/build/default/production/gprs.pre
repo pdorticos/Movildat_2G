@@ -8182,7 +8182,39 @@ void interrupt INTERRUPT_InterruptManager(void);
 # 125
 void INTERRUPT_Initialize (void);
 
-# 34 "Sigfox/sfxProtocol.h"
+# 4 "/opt/microchip/xc8/v1.42/include/__size_t.h"
+typedef unsigned size_t;
+
+# 8 "/opt/microchip/xc8/v1.42/include/time.h"
+typedef long time_t;
+struct tm {
+int tm_sec;
+int tm_min;
+int tm_hour;
+int tm_mday;
+int tm_mon;
+int tm_year;
+int tm_wday;
+int tm_yday;
+int tm_isdst;
+};
+
+# 25
+extern int time_zone;
+
+# 30
+extern time_t time(time_t *);
+extern int stime(time_t *);
+
+# 47
+extern char * asctime(const struct tm *) ;
+extern char * ctime(const time_t *) ;
+extern struct tm * gmtime(const time_t *) ;
+extern struct tm * localtime(const time_t *) ;
+extern size_t strftime(char *, size_t, const char *, const struct tm *) ;
+extern time_t mktime(struct tm *);
+
+# 35 "Sigfox/sfxProtocol.h"
 typedef enum _mainTaskStates_t {
 MAIN_TASK_PARKED,
 POWERING_TASK,
@@ -8229,17 +8261,27 @@ VARIABLE_ALARM_EV,
 BATTERY_EV
 }systemEvent_t;
 
-# 85
+# 88
+eeprom char sysVarAPN[32] = "\"wlapn.com\"";
+eeprom char sysVarDestPORT[8] = "6000";
+eeprom char sysVarDestADDRESS[32] = "52.88.24.74";
+
+
 bool sysVarGpsValidFlag = 0;
 long sysVarGpsLat;
 long sysVarGpsLong;
 unsigned int sysVarGpsSpeed;
 int sysVarGpsCourse;
 unsigned int sysVarGpsAlt = 6000;
+struct tm sysVarGPS;
 long sysVarGpsDayTime;
+time_t sysVarUNIXDayTime;
 
 unsigned int sysVarGpsOdometer;
 
+
+char sysVarCCID[20] = "";
+char sysVarIMEI[20] = "";
 
 unsigned char sysVarBattery = 100;
 
@@ -8388,9 +8430,6 @@ void SYSTEM_Initialize(void);
 # 85
 void OSCILLATOR_Initialize(void);
 
-# 4 "/opt/microchip/xc8/v1.42/include/__size_t.h"
-typedef unsigned size_t;
-
 # 14 "/opt/microchip/xc8/v1.42/include/string.h"
 extern void * memcpy(void *, const void *, size_t);
 extern void * memmove(void *, const void *, size_t);
@@ -8423,103 +8462,227 @@ extern char * strichr(const char *, int);
 extern char * strrchr(const char *, int);
 extern char * strrichr(const char *, int);
 
-# 21 "gprs.c"
+# 13 "mcc_generated_files/gprs.h"
+typedef enum _GPRS_TASK_COMMANDS_T {
+GPRS_TASK_INITIALIZE,
+GPRS_TASK_SEND_MSG,
+GPRS_TASK_PWR_DOWN,
+GPRS_TASK_GET_EPO,
+GPRS_TASK_FLUSH,
+GPRS_TASK_GET_FTP_CFG,
+GRPS_TASK_SET_FTP
+} GPRS_TASK_COMMANDS_T;
+
+
+void gprsTaskTick(void);
+void EUSART2_GPRS_Transmit_ISR(void);
+void EUSART2_GPRS_Receive_ISR(void);
+
+# 7 "/opt/microchip/xc8/v1.42/include/stdarg.h"
+typedef void * va_list[1];
+
+#pragma intrinsic(__va_start)
+extern void * __va_start(void);
+
+#pragma intrinsic(__va_arg)
+extern void * __va_arg(void *, ...);
+
+# 43 "/opt/microchip/xc8/v1.42/include/stdio.h"
+struct __prbuf
+{
+char * ptr;
+void (* func)(char);
+};
+
+# 29 "/opt/microchip/xc8/v1.42/include/errno.h"
+extern int errno;
+
+# 12 "/opt/microchip/xc8/v1.42/include/conio.h"
+extern void init_uart(void);
+
+extern char getch(void);
+extern char getche(void);
+extern void putch(char);
+extern void ungetch(char);
+
+extern __bit kbhit(void);
+
+# 23
+extern char * cgets(char *);
+extern void cputs(const char *);
+
+# 88 "/opt/microchip/xc8/v1.42/include/stdio.h"
+extern int cprintf(char *, ...);
+#pragma printf_check(cprintf)
+
+
+
+extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+
+
+# 180
+#pragma printf_check(vprintf) const
+#pragma printf_check(vsprintf) const
+
+extern char * gets(char *);
+extern int puts(const char *);
+extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+
+#pragma printf_check(printf) const
+#pragma printf_check(sprintf) const
+extern int sprintf(char *, const char *, ...);
+extern int printf(const char *, ...);
+
+# 7 "gprs.c"
+bool gprsOKParser(void);
+bool gprsCCIDParser(void);
+bool gprsCCIDParser(void);
+bool gprsInternetAccessParser(void);
+bool gprsCGSNParser(void);
+bool gprsConnectParser(void);
+bool gprsEmptyParser(void);
+
+
+typedef struct _GPRS_AT_CMD_STRUCT_T {
+uint8_t index;
+const char atCmdStr[21];
+bool (* gprsParserPtr) (void);
+uint8_t atCmdTimeOut;
+uint8_t cmdRepeatAttemps;
+}GPRS_AT_CMD_STRUCT_T;
+
+# 58
+const GPRS_AT_CMD_STRUCT_T gprsAtCommands[]={
+{0,"AT",gprsOKParser,2},
+{1,"ATV0",gprsOKParser,2},
+{2,"ATE0",gprsOKParser,2},
+{3,"AT+CGDCONT=1,\"IP\",",gprsOKParser,2},
+{5,"AT#GPRS=1",gprsOKParser,2},
+{6,"AT&W",gprsOKParser,2},
+{7,"AT#CCID",gprsCCIDParser,2},
+{8,"AT#CGSN",gprsCGSNParser,2},
+{9,"AT#SD=1,1,",gprsConnectParser,2},
+{10,"AT+CGREG?",gprsInternetAccessParser,2},
+{0xFF,"",(0),0}
+};
+
+# 89
 static taskResult_t gprsTransactionResult = TASK_ON_COURSE;
 static TaskCommManagerState_t gprsCommManagerState = TASK_SEND_COMMAND_SM;
-
 static taskStates_t gprsTaskState = TASK_RESET_TASK;
-
-char gprsTxBuffer[100];
+uint8_t gprsPayloadBuffer[240];
+char gprsTxBuffer[250];
 uint8_t gprsTXBufferPtr;
-char gprsRxBuffer[100];
+char gprsRxBuffer[180];
 uint8_t gprsRXBufferPtr;
-
-static TaskCommManagerState_t GPRS_CommManagerState = TASK_SEND_COMMAND_SM;
-bool gprsMsgReceivedFlag;
-static taskResult_t GPRS_TransactionResult = TASK_ON_COURSE;
 uint8_t gprsTransactionAttemps=3;
-
-bool gprsScheduledInitTaskFlag;
-bool gprsScheduledPwrDownTaskFlag;
 uint8_t gprsTimeOutTimer;
 uint8_t gprsTxDelay;
 
-# 46
+# 106
 bool gprsScheduledMsgTaskFlag = 0,
-gprsScheduledMsgStaTaskFlag=0,
-gprsScheduledMsgAckTaskFlag;
-
-void EUSART2_GPRS_Initialize(void){
-PMD0bits.UART2MD = 0;
-
-PIE3bits.RC2IE = 0;
-PIE3bits.TX2IE = 0;
-
+gprsScheduledGetEpoFlag=0,
+gprsScheduledFlushFlag=0,
+gprsScheduledGetFTPConfFlag=0,
+gprsScheduledSetFTPConfFlag=0,
+gprsMsgReceivedFlag=0;
+bool gprsScheduledInitTaskFlag=0;
+bool gprsScheduledPwrDownTaskFlag=0;
 
 
 
-BAUDCON2 = 0x08;
-
-RCSTA2 = 0x90;
-
-TXSTA2 = 0x24;
-
-
-SPBRG2 = 0x67;
-
-
-SPBRGH2 = 0x00;
+bool gprsOKParser(void){
+return (gprsRxBuffer[gprsRXBufferPtr-1] == '0');
 }
-void EUSART2_GPRS_Transmit_ISR(void){
+bool gprsCCIDParser(void){
+const char ccidStr[] = "+CCID:";
+
+if (strstr(gprsRxBuffer, ccidStr)== (0))
+return(0);
+char * ptr=strchr(gprsRxBuffer,(int)':');
+if(ptr==(0))
+return 0;
+strcpy(sysVarCCID,ptr+1);
+return 1;
+}
+bool gprsInternetAccessParser(void){
+if (strstr(gprsRxBuffer, "+CGREG:")==(0))
+return 0;
+char * ptr=strchr(gprsRxBuffer,',');
+if(ptr==(0))
+return 0;
+return (ptr[1]=='1'||ptr[1]=='2');
+}
+bool gprsCGSNParser(void){
+if (strstr(gprsRxBuffer, "#CGSN:")==(0))
+return 0;
+char * ptr=strchr(gprsRxBuffer,':');
+if(ptr==(0))
+return 0;
+strcpy(sysVarIMEI,ptr+1);
+return 1;
+}
+bool gprsConnectParser(void){
+return gprsRxBuffer[gprsRXBufferPtr-1] == '1';
+}
+bool gprsEmptyParser(void){
+return 1;
+}
+
+void gprsReceive(void){
+
+RCSTA2bits.CREN = 0;
+gprsRXBufferPtr = 0;
+gprsRxBuffer[0] = 0;
+gprsMsgReceivedFlag = 0;
+
+RCSTA2bits.CREN = 1;
+PIE3bits.RC2IE = 1;
 
 }
-void EUSART2_GPRS_Receive_ISR(void){
 
+# 178
+void gprsCommandSelector(char gprsCommand){
+const char gprsCOMMAND_TAIL_STR[] = {0x0d, 0x0A, 0};
+
+const GPRS_AT_CMD_STRUCT_T * gprsCommandPtr=&gprsAtCommands[gprsCommand];
+eeprom char *epromPtr;
+
+gprsTimeOutTimer = gprsCommandPtr->atCmdTimeOut;
+strcpy(gprsTxBuffer,gprsCommandPtr->atCmdStr);
+switch(gprsCommand){
+case 3:
+epromPtr = sysVarAPN;
+strcat(gprsTxBuffer,epromPtr);
+break;
+case 9:
+epromPtr=sysVarDestPORT;
+strcat(gprsTxBuffer,epromPtr);
+strcat(gprsTxBuffer,",");
+epromPtr=sysVarDestADDRESS;
+strcat(gprsTxBuffer,epromPtr);
+break;
+case 11:
+sprintf(gprsTxBuffer,"%4.4X",sysVarUNIXDayTime);
+break;
+case 12:
+return;
 }
-void gprsTaskTick(void){
-if(gprsTimeOutTimer){
-gprsTimeOutTimer--;
+strcat(gprsCommandPtr,gprsCOMMAND_TAIL_STR);
 }
-if(gprsTxDelay){
-gprsTxDelay--;
-}
-}
+
+# 210
 void gprsTransmit(void){
 
 gprsTXBufferPtr = 0;
 PIE3bits.TX2IE = 1;
 
 }
-
-
-
-taskResult_t GPRS_VerifyTransactionStatus(void){
-gprsTxDelay = 2;
-GPRS_CommManagerState = TASK_SEND_COMMAND_SM;
-if(gprsMsgReceivedFlag){
-GPRS_TransactionResult = TASK_DATA_READY;
-gprsMsgReceivedFlag = 0;
-return(TASK_DATA_READY);
-}
-if(gprsTransactionAttemps){
-gprsTransactionAttemps--;
-}
-if(gprsTransactionAttemps == 0){
-gprsTaskState = TASK_RESET_TASK;
-GPRS_TransactionResult = TASK_NO_SENSOR_FOUND;
-return(TASK_NO_SENSOR_FOUND);
-}
-GPRS_TransactionResult = TASK_ON_COURSE;
-return(TASK_ON_COURSE);
-}
-
-void gprsCommandSelector(SFX_TASK_COMMANDS_T command){
-
-}
-
-
-
-
 bool gprsTXReady(void){
 if(!gprsTxDelay){
 
@@ -8527,14 +8690,6 @@ return(!PIE3bits.TX2IE);
 }
 return(0);
 }
-
-bool gprsResponseParser(void){
-char * dumyPtr;
-dumyPtr = strstr(gprsRxBuffer,"OK");
-
-return(1);
-}
-
 taskResult_t gprsVerifyTransactionStatus(void){
 
 gprsTxDelay = 2;
@@ -8548,47 +8703,13 @@ if(gprsTransactionAttemps){
 gprsTransactionAttemps--;
 }
 if(gprsTransactionAttemps == 0){
-gprsTaskState = TASK_RESET_TASK;
 gprsTransactionResult = TASK_NO_SENSOR_FOUND;
 return(TASK_NO_SENSOR_FOUND);
 }
 gprsTransactionResult = TASK_ON_COURSE;
 return(TASK_ON_COURSE);
 }
-
-taskResult_t GPRS_CommManager(SFX_TASK_COMMANDS_T GPRS_Command){
-
-GPRS_TransactionResult = TASK_ON_COURSE;
-switch(GPRS_CommManagerState){
-case TASK_SEND_COMMAND_SM:
-if(gprsTXReady()){
-gprsCommandSelector(GPRS_Command);
-GPRS_CommManagerState = TASK_DETECT_TRANSACTION_END_SM;
-gprsTransmit();
-}
-break;
-case TASK_DETECT_TRANSACTION_END_SM:
-if(gprsTimeOutTimer == 0){
-PIE3bits.TX2IE = 0;
-PIE3bits.RC2IE = 0;
-return(GPRS_VerifyTransactionStatus());
-}
-if(gprsMsgReceivedFlag){
-gprsTimeOutTimer = 0;
-return(GPRS_VerifyTransactionStatus());
-}
-break;
-default:
-GPRS_CommManagerState = TASK_SEND_COMMAND_SM;
-gprsTxDelay = 2;
-break;
-}
-return(TASK_ON_COURSE);
-}
-void gprsTaskReset(void){
-
-}
-taskResult_t gprsCommManager(SFX_TASK_COMMANDS_T gprsCommand){
+taskResult_t gprsCommManager(char gprsCommand){
 
 gprsTransactionResult = TASK_ON_COURSE;
 switch(gprsCommManagerState){
@@ -8618,13 +8739,88 @@ break;
 return(TASK_ON_COURSE);
 }
 
+# 275
+void gprsTaskTick(void){
+if(gprsTimeOutTimer){
+gprsTimeOutTimer--;
+}
+if(gprsTxDelay){
+gprsTxDelay--;
+}
+}
+
+void EUSART2_GPRS_Initialize(void){
+PMD0bits.UART2MD = 0;
+
+PIE3bits.RC2IE = 0;
+PIE3bits.TX2IE = 0;
+
+setSemaphore(GPRS_OWNER);
 
 
 
+
+BAUDCON2 = 0x08;
+
+RCSTA2 = 0x90;
+
+TXSTA2 = 0x24;
+
+
+SPBRG2 = 0x67;
+
+
+SPBRGH2 = 0x00;
+}
+
+void gprsTaskReset(void){
+EUSART2_GPRS_Initialize();
+gprsTaskState=TASK_RESET_TASK;
+gprsTxDelay=5;
+gprsCommManagerState=TASK_SEND_COMMAND_SM;
+gprsTransactionResult=TASK_ON_COURSE;
+gprsTransactionAttemps=3;
+gprsTimeOutTimer=0;
+gprsScheduledMsgTaskFlag = 0;
+gprsScheduledGetEpoFlag=0;
+gprsScheduledFlushFlag=0;
+gprsScheduledGetFTPConfFlag=0;
+gprsScheduledSetFTPConfFlag=0;
+gprsMsgReceivedFlag=0;
+
+
+do { LATBbits.LATB2 = 0; } while(0);
+}
+void gprsTaskPowerDown(void){
+gprsScheduledInitTaskFlag=0;
+gprsScheduledPwrDownTaskFlag=0;
+
+# 334
+gprsTaskState=TASK_PARKED;
+setSemaphore(NO_OWNER);
+}
 taskResult_t gprsTask(void){
-const uint8_t gprsInitCommandsROMList[3] = {0xFF};
-const char *gprsInitCommandPtr;
+const uint8_t gprsInitCommandsROMList[] = {
+0,
+1,
+2,
+3 ,
+8,
+6,
+0xFF
+};
+const uint8_t gprsSendMsgCommandROMList[] = {
+4,
+10,
+9,
+11,
+12,
+0xFF
+};
+static const GPRS_AT_CMD_STRUCT_T * gprsRomCommandPtr;
+static const char *gprsFlashCommandPtr;
 
+bool parserRusultFlag;
 switch(gprsTaskState){
 case TASK_PARKED:
 if(gprsScheduledInitTaskFlag){
@@ -8636,92 +8832,179 @@ return(TASK_NO_SENSOR_FOUND);
 case TASK_RESET_TASK:
 gprsTaskReset();
 gprsTaskState = TASK_INIT;
-gprsInitCommandPtr = gprsInitCommandsROMList;
-return(TASK_ON_COURSE);
+gprsFlashCommandPtr = gprsInitCommandsROMList;
 
-case TASK_INIT:
-while(gprsInitCommandPtr[0] != 0xFF)
+while(gprsFlashCommandPtr[0] != 0xFF)
 {
-GPRS_TransactionResult = GPRS_CommManager(gprsInitCommandPtr[0]);
-if(GPRS_TransactionResult == TASK_DATA_READY){
-if(gprsResponseParser()){
-gprsInitCommandPtr++;
-gprsTransactionAttemps=3;
+gprsTransactionResult = gprsCommManager(gprsFlashCommandPtr[0]);
+
+if(gprsTransactionResult == TASK_DATA_READY){
+parserRusultFlag = gprsRomCommandPtr->gprsParserPtr();
+if((parserRusultFlag) || (gprsRomCommandPtr->index == 0))
+{
+gprsFlashCommandPtr++;
+gprsRomCommandPtr = &gprsAtCommands[gprsFlashCommandPtr[0]];
+gprsTransactionAttemps = gprsRomCommandPtr->cmdRepeatAttemps;
+continue;
 }
 else if(gprsTransactionAttemps){
 gprsTransactionAttemps--;
 }
-continue;
 }
-if(GPRS_TransactionResult == TASK_NO_SENSOR_FOUND){
-SigfoxTaskPowerDown();
+if(gprsTransactionResult == TASK_NO_SENSOR_FOUND){
+if(gprsRomCommandPtr->index == 0){
+break;
 }
-return(GPRS_TransactionResult);
+gprsTaskPowerDown();
 }
-GPRS_TransactionResult = TASK_DATA_READY;
+return(gprsTransactionResult);
+}
+gprsTransactionResult = TASK_DATA_READY;
 gprsTaskState = TASK_READY;
-
 gprsScheduledInitTaskFlag = 0;
-
-
-if(gprsScheduledMsgTaskFlag || gprsScheduledMsgStaTaskFlag){
+if(gprsScheduledMsgTaskFlag
+||gprsScheduledGetEpoFlag
+||gprsScheduledFlushFlag
+||gprsScheduledGetFTPConfFlag){
 return(TASK_ON_COURSE);
 }
 return(TASK_DATA_READY);
-
 case TASK_READY:
-
-# 276
-if(gprsScheduledMsgTaskFlag || gprsScheduledMsgAckTaskFlag || gprsScheduledMsgStaTaskFlag){
+if(gprsScheduledMsgTaskFlag){
 gprsTransactionAttemps = 3;
 gprsTaskState = TASK_WAITING_DATA;
-GPRS_CommManagerState = TASK_SEND_COMMAND_SM;
+gprsCommManagerState = TASK_SEND_COMMAND_SM;
+gprsFlashCommandPtr = gprsSendMsgCommandROMList;
 return(TASK_ON_COURSE);
 }
 
-# 287
 if(gprsScheduledPwrDownTaskFlag){
-SigfoxTaskPowerDown();
+gprsTaskPowerDown();
 return(TASK_NO_SENSOR_FOUND);
 }
 return(TASK_DATA_READY);
 
 case TASK_WAITING_DATA:
-if(gprsScheduledMsgAckTaskFlag){
-gprsTransactionResult = gprsCommManager(SFX_CMD_SEND_MSG_WAIT_ACK);
-}
-else if(gprsScheduledMsgStaTaskFlag){
-gprsTransactionResult = gprsCommManager(SFX_CMD_SEND_STATUS);
-}
-else
-{
-gprsTransactionResult = gprsCommManager(SFX_CMD_SEND_MSG);
-}
-if(gprsTransactionResult == TASK_DATA_READY){
-if(gprsResponseParser()){
-gprsScheduledMsgTaskFlag = 0;
-gprsScheduledMsgAckTaskFlag = 0;
-gprsScheduledMsgStaTaskFlag = 0;
+while(gprsFlashCommandPtr[0] != 0xFF){
+gprsTransactionResult = gprsCommManager(gprsFlashCommandPtr[0]);
 
-gprsTaskState = TASK_READY;
-return(TASK_ON_COURSE);
+if(gprsTransactionResult == TASK_DATA_READY){
+if(gprsRomCommandPtr->gprsParserPtr()){
+gprsRomCommandPtr = &gprsAtCommands[gprsFlashCommandPtr[0]];
+gprsTransactionAttemps = gprsRomCommandPtr->cmdRepeatAttemps;
+continue;
 }
-else if(gprsTransactionAttemps){
+if(gprsTransactionAttemps){
 gprsTransactionAttemps--;
 }
+if(!gprsTransactionAttemps){
+gprsTransactionResult = TASK_NO_SENSOR_FOUND;
 }
-if(GPRS_TransactionResult == TASK_NO_SENSOR_FOUND){
+}
 
-
-gprsScheduledMsgStaTaskFlag = 0;
+if(gprsTransactionResult == TASK_NO_SENSOR_FOUND){
 gprsScheduledMsgTaskFlag = 0;
-gprsScheduledMsgAckTaskFlag = 0;
 gprsTaskState = TASK_READY;
 return(TASK_DATA_NOT_AVAILABLE);
 }
+return(TASK_ON_COURSE);
+}
+if(gprsScheduledMsgTaskFlag){
+gprsScheduledMsgTaskFlag = 0;
+}
+else if(gprsScheduledGetEpoFlag){
+gprsScheduledGetEpoFlag = 0;
+}
+gprsTaskState = TASK_READY;
 return(TASK_ON_COURSE);
 default:
 gprsTaskState = TASK_RESET_TASK;
 return(TASK_ON_COURSE);
 }
+}
+void gprsTaskLoadPayloadBuffer(uint8_t *rawData){
+uint8_t payloadBufferPtr, buffer;
+
+for(payloadBufferPtr = 0; payloadBufferPtr < 12; payloadBufferPtr++){
+buffer = (rawData[payloadBufferPtr] >> 4) & 0x0F;
+gprsPayloadBuffer[2 * payloadBufferPtr] = (buffer < 10)? (buffer + '0'): (buffer - 10 + 'A');
+buffer = rawData[payloadBufferPtr] & 0x0F;
+gprsPayloadBuffer[2 * payloadBufferPtr + 1] = (buffer < 10)? (buffer + '0'): (buffer - 10 + 'A');
+}
+gprsPayloadBuffer[24] = 0;
+}
+void gprsTaskNewTask(GPRS_TASK_COMMANDS_T command){
+switch(command){
+case GPRS_TASK_INITIALIZE:
+gprsScheduledInitTaskFlag = 1;
+break;
+
+case GPRS_TASK_SEND_MSG:
+gprsScheduledMsgTaskFlag = 1;
+
+break;
+
+case GPRS_TASK_GET_EPO:
+gprsScheduledGetEpoFlag = 1;
+break;
+case GPRS_TASK_PWR_DOWN:
+gprsScheduledPwrDownTaskFlag = 1;
+break;
+
+case GPRS_TASK_FLUSH:
+break;
+
+case GPRS_TASK_GET_FTP_CFG:
+break;
+case GRPS_TASK_SET_FTP:
+break;
+default : break;
+
+# 509
+}
+}
+
+# 516
+void EUSART2_GPRS_Transmit_ISR(void){
+if(gprsTxBuffer[gprsTXBufferPtr] == 0)
+{
+PIE3bits.TX2IE = 0;
+gprsReceive();
+}
+else
+{
+TXREG2 = gprsTxBuffer[gprsTXBufferPtr];
+gprsTXBufferPtr++;
+}
+PIR3bits.TX2IF = 0;
+
+# 537
+}
+
+void EUSART2_GPRS_Receive_ISR(void){
+uint8_t auxVar;
+static uint8_t lastReceivedB;
+auxVar = RCREG2;
+PIR3bits.RC2IF = 0;
+if(1 == RCSTA2bits.OERR)
+{
+RCSTA2bits.CREN = 0;
+RCSTA2bits.CREN = 1;
+gprsRXBufferPtr = 0;
+auxVar = 0;
+lastReceivedB=0;
+}
+if(gprsRXBufferPtr >= (180-1))
+{
+lastReceivedB=0;
+gprsRXBufferPtr = 0;
+}
+if((auxVar == '4'||auxVar=='0')&&(gprsRXBufferPtr > 0)&&(lastReceivedB==0x0d)){
+gprsMsgReceivedFlag = 1;
+lastReceivedB=0;
+PIE3bits.RC2IE = 0;
+}
+lastReceivedB=auxVar;
+gprsRxBuffer[gprsRXBufferPtr++] = auxVar;
+gprsRxBuffer[gprsRXBufferPtr] = 0;
 }

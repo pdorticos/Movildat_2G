@@ -1,13 +1,16 @@
 Version 3.2 HI-TECH Software Intermediate Code
+"9 /opt/microchip/xc8/v1.42/include/time.h
+[s S821 `i 1 `i 1 `i 1 `i 1 `i 1 `i 1 `i 1 `i 1 `i 1 ]
+[n S821 tm tm_sec tm_min tm_hour tm_mday tm_mon tm_year tm_wday tm_yday tm_isdst ]
 "35 mcc_generated_files/eusart2.c
-[c E6656 0 1 2 3 4 .. ]
-[n E6656 _taskStates_t TASK_PARKED TASK_RESET_TASK TASK_INIT TASK_READY TASK_WAITING_DATA  ]
+[c E6688 0 1 2 3 4 .. ]
+[n E6688 _taskStates_t TASK_PARKED TASK_RESET_TASK TASK_INIT TASK_READY TASK_WAITING_DATA  ]
 "36
-[c E6677 0 1 .. ]
-[n E6677 _TaskCommManagerState_t TASK_SEND_COMMAND_SM TASK_DETECT_TRANSACTION_END_SM  ]
+[c E6709 0 1 .. ]
+[n E6709 _TaskCommManagerState_t TASK_SEND_COMMAND_SM TASK_DETECT_TRANSACTION_END_SM  ]
 "37
-[c E6663 0 1 2 3 4 .. ]
-[n E6663 _taskResult_t TASK_NO_SENSOR_FOUND TASK_ON_COURSE TASK_DATA_READY TASK_TO_ERR TASK_DATA_NOT_AVAILABLE  ]
+[c E6695 0 1 2 3 4 .. ]
+[n E6695 _taskResult_t TASK_NO_SENSOR_FOUND TASK_ON_COURSE TASK_DATA_READY TASK_TO_ERR TASK_DATA_NOT_AVAILABLE  ]
 "4453 /opt/microchip/xc8/v1.42/include/pic18lf25k22.h
 [s S209 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S209 . RX9D OERR FERR ADDEN CREN SREN RX9 SPEN ]
@@ -81,8 +84,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 "53 /opt/microchip/xc8/v1.42/include/string.h
 [v _strstr `(*uc ~T0 @X0 0 ef2`*Cuc`*Cuc ]
 "173 mcc_generated_files/eusart2.c
-[c E6708 0 1 2 3 4 5 6 .. ]
-[n E6708 _SFX_TASK_COMMANDS_T SFX_CMD_INITIALIZE SFX_CMD_SEND_MSG SFX_CMD_SEND_MSG_WAIT_ACK SFX_CMD_SEND_STATUS SFX_CMD_SET_SFX_MODE SFX_CMD_PWR_DOWN SFX_CMD_ADJ_PWR  ]
+[c E6747 0 1 2 3 4 5 6 .. ]
+[n E6747 _SFX_TASK_COMMANDS_T SFX_CMD_INITIALIZE SFX_CMD_SEND_MSG SFX_CMD_SEND_MSG_WAIT_ACK SFX_CMD_SEND_STATUS SFX_CMD_SET_SFX_MODE SFX_CMD_PWR_DOWN SFX_CMD_ADJ_PWR  ]
 "37 /opt/microchip/xc8/v1.42/include/string.h
 [v _strcpy `(*uc ~T0 @X0 0 ef2`*uc`*Cuc ]
 "36
@@ -6396,92 +6399,186 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 217: typedef uint32_t uintmax_t;
 [; ;stdint.h: 222: typedef int16_t intptr_t;
 [; ;stdint.h: 227: typedef uint16_t uintptr_t;
-[; ;sfxProtocol.h: 34: typedef enum _mainTaskStates_t {
-[; ;sfxProtocol.h: 35: MAIN_TASK_PARKED,
-[; ;sfxProtocol.h: 36: POWERING_TASK,
-[; ;sfxProtocol.h: 37: MEASURING_TASK,
-[; ;sfxProtocol.h: 38: COMMUNICATING_TASK
-[; ;sfxProtocol.h: 39: }mainTaskStates_t;
-[; ;sfxProtocol.h: 41: typedef enum _taskStates_t {
-[; ;sfxProtocol.h: 42: TASK_PARKED,
-[; ;sfxProtocol.h: 43: TASK_RESET_TASK,
-[; ;sfxProtocol.h: 44: TASK_INIT,
-[; ;sfxProtocol.h: 45: TASK_READY,
-[; ;sfxProtocol.h: 46: TASK_WAITING_DATA
-[; ;sfxProtocol.h: 47: }taskStates_t;
-[; ;sfxProtocol.h: 49: typedef enum _taskResult_t {
-[; ;sfxProtocol.h: 50: TASK_NO_SENSOR_FOUND,
-[; ;sfxProtocol.h: 51: TASK_ON_COURSE,
-[; ;sfxProtocol.h: 52: TASK_DATA_READY,
-[; ;sfxProtocol.h: 53: TASK_TO_ERR,
-[; ;sfxProtocol.h: 54: TASK_DATA_NOT_AVAILABLE
-[; ;sfxProtocol.h: 55: }taskResult_t;
-[; ;sfxProtocol.h: 57: typedef enum _dataQualifier_t {
-[; ;sfxProtocol.h: 58: SENSOR_READ,
-[; ;sfxProtocol.h: 59: BORROWED,
-[; ;sfxProtocol.h: 60: CALCULATED,
-[; ;sfxProtocol.h: 61: NOT_AVAILABLE,
-[; ;sfxProtocol.h: 62: UNKNOWN_SENSOR
-[; ;sfxProtocol.h: 63: }dataQualifier_t;
-[; ;sfxProtocol.h: 65: typedef enum _TaskCommManagerState_t {
-[; ;sfxProtocol.h: 66: TASK_SEND_COMMAND_SM = 0,
-[; ;sfxProtocol.h: 67: TASK_DETECT_TRANSACTION_END_SM
-[; ;sfxProtocol.h: 68: } TaskCommManagerState_t;
-[; ;sfxProtocol.h: 70: typedef enum _systemEvent_t {
-[; ;sfxProtocol.h: 71: HW_WARNING_EV,
-[; ;sfxProtocol.h: 72: TIMER1_EV,
-[; ;sfxProtocol.h: 73: TIMER2_EV,
-[; ;sfxProtocol.h: 74: INPUT_EV,
-[; ;sfxProtocol.h: 75: MOTION_EV,
-[; ;sfxProtocol.h: 76: VARIABLE_ALARM_EV,
-[; ;sfxProtocol.h: 77: BATTERY_EV
-[; ;sfxProtocol.h: 78: }systemEvent_t;
-"85 Sigfox/sfxProtocol.h
+[; ;__size_t.h: 4: typedef unsigned size_t;
+[; ;time.h: 8: typedef long time_t;
+[; ;time.h: 9: struct tm {
+[; ;time.h: 10: int tm_sec;
+[; ;time.h: 11: int tm_min;
+[; ;time.h: 12: int tm_hour;
+[; ;time.h: 13: int tm_mday;
+[; ;time.h: 14: int tm_mon;
+[; ;time.h: 15: int tm_year;
+[; ;time.h: 16: int tm_wday;
+[; ;time.h: 17: int tm_yday;
+[; ;time.h: 18: int tm_isdst;
+[; ;time.h: 19: };
+[; ;time.h: 25: extern int time_zone;
+[; ;time.h: 30: extern time_t time(time_t *);
+[; ;time.h: 31: extern int stime(time_t *);
+[; ;time.h: 47: extern char * asctime(const struct tm *) ;
+[; ;time.h: 48: extern char * ctime(const time_t *) ;
+[; ;time.h: 49: extern struct tm * gmtime(const time_t *) ;
+[; ;time.h: 50: extern struct tm * localtime(const time_t *) ;
+[; ;time.h: 51: extern size_t strftime(char *, size_t, const char *, const struct tm *) ;
+[; ;time.h: 52: extern time_t mktime(struct tm *);
+[; ;sfxProtocol.h: 35: typedef enum _mainTaskStates_t {
+[; ;sfxProtocol.h: 36: MAIN_TASK_PARKED,
+[; ;sfxProtocol.h: 37: POWERING_TASK,
+[; ;sfxProtocol.h: 38: MEASURING_TASK,
+[; ;sfxProtocol.h: 39: COMMUNICATING_TASK
+[; ;sfxProtocol.h: 40: }mainTaskStates_t;
+[; ;sfxProtocol.h: 42: typedef enum _taskStates_t {
+[; ;sfxProtocol.h: 43: TASK_PARKED,
+[; ;sfxProtocol.h: 44: TASK_RESET_TASK,
+[; ;sfxProtocol.h: 45: TASK_INIT,
+[; ;sfxProtocol.h: 46: TASK_READY,
+[; ;sfxProtocol.h: 47: TASK_WAITING_DATA
+[; ;sfxProtocol.h: 48: }taskStates_t;
+[; ;sfxProtocol.h: 50: typedef enum _taskResult_t {
+[; ;sfxProtocol.h: 51: TASK_NO_SENSOR_FOUND,
+[; ;sfxProtocol.h: 52: TASK_ON_COURSE,
+[; ;sfxProtocol.h: 53: TASK_DATA_READY,
+[; ;sfxProtocol.h: 54: TASK_TO_ERR,
+[; ;sfxProtocol.h: 55: TASK_DATA_NOT_AVAILABLE
+[; ;sfxProtocol.h: 56: }taskResult_t;
+[; ;sfxProtocol.h: 58: typedef enum _dataQualifier_t {
+[; ;sfxProtocol.h: 59: SENSOR_READ,
+[; ;sfxProtocol.h: 60: BORROWED,
+[; ;sfxProtocol.h: 61: CALCULATED,
+[; ;sfxProtocol.h: 62: NOT_AVAILABLE,
+[; ;sfxProtocol.h: 63: UNKNOWN_SENSOR
+[; ;sfxProtocol.h: 64: }dataQualifier_t;
+[; ;sfxProtocol.h: 66: typedef enum _TaskCommManagerState_t {
+[; ;sfxProtocol.h: 67: TASK_SEND_COMMAND_SM = 0,
+[; ;sfxProtocol.h: 68: TASK_DETECT_TRANSACTION_END_SM
+[; ;sfxProtocol.h: 69: } TaskCommManagerState_t;
+[; ;sfxProtocol.h: 71: typedef enum _systemEvent_t {
+[; ;sfxProtocol.h: 72: HW_WARNING_EV,
+[; ;sfxProtocol.h: 73: TIMER1_EV,
+[; ;sfxProtocol.h: 74: TIMER2_EV,
+[; ;sfxProtocol.h: 75: INPUT_EV,
+[; ;sfxProtocol.h: 76: MOTION_EV,
+[; ;sfxProtocol.h: 77: VARIABLE_ALARM_EV,
+[; ;sfxProtocol.h: 78: BATTERY_EV
+[; ;sfxProtocol.h: 79: }systemEvent_t;
+"88 Sigfox/sfxProtocol.h
+[v _sysVarAPN `AEuc ~T0 @X0 -> 32 `i e ]
+[i _sysVarAPN
+:U ..
+-> 34 `c
+-> 119 `c
+-> 108 `c
+-> 97 `c
+-> 112 `c
+-> 110 `c
+-> 46 `c
+-> 99 `c
+-> 111 `c
+-> 109 `c
+-> 34 `c
+-> 0 `c
+..
+]
+[; ;sfxProtocol.h: 88: eeprom char sysVarAPN[32] = "\"wlapn.com\"";
+"89
+[v _sysVarDestPORT `AEuc ~T0 @X0 -> 8 `i e ]
+[i _sysVarDestPORT
+:U ..
+-> 54 `c
+-> 48 `c
+-> 48 `c
+-> 48 `c
+-> 0 `c
+..
+]
+[; ;sfxProtocol.h: 89: eeprom char sysVarDestPORT[8] = "6000";
+"90
+[v _sysVarDestADDRESS `AEuc ~T0 @X0 -> 32 `i e ]
+[i _sysVarDestADDRESS
+:U ..
+-> 53 `c
+-> 50 `c
+-> 46 `c
+-> 56 `c
+-> 56 `c
+-> 46 `c
+-> 50 `c
+-> 52 `c
+-> 46 `c
+-> 55 `c
+-> 52 `c
+-> 0 `c
+..
+]
+[; ;sfxProtocol.h: 90: eeprom char sysVarDestADDRESS[32] = "52.88.24.74";
+"93
 [v _sysVarGpsValidFlag `Auc ~T0 @X0 1 e ]
 [i _sysVarGpsValidFlag
 -> -> 0 `i `uc
 ]
-[; ;sfxProtocol.h: 85: bool sysVarGpsValidFlag = 0;
-"86
+[; ;sfxProtocol.h: 93: bool sysVarGpsValidFlag = 0;
+"94
 [v _sysVarGpsLat `Al ~T0 @X0 1 e ]
-[; ;sfxProtocol.h: 86: long sysVarGpsLat;
-"87
+[; ;sfxProtocol.h: 94: long sysVarGpsLat;
+"95
 [v _sysVarGpsLong `Al ~T0 @X0 1 e ]
-[; ;sfxProtocol.h: 87: long sysVarGpsLong;
-"88
+[; ;sfxProtocol.h: 95: long sysVarGpsLong;
+"96
 [v _sysVarGpsSpeed `Aui ~T0 @X0 1 e ]
-[; ;sfxProtocol.h: 88: unsigned int sysVarGpsSpeed;
-"89
+[; ;sfxProtocol.h: 96: unsigned int sysVarGpsSpeed;
+"97
 [v _sysVarGpsCourse `Ai ~T0 @X0 1 e ]
-[; ;sfxProtocol.h: 89: int sysVarGpsCourse;
-"90
+[; ;sfxProtocol.h: 97: int sysVarGpsCourse;
+"98
 [v _sysVarGpsAlt `Aui ~T0 @X0 1 e ]
 [i _sysVarGpsAlt
 -> -> 6000 `i `ui
 ]
-[; ;sfxProtocol.h: 90: unsigned int sysVarGpsAlt = 6000;
-"91
+[; ;sfxProtocol.h: 98: unsigned int sysVarGpsAlt = 6000;
+"99
+[v _sysVarGPS `AS821 ~T0 @X0 1 e ]
+[; ;sfxProtocol.h: 99: struct tm sysVarGPS;
+"100
 [v _sysVarGpsDayTime `Al ~T0 @X0 1 e ]
-[; ;sfxProtocol.h: 91: long sysVarGpsDayTime;
-"93
+[; ;sfxProtocol.h: 100: long sysVarGpsDayTime;
+"101
+[v _sysVarUNIXDayTime `Al ~T0 @X0 1 e ]
+[; ;sfxProtocol.h: 101: time_t sysVarUNIXDayTime;
+"103
 [v _sysVarGpsOdometer `Aui ~T0 @X0 1 e ]
-[; ;sfxProtocol.h: 93: unsigned int sysVarGpsOdometer;
-"96
+[; ;sfxProtocol.h: 103: unsigned int sysVarGpsOdometer;
+"106
+[v _sysVarCCID `Auc ~T0 @X0 -> 20 `i e ]
+[i _sysVarCCID
+:U ..
+-> 0 `c
+..
+]
+[; ;sfxProtocol.h: 106: char sysVarCCID[20] = "";
+"107
+[v _sysVarIMEI `Auc ~T0 @X0 -> 20 `i e ]
+[i _sysVarIMEI
+:U ..
+-> 0 `c
+..
+]
+[; ;sfxProtocol.h: 107: char sysVarIMEI[20] = "";
+"109
 [v _sysVarBattery `Auc ~T0 @X0 1 e ]
 [i _sysVarBattery
 -> -> 100 `i `uc
 ]
-[; ;sfxProtocol.h: 96: unsigned char sysVarBattery = 100;
-"99
+[; ;sfxProtocol.h: 109: unsigned char sysVarBattery = 100;
+"112
 [v _sysVarMainInput `Auc ~T0 @X0 1 e ]
 [i _sysVarMainInput
 -> -> 0 `i `uc
 ]
-[; ;sfxProtocol.h: 99: bool sysVarMainInput = 0;
-[; ;sfxProtocol.h: 102: void ProtocolTaskSleepTimeUpdate(unsigned int watchDogSleepingTime);
-[; ;sfxProtocol.h: 103: void ProtocolTaskTick(void);
-[; ;sfxProtocol.h: 104: taskResult_t ProtocolTask(void);
-[; ;sfxProtocol.h: 105: void ProtocolTaskPowerDown(void);
+[; ;sfxProtocol.h: 112: bool sysVarMainInput = 0;
+[; ;sfxProtocol.h: 115: void ProtocolTaskSleepTimeUpdate(unsigned int watchDogSleepingTime);
+[; ;sfxProtocol.h: 116: void ProtocolTaskTick(void);
+[; ;sfxProtocol.h: 117: taskResult_t ProtocolTask(void);
+[; ;sfxProtocol.h: 118: void ProtocolTaskPowerDown(void);
 [; ;eusart2.h: 12: typedef enum _SFX_TASK_COMMANDS_T {
 [; ;eusart2.h: 13: SFX_CMD_INITIALIZE,
 [; ;eusart2.h: 14: SFX_CMD_SEND_MSG,
@@ -6499,7 +6596,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;eusart2.h: 34: void EUSART2_Initialize(void);
 [; ;eusart2.h: 35: void EUSART2_Transmit_ISR(void);
 [; ;eusart2.h: 36: void EUSART2_Receive_ISR(void);
-[; ;__size_t.h: 4: typedef unsigned size_t;
 [; ;string.h: 14: extern void * memcpy(void *, const void *, size_t);
 [; ;string.h: 15: extern void * memmove(void *, const void *, size_t);
 [; ;string.h: 16: extern void * memset(void *, int, size_t);
@@ -6529,21 +6625,21 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pin_manager.h: 353: void PIN_MANAGER_Initialize (void);
 [; ;pin_manager.h: 365: void PIN_MANAGER_IOC(void);
 "35 mcc_generated_files/eusart2.c
-[v _SFX_STATE `AE6656 ~T0 @X0 1 s ]
+[v _SFX_STATE `AE6688 ~T0 @X0 1 s ]
 [i _SFX_STATE
-. `E6656 1
+. `E6688 1
 ]
 [; ;eusart2.c: 35: static taskStates_t SFX_STATE = TASK_RESET_TASK;
 "36
-[v _SigfoxCommManagerState `AE6677 ~T0 @X0 1 s ]
+[v _SigfoxCommManagerState `AE6709 ~T0 @X0 1 s ]
 [i _SigfoxCommManagerState
-. `E6677 0
+. `E6709 0
 ]
 [; ;eusart2.c: 36: static TaskCommManagerState_t SigfoxCommManagerState = TASK_SEND_COMMAND_SM;
 "37
-[v _SigfoxTransactionResult `AE6663 ~T0 @X0 1 s ]
+[v _SigfoxTransactionResult `AE6695 ~T0 @X0 1 s ]
 [i _SigfoxTransactionResult
-. `E6663 1
+. `E6695 1
 ]
 [; ;eusart2.c: 37: static taskResult_t SigfoxTransactionResult = TASK_ON_COURSE;
 "38
@@ -6603,9 +6699,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "58
 [v _SigfoxTxDelay `Auc ~T0 @X0 1 e ]
 [; ;eusart2.c: 58: uint8_t SigfoxTxDelay;
-[v F6841 `(v ~T0 @X0 1 tf ]
+[v F6879 `(v ~T0 @X0 1 tf ]
 "61
-[v _SigfoxReceive `AF6841 ~T0 @X0 1 e ]
+[v _SigfoxReceive `AF6879 ~T0 @X0 1 e ]
 {
 [; ;eusart2.c: 61: void SigfoxReceive(void){
 [e :U _SigfoxReceive ]
@@ -6630,11 +6726,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . . _PIE3bits 0 5 -> -> 1 `i `uc ]
 [; ;eusart2.c: 72: }
 "72
-[e :UE 821 ]
+[e :UE 822 ]
 }
-[v F6843 `(v ~T0 @X0 1 tf ]
+[v F6881 `(v ~T0 @X0 1 tf ]
 "77
-[v _EUSART2_Initialize `AF6843 ~T0 @X0 1 e ]
+[v _EUSART2_Initialize `AF6881 ~T0 @X0 1 e ]
 {
 [; ;eusart2.c: 77: void EUSART2_Initialize(void){
 [e :U _EUSART2_Initialize ]
@@ -6665,18 +6761,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _SPBRGH2 -> -> 0 `i `uc ]
 [; ;eusart2.c: 97: }
 "97
-[e :UE 822 ]
+[e :UE 823 ]
 }
-[v F6845 `(v ~T0 @X0 1 tf ]
+[v F6883 `(v ~T0 @X0 1 tf ]
 "98
-[v _EUSART2_Transmit_ISR `AF6845 ~T0 @X0 1 e ]
+[v _EUSART2_Transmit_ISR `AF6883 ~T0 @X0 1 e ]
 {
 [; ;eusart2.c: 98: void EUSART2_Transmit_ISR(void){
 [e :U _EUSART2_Transmit_ISR ]
 [f ]
 [; ;eusart2.c: 99: if(SigfoxTXBuffer[SigfoxTXBufferPtr] == 0)
 "99
-[e $ ! == -> *U + &U _SigfoxTXBuffer * -> _SigfoxTXBufferPtr `ux -> -> # *U &U _SigfoxTXBuffer `ui `ux `i -> 0 `i 824  ]
+[e $ ! == -> *U + &U _SigfoxTXBuffer * -> _SigfoxTXBufferPtr `ux -> -> # *U &U _SigfoxTXBuffer `ui `ux `i -> 0 `i 825  ]
 [; ;eusart2.c: 100: {
 "100
 {
@@ -6689,9 +6785,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "103
 }
 [; ;eusart2.c: 103: }
-[e $U 825  ]
+[e $U 826  ]
 "104
-[e :U 824 ]
+[e :U 825 ]
 [; ;eusart2.c: 104: else
 [; ;eusart2.c: 105: {
 "105
@@ -6704,18 +6800,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ++ _SigfoxTXBufferPtr -> -> 1 `i `uc ]
 "108
 }
-[e :U 825 ]
+[e :U 826 ]
 [; ;eusart2.c: 108: }
 [; ;eusart2.c: 109: PIR3bits.TX2IF = 0;
 "109
 [e = . . _PIR3bits 0 4 -> -> 0 `i `uc ]
 [; ;eusart2.c: 119: }
 "119
-[e :UE 823 ]
+[e :UE 824 ]
 }
-[v F6847 `(v ~T0 @X0 1 tf ]
+[v F6885 `(v ~T0 @X0 1 tf ]
 "120
-[v _EUSART2_Receive_ISR `AF6847 ~T0 @X0 1 e ]
+[v _EUSART2_Receive_ISR `AF6885 ~T0 @X0 1 e ]
 {
 [; ;eusart2.c: 120: void EUSART2_Receive_ISR(void){
 [e :U _EUSART2_Receive_ISR ]
@@ -6731,7 +6827,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . . _PIR3bits 0 5 -> -> 0 `i `uc ]
 [; ;eusart2.c: 125: if(1 == RCSTA2bits.OERR)
 "125
-[e $ ! == -> 1 `i -> . . _RCSTA2bits 0 1 `i 827  ]
+[e $ ! == -> 1 `i -> . . _RCSTA2bits 0 1 `i 828  ]
 [; ;eusart2.c: 126: {
 "126
 {
@@ -6749,11 +6845,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _auxVar -> -> 0 `i `uc ]
 "131
 }
-[e :U 827 ]
+[e :U 828 ]
 [; ;eusart2.c: 131: }
 [; ;eusart2.c: 132: if(SigfoxRXBufferPtr >= (22-1))
 "132
-[e $ ! >= -> _SigfoxRXBufferPtr `i - -> 22 `i -> 1 `i 828  ]
+[e $ ! >= -> _SigfoxRXBufferPtr `i - -> 22 `i -> 1 `i 829  ]
 [; ;eusart2.c: 133: {
 "133
 {
@@ -6762,11 +6858,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _SigfoxRXBufferPtr -> -> 0 `i `uc ]
 "135
 }
-[e :U 828 ]
+[e :U 829 ]
 [; ;eusart2.c: 135: }
 [; ;eusart2.c: 137: if((auxVar == 0x0d)&&(SigfoxRXBufferPtr > 0)){
 "137
-[e $ ! && == -> _auxVar `i -> 13 `i > -> _SigfoxRXBufferPtr `i -> 0 `i 829  ]
+[e $ ! && == -> _auxVar `i -> 13 `i > -> _SigfoxRXBufferPtr `i -> 0 `i 830  ]
 {
 [; ;eusart2.c: 138: SigfoxMsgReceivedFlag = 1;
 "138
@@ -6776,7 +6872,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . . _PIE3bits 0 5 -> -> 0 `i `uc ]
 "140
 }
-[e :U 829 ]
+[e :U 830 ]
 [; ;eusart2.c: 140: }
 [; ;eusart2.c: 141: SigfoxRXBuffer[SigfoxRXBufferPtr++] = auxVar;
 "141
@@ -6786,11 +6882,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = *U + &U _SigfoxRXBuffer * -> _SigfoxRXBufferPtr `ux -> -> # *U &U _SigfoxRXBuffer `ui `ux -> -> 0 `i `uc ]
 [; ;eusart2.c: 143: }
 "143
-[e :UE 826 ]
+[e :UE 827 ]
 }
-[v F6850 `Cuc ~T0 @X0 -> 10 `i t ]
+[v F6888 `Cuc ~T0 @X0 -> 10 `i t ]
 "156
-[v _SigfoxCommandsDefinitions `AF6850 ~T0 @X0 -> 0 `x e ]
+[v _SigfoxCommandsDefinitions `AF6888 ~T0 @X0 -> 0 `x e ]
 [i _SigfoxCommandsDefinitions
 :U ..
 :U ..
@@ -6854,9 +6950,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;eusart2.c: 161: "ATX",
 [; ;eusart2.c: 162: "ATS202=7"
 [; ;eusart2.c: 163: };
-[v F6853 `(uc ~T0 @X0 1 tf ]
+[v F6891 `(uc ~T0 @X0 1 tf ]
 "167
-[v _SigfoxResponseParser `AF6853 ~T0 @X0 1 e ]
+[v _SigfoxResponseParser `AF6891 ~T0 @X0 1 e ]
 {
 [; ;eusart2.c: 167: bool SigfoxResponseParser(void){
 [e :U _SigfoxResponseParser ]
@@ -6870,23 +6966,23 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;eusart2.c: 171: return(1);
 "171
 [e ) -> -> 1 `i `uc ]
-[e $UE 830  ]
+[e $UE 831  ]
 [; ;eusart2.c: 172: }
 "172
-[e :UE 830 ]
+[e :UE 831 ]
 }
-[v F6857 `(v ~T0 @X0 1 tf1`E6708 ]
+[v F6895 `(v ~T0 @X0 1 tf1`E6747 ]
 "173
-[v _SigfoxCommandSelector `AF6857 ~T0 @X0 1 e ]
+[v _SigfoxCommandSelector `AF6895 ~T0 @X0 1 e ]
 {
 [; ;eusart2.c: 173: void SigfoxCommandSelector(SFX_TASK_COMMANDS_T SigfoxCommand){
 [e :U _SigfoxCommandSelector ]
-[v _SigfoxCommand `E6708 ~T0 @X0 1 r1 ]
+[v _SigfoxCommand `E6747 ~T0 @X0 1 r1 ]
 [f ]
 "175
 [v _SigfoxRomCommandStrPtr `*Cuc ~T0 @X0 1 a ]
-[v F6860 `Cuc ~T0 @X0 -> 0 `x s ]
-[i F6860
+[v F6898 `Cuc ~T0 @X0 -> 0 `x s ]
+[i F6898
 :U ..
 "176
 -> -> 13 `i `uc
@@ -6896,9 +6992,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _SFX_COMMAND_TAIL_STR `Cuc ~T0 @X0 2  a ]
 [; ;eusart2.c: 175: const char *SigfoxRomCommandStrPtr;
 [; ;eusart2.c: 176: const char SFX_COMMAND_TAIL_STR[] = {0x0d, 0};
-[e = _SFX_COMMAND_TAIL_STR F6860 ]
-[v F6862 `Cuc ~T0 @X0 -> 0 `x s ]
-[i F6862
+[e = _SFX_COMMAND_TAIL_STR F6898 ]
+[v F6900 `Cuc ~T0 @X0 -> 0 `x s ]
+[i F6900
 :U ..
 "177
 -> -> 44 `ui `uc
@@ -6909,7 +7005,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 ]
 [v _SFX_COMMAND_TAIL_ACK_STR `Cuc ~T0 @X0 4  a ]
 [; ;eusart2.c: 177: const char SFX_COMMAND_TAIL_ACK_STR[] = {',','1',0x0d, 0};
-[e = _SFX_COMMAND_TAIL_ACK_STR F6862 ]
+[e = _SFX_COMMAND_TAIL_ACK_STR F6900 ]
 [; ;eusart2.c: 179: SigfoxTimeOutTimer = 5;
 "179
 [e = _SigfoxTimeOutTimer -> -> 5 `i `uc ]
@@ -6918,24 +7014,24 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _SigfoxRomCommandStrPtr &U *U + &U _SigfoxCommandsDefinitions * -> _SigfoxCommand `ux -> * -> # *U &U *U &U _SigfoxCommandsDefinitions `ui -> -> 10 `i `ui `ux ]
 [; ;eusart2.c: 181: switch(SigfoxCommand){
 "181
-[e $U 833  ]
+[e $U 834  ]
 {
 [; ;eusart2.c: 182: case SFX_CMD_INITIALIZE:
 "182
-[e :U 834 ]
+[e :U 835 ]
 [; ;eusart2.c: 183: strcpy(SigfoxTXBuffer,SigfoxRomCommandStrPtr);
 "183
 [e ( _strcpy (2 , &U _SigfoxTXBuffer _SigfoxRomCommandStrPtr ]
 [; ;eusart2.c: 184: return;
 "184
-[e $UE 831  ]
+[e $UE 832  ]
 [; ;eusart2.c: 185: case SFX_CMD_SET_SFX_MODE:
 "185
-[e :U 835 ]
-"186
 [e :U 836 ]
-"187
+"186
 [e :U 837 ]
+"187
+[e :U 838 ]
 [; ;eusart2.c: 186: case SFX_CMD_SEND_STATUS:
 [; ;eusart2.c: 187: case SFX_CMD_ADJ_PWR:
 [; ;eusart2.c: 188: strcpy(SigfoxTXBuffer,SigfoxRomCommandStrPtr);
@@ -6943,12 +7039,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _strcpy (2 , &U _SigfoxTXBuffer _SigfoxRomCommandStrPtr ]
 [; ;eusart2.c: 189: break;
 "189
-[e $U 832  ]
+[e $U 833  ]
 [; ;eusart2.c: 190: case SFX_CMD_SEND_MSG:
 "190
-[e :U 838 ]
-"191
 [e :U 839 ]
+"191
+[e :U 840 ]
 [; ;eusart2.c: 191: case SFX_CMD_SEND_MSG_WAIT_ACK:
 [; ;eusart2.c: 192: SigfoxTimeOutTimer = 30;
 "192
@@ -6961,25 +7057,25 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _strcat (2 , &U _SigfoxTXBuffer -> &U _SigfoxPayloadBuffer `*Cuc ]
 [; ;eusart2.c: 195: break;
 "195
-[e $U 832  ]
+[e $U 833  ]
 "196
 }
 [; ;eusart2.c: 196: }
-[e $U 832  ]
+[e $U 833  ]
 "181
-[e :U 833 ]
-[e [\ _SigfoxCommand , $ . `E6708 0 834
- , $ . `E6708 4 835
- , $ . `E6708 3 836
- , $ . `E6708 6 837
- , $ . `E6708 1 838
- , $ . `E6708 2 839
- 832 ]
+[e :U 834 ]
+[e [\ _SigfoxCommand , $ . `E6747 0 835
+ , $ . `E6747 4 836
+ , $ . `E6747 3 837
+ , $ . `E6747 6 838
+ , $ . `E6747 1 839
+ , $ . `E6747 2 840
+ 833 ]
 "196
-[e :U 832 ]
+[e :U 833 ]
 [; ;eusart2.c: 197: if(SigfoxCommand == SFX_CMD_SEND_MSG_WAIT_ACK){
 "197
-[e $ ! == -> _SigfoxCommand `i -> . `E6708 2 `i 840  ]
+[e $ ! == -> _SigfoxCommand `i -> . `E6747 2 `i 841  ]
 {
 [; ;eusart2.c: 198: strcat(SigfoxTXBuffer,SFX_COMMAND_TAIL_ACK_STR);
 "198
@@ -6987,9 +7083,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "199
 }
 [; ;eusart2.c: 199: }
-[e $U 841  ]
+[e $U 842  ]
 "200
-[e :U 840 ]
+[e :U 841 ]
 [; ;eusart2.c: 200: else
 [; ;eusart2.c: 201: {
 "201
@@ -6999,15 +7095,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _strcat (2 , &U _SigfoxTXBuffer &U _SFX_COMMAND_TAIL_STR ]
 "203
 }
-[e :U 841 ]
+[e :U 842 ]
 [; ;eusart2.c: 203: }
 [; ;eusart2.c: 205: }
 "205
-[e :UE 831 ]
+[e :UE 832 ]
 }
-[v F6865 `(v ~T0 @X0 1 tf ]
+[v F6903 `(v ~T0 @X0 1 tf ]
 "211
-[v _SigfoxTransmit `AF6865 ~T0 @X0 1 e ]
+[v _SigfoxTransmit `AF6903 ~T0 @X0 1 e ]
 {
 [; ;eusart2.c: 211: void SigfoxTransmit(void){
 [e :U _SigfoxTransmit ]
@@ -7020,38 +7116,38 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . . _PIE3bits 0 4 -> -> 1 `i `uc ]
 [; ;eusart2.c: 216: }
 "216
-[e :UE 842 ]
+[e :UE 843 ]
 }
-[v F6868 `(uc ~T0 @X0 1 tf ]
+[v F6906 `(uc ~T0 @X0 1 tf ]
 "218
-[v _SigfoxTXReady `AF6868 ~T0 @X0 1 e ]
+[v _SigfoxTXReady `AF6906 ~T0 @X0 1 e ]
 {
 [; ;eusart2.c: 218: bool SigfoxTXReady(void){
 [e :U _SigfoxTXReady ]
 [f ]
 [; ;eusart2.c: 219: if(!SigfoxTxDelay){
 "219
-[e $ ! ! != -> _SigfoxTxDelay `i -> -> -> 0 `i `Auc `i 844  ]
+[e $ ! ! != -> _SigfoxTxDelay `i -> -> -> 0 `i `Auc `i 845  ]
 {
 [; ;eusart2.c: 221: return(!PIE3bits.TX2IE);
 "221
 [e ) -> -> ! != -> . . _PIE3bits 0 4 `i -> -> -> 0 `i `Vuc `i `i `uc ]
-[e $UE 843  ]
+[e $UE 844  ]
 "222
 }
-[e :U 844 ]
+[e :U 845 ]
 [; ;eusart2.c: 222: }
 [; ;eusart2.c: 223: return(0);
 "223
 [e ) -> -> 0 `i `uc ]
-[e $UE 843  ]
+[e $UE 844  ]
 [; ;eusart2.c: 224: }
 "224
-[e :UE 843 ]
+[e :UE 844 ]
 }
-[v F6871 `(E6663 ~T0 @X0 1 tf ]
+[v F6909 `(E6695 ~T0 @X0 1 tf ]
 "229
-[v _SigfoxVerifyTransactionStatus `AF6871 ~T0 @X0 1 e ]
+[v _SigfoxVerifyTransactionStatus `AF6909 ~T0 @X0 1 e ]
 {
 [; ;eusart2.c: 229: taskResult_t SigfoxVerifyTransactionStatus(void){
 [e :U _SigfoxVerifyTransactionStatus ]
@@ -7061,109 +7157,109 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _SigfoxTxDelay -> -> 2 `i `uc ]
 [; ;eusart2.c: 232: SigfoxCommManagerState = TASK_SEND_COMMAND_SM;
 "232
-[e = _SigfoxCommManagerState . `E6677 0 ]
+[e = _SigfoxCommManagerState . `E6709 0 ]
 [; ;eusart2.c: 233: if(SigfoxMsgReceivedFlag){
 "233
-[e $ ! != -> _SigfoxMsgReceivedFlag `i -> -> -> 0 `i `Auc `i 846  ]
+[e $ ! != -> _SigfoxMsgReceivedFlag `i -> -> -> 0 `i `Auc `i 847  ]
 {
 [; ;eusart2.c: 234: SigfoxTransactionResult = TASK_DATA_READY;
 "234
-[e = _SigfoxTransactionResult . `E6663 2 ]
+[e = _SigfoxTransactionResult . `E6695 2 ]
 [; ;eusart2.c: 235: SigfoxMsgReceivedFlag = 0;
 "235
 [e = _SigfoxMsgReceivedFlag -> -> 0 `i `uc ]
 [; ;eusart2.c: 236: return(TASK_DATA_READY);
 "236
-[e ) . `E6663 2 ]
-[e $UE 845  ]
+[e ) . `E6695 2 ]
+[e $UE 846  ]
 "237
 }
-[e :U 846 ]
+[e :U 847 ]
 [; ;eusart2.c: 237: }
 [; ;eusart2.c: 238: if(SigfoxTransactionAttemps){
 "238
-[e $ ! != -> _SigfoxTransactionAttemps `i -> -> -> 0 `i `Auc `i 847  ]
+[e $ ! != -> _SigfoxTransactionAttemps `i -> -> -> 0 `i `Auc `i 848  ]
 {
 [; ;eusart2.c: 239: SigfoxTransactionAttemps--;
 "239
 [e -- _SigfoxTransactionAttemps -> -> 1 `i `uc ]
 "240
 }
-[e :U 847 ]
+[e :U 848 ]
 [; ;eusart2.c: 240: }
 [; ;eusart2.c: 241: if(SigfoxTransactionAttemps == 0){
 "241
-[e $ ! == -> _SigfoxTransactionAttemps `i -> 0 `i 848  ]
+[e $ ! == -> _SigfoxTransactionAttemps `i -> 0 `i 849  ]
 {
 [; ;eusart2.c: 242: SFX_STATE = TASK_RESET_TASK;
 "242
-[e = _SFX_STATE . `E6656 1 ]
+[e = _SFX_STATE . `E6688 1 ]
 [; ;eusart2.c: 243: SigfoxTransactionResult = TASK_NO_SENSOR_FOUND;
 "243
-[e = _SigfoxTransactionResult . `E6663 0 ]
+[e = _SigfoxTransactionResult . `E6695 0 ]
 [; ;eusart2.c: 244: return(TASK_NO_SENSOR_FOUND);
 "244
-[e ) . `E6663 0 ]
-[e $UE 845  ]
+[e ) . `E6695 0 ]
+[e $UE 846  ]
 "245
 }
-[e :U 848 ]
+[e :U 849 ]
 [; ;eusart2.c: 245: }
 [; ;eusart2.c: 246: SigfoxTransactionResult = TASK_ON_COURSE;
 "246
-[e = _SigfoxTransactionResult . `E6663 1 ]
+[e = _SigfoxTransactionResult . `E6695 1 ]
 [; ;eusart2.c: 247: return(TASK_ON_COURSE);
 "247
-[e ) . `E6663 1 ]
-[e $UE 845  ]
+[e ) . `E6695 1 ]
+[e $UE 846  ]
 [; ;eusart2.c: 248: }
 "248
-[e :UE 845 ]
+[e :UE 846 ]
 }
-[v F6874 `(E6663 ~T0 @X0 1 tf1`E6708 ]
+[v F6912 `(E6695 ~T0 @X0 1 tf1`E6747 ]
 "249
-[v _SigfoxCommManager `AF6874 ~T0 @X0 1 e ]
+[v _SigfoxCommManager `AF6912 ~T0 @X0 1 e ]
 {
 [; ;eusart2.c: 249: taskResult_t SigfoxCommManager(SFX_TASK_COMMANDS_T SigfoxCommand){
 [e :U _SigfoxCommManager ]
-[v _SigfoxCommand `E6708 ~T0 @X0 1 r1 ]
+[v _SigfoxCommand `E6747 ~T0 @X0 1 r1 ]
 [f ]
 [; ;eusart2.c: 251: SigfoxTransactionResult = TASK_ON_COURSE;
 "251
-[e = _SigfoxTransactionResult . `E6663 1 ]
+[e = _SigfoxTransactionResult . `E6695 1 ]
 [; ;eusart2.c: 252: switch(SigfoxCommManagerState){
 "252
-[e $U 851  ]
+[e $U 852  ]
 {
 [; ;eusart2.c: 253: case TASK_SEND_COMMAND_SM:
 "253
-[e :U 852 ]
+[e :U 853 ]
 [; ;eusart2.c: 254: if(SigfoxTXReady()){
 "254
-[e $ ! != -> ( _SigfoxTXReady ..  `i -> -> -> 0 `i `uc `i 853  ]
+[e $ ! != -> ( _SigfoxTXReady ..  `i -> -> -> 0 `i `uc `i 854  ]
 {
 [; ;eusart2.c: 255: SigfoxCommandSelector(SigfoxCommand);
 "255
 [e ( _SigfoxCommandSelector (1 _SigfoxCommand ]
 [; ;eusart2.c: 256: SigfoxCommManagerState = TASK_DETECT_TRANSACTION_END_SM;
 "256
-[e = _SigfoxCommManagerState . `E6677 1 ]
+[e = _SigfoxCommManagerState . `E6709 1 ]
 [; ;eusart2.c: 257: SigfoxTransmit();
 "257
 [e ( _SigfoxTransmit ..  ]
 "258
 }
-[e :U 853 ]
+[e :U 854 ]
 [; ;eusart2.c: 258: }
 [; ;eusart2.c: 259: break;
 "259
-[e $U 850  ]
+[e $U 851  ]
 [; ;eusart2.c: 260: case TASK_DETECT_TRANSACTION_END_SM:
 "260
-[e :U 854 ]
+[e :U 855 ]
 [; ;eusart2.c: 261: if(SigfoxTimeOutTimer == 0){
 "261
-[e $ ! == -> _SigfoxTimeOutTimer `i -> 0 `i 855  ]
+[e $ ! == -> _SigfoxTimeOutTimer `i -> 0 `i 856  ]
 {
 [; ;eusart2.c: 262: PIE3bits.TX2IE = 0;
 "262
@@ -7174,14 +7270,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;eusart2.c: 264: return(SigfoxVerifyTransactionStatus());
 "264
 [e ) ( _SigfoxVerifyTransactionStatus ..  ]
-[e $UE 849  ]
+[e $UE 850  ]
 "265
 }
-[e :U 855 ]
+[e :U 856 ]
 [; ;eusart2.c: 265: }
 [; ;eusart2.c: 266: if(SigfoxMsgReceivedFlag){
 "266
-[e $ ! != -> _SigfoxMsgReceivedFlag `i -> -> -> 0 `i `Auc `i 856  ]
+[e $ ! != -> _SigfoxMsgReceivedFlag `i -> -> -> 0 `i `Auc `i 857  ]
 {
 [; ;eusart2.c: 267: SigfoxTimeOutTimer = 0;
 "267
@@ -7189,81 +7285,81 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;eusart2.c: 268: return(SigfoxVerifyTransactionStatus());
 "268
 [e ) ( _SigfoxVerifyTransactionStatus ..  ]
-[e $UE 849  ]
+[e $UE 850  ]
 "269
 }
-[e :U 856 ]
+[e :U 857 ]
 [; ;eusart2.c: 269: }
 [; ;eusart2.c: 270: break;
 "270
-[e $U 850  ]
+[e $U 851  ]
 [; ;eusart2.c: 271: default:
 "271
-[e :U 857 ]
+[e :U 858 ]
 [; ;eusart2.c: 272: SigfoxCommManagerState = TASK_SEND_COMMAND_SM;
 "272
-[e = _SigfoxCommManagerState . `E6677 0 ]
+[e = _SigfoxCommManagerState . `E6709 0 ]
 [; ;eusart2.c: 273: SigfoxTxDelay = 2;
 "273
 [e = _SigfoxTxDelay -> -> 2 `i `uc ]
 [; ;eusart2.c: 274: break;
 "274
-[e $U 850  ]
+[e $U 851  ]
 "275
 }
 [; ;eusart2.c: 275: }
-[e $U 850  ]
+[e $U 851  ]
 "252
-[e :U 851 ]
-[e [\ _SigfoxCommManagerState , $ . `E6677 0 852
- , $ . `E6677 1 854
- 857 ]
+[e :U 852 ]
+[e [\ _SigfoxCommManagerState , $ . `E6709 0 853
+ , $ . `E6709 1 855
+ 858 ]
 "275
-[e :U 850 ]
+[e :U 851 ]
 [; ;eusart2.c: 276: return(TASK_ON_COURSE);
 "276
-[e ) . `E6663 1 ]
-[e $UE 849  ]
+[e ) . `E6695 1 ]
+[e $UE 850  ]
 [; ;eusart2.c: 277: }
 "277
-[e :UE 849 ]
+[e :UE 850 ]
 }
-[v F6876 `(v ~T0 @X0 1 tf ]
+[v F6914 `(v ~T0 @X0 1 tf ]
 "282
-[v _SigfoxTaskTick `AF6876 ~T0 @X0 1 e ]
+[v _SigfoxTaskTick `AF6914 ~T0 @X0 1 e ]
 {
 [; ;eusart2.c: 282: void SigfoxTaskTick(void){
 [e :U _SigfoxTaskTick ]
 [f ]
 [; ;eusart2.c: 283: if(SigfoxTimeOutTimer){
 "283
-[e $ ! != -> _SigfoxTimeOutTimer `i -> -> -> 0 `i `Auc `i 859  ]
+[e $ ! != -> _SigfoxTimeOutTimer `i -> -> -> 0 `i `Auc `i 860  ]
 {
 [; ;eusart2.c: 284: SigfoxTimeOutTimer--;
 "284
 [e -- _SigfoxTimeOutTimer -> -> 1 `i `uc ]
 "285
 }
-[e :U 859 ]
+[e :U 860 ]
 [; ;eusart2.c: 285: }
 [; ;eusart2.c: 286: if(SigfoxTxDelay){
 "286
-[e $ ! != -> _SigfoxTxDelay `i -> -> -> 0 `i `Auc `i 860  ]
+[e $ ! != -> _SigfoxTxDelay `i -> -> -> 0 `i `Auc `i 861  ]
 {
 [; ;eusart2.c: 287: SigfoxTxDelay--;
 "287
 [e -- _SigfoxTxDelay -> -> 1 `i `uc ]
 "288
 }
-[e :U 860 ]
+[e :U 861 ]
 [; ;eusart2.c: 288: }
 [; ;eusart2.c: 289: }
 "289
-[e :UE 858 ]
+[e :UE 859 ]
 }
-[v F6879 `(v ~T0 @X0 1 tf ]
+[v F6917 `(v ~T0 @X0 1 tf ]
 "290
-[v _SigfoxTaskReset `AF6879 ~T0 @X0 1 e ]
+[v _SigfoxTaskReset `AF6917 ~T0 @X0 1 e ]
 {
 [; ;eusart2.c: 290: void SigfoxTaskReset(void){
 [e :U _SigfoxTaskReset ]
@@ -7273,16 +7369,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _EUSART2_Initialize ..  ]
 [; ;eusart2.c: 292: SFX_STATE = TASK_RESET_TASK;
 "292
-[e = _SFX_STATE . `E6656 1 ]
+[e = _SFX_STATE . `E6688 1 ]
 [; ;eusart2.c: 293: SigfoxTxDelay = 2;
 "293
 [e = _SigfoxTxDelay -> -> 2 `i `uc ]
 [; ;eusart2.c: 294: SigfoxCommManagerState = TASK_SEND_COMMAND_SM;
 "294
-[e = _SigfoxCommManagerState . `E6677 0 ]
+[e = _SigfoxCommManagerState . `E6709 0 ]
 [; ;eusart2.c: 295: SigfoxTransactionResult = TASK_ON_COURSE;
 "295
-[e = _SigfoxTransactionResult . `E6663 1 ]
+[e = _SigfoxTransactionResult . `E6695 1 ]
 [; ;eusart2.c: 296: SigfoxTransactionAttemps = 3;
 "296
 [e = _SigfoxTransactionAttemps -> -> 3 `i `uc ]
@@ -7294,32 +7390,32 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _SigfoxMsgReceivedFlag -> -> 0 `i `uc ]
 [; ;eusart2.c: 300: do { LATBbits.LATB5 = 1; } while(0);
 "300
-[e :U 864 ]
+[e :U 865 ]
 {
 [e = . . _LATBbits 0 5 -> -> 1 `i `uc ]
 }
-[e :U 863 ]
+[e :U 864 ]
 [; ;eusart2.c: 301: do { LATBbits.LATB0 = 0; } while(0);
 "301
-[e :U 867 ]
+[e :U 868 ]
 {
 [e = . . _LATBbits 0 0 -> -> 0 `i `uc ]
 }
-[e :U 866 ]
+[e :U 867 ]
 [; ;eusart2.c: 303: do { LATBbits.LATB2 = 0; } while(0);
 "303
-[e :U 870 ]
+[e :U 871 ]
 {
 [e = . . _LATBbits 0 2 -> -> 0 `i `uc ]
 }
-[e :U 869 ]
+[e :U 870 ]
 [; ;eusart2.c: 304: }
 "304
-[e :UE 861 ]
+[e :UE 862 ]
 }
-[v F6881 `(v ~T0 @X0 1 tf ]
+[v F6919 `(v ~T0 @X0 1 tf ]
 "305
-[v _SigfoxTaskPowerDown `AF6881 ~T0 @X0 1 e ]
+[v _SigfoxTaskPowerDown `AF6919 ~T0 @X0 1 e ]
 {
 [; ;eusart2.c: 305: void SigfoxTaskPowerDown(void){
 [e :U _SigfoxTaskPowerDown ]
@@ -7335,46 +7431,46 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . . _PMD0bits 0 7 -> -> 1 `i `uc ]
 [; ;eusart2.c: 309: do { LATBbits.LATB2 = 1; } while(0);
 "309
-[e :U 874 ]
+[e :U 875 ]
 {
 [e = . . _LATBbits 0 2 -> -> 1 `i `uc ]
 }
-[e :U 873 ]
+[e :U 874 ]
 [; ;eusart2.c: 310: do { LATBbits.LATB5 = 0; } while(0);
 "310
-[e :U 877 ]
+[e :U 878 ]
 {
 [e = . . _LATBbits 0 5 -> -> 0 `i `uc ]
 }
-[e :U 876 ]
+[e :U 877 ]
 [; ;eusart2.c: 311: do { LATBbits.LATB0 = 1; } while(0);
 "311
-[e :U 880 ]
+[e :U 881 ]
 {
 [e = . . _LATBbits 0 0 -> -> 1 `i `uc ]
 }
-[e :U 879 ]
+[e :U 880 ]
 [; ;eusart2.c: 312: SFX_STATE = TASK_PARKED;
 "312
-[e = _SFX_STATE . `E6656 0 ]
+[e = _SFX_STATE . `E6688 0 ]
 [; ;eusart2.c: 313: }
 "313
-[e :UE 871 ]
+[e :UE 872 ]
 }
-[v F6883 `(E6663 ~T0 @X0 1 tf ]
+[v F6921 `(E6695 ~T0 @X0 1 tf ]
 "314
-[v _SigfoxTask `AF6883 ~T0 @X0 1 e ]
+[v _SigfoxTask `AF6921 ~T0 @X0 1 e ]
 {
 [; ;eusart2.c: 314: taskResult_t SigfoxTask(void){
 [e :U _SigfoxTask ]
 [f ]
-[v F6885 `Cuc ~T0 @X0 -> 3 `i s ]
-[i F6885
+[v F6923 `Cuc ~T0 @X0 -> 3 `i s ]
+[i F6923
 :U ..
 "315
--> . `E6708 0 `uc
+-> . `E6747 0 `uc
 "317
--> . `E6708 6 `uc
+-> . `E6747 6 `uc
 "318
 -> -> 255 `i `uc
 ..
@@ -7385,72 +7481,72 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;eusart2.c: 317: SFX_CMD_ADJ_PWR,
 [; ;eusart2.c: 318: 0xFF};
 "318
-[e = _sigfoxInitCommandsROMList F6885 ]
+[e = _sigfoxInitCommandsROMList F6923 ]
 "319
 [v _SigfoxInitCommandPtr `*Cuc ~T0 @X0 1 a ]
 [; ;eusart2.c: 319: const char *SigfoxInitCommandPtr;
 [; ;eusart2.c: 321: switch(SFX_STATE){
 "321
-[e $U 883  ]
+[e $U 884  ]
 {
 [; ;eusart2.c: 322: case TASK_PARKED:
 "322
-[e :U 884 ]
+[e :U 885 ]
 [; ;eusart2.c: 323: if(SigfoxScheduledInitTaskFlag){
 "323
-[e $ ! != -> _SigfoxScheduledInitTaskFlag `i -> -> -> 0 `i `Auc `i 885  ]
+[e $ ! != -> _SigfoxScheduledInitTaskFlag `i -> -> -> 0 `i `Auc `i 886  ]
 {
 [; ;eusart2.c: 324: SFX_STATE = TASK_RESET_TASK;
 "324
-[e = _SFX_STATE . `E6656 1 ]
+[e = _SFX_STATE . `E6688 1 ]
 [; ;eusart2.c: 325: return(TASK_ON_COURSE);
 "325
-[e ) . `E6663 1 ]
-[e $UE 881  ]
+[e ) . `E6695 1 ]
+[e $UE 882  ]
 "326
 }
-[e :U 885 ]
+[e :U 886 ]
 [; ;eusart2.c: 326: }
 [; ;eusart2.c: 328: return(TASK_NO_SENSOR_FOUND);
 "328
-[e ) . `E6663 0 ]
-[e $UE 881  ]
+[e ) . `E6695 0 ]
+[e $UE 882  ]
 [; ;eusart2.c: 330: case TASK_RESET_TASK:
 "330
-[e :U 886 ]
+[e :U 887 ]
 [; ;eusart2.c: 331: SigfoxTaskReset();
 "331
 [e ( _SigfoxTaskReset ..  ]
 [; ;eusart2.c: 332: SFX_STATE = TASK_INIT;
 "332
-[e = _SFX_STATE . `E6656 2 ]
+[e = _SFX_STATE . `E6688 2 ]
 [; ;eusart2.c: 333: SigfoxInitCommandPtr = sigfoxInitCommandsROMList;
 "333
 [e = _SigfoxInitCommandPtr &U _sigfoxInitCommandsROMList ]
 [; ;eusart2.c: 334: return(TASK_ON_COURSE);
 "334
-[e ) . `E6663 1 ]
-[e $UE 881  ]
+[e ) . `E6695 1 ]
+[e $UE 882  ]
 [; ;eusart2.c: 336: case TASK_INIT:
 "336
-[e :U 887 ]
+[e :U 888 ]
 [; ;eusart2.c: 337: while(SigfoxInitCommandPtr[0] != 0xFF)
 "337
-[e $U 888  ]
-[e :U 889 ]
+[e $U 889  ]
+[e :U 890 ]
 [; ;eusart2.c: 338: {
 "338
 {
 [; ;eusart2.c: 339: SigfoxTransactionResult = SigfoxCommManager(SigfoxInitCommandPtr[0]);
 "339
-[e = _SigfoxTransactionResult ( _SigfoxCommManager (1 -> *U + _SigfoxInitCommandPtr * -> -> 0 `i `x -> -> # *U _SigfoxInitCommandPtr `i `x `E6708 ]
+[e = _SigfoxTransactionResult ( _SigfoxCommManager (1 -> *U + _SigfoxInitCommandPtr * -> -> 0 `i `x -> -> # *U _SigfoxInitCommandPtr `i `x `E6747 ]
 [; ;eusart2.c: 340: if(SigfoxTransactionResult == TASK_DATA_READY){
 "340
-[e $ ! == -> _SigfoxTransactionResult `i -> . `E6663 2 `i 891  ]
+[e $ ! == -> _SigfoxTransactionResult `i -> . `E6695 2 `i 892  ]
 {
 [; ;eusart2.c: 341: if(SigfoxResponseParser()){
 "341
-[e $ ! != -> ( _SigfoxResponseParser ..  `i -> -> -> 0 `i `uc `i 892  ]
+[e $ ! != -> ( _SigfoxResponseParser ..  `i -> -> -> 0 `i `uc `i 893  ]
 {
 [; ;eusart2.c: 342: SigfoxInitCommandPtr++;
 "342
@@ -7461,164 +7557,164 @@ Version 3.2 HI-TECH Software Intermediate Code
 "344
 }
 [; ;eusart2.c: 344: }
-[e $U 893  ]
+[e $U 894  ]
 "345
-[e :U 892 ]
+[e :U 893 ]
 [; ;eusart2.c: 345: else if(SigfoxTransactionAttemps){
-[e $ ! != -> _SigfoxTransactionAttemps `i -> -> -> 0 `i `Auc `i 894  ]
+[e $ ! != -> _SigfoxTransactionAttemps `i -> -> -> 0 `i `Auc `i 895  ]
 {
 [; ;eusart2.c: 346: SigfoxTransactionAttemps--;
 "346
 [e -- _SigfoxTransactionAttemps -> -> 1 `i `uc ]
 "347
 }
-[e :U 894 ]
+[e :U 895 ]
 "348
-[e :U 893 ]
+[e :U 894 ]
 [; ;eusart2.c: 347: }
 [; ;eusart2.c: 348: continue;
-[e $U 888  ]
+[e $U 889  ]
 "349
 }
-[e :U 891 ]
+[e :U 892 ]
 [; ;eusart2.c: 349: }
 [; ;eusart2.c: 350: if(SigfoxTransactionResult == TASK_NO_SENSOR_FOUND){
 "350
-[e $ ! == -> _SigfoxTransactionResult `i -> . `E6663 0 `i 895  ]
+[e $ ! == -> _SigfoxTransactionResult `i -> . `E6695 0 `i 896  ]
 {
 [; ;eusart2.c: 351: SigfoxTaskPowerDown();
 "351
 [e ( _SigfoxTaskPowerDown ..  ]
 "352
 }
-[e :U 895 ]
+[e :U 896 ]
 [; ;eusart2.c: 352: }
 [; ;eusart2.c: 353: return(SigfoxTransactionResult);
 "353
 [e ) _SigfoxTransactionResult ]
-[e $UE 881  ]
+[e $UE 882  ]
 "354
 }
-[e :U 888 ]
+[e :U 889 ]
 "337
-[e $ != -> *U + _SigfoxInitCommandPtr * -> -> 0 `i `x -> -> # *U _SigfoxInitCommandPtr `i `x `i -> 255 `i 889  ]
-[e :U 890 ]
+[e $ != -> *U + _SigfoxInitCommandPtr * -> -> 0 `i `x -> -> # *U _SigfoxInitCommandPtr `i `x `i -> 255 `i 890  ]
+[e :U 891 ]
 [; ;eusart2.c: 354: }
 [; ;eusart2.c: 355: SigfoxTransactionResult = TASK_DATA_READY;
 "355
-[e = _SigfoxTransactionResult . `E6663 2 ]
+[e = _SigfoxTransactionResult . `E6695 2 ]
 [; ;eusart2.c: 356: SFX_STATE = TASK_READY;
 "356
-[e = _SFX_STATE . `E6656 3 ]
+[e = _SFX_STATE . `E6688 3 ]
 [; ;eusart2.c: 357: SigfoxScheduledInitTaskFlag = 0;
 "357
 [e = _SigfoxScheduledInitTaskFlag -> -> 0 `i `uc ]
 [; ;eusart2.c: 358: if(SigfoxScheduledMsgTaskFlag || SigfoxScheduledMsgAckTaskFlag || SigfoxScheduledMsgStaTaskFlag){
 "358
-[e $ ! || || != -> _SigfoxScheduledMsgTaskFlag `i -> -> -> 0 `i `Auc `i != -> _SigfoxScheduledMsgAckTaskFlag `i -> -> -> 0 `i `Auc `i != -> _SigfoxScheduledMsgStaTaskFlag `i -> -> -> 0 `i `Auc `i 896  ]
+[e $ ! || || != -> _SigfoxScheduledMsgTaskFlag `i -> -> -> 0 `i `Auc `i != -> _SigfoxScheduledMsgAckTaskFlag `i -> -> -> 0 `i `Auc `i != -> _SigfoxScheduledMsgStaTaskFlag `i -> -> -> 0 `i `Auc `i 897  ]
 {
 [; ;eusart2.c: 359: return(TASK_ON_COURSE);
 "359
-[e ) . `E6663 1 ]
-[e $UE 881  ]
+[e ) . `E6695 1 ]
+[e $UE 882  ]
 "360
 }
-[e :U 896 ]
+[e :U 897 ]
 [; ;eusart2.c: 360: }
 [; ;eusart2.c: 361: return(TASK_DATA_READY);
 "361
-[e ) . `E6663 2 ]
-[e $UE 881  ]
+[e ) . `E6695 2 ]
+[e $UE 882  ]
 [; ;eusart2.c: 363: case TASK_READY:
 "363
-[e :U 897 ]
+[e :U 898 ]
 [; ;eusart2.c: 369: if(SigfoxScheduledMsgTaskFlag || SigfoxScheduledMsgAckTaskFlag || SigfoxScheduledMsgStaTaskFlag){
 "369
-[e $ ! || || != -> _SigfoxScheduledMsgTaskFlag `i -> -> -> 0 `i `Auc `i != -> _SigfoxScheduledMsgAckTaskFlag `i -> -> -> 0 `i `Auc `i != -> _SigfoxScheduledMsgStaTaskFlag `i -> -> -> 0 `i `Auc `i 898  ]
+[e $ ! || || != -> _SigfoxScheduledMsgTaskFlag `i -> -> -> 0 `i `Auc `i != -> _SigfoxScheduledMsgAckTaskFlag `i -> -> -> 0 `i `Auc `i != -> _SigfoxScheduledMsgStaTaskFlag `i -> -> -> 0 `i `Auc `i 899  ]
 {
 [; ;eusart2.c: 370: SigfoxTransactionAttemps = 3;
 "370
 [e = _SigfoxTransactionAttemps -> -> 3 `i `uc ]
 [; ;eusart2.c: 371: SFX_STATE = TASK_WAITING_DATA;
 "371
-[e = _SFX_STATE . `E6656 4 ]
+[e = _SFX_STATE . `E6688 4 ]
 [; ;eusart2.c: 372: SigfoxCommManagerState = TASK_SEND_COMMAND_SM;
 "372
-[e = _SigfoxCommManagerState . `E6677 0 ]
+[e = _SigfoxCommManagerState . `E6709 0 ]
 [; ;eusart2.c: 373: return(TASK_ON_COURSE);
 "373
-[e ) . `E6663 1 ]
-[e $UE 881  ]
+[e ) . `E6695 1 ]
+[e $UE 882  ]
 "374
 }
-[e :U 898 ]
+[e :U 899 ]
 [; ;eusart2.c: 374: }
 [; ;eusart2.c: 375: if(SigfoxScheduledPwrDownTaskFlag){
 "375
-[e $ ! != -> _SigfoxScheduledPwrDownTaskFlag `i -> -> -> 0 `i `Auc `i 899  ]
+[e $ ! != -> _SigfoxScheduledPwrDownTaskFlag `i -> -> -> 0 `i `Auc `i 900  ]
 {
 [; ;eusart2.c: 376: SigfoxTaskPowerDown();
 "376
 [e ( _SigfoxTaskPowerDown ..  ]
 [; ;eusart2.c: 377: return(TASK_NO_SENSOR_FOUND);
 "377
-[e ) . `E6663 0 ]
-[e $UE 881  ]
+[e ) . `E6695 0 ]
+[e $UE 882  ]
 "378
 }
-[e :U 899 ]
+[e :U 900 ]
 [; ;eusart2.c: 378: }
 [; ;eusart2.c: 379: return(TASK_DATA_READY);
 "379
-[e ) . `E6663 2 ]
-[e $UE 881  ]
+[e ) . `E6695 2 ]
+[e $UE 882  ]
 [; ;eusart2.c: 381: case TASK_WAITING_DATA:
 "381
-[e :U 900 ]
+[e :U 901 ]
 [; ;eusart2.c: 382: if(SigfoxScheduledMsgAckTaskFlag){
 "382
-[e $ ! != -> _SigfoxScheduledMsgAckTaskFlag `i -> -> -> 0 `i `Auc `i 901  ]
+[e $ ! != -> _SigfoxScheduledMsgAckTaskFlag `i -> -> -> 0 `i `Auc `i 902  ]
 {
 [; ;eusart2.c: 383: SigfoxTransactionResult = SigfoxCommManager(SFX_CMD_SEND_MSG_WAIT_ACK);
 "383
-[e = _SigfoxTransactionResult ( _SigfoxCommManager (1 . `E6708 2 ]
+[e = _SigfoxTransactionResult ( _SigfoxCommManager (1 . `E6747 2 ]
 "384
 }
 [; ;eusart2.c: 384: }
-[e $U 902  ]
+[e $U 903  ]
 "385
-[e :U 901 ]
+[e :U 902 ]
 [; ;eusart2.c: 385: else if(SigfoxScheduledMsgStaTaskFlag){
-[e $ ! != -> _SigfoxScheduledMsgStaTaskFlag `i -> -> -> 0 `i `Auc `i 903  ]
+[e $ ! != -> _SigfoxScheduledMsgStaTaskFlag `i -> -> -> 0 `i `Auc `i 904  ]
 {
 [; ;eusart2.c: 386: SigfoxTransactionResult = SigfoxCommManager(SFX_CMD_SEND_STATUS);
 "386
-[e = _SigfoxTransactionResult ( _SigfoxCommManager (1 . `E6708 3 ]
+[e = _SigfoxTransactionResult ( _SigfoxCommManager (1 . `E6747 3 ]
 "387
 }
 [; ;eusart2.c: 387: }
-[e $U 904  ]
+[e $U 905  ]
 "388
-[e :U 903 ]
+[e :U 904 ]
 [; ;eusart2.c: 388: else
 [; ;eusart2.c: 389: {
 "389
 {
 [; ;eusart2.c: 390: SigfoxTransactionResult = SigfoxCommManager(SFX_CMD_SEND_MSG);
 "390
-[e = _SigfoxTransactionResult ( _SigfoxCommManager (1 . `E6708 1 ]
+[e = _SigfoxTransactionResult ( _SigfoxCommManager (1 . `E6747 1 ]
 "391
 }
-[e :U 904 ]
-[e :U 902 ]
+[e :U 905 ]
+[e :U 903 ]
 [; ;eusart2.c: 391: }
 [; ;eusart2.c: 392: if(SigfoxTransactionResult == TASK_DATA_READY){
 "392
-[e $ ! == -> _SigfoxTransactionResult `i -> . `E6663 2 `i 905  ]
+[e $ ! == -> _SigfoxTransactionResult `i -> . `E6695 2 `i 906  ]
 {
 [; ;eusart2.c: 393: if(SigfoxResponseParser()){
 "393
-[e $ ! != -> ( _SigfoxResponseParser ..  `i -> -> -> 0 `i `uc `i 906  ]
+[e $ ! != -> ( _SigfoxResponseParser ..  `i -> -> -> 0 `i `uc `i 907  ]
 {
 [; ;eusart2.c: 394: SigfoxScheduledMsgTaskFlag = 0;
 "394
@@ -7631,35 +7727,35 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _SigfoxScheduledMsgStaTaskFlag -> -> 0 `i `uc ]
 [; ;eusart2.c: 398: SFX_STATE = TASK_READY;
 "398
-[e = _SFX_STATE . `E6656 3 ]
+[e = _SFX_STATE . `E6688 3 ]
 [; ;eusart2.c: 399: return(TASK_ON_COURSE);
 "399
-[e ) . `E6663 1 ]
-[e $UE 881  ]
+[e ) . `E6695 1 ]
+[e $UE 882  ]
 "400
 }
 [; ;eusart2.c: 400: }
-[e $U 907  ]
+[e $U 908  ]
 "401
-[e :U 906 ]
+[e :U 907 ]
 [; ;eusart2.c: 401: else if(SigfoxTransactionAttemps){
-[e $ ! != -> _SigfoxTransactionAttemps `i -> -> -> 0 `i `Auc `i 908  ]
+[e $ ! != -> _SigfoxTransactionAttemps `i -> -> -> 0 `i `Auc `i 909  ]
 {
 [; ;eusart2.c: 402: SigfoxTransactionAttemps--;
 "402
 [e -- _SigfoxTransactionAttemps -> -> 1 `i `uc ]
 "403
 }
-[e :U 908 ]
+[e :U 909 ]
 "404
-[e :U 907 ]
+[e :U 908 ]
 }
-[e :U 905 ]
+[e :U 906 ]
 [; ;eusart2.c: 403: }
 [; ;eusart2.c: 404: }
 [; ;eusart2.c: 405: if(SigfoxTransactionResult == TASK_NO_SENSOR_FOUND){
 "405
-[e $ ! == -> _SigfoxTransactionResult `i -> . `E6663 0 `i 909  ]
+[e $ ! == -> _SigfoxTransactionResult `i -> . `E6695 0 `i 910  ]
 {
 [; ;eusart2.c: 408: SigfoxScheduledMsgStaTaskFlag = 0;
 "408
@@ -7672,50 +7768,50 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _SigfoxScheduledMsgAckTaskFlag -> -> 0 `i `uc ]
 [; ;eusart2.c: 411: SFX_STATE = TASK_READY;
 "411
-[e = _SFX_STATE . `E6656 3 ]
+[e = _SFX_STATE . `E6688 3 ]
 [; ;eusart2.c: 412: return(TASK_DATA_NOT_AVAILABLE);
 "412
-[e ) . `E6663 4 ]
-[e $UE 881  ]
+[e ) . `E6695 4 ]
+[e $UE 882  ]
 "413
 }
-[e :U 909 ]
+[e :U 910 ]
 [; ;eusart2.c: 413: }
 [; ;eusart2.c: 414: return(TASK_ON_COURSE);
 "414
-[e ) . `E6663 1 ]
-[e $UE 881  ]
+[e ) . `E6695 1 ]
+[e $UE 882  ]
 [; ;eusart2.c: 415: default:
 "415
-[e :U 910 ]
+[e :U 911 ]
 [; ;eusart2.c: 416: SFX_STATE = TASK_RESET_TASK;
 "416
-[e = _SFX_STATE . `E6656 1 ]
+[e = _SFX_STATE . `E6688 1 ]
 [; ;eusart2.c: 417: return(TASK_ON_COURSE);
 "417
-[e ) . `E6663 1 ]
-[e $UE 881  ]
+[e ) . `E6695 1 ]
+[e $UE 882  ]
 "418
 }
 [; ;eusart2.c: 418: }
-[e $U 882  ]
+[e $U 883  ]
 "321
-[e :U 883 ]
-[e [\ _SFX_STATE , $ . `E6656 0 884
- , $ . `E6656 1 886
- , $ . `E6656 2 887
- , $ . `E6656 3 897
- , $ . `E6656 4 900
- 910 ]
+[e :U 884 ]
+[e [\ _SFX_STATE , $ . `E6688 0 885
+ , $ . `E6688 1 887
+ , $ . `E6688 2 888
+ , $ . `E6688 3 898
+ , $ . `E6688 4 901
+ 911 ]
 "418
-[e :U 882 ]
+[e :U 883 ]
 [; ;eusart2.c: 419: }
 "419
-[e :UE 881 ]
+[e :UE 882 ]
 }
-[v F6888 `(v ~T0 @X0 1 tf1`*uc ]
+[v F6926 `(v ~T0 @X0 1 tf1`*uc ]
 "420
-[v _SigfoxTaskLoadPayloadBuffer `AF6888 ~T0 @X0 1 e ]
+[v _SigfoxTaskLoadPayloadBuffer `AF6926 ~T0 @X0 1 e ]
 {
 [; ;eusart2.c: 420: void SigfoxTaskLoadPayloadBuffer(uint8_t *rawData){
 [e :U _SigfoxTaskLoadPayloadBuffer ]
@@ -7729,9 +7825,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "423
 {
 [e = _payloadBufferPtr -> -> 0 `i `uc ]
-[e $ < -> _payloadBufferPtr `i -> 12 `i 912  ]
-[e $U 913  ]
-[e :U 912 ]
+[e $ < -> _payloadBufferPtr `i -> 12 `i 913  ]
+[e $U 914  ]
+[e :U 913 ]
 {
 [; ;eusart2.c: 424: buffer = (rawData[payloadBufferPtr] >> 4) & 0x0F;
 "424
@@ -7749,8 +7845,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "423
 [e ++ _payloadBufferPtr -> -> 1 `i `uc ]
-[e $ < -> _payloadBufferPtr `i -> 12 `i 912  ]
-[e :U 913 ]
+[e $ < -> _payloadBufferPtr `i -> 12 `i 913  ]
+[e :U 914 ]
 "428
 }
 [; ;eusart2.c: 428: }
@@ -7759,32 +7855,32 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = *U + &U _SigfoxPayloadBuffer * -> -> -> 24 `i `ui `ux -> -> # *U &U _SigfoxPayloadBuffer `ui `ux -> -> 0 `i `uc ]
 [; ;eusart2.c: 430: }
 "430
-[e :UE 911 ]
+[e :UE 912 ]
 }
-[v F6892 `(v ~T0 @X0 1 tf1`E6708 ]
+[v F6930 `(v ~T0 @X0 1 tf1`E6747 ]
 "431
-[v _SigfoxTaskNewTask `AF6892 ~T0 @X0 1 e ]
+[v _SigfoxTaskNewTask `AF6930 ~T0 @X0 1 e ]
 {
 [; ;eusart2.c: 431: void SigfoxTaskNewTask(SFX_TASK_COMMANDS_T command){
 [e :U _SigfoxTaskNewTask ]
-[v _command `E6708 ~T0 @X0 1 r1 ]
+[v _command `E6747 ~T0 @X0 1 r1 ]
 [f ]
 [; ;eusart2.c: 432: switch(command){
 "432
-[e $U 917  ]
+[e $U 918  ]
 {
 [; ;eusart2.c: 433: case SFX_CMD_INITIALIZE:
 "433
-[e :U 918 ]
+[e :U 919 ]
 [; ;eusart2.c: 434: SigfoxScheduledInitTaskFlag = 1;
 "434
 [e = _SigfoxScheduledInitTaskFlag -> -> 1 `i `uc ]
 [; ;eusart2.c: 435: break;
 "435
-[e $U 916  ]
+[e $U 917  ]
 [; ;eusart2.c: 437: case SFX_CMD_SEND_MSG:
 "437
-[e :U 919 ]
+[e :U 920 ]
 [; ;eusart2.c: 438: SigfoxScheduledMsgAckTaskFlag = 0;
 "438
 [e = _SigfoxScheduledMsgAckTaskFlag -> -> 0 `i `uc ]
@@ -7796,10 +7892,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _SigfoxScheduledMsgStaTaskFlag -> -> 0 `i `uc ]
 [; ;eusart2.c: 441: break;
 "441
-[e $U 916  ]
+[e $U 917  ]
 [; ;eusart2.c: 444: case SFX_CMD_SEND_MSG_WAIT_ACK:
 "444
-[e :U 920 ]
+[e :U 921 ]
 [; ;eusart2.c: 445: SigfoxScheduledMsgTaskFlag = 0;
 "445
 [e = _SigfoxScheduledMsgTaskFlag -> -> 0 `i `uc ]
@@ -7811,10 +7907,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _SigfoxScheduledMsgStaTaskFlag -> -> 0 `i `uc ]
 [; ;eusart2.c: 448: break;
 "448
-[e $U 916  ]
+[e $U 917  ]
 [; ;eusart2.c: 450: case SFX_CMD_SEND_STATUS:
 "450
-[e :U 921 ]
+[e :U 922 ]
 [; ;eusart2.c: 451: SigfoxScheduledMsgTaskFlag = 0;
 "451
 [e = _SigfoxScheduledMsgTaskFlag -> -> 0 `i `uc ]
@@ -7826,33 +7922,33 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _SigfoxScheduledMsgStaTaskFlag -> -> 1 `i `uc ]
 [; ;eusart2.c: 454: break;
 "454
-[e $U 916  ]
+[e $U 917  ]
 [; ;eusart2.c: 456: case SFX_CMD_PWR_DOWN:
 "456
-[e :U 922 ]
+[e :U 923 ]
 [; ;eusart2.c: 457: SigfoxScheduledPwrDownTaskFlag = 1;
 "457
 [e = _SigfoxScheduledPwrDownTaskFlag -> -> 1 `i `uc ]
 [; ;eusart2.c: 458: break;
 "458
-[e $U 916  ]
+[e $U 917  ]
 "459
 }
 [; ;eusart2.c: 459: }
-[e $U 916  ]
+[e $U 917  ]
 "432
-[e :U 917 ]
-[e [\ _command , $ . `E6708 0 918
- , $ . `E6708 1 919
- , $ . `E6708 2 920
- , $ . `E6708 3 921
- , $ . `E6708 5 922
- 916 ]
+[e :U 918 ]
+[e [\ _command , $ . `E6747 0 919
+ , $ . `E6747 1 920
+ , $ . `E6747 2 921
+ , $ . `E6747 3 922
+ , $ . `E6747 5 923
+ 917 ]
 "459
-[e :U 916 ]
+[e :U 917 ]
 [; ;eusart2.c: 460: }
 "460
-[e :UE 915 ]
+[e :UE 916 ]
 }
 [a 1C 79 75 0 ]
 

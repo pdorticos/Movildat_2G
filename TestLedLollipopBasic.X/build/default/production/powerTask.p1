@@ -1,7 +1,10 @@
 Version 3.2 HI-TECH Software Intermediate Code
+"9 /opt/microchip/xc8/v1.42/include/time.h
+[s S821 `i 1 `i 1 `i 1 `i 1 `i 1 `i 1 `i 1 `i 1 `i 1 ]
+[n S821 tm tm_sec tm_min tm_hour tm_mday tm_mon tm_year tm_wday tm_yday tm_isdst ]
 "17 powerTask.c
-[c E6634 0 1 2 3 4 .. ]
-[n E6634 _taskStates_t TASK_PARKED TASK_RESET_TASK TASK_INIT TASK_READY TASK_WAITING_DATA  ]
+[c E6666 0 1 2 3 4 .. ]
+[n E6666 _taskStates_t TASK_PARKED TASK_RESET_TASK TASK_INIT TASK_READY TASK_WAITING_DATA  ]
 "202 /opt/microchip/xc8/v1.42/include/pic18lf25k22.h
 [s S8 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S8 . ADCMD CMP1MD CMP2MD CTMUMD ]
@@ -33,14 +36,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 "7493
 [v _LATCbits `VS371 ~T0 @X0 0 e@3979 ]
 "43 powerTask.c
-[c E6641 0 1 2 3 4 .. ]
-[n E6641 _taskResult_t TASK_NO_SENSOR_FOUND TASK_ON_COURSE TASK_DATA_READY TASK_TO_ERR TASK_DATA_NOT_AVAILABLE  ]
+[c E6673 0 1 2 3 4 .. ]
+[n E6673 _taskResult_t TASK_NO_SENSOR_FOUND TASK_ON_COURSE TASK_DATA_READY TASK_TO_ERR TASK_DATA_NOT_AVAILABLE  ]
 "104
-[c E6686 0 1 2 3 4 5 .. ]
-[n E6686 _POWER_TASK_COMMANDS_T PWR_CMD_INITIALIZE PWR_CMD_VDD_EN PWR_CMD_VDD_DIS PWR_CMD_VCC_EN PWR_CMD_VCC_DIS PWR_CMD_PWR_DOWN  ]
+[c E6725 0 1 2 3 4 5 .. ]
+[n E6725 _POWER_TASK_COMMANDS_T PWR_CMD_INITIALIZE PWR_CMD_VDD_EN PWR_CMD_VDD_DIS PWR_CMD_VCC_EN PWR_CMD_VCC_DIS PWR_CMD_PWR_DOWN  ]
 "137
-[c E6648 0 1 2 3 4 .. ]
-[n E6648 _dataQualifier_t SENSOR_READ BORROWED CALCULATED NOT_AVAILABLE UNKNOWN_SENSOR  ]
+[c E6680 0 1 2 3 4 .. ]
+[n E6680 _dataQualifier_t SENSOR_READ BORROWED CALCULATED NOT_AVAILABLE UNKNOWN_SENSOR  ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -6317,92 +6320,186 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 166: extern __nonreentrant void _delaywdt(unsigned long);
 [; ;pic18.h: 168: extern __nonreentrant void _delay3(unsigned char);
 [; ;stdbool.h: 12: typedef unsigned char bool;
-[; ;sfxProtocol.h: 34: typedef enum _mainTaskStates_t {
-[; ;sfxProtocol.h: 35: MAIN_TASK_PARKED,
-[; ;sfxProtocol.h: 36: POWERING_TASK,
-[; ;sfxProtocol.h: 37: MEASURING_TASK,
-[; ;sfxProtocol.h: 38: COMMUNICATING_TASK
-[; ;sfxProtocol.h: 39: }mainTaskStates_t;
-[; ;sfxProtocol.h: 41: typedef enum _taskStates_t {
-[; ;sfxProtocol.h: 42: TASK_PARKED,
-[; ;sfxProtocol.h: 43: TASK_RESET_TASK,
-[; ;sfxProtocol.h: 44: TASK_INIT,
-[; ;sfxProtocol.h: 45: TASK_READY,
-[; ;sfxProtocol.h: 46: TASK_WAITING_DATA
-[; ;sfxProtocol.h: 47: }taskStates_t;
-[; ;sfxProtocol.h: 49: typedef enum _taskResult_t {
-[; ;sfxProtocol.h: 50: TASK_NO_SENSOR_FOUND,
-[; ;sfxProtocol.h: 51: TASK_ON_COURSE,
-[; ;sfxProtocol.h: 52: TASK_DATA_READY,
-[; ;sfxProtocol.h: 53: TASK_TO_ERR,
-[; ;sfxProtocol.h: 54: TASK_DATA_NOT_AVAILABLE
-[; ;sfxProtocol.h: 55: }taskResult_t;
-[; ;sfxProtocol.h: 57: typedef enum _dataQualifier_t {
-[; ;sfxProtocol.h: 58: SENSOR_READ,
-[; ;sfxProtocol.h: 59: BORROWED,
-[; ;sfxProtocol.h: 60: CALCULATED,
-[; ;sfxProtocol.h: 61: NOT_AVAILABLE,
-[; ;sfxProtocol.h: 62: UNKNOWN_SENSOR
-[; ;sfxProtocol.h: 63: }dataQualifier_t;
-[; ;sfxProtocol.h: 65: typedef enum _TaskCommManagerState_t {
-[; ;sfxProtocol.h: 66: TASK_SEND_COMMAND_SM = 0,
-[; ;sfxProtocol.h: 67: TASK_DETECT_TRANSACTION_END_SM
-[; ;sfxProtocol.h: 68: } TaskCommManagerState_t;
-[; ;sfxProtocol.h: 70: typedef enum _systemEvent_t {
-[; ;sfxProtocol.h: 71: HW_WARNING_EV,
-[; ;sfxProtocol.h: 72: TIMER1_EV,
-[; ;sfxProtocol.h: 73: TIMER2_EV,
-[; ;sfxProtocol.h: 74: INPUT_EV,
-[; ;sfxProtocol.h: 75: MOTION_EV,
-[; ;sfxProtocol.h: 76: VARIABLE_ALARM_EV,
-[; ;sfxProtocol.h: 77: BATTERY_EV
-[; ;sfxProtocol.h: 78: }systemEvent_t;
-"85 Sigfox/sfxProtocol.h
+[; ;__size_t.h: 4: typedef unsigned size_t;
+[; ;time.h: 8: typedef long time_t;
+[; ;time.h: 9: struct tm {
+[; ;time.h: 10: int tm_sec;
+[; ;time.h: 11: int tm_min;
+[; ;time.h: 12: int tm_hour;
+[; ;time.h: 13: int tm_mday;
+[; ;time.h: 14: int tm_mon;
+[; ;time.h: 15: int tm_year;
+[; ;time.h: 16: int tm_wday;
+[; ;time.h: 17: int tm_yday;
+[; ;time.h: 18: int tm_isdst;
+[; ;time.h: 19: };
+[; ;time.h: 25: extern int time_zone;
+[; ;time.h: 30: extern time_t time(time_t *);
+[; ;time.h: 31: extern int stime(time_t *);
+[; ;time.h: 47: extern char * asctime(const struct tm *) ;
+[; ;time.h: 48: extern char * ctime(const time_t *) ;
+[; ;time.h: 49: extern struct tm * gmtime(const time_t *) ;
+[; ;time.h: 50: extern struct tm * localtime(const time_t *) ;
+[; ;time.h: 51: extern size_t strftime(char *, size_t, const char *, const struct tm *) ;
+[; ;time.h: 52: extern time_t mktime(struct tm *);
+[; ;sfxProtocol.h: 35: typedef enum _mainTaskStates_t {
+[; ;sfxProtocol.h: 36: MAIN_TASK_PARKED,
+[; ;sfxProtocol.h: 37: POWERING_TASK,
+[; ;sfxProtocol.h: 38: MEASURING_TASK,
+[; ;sfxProtocol.h: 39: COMMUNICATING_TASK
+[; ;sfxProtocol.h: 40: }mainTaskStates_t;
+[; ;sfxProtocol.h: 42: typedef enum _taskStates_t {
+[; ;sfxProtocol.h: 43: TASK_PARKED,
+[; ;sfxProtocol.h: 44: TASK_RESET_TASK,
+[; ;sfxProtocol.h: 45: TASK_INIT,
+[; ;sfxProtocol.h: 46: TASK_READY,
+[; ;sfxProtocol.h: 47: TASK_WAITING_DATA
+[; ;sfxProtocol.h: 48: }taskStates_t;
+[; ;sfxProtocol.h: 50: typedef enum _taskResult_t {
+[; ;sfxProtocol.h: 51: TASK_NO_SENSOR_FOUND,
+[; ;sfxProtocol.h: 52: TASK_ON_COURSE,
+[; ;sfxProtocol.h: 53: TASK_DATA_READY,
+[; ;sfxProtocol.h: 54: TASK_TO_ERR,
+[; ;sfxProtocol.h: 55: TASK_DATA_NOT_AVAILABLE
+[; ;sfxProtocol.h: 56: }taskResult_t;
+[; ;sfxProtocol.h: 58: typedef enum _dataQualifier_t {
+[; ;sfxProtocol.h: 59: SENSOR_READ,
+[; ;sfxProtocol.h: 60: BORROWED,
+[; ;sfxProtocol.h: 61: CALCULATED,
+[; ;sfxProtocol.h: 62: NOT_AVAILABLE,
+[; ;sfxProtocol.h: 63: UNKNOWN_SENSOR
+[; ;sfxProtocol.h: 64: }dataQualifier_t;
+[; ;sfxProtocol.h: 66: typedef enum _TaskCommManagerState_t {
+[; ;sfxProtocol.h: 67: TASK_SEND_COMMAND_SM = 0,
+[; ;sfxProtocol.h: 68: TASK_DETECT_TRANSACTION_END_SM
+[; ;sfxProtocol.h: 69: } TaskCommManagerState_t;
+[; ;sfxProtocol.h: 71: typedef enum _systemEvent_t {
+[; ;sfxProtocol.h: 72: HW_WARNING_EV,
+[; ;sfxProtocol.h: 73: TIMER1_EV,
+[; ;sfxProtocol.h: 74: TIMER2_EV,
+[; ;sfxProtocol.h: 75: INPUT_EV,
+[; ;sfxProtocol.h: 76: MOTION_EV,
+[; ;sfxProtocol.h: 77: VARIABLE_ALARM_EV,
+[; ;sfxProtocol.h: 78: BATTERY_EV
+[; ;sfxProtocol.h: 79: }systemEvent_t;
+"88 Sigfox/sfxProtocol.h
+[v _sysVarAPN `AEuc ~T0 @X0 -> 32 `i e ]
+[i _sysVarAPN
+:U ..
+-> 34 `c
+-> 119 `c
+-> 108 `c
+-> 97 `c
+-> 112 `c
+-> 110 `c
+-> 46 `c
+-> 99 `c
+-> 111 `c
+-> 109 `c
+-> 34 `c
+-> 0 `c
+..
+]
+[; ;sfxProtocol.h: 88: eeprom char sysVarAPN[32] = "\"wlapn.com\"";
+"89
+[v _sysVarDestPORT `AEuc ~T0 @X0 -> 8 `i e ]
+[i _sysVarDestPORT
+:U ..
+-> 54 `c
+-> 48 `c
+-> 48 `c
+-> 48 `c
+-> 0 `c
+..
+]
+[; ;sfxProtocol.h: 89: eeprom char sysVarDestPORT[8] = "6000";
+"90
+[v _sysVarDestADDRESS `AEuc ~T0 @X0 -> 32 `i e ]
+[i _sysVarDestADDRESS
+:U ..
+-> 53 `c
+-> 50 `c
+-> 46 `c
+-> 56 `c
+-> 56 `c
+-> 46 `c
+-> 50 `c
+-> 52 `c
+-> 46 `c
+-> 55 `c
+-> 52 `c
+-> 0 `c
+..
+]
+[; ;sfxProtocol.h: 90: eeprom char sysVarDestADDRESS[32] = "52.88.24.74";
+"93
 [v _sysVarGpsValidFlag `Auc ~T0 @X0 1 e ]
 [i _sysVarGpsValidFlag
 -> -> 0 `i `uc
 ]
-[; ;sfxProtocol.h: 85: bool sysVarGpsValidFlag = 0;
-"86
+[; ;sfxProtocol.h: 93: bool sysVarGpsValidFlag = 0;
+"94
 [v _sysVarGpsLat `Al ~T0 @X0 1 e ]
-[; ;sfxProtocol.h: 86: long sysVarGpsLat;
-"87
+[; ;sfxProtocol.h: 94: long sysVarGpsLat;
+"95
 [v _sysVarGpsLong `Al ~T0 @X0 1 e ]
-[; ;sfxProtocol.h: 87: long sysVarGpsLong;
-"88
+[; ;sfxProtocol.h: 95: long sysVarGpsLong;
+"96
 [v _sysVarGpsSpeed `Aui ~T0 @X0 1 e ]
-[; ;sfxProtocol.h: 88: unsigned int sysVarGpsSpeed;
-"89
+[; ;sfxProtocol.h: 96: unsigned int sysVarGpsSpeed;
+"97
 [v _sysVarGpsCourse `Ai ~T0 @X0 1 e ]
-[; ;sfxProtocol.h: 89: int sysVarGpsCourse;
-"90
+[; ;sfxProtocol.h: 97: int sysVarGpsCourse;
+"98
 [v _sysVarGpsAlt `Aui ~T0 @X0 1 e ]
 [i _sysVarGpsAlt
 -> -> 6000 `i `ui
 ]
-[; ;sfxProtocol.h: 90: unsigned int sysVarGpsAlt = 6000;
-"91
+[; ;sfxProtocol.h: 98: unsigned int sysVarGpsAlt = 6000;
+"99
+[v _sysVarGPS `AS821 ~T0 @X0 1 e ]
+[; ;sfxProtocol.h: 99: struct tm sysVarGPS;
+"100
 [v _sysVarGpsDayTime `Al ~T0 @X0 1 e ]
-[; ;sfxProtocol.h: 91: long sysVarGpsDayTime;
-"93
+[; ;sfxProtocol.h: 100: long sysVarGpsDayTime;
+"101
+[v _sysVarUNIXDayTime `Al ~T0 @X0 1 e ]
+[; ;sfxProtocol.h: 101: time_t sysVarUNIXDayTime;
+"103
 [v _sysVarGpsOdometer `Aui ~T0 @X0 1 e ]
-[; ;sfxProtocol.h: 93: unsigned int sysVarGpsOdometer;
-"96
+[; ;sfxProtocol.h: 103: unsigned int sysVarGpsOdometer;
+"106
+[v _sysVarCCID `Auc ~T0 @X0 -> 20 `i e ]
+[i _sysVarCCID
+:U ..
+-> 0 `c
+..
+]
+[; ;sfxProtocol.h: 106: char sysVarCCID[20] = "";
+"107
+[v _sysVarIMEI `Auc ~T0 @X0 -> 20 `i e ]
+[i _sysVarIMEI
+:U ..
+-> 0 `c
+..
+]
+[; ;sfxProtocol.h: 107: char sysVarIMEI[20] = "";
+"109
 [v _sysVarBattery `Auc ~T0 @X0 1 e ]
 [i _sysVarBattery
 -> -> 100 `i `uc
 ]
-[; ;sfxProtocol.h: 96: unsigned char sysVarBattery = 100;
-"99
+[; ;sfxProtocol.h: 109: unsigned char sysVarBattery = 100;
+"112
 [v _sysVarMainInput `Auc ~T0 @X0 1 e ]
 [i _sysVarMainInput
 -> -> 0 `i `uc
 ]
-[; ;sfxProtocol.h: 99: bool sysVarMainInput = 0;
-[; ;sfxProtocol.h: 102: void ProtocolTaskSleepTimeUpdate(unsigned int watchDogSleepingTime);
-[; ;sfxProtocol.h: 103: void ProtocolTaskTick(void);
-[; ;sfxProtocol.h: 104: taskResult_t ProtocolTask(void);
-[; ;sfxProtocol.h: 105: void ProtocolTaskPowerDown(void);
+[; ;sfxProtocol.h: 112: bool sysVarMainInput = 0;
+[; ;sfxProtocol.h: 115: void ProtocolTaskSleepTimeUpdate(unsigned int watchDogSleepingTime);
+[; ;sfxProtocol.h: 116: void ProtocolTaskTick(void);
+[; ;sfxProtocol.h: 117: taskResult_t ProtocolTask(void);
+[; ;sfxProtocol.h: 118: void ProtocolTaskPowerDown(void);
 [; ;powerTask.h: 17: typedef enum _POWER_TASK_COMMANDS_T {
 [; ;powerTask.h: 18: PWR_CMD_INITIALIZE,
 [; ;powerTask.h: 19: PWR_CMD_VDD_EN,
@@ -6523,9 +6620,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;mcc.h: 72: void SYSTEM_Initialize(void);
 [; ;mcc.h: 85: void OSCILLATOR_Initialize(void);
 "17 powerTask.c
-[v _PWR_STATE `AE6634 ~T0 @X0 1 s ]
+[v _PWR_STATE `AE6666 ~T0 @X0 1 s ]
 [i _PWR_STATE
-. `E6634 0
+. `E6666 0
 ]
 [; ;powerTask.c: 17: static taskStates_t PWR_STATE = TASK_PARKED;
 "18
@@ -6549,9 +6646,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ]
 [; ;powerTask.c: 21: bool pwrScheduledCommPowerTaskFlag = 0;
-[v F6857 `(v ~T0 @X0 1 tf ]
+[v F6896 `(v ~T0 @X0 1 tf ]
 "23
-[v _powerTaskPowerDown `AF6857 ~T0 @X0 1 e ]
+[v _powerTaskPowerDown `AF6896 ~T0 @X0 1 e ]
 {
 [; ;powerTask.c: 23: void powerTaskPowerDown(void){
 [e :U _powerTaskPowerDown ]
@@ -6570,247 +6667,247 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _pwrScheduledCommPowerTaskFlag -> -> 0 `i `uc ]
 [; ;powerTask.c: 28: do { LATAbits.LATA6 = 0; } while(0);
 "28
-[e :U 825 ]
+[e :U 826 ]
 {
 [e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
 }
-[e :U 824 ]
+[e :U 825 ]
 [; ;powerTask.c: 29: do { LATCbits.LATC0 = 0; } while(0);
 "29
-[e :U 828 ]
+[e :U 829 ]
 {
 [e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
 }
-[e :U 827 ]
+[e :U 828 ]
 [; ;powerTask.c: 30: do { LATAbits.LATA7 = 0; } while(0);
 "30
-[e :U 831 ]
+[e :U 832 ]
 {
 [e = . . _LATAbits 0 7 -> -> 0 `i `uc ]
 }
-[e :U 830 ]
+[e :U 831 ]
 [; ;powerTask.c: 31: PWR_STATE = TASK_PARKED;
 "31
-[e = _PWR_STATE . `E6634 0 ]
+[e = _PWR_STATE . `E6666 0 ]
 [; ;powerTask.c: 32: }
 "32
-[e :UE 822 ]
+[e :UE 823 ]
 }
-[v F6860 `(v ~T0 @X0 1 tf ]
+[v F6899 `(v ~T0 @X0 1 tf ]
 "33
-[v _powerTaskReset `AF6860 ~T0 @X0 1 e ]
+[v _powerTaskReset `AF6899 ~T0 @X0 1 e ]
 {
 [; ;powerTask.c: 33: void powerTaskReset(void){
 [e :U _powerTaskReset ]
 [f ]
 [; ;powerTask.c: 34: do { LATAbits.LATA6 = 0; } while(0);
 "34
-[e :U 835 ]
+[e :U 836 ]
 {
 [e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
 }
-[e :U 834 ]
+[e :U 835 ]
 [; ;powerTask.c: 35: do { LATCbits.LATC0 = 0; } while(0);
 "35
-[e :U 838 ]
+[e :U 839 ]
 {
 [e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
 }
-[e :U 837 ]
+[e :U 838 ]
 [; ;powerTask.c: 36: do { LATAbits.LATA7 = 0; } while(0);
 "36
-[e :U 841 ]
+[e :U 842 ]
 {
 [e = . . _LATAbits 0 7 -> -> 0 `i `uc ]
 }
-[e :U 840 ]
+[e :U 841 ]
 [; ;powerTask.c: 37: }
 "37
-[e :UE 832 ]
+[e :UE 833 ]
 }
-[v F6862 `(v ~T0 @X0 1 tf ]
+[v F6901 `(v ~T0 @X0 1 tf ]
 "38
-[v _powerTaskTick `AF6862 ~T0 @X0 1 e ]
+[v _powerTaskTick `AF6901 ~T0 @X0 1 e ]
 {
 [; ;powerTask.c: 38: void powerTaskTick(void){
 [e :U _powerTaskTick ]
 [f ]
 [; ;powerTask.c: 39: if(powerTaskPwrReadyTimer){
 "39
-[e $ ! != _powerTaskPwrReadyTimer -> -> 0 `i `Aui 843  ]
+[e $ ! != _powerTaskPwrReadyTimer -> -> 0 `i `Aui 844  ]
 {
 [; ;powerTask.c: 40: powerTaskPwrReadyTimer--;
 "40
 [e -- _powerTaskPwrReadyTimer -> -> 1 `i `ui ]
 "41
 }
-[e :U 843 ]
+[e :U 844 ]
 [; ;powerTask.c: 41: }
 [; ;powerTask.c: 42: }
 "42
-[e :UE 842 ]
+[e :UE 843 ]
 }
-[v F6864 `(E6641 ~T0 @X0 1 tf ]
+[v F6903 `(E6673 ~T0 @X0 1 tf ]
 "43
-[v _powerTask `AF6864 ~T0 @X0 1 e ]
+[v _powerTask `AF6903 ~T0 @X0 1 e ]
 {
 [; ;powerTask.c: 43: taskResult_t powerTask(void){
 [e :U _powerTask ]
 [f ]
 [; ;powerTask.c: 44: switch(PWR_STATE){
 "44
-[e $U 846  ]
+[e $U 847  ]
 {
 [; ;powerTask.c: 45: case TASK_PARKED:
 "45
-[e :U 847 ]
+[e :U 848 ]
 [; ;powerTask.c: 46: if(pwrScheduledInitTaskFlag){
 "46
-[e $ ! != -> _pwrScheduledInitTaskFlag `i -> -> -> 0 `i `Auc `i 848  ]
+[e $ ! != -> _pwrScheduledInitTaskFlag `i -> -> -> 0 `i `Auc `i 849  ]
 {
 [; ;powerTask.c: 47: PWR_STATE = TASK_RESET_TASK;
 "47
-[e = _PWR_STATE . `E6634 1 ]
+[e = _PWR_STATE . `E6666 1 ]
 [; ;powerTask.c: 48: return(TASK_ON_COURSE);
 "48
-[e ) . `E6641 1 ]
-[e $UE 844  ]
+[e ) . `E6673 1 ]
+[e $UE 845  ]
 "49
 }
-[e :U 848 ]
+[e :U 849 ]
 [; ;powerTask.c: 49: }
 [; ;powerTask.c: 50: return(TASK_NO_SENSOR_FOUND);
 "50
-[e ) . `E6641 0 ]
-[e $UE 844  ]
+[e ) . `E6673 0 ]
+[e $UE 845  ]
 [; ;powerTask.c: 51: case TASK_RESET_TASK:
 "51
-[e :U 849 ]
+[e :U 850 ]
 [; ;powerTask.c: 52: powerTaskReset();
 "52
 [e ( _powerTaskReset ..  ]
 [; ;powerTask.c: 53: do { LATAbits.LATA7 = 1; } while(0);
 "53
-[e :U 852 ]
+[e :U 853 ]
 {
 [e = . . _LATAbits 0 7 -> -> 1 `i `uc ]
 }
-[e :U 851 ]
+[e :U 852 ]
 [; ;powerTask.c: 55: powerTaskPwrReadyTimer = 4;
 "55
 [e = _powerTaskPwrReadyTimer -> -> 4 `i `ui ]
 [; ;powerTask.c: 59: PWR_STATE = TASK_INIT;
 "59
-[e = _PWR_STATE . `E6634 2 ]
+[e = _PWR_STATE . `E6666 2 ]
 [; ;powerTask.c: 60: return(TASK_ON_COURSE);
 "60
-[e ) . `E6641 1 ]
-[e $UE 844  ]
+[e ) . `E6673 1 ]
+[e $UE 845  ]
 [; ;powerTask.c: 61: case TASK_INIT:
 "61
-[e :U 853 ]
+[e :U 854 ]
 [; ;powerTask.c: 63: if(powerTaskPwrReadyTimer){
 "63
-[e $ ! != _powerTaskPwrReadyTimer -> -> 0 `i `Aui 854  ]
+[e $ ! != _powerTaskPwrReadyTimer -> -> 0 `i `Aui 855  ]
 {
 [; ;powerTask.c: 64: return(TASK_ON_COURSE);
 "64
-[e ) . `E6641 1 ]
-[e $UE 844  ]
+[e ) . `E6673 1 ]
+[e $UE 845  ]
 "65
 }
-[e :U 854 ]
+[e :U 855 ]
 [; ;powerTask.c: 65: }
 [; ;powerTask.c: 69: pwrScheduledInitTaskFlag = 0;
 "69
 [e = _pwrScheduledInitTaskFlag -> -> 0 `i `uc ]
 [; ;powerTask.c: 70: PWR_STATE = TASK_READY;
 "70
-[e = _PWR_STATE . `E6634 3 ]
+[e = _PWR_STATE . `E6666 3 ]
 [; ;powerTask.c: 71: if(pwrScheduledMeasPowerTaskFlag||pwrScheduledCommPowerTaskFlag){
 "71
-[e $ ! || != -> _pwrScheduledMeasPowerTaskFlag `i -> -> -> 0 `i `Auc `i != -> _pwrScheduledCommPowerTaskFlag `i -> -> -> 0 `i `Auc `i 855  ]
+[e $ ! || != -> _pwrScheduledMeasPowerTaskFlag `i -> -> -> 0 `i `Auc `i != -> _pwrScheduledCommPowerTaskFlag `i -> -> -> 0 `i `Auc `i 856  ]
 {
 [; ;powerTask.c: 72: return(TASK_ON_COURSE);
 "72
-[e ) . `E6641 1 ]
-[e $UE 844  ]
+[e ) . `E6673 1 ]
+[e $UE 845  ]
 "73
 }
-[e :U 855 ]
+[e :U 856 ]
 [; ;powerTask.c: 73: }
 [; ;powerTask.c: 74: return(TASK_DATA_READY);
 "74
-[e ) . `E6641 2 ]
-[e $UE 844  ]
+[e ) . `E6673 2 ]
+[e $UE 845  ]
 [; ;powerTask.c: 75: case TASK_READY:
 "75
-[e :U 856 ]
+[e :U 857 ]
 [; ;powerTask.c: 76: if(pwrScheduledMeasPowerTaskFlag){
 "76
-[e $ ! != -> _pwrScheduledMeasPowerTaskFlag `i -> -> -> 0 `i `Auc `i 857  ]
+[e $ ! != -> _pwrScheduledMeasPowerTaskFlag `i -> -> -> 0 `i `Auc `i 858  ]
 {
 [; ;powerTask.c: 77: do { LATAbits.LATA6 = 1; } while(0);
 "77
-[e :U 860 ]
+[e :U 861 ]
 {
 [e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
 }
-[e :U 859 ]
+[e :U 860 ]
 "78
 }
-[e :U 857 ]
+[e :U 858 ]
 [; ;powerTask.c: 78: }
 [; ;powerTask.c: 79: if(pwrScheduledCommPowerTaskFlag){
 "79
-[e $ ! != -> _pwrScheduledCommPowerTaskFlag `i -> -> -> 0 `i `Auc `i 861  ]
+[e $ ! != -> _pwrScheduledCommPowerTaskFlag `i -> -> -> 0 `i `Auc `i 862  ]
 {
 [; ;powerTask.c: 80: do { LATCbits.LATC0 = 1; } while(0);
 "80
-[e :U 864 ]
+[e :U 865 ]
 {
 [e = . . _LATCbits 0 0 -> -> 1 `i `uc ]
 }
-[e :U 863 ]
+[e :U 864 ]
 "81
 }
-[e :U 861 ]
+[e :U 862 ]
 [; ;powerTask.c: 81: }
 [; ;powerTask.c: 82: if(pwrScheduledMeasPowerTaskFlag||pwrScheduledCommPowerTaskFlag){
 "82
-[e $ ! || != -> _pwrScheduledMeasPowerTaskFlag `i -> -> -> 0 `i `Auc `i != -> _pwrScheduledCommPowerTaskFlag `i -> -> -> 0 `i `Auc `i 865  ]
+[e $ ! || != -> _pwrScheduledMeasPowerTaskFlag `i -> -> -> 0 `i `Auc `i != -> _pwrScheduledCommPowerTaskFlag `i -> -> -> 0 `i `Auc `i 866  ]
 {
 [; ;powerTask.c: 83: PWR_STATE = TASK_WAITING_DATA;
 "83
-[e = _PWR_STATE . `E6634 4 ]
+[e = _PWR_STATE . `E6666 4 ]
 [; ;powerTask.c: 84: powerTaskPwrReadyTimer = 2;
 "84
 [e = _powerTaskPwrReadyTimer -> -> 2 `i `ui ]
 [; ;powerTask.c: 85: return(TASK_ON_COURSE);
 "85
-[e ) . `E6641 1 ]
-[e $UE 844  ]
+[e ) . `E6673 1 ]
+[e $UE 845  ]
 "86
 }
-[e :U 865 ]
+[e :U 866 ]
 [; ;powerTask.c: 86: }
 [; ;powerTask.c: 87: return(TASK_DATA_READY);
 "87
-[e ) . `E6641 2 ]
-[e $UE 844  ]
+[e ) . `E6673 2 ]
+[e $UE 845  ]
 [; ;powerTask.c: 88: case TASK_WAITING_DATA:
 "88
-[e :U 866 ]
+[e :U 867 ]
 [; ;powerTask.c: 89: if(powerTaskPwrReadyTimer == 0){
 "89
-[e $ ! == _powerTaskPwrReadyTimer -> -> 0 `i `ui 867  ]
+[e $ ! == _powerTaskPwrReadyTimer -> -> 0 `i `ui 868  ]
 {
 [; ;powerTask.c: 90: PWR_STATE = TASK_READY;
 "90
-[e = _PWR_STATE . `E6634 3 ]
+[e = _PWR_STATE . `E6666 3 ]
 [; ;powerTask.c: 91: if(pwrScheduledMeasPowerTaskFlag){
 "91
-[e $ ! != -> _pwrScheduledMeasPowerTaskFlag `i -> -> -> 0 `i `Auc `i 868  ]
+[e $ ! != -> _pwrScheduledMeasPowerTaskFlag `i -> -> -> 0 `i `Auc `i 869  ]
 {
 [; ;powerTask.c: 92: pwrScheduledMeasPowerTaskFlag = 0;
 "92
@@ -6818,158 +6915,158 @@ Version 3.2 HI-TECH Software Intermediate Code
 "93
 }
 [; ;powerTask.c: 93: }
-[e $U 869  ]
+[e $U 870  ]
 "94
-[e :U 868 ]
+[e :U 869 ]
 [; ;powerTask.c: 94: else if(pwrScheduledCommPowerTaskFlag){
-[e $ ! != -> _pwrScheduledCommPowerTaskFlag `i -> -> -> 0 `i `Auc `i 870  ]
+[e $ ! != -> _pwrScheduledCommPowerTaskFlag `i -> -> -> 0 `i `Auc `i 871  ]
 {
 [; ;powerTask.c: 95: pwrScheduledCommPowerTaskFlag = 0;
 "95
 [e = _pwrScheduledCommPowerTaskFlag -> -> 0 `i `uc ]
 "96
 }
-[e :U 870 ]
+[e :U 871 ]
 "97
-[e :U 869 ]
+[e :U 870 ]
 }
-[e :U 867 ]
+[e :U 868 ]
 [; ;powerTask.c: 96: }
 [; ;powerTask.c: 97: }
 [; ;powerTask.c: 98: return(TASK_ON_COURSE);
 "98
-[e ) . `E6641 1 ]
-[e $UE 844  ]
+[e ) . `E6673 1 ]
+[e $UE 845  ]
 [; ;powerTask.c: 99: default:
 "99
-[e :U 871 ]
+[e :U 872 ]
 [; ;powerTask.c: 100: powerTaskPowerDown();
 "100
 [e ( _powerTaskPowerDown ..  ]
 [; ;powerTask.c: 101: return(TASK_ON_COURSE);
 "101
-[e ) . `E6641 1 ]
-[e $UE 844  ]
+[e ) . `E6673 1 ]
+[e $UE 845  ]
 "102
 }
 [; ;powerTask.c: 102: }
-[e $U 845  ]
+[e $U 846  ]
 "44
-[e :U 846 ]
-[e [\ _PWR_STATE , $ . `E6634 0 847
- , $ . `E6634 1 849
- , $ . `E6634 2 853
- , $ . `E6634 3 856
- , $ . `E6634 4 866
- 871 ]
+[e :U 847 ]
+[e [\ _PWR_STATE , $ . `E6666 0 848
+ , $ . `E6666 1 850
+ , $ . `E6666 2 854
+ , $ . `E6666 3 857
+ , $ . `E6666 4 867
+ 872 ]
 "102
-[e :U 845 ]
+[e :U 846 ]
 [; ;powerTask.c: 103: }
 "103
-[e :UE 844 ]
+[e :UE 845 ]
 }
-[v F6866 `(v ~T0 @X0 1 tf1`E6686 ]
+[v F6905 `(v ~T0 @X0 1 tf1`E6725 ]
 "104
-[v _powerTaskNewTask `AF6866 ~T0 @X0 1 e ]
+[v _powerTaskNewTask `AF6905 ~T0 @X0 1 e ]
 {
 [; ;powerTask.c: 104: void powerTaskNewTask(POWER_TASK_COMMANDS_T command){
 [e :U _powerTaskNewTask ]
-[v _command `E6686 ~T0 @X0 1 r1 ]
+[v _command `E6725 ~T0 @X0 1 r1 ]
 [f ]
 [; ;powerTask.c: 105: switch(command){
 "105
-[e $U 874  ]
+[e $U 875  ]
 {
 [; ;powerTask.c: 106: case PWR_CMD_INITIALIZE:
 "106
-[e :U 875 ]
+[e :U 876 ]
 [; ;powerTask.c: 107: pwrScheduledInitTaskFlag = 1;
 "107
 [e = _pwrScheduledInitTaskFlag -> -> 1 `i `uc ]
 [; ;powerTask.c: 108: break;
 "108
-[e $U 873  ]
+[e $U 874  ]
 [; ;powerTask.c: 109: case PWR_CMD_VDD_EN:
 "109
-[e :U 876 ]
+[e :U 877 ]
 [; ;powerTask.c: 110: pwrScheduledMeasPowerTaskFlag = 1;
 "110
 [e = _pwrScheduledMeasPowerTaskFlag -> -> 1 `i `uc ]
 [; ;powerTask.c: 111: break;
 "111
-[e $U 873  ]
+[e $U 874  ]
 [; ;powerTask.c: 112: case PWR_CMD_VDD_DIS:
 "112
-[e :U 877 ]
+[e :U 878 ]
 [; ;powerTask.c: 113: pwrScheduledMeasPowerTaskFlag = 0;
 "113
 [e = _pwrScheduledMeasPowerTaskFlag -> -> 0 `i `uc ]
 [; ;powerTask.c: 114: do { LATAbits.LATA6 = 0; } while(0);
 "114
-[e :U 880 ]
+[e :U 881 ]
 {
 [e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
 }
-[e :U 879 ]
+[e :U 880 ]
 [; ;powerTask.c: 115: break;
 "115
-[e $U 873  ]
+[e $U 874  ]
 [; ;powerTask.c: 116: case PWR_CMD_VCC_EN:
 "116
-[e :U 881 ]
+[e :U 882 ]
 [; ;powerTask.c: 120: pwrScheduledMeasPowerTaskFlag = 1;
 "120
 [e = _pwrScheduledMeasPowerTaskFlag -> -> 1 `i `uc ]
 [; ;powerTask.c: 122: break;
 "122
-[e $U 873  ]
+[e $U 874  ]
 [; ;powerTask.c: 123: case PWR_CMD_VCC_DIS:
 "123
-[e :U 882 ]
+[e :U 883 ]
 [; ;powerTask.c: 128: pwrScheduledMeasPowerTaskFlag = 0;
 "128
 [e = _pwrScheduledMeasPowerTaskFlag -> -> 0 `i `uc ]
 [; ;powerTask.c: 129: do { LATAbits.LATA6 = 0; } while(0);
 "129
-[e :U 885 ]
+[e :U 886 ]
 {
 [e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
 }
-[e :U 884 ]
+[e :U 885 ]
 [; ;powerTask.c: 131: break;
 "131
-[e $U 873  ]
+[e $U 874  ]
 [; ;powerTask.c: 132: case PWR_CMD_PWR_DOWN:
 "132
-[e :U 886 ]
+[e :U 887 ]
 [; ;powerTask.c: 133: powerTaskPowerDown();
 "133
 [e ( _powerTaskPowerDown ..  ]
 [; ;powerTask.c: 134: break;
 "134
-[e $U 873  ]
+[e $U 874  ]
 "135
 }
 [; ;powerTask.c: 135: }
-[e $U 873  ]
+[e $U 874  ]
 "105
-[e :U 874 ]
-[e [\ _command , $ . `E6686 0 875
- , $ . `E6686 1 876
- , $ . `E6686 2 877
- , $ . `E6686 3 881
- , $ . `E6686 4 882
- , $ . `E6686 5 886
- 873 ]
+[e :U 875 ]
+[e [\ _command , $ . `E6725 0 876
+ , $ . `E6725 1 877
+ , $ . `E6725 2 878
+ , $ . `E6725 3 882
+ , $ . `E6725 4 883
+ , $ . `E6725 5 887
+ 874 ]
 "135
-[e :U 873 ]
+[e :U 874 ]
 [; ;powerTask.c: 136: }
 "136
-[e :UE 872 ]
+[e :UE 873 ]
 }
-[v F6868 `(E6648 ~T0 @X0 1 tf1`uc ]
+[v F6907 `(E6680 ~T0 @X0 1 tf1`uc ]
 "137
-[v _powerTaskGetVarValidity `AF6868 ~T0 @X0 1 e ]
+[v _powerTaskGetVarValidity `AF6907 ~T0 @X0 1 e ]
 {
 [; ;powerTask.c: 137: dataQualifier_t powerTaskGetVarValidity(unsigned char variableID){
 [e :U _powerTaskGetVarValidity ]
@@ -6977,21 +7074,21 @@ Version 3.2 HI-TECH Software Intermediate Code
 [f ]
 [; ;powerTask.c: 138: if(variableID == 0x0B){
 "138
-[e $ ! == -> _variableID `i -> 11 `i 888  ]
+[e $ ! == -> _variableID `i -> 11 `i 889  ]
 {
 [; ;powerTask.c: 139: return(SENSOR_READ);
 "139
-[e ) . `E6648 0 ]
-[e $UE 887  ]
+[e ) . `E6680 0 ]
+[e $UE 888  ]
 "140
 }
-[e :U 888 ]
+[e :U 889 ]
 [; ;powerTask.c: 140: }
 [; ;powerTask.c: 141: return(UNKNOWN_SENSOR);
 "141
-[e ) . `E6648 4 ]
-[e $UE 887  ]
+[e ) . `E6680 4 ]
+[e $UE 888  ]
 [; ;powerTask.c: 142: }
 "142
-[e :UE 887 ]
+[e :UE 888 ]
 }

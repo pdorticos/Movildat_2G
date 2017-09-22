@@ -1,17 +1,20 @@
 Version 3.2 HI-TECH Software Intermediate Code
+"9 /opt/microchip/xc8/v1.42/include/time.h
+[s S821 `i 1 `i 1 `i 1 `i 1 `i 1 `i 1 `i 1 `i 1 `i 1 ]
+[n S821 tm tm_sec tm_min tm_hour tm_mday tm_mon tm_year tm_wday tm_yday tm_isdst ]
 "11 sfxProtocoll.c
-[c E6666 0 1 2 3 .. ]
-[n E6666 _mainTaskStates_t MAIN_TASK_PARKED POWERING_TASK MEASURING_TASK COMMUNICATING_TASK  ]
+[c E6698 0 1 2 3 .. ]
+[n E6698 _mainTaskStates_t MAIN_TASK_PARKED POWERING_TASK MEASURING_TASK COMMUNICATING_TASK  ]
 "52
-[c E6686 0 1 2 3 4 .. ]
-[n E6686 _dataQualifier_t SENSOR_READ BORROWED CALCULATED NOT_AVAILABLE UNKNOWN_SENSOR  ]
+[c E6718 0 1 2 3 4 .. ]
+[n E6718 _dataQualifier_t SENSOR_READ BORROWED CALCULATED NOT_AVAILABLE UNKNOWN_SENSOR  ]
 "56 mcc_generated_files/eusart1.h
-[v _gpsTaskGetVarValidity `(E6686 ~T0 @X0 0 ef1`uc ]
+[v _gpsTaskGetVarValidity `(E6718 ~T0 @X0 0 ef1`uc ]
 "30 powerTask.h
-[v _powerTaskGetVarValidity `(E6686 ~T0 @X0 0 ef1`uc ]
+[v _powerTaskGetVarValidity `(E6718 ~T0 @X0 0 ef1`uc ]
 "95 sfxProtocoll.c
-[c E6697 0 1 2 3 4 5 6 .. ]
-[n E6697 _systemEvent_t HW_WARNING_EV TIMER1_EV TIMER2_EV INPUT_EV MOTION_EV VARIABLE_ALARM_EV BATTERY_EV  ]
+[c E6729 0 1 2 3 4 5 6 .. ]
+[n E6729 _systemEvent_t HW_WARNING_EV TIMER1_EV TIMER2_EV INPUT_EV MOTION_EV VARIABLE_ALARM_EV BATTERY_EV  ]
 "32 mcc_generated_files/eusart2.h
 [v _SigfoxTaskLoadPayloadBuffer `(v ~T0 @X0 0 ef1`*uc ]
 "27 powerTask.h
@@ -19,27 +22,27 @@ Version 3.2 HI-TECH Software Intermediate Code
 "30 mcc_generated_files/eusart2.h
 [v _SigfoxTaskTick `(v ~T0 @X0 0 ef ]
 "230 sfxProtocoll.c
-[c E6679 0 1 2 3 4 .. ]
-[n E6679 _taskResult_t TASK_NO_SENSOR_FOUND TASK_ON_COURSE TASK_DATA_READY TASK_TO_ERR TASK_DATA_NOT_AVAILABLE  ]
-[v F6898 `(E6679 ~T0 @X0 0 tf ]
+[c E6711 0 1 2 3 4 .. ]
+[n E6711 _taskResult_t TASK_NO_SENSOR_FOUND TASK_ON_COURSE TASK_DATA_READY TASK_TO_ERR TASK_DATA_NOT_AVAILABLE  ]
+[v F6937 `(E6711 ~T0 @X0 0 tf ]
 "28 mcc_generated_files/eusart2.h
 [v _SigfoxTaskPowerDown `(v ~T0 @X0 0 ef ]
 "26 powerTask.h
 [v _powerTaskPowerDown `(v ~T0 @X0 0 ef ]
 "269 sfxProtocoll.c
-[c E6833 0 1 2 3 4 5 .. ]
-[n E6833 _POWER_TASK_COMMANDS_T PWR_CMD_INITIALIZE PWR_CMD_VDD_EN PWR_CMD_VDD_DIS PWR_CMD_VCC_EN PWR_CMD_VCC_DIS PWR_CMD_PWR_DOWN  ]
+[c E6872 0 1 2 3 4 5 .. ]
+[n E6872 _POWER_TASK_COMMANDS_T PWR_CMD_INITIALIZE PWR_CMD_VDD_EN PWR_CMD_VDD_DIS PWR_CMD_VCC_EN PWR_CMD_VCC_DIS PWR_CMD_PWR_DOWN  ]
 "29 powerTask.h
-[v _powerTaskNewTask `(v ~T0 @X0 0 ef1`E6833 ]
+[v _powerTaskNewTask `(v ~T0 @X0 0 ef1`E6872 ]
 "28
-[v _powerTask `(E6679 ~T0 @X0 0 ef ]
+[v _powerTask `(E6711 ~T0 @X0 0 ef ]
 "302 sfxProtocoll.c
-[c E6724 0 1 2 3 4 5 6 .. ]
-[n E6724 _SFX_TASK_COMMANDS_T SFX_CMD_INITIALIZE SFX_CMD_SEND_MSG SFX_CMD_SEND_MSG_WAIT_ACK SFX_CMD_SEND_STATUS SFX_CMD_SET_SFX_MODE SFX_CMD_PWR_DOWN SFX_CMD_ADJ_PWR  ]
+[c E6763 0 1 2 3 4 5 6 .. ]
+[n E6763 _SFX_TASK_COMMANDS_T SFX_CMD_INITIALIZE SFX_CMD_SEND_MSG SFX_CMD_SEND_MSG_WAIT_ACK SFX_CMD_SEND_STATUS SFX_CMD_SET_SFX_MODE SFX_CMD_PWR_DOWN SFX_CMD_ADJ_PWR  ]
 "31 mcc_generated_files/eusart2.h
-[v _SigfoxTaskNewTask `(v ~T0 @X0 0 ef1`E6724 ]
+[v _SigfoxTaskNewTask `(v ~T0 @X0 0 ef1`E6763 ]
 "29
-[v _SigfoxTask `(E6679 ~T0 @X0 0 ef ]
+[v _SigfoxTask `(E6711 ~T0 @X0 0 ef ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -6344,92 +6347,186 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;interrupt_manager.h: 53: void setSemaphore(uart_semaphore_t semaphore);
 [; ;interrupt_manager.h: 113: void interrupt INTERRUPT_InterruptManager(void);
 [; ;interrupt_manager.h: 125: void INTERRUPT_Initialize (void);
-[; ;sfxProtocol.h: 34: typedef enum _mainTaskStates_t {
-[; ;sfxProtocol.h: 35: MAIN_TASK_PARKED,
-[; ;sfxProtocol.h: 36: POWERING_TASK,
-[; ;sfxProtocol.h: 37: MEASURING_TASK,
-[; ;sfxProtocol.h: 38: COMMUNICATING_TASK
-[; ;sfxProtocol.h: 39: }mainTaskStates_t;
-[; ;sfxProtocol.h: 41: typedef enum _taskStates_t {
-[; ;sfxProtocol.h: 42: TASK_PARKED,
-[; ;sfxProtocol.h: 43: TASK_RESET_TASK,
-[; ;sfxProtocol.h: 44: TASK_INIT,
-[; ;sfxProtocol.h: 45: TASK_READY,
-[; ;sfxProtocol.h: 46: TASK_WAITING_DATA
-[; ;sfxProtocol.h: 47: }taskStates_t;
-[; ;sfxProtocol.h: 49: typedef enum _taskResult_t {
-[; ;sfxProtocol.h: 50: TASK_NO_SENSOR_FOUND,
-[; ;sfxProtocol.h: 51: TASK_ON_COURSE,
-[; ;sfxProtocol.h: 52: TASK_DATA_READY,
-[; ;sfxProtocol.h: 53: TASK_TO_ERR,
-[; ;sfxProtocol.h: 54: TASK_DATA_NOT_AVAILABLE
-[; ;sfxProtocol.h: 55: }taskResult_t;
-[; ;sfxProtocol.h: 57: typedef enum _dataQualifier_t {
-[; ;sfxProtocol.h: 58: SENSOR_READ,
-[; ;sfxProtocol.h: 59: BORROWED,
-[; ;sfxProtocol.h: 60: CALCULATED,
-[; ;sfxProtocol.h: 61: NOT_AVAILABLE,
-[; ;sfxProtocol.h: 62: UNKNOWN_SENSOR
-[; ;sfxProtocol.h: 63: }dataQualifier_t;
-[; ;sfxProtocol.h: 65: typedef enum _TaskCommManagerState_t {
-[; ;sfxProtocol.h: 66: TASK_SEND_COMMAND_SM = 0,
-[; ;sfxProtocol.h: 67: TASK_DETECT_TRANSACTION_END_SM
-[; ;sfxProtocol.h: 68: } TaskCommManagerState_t;
-[; ;sfxProtocol.h: 70: typedef enum _systemEvent_t {
-[; ;sfxProtocol.h: 71: HW_WARNING_EV,
-[; ;sfxProtocol.h: 72: TIMER1_EV,
-[; ;sfxProtocol.h: 73: TIMER2_EV,
-[; ;sfxProtocol.h: 74: INPUT_EV,
-[; ;sfxProtocol.h: 75: MOTION_EV,
-[; ;sfxProtocol.h: 76: VARIABLE_ALARM_EV,
-[; ;sfxProtocol.h: 77: BATTERY_EV
-[; ;sfxProtocol.h: 78: }systemEvent_t;
-"85 Sigfox/sfxProtocol.h
+[; ;__size_t.h: 4: typedef unsigned size_t;
+[; ;time.h: 8: typedef long time_t;
+[; ;time.h: 9: struct tm {
+[; ;time.h: 10: int tm_sec;
+[; ;time.h: 11: int tm_min;
+[; ;time.h: 12: int tm_hour;
+[; ;time.h: 13: int tm_mday;
+[; ;time.h: 14: int tm_mon;
+[; ;time.h: 15: int tm_year;
+[; ;time.h: 16: int tm_wday;
+[; ;time.h: 17: int tm_yday;
+[; ;time.h: 18: int tm_isdst;
+[; ;time.h: 19: };
+[; ;time.h: 25: extern int time_zone;
+[; ;time.h: 30: extern time_t time(time_t *);
+[; ;time.h: 31: extern int stime(time_t *);
+[; ;time.h: 47: extern char * asctime(const struct tm *) ;
+[; ;time.h: 48: extern char * ctime(const time_t *) ;
+[; ;time.h: 49: extern struct tm * gmtime(const time_t *) ;
+[; ;time.h: 50: extern struct tm * localtime(const time_t *) ;
+[; ;time.h: 51: extern size_t strftime(char *, size_t, const char *, const struct tm *) ;
+[; ;time.h: 52: extern time_t mktime(struct tm *);
+[; ;sfxProtocol.h: 35: typedef enum _mainTaskStates_t {
+[; ;sfxProtocol.h: 36: MAIN_TASK_PARKED,
+[; ;sfxProtocol.h: 37: POWERING_TASK,
+[; ;sfxProtocol.h: 38: MEASURING_TASK,
+[; ;sfxProtocol.h: 39: COMMUNICATING_TASK
+[; ;sfxProtocol.h: 40: }mainTaskStates_t;
+[; ;sfxProtocol.h: 42: typedef enum _taskStates_t {
+[; ;sfxProtocol.h: 43: TASK_PARKED,
+[; ;sfxProtocol.h: 44: TASK_RESET_TASK,
+[; ;sfxProtocol.h: 45: TASK_INIT,
+[; ;sfxProtocol.h: 46: TASK_READY,
+[; ;sfxProtocol.h: 47: TASK_WAITING_DATA
+[; ;sfxProtocol.h: 48: }taskStates_t;
+[; ;sfxProtocol.h: 50: typedef enum _taskResult_t {
+[; ;sfxProtocol.h: 51: TASK_NO_SENSOR_FOUND,
+[; ;sfxProtocol.h: 52: TASK_ON_COURSE,
+[; ;sfxProtocol.h: 53: TASK_DATA_READY,
+[; ;sfxProtocol.h: 54: TASK_TO_ERR,
+[; ;sfxProtocol.h: 55: TASK_DATA_NOT_AVAILABLE
+[; ;sfxProtocol.h: 56: }taskResult_t;
+[; ;sfxProtocol.h: 58: typedef enum _dataQualifier_t {
+[; ;sfxProtocol.h: 59: SENSOR_READ,
+[; ;sfxProtocol.h: 60: BORROWED,
+[; ;sfxProtocol.h: 61: CALCULATED,
+[; ;sfxProtocol.h: 62: NOT_AVAILABLE,
+[; ;sfxProtocol.h: 63: UNKNOWN_SENSOR
+[; ;sfxProtocol.h: 64: }dataQualifier_t;
+[; ;sfxProtocol.h: 66: typedef enum _TaskCommManagerState_t {
+[; ;sfxProtocol.h: 67: TASK_SEND_COMMAND_SM = 0,
+[; ;sfxProtocol.h: 68: TASK_DETECT_TRANSACTION_END_SM
+[; ;sfxProtocol.h: 69: } TaskCommManagerState_t;
+[; ;sfxProtocol.h: 71: typedef enum _systemEvent_t {
+[; ;sfxProtocol.h: 72: HW_WARNING_EV,
+[; ;sfxProtocol.h: 73: TIMER1_EV,
+[; ;sfxProtocol.h: 74: TIMER2_EV,
+[; ;sfxProtocol.h: 75: INPUT_EV,
+[; ;sfxProtocol.h: 76: MOTION_EV,
+[; ;sfxProtocol.h: 77: VARIABLE_ALARM_EV,
+[; ;sfxProtocol.h: 78: BATTERY_EV
+[; ;sfxProtocol.h: 79: }systemEvent_t;
+"88 Sigfox/sfxProtocol.h
+[v _sysVarAPN `AEuc ~T0 @X0 -> 32 `i e ]
+[i _sysVarAPN
+:U ..
+-> 34 `c
+-> 119 `c
+-> 108 `c
+-> 97 `c
+-> 112 `c
+-> 110 `c
+-> 46 `c
+-> 99 `c
+-> 111 `c
+-> 109 `c
+-> 34 `c
+-> 0 `c
+..
+]
+[; ;sfxProtocol.h: 88: eeprom char sysVarAPN[32] = "\"wlapn.com\"";
+"89
+[v _sysVarDestPORT `AEuc ~T0 @X0 -> 8 `i e ]
+[i _sysVarDestPORT
+:U ..
+-> 54 `c
+-> 48 `c
+-> 48 `c
+-> 48 `c
+-> 0 `c
+..
+]
+[; ;sfxProtocol.h: 89: eeprom char sysVarDestPORT[8] = "6000";
+"90
+[v _sysVarDestADDRESS `AEuc ~T0 @X0 -> 32 `i e ]
+[i _sysVarDestADDRESS
+:U ..
+-> 53 `c
+-> 50 `c
+-> 46 `c
+-> 56 `c
+-> 56 `c
+-> 46 `c
+-> 50 `c
+-> 52 `c
+-> 46 `c
+-> 55 `c
+-> 52 `c
+-> 0 `c
+..
+]
+[; ;sfxProtocol.h: 90: eeprom char sysVarDestADDRESS[32] = "52.88.24.74";
+"93
 [v _sysVarGpsValidFlag `Auc ~T0 @X0 1 e ]
 [i _sysVarGpsValidFlag
 -> -> 0 `i `uc
 ]
-[; ;sfxProtocol.h: 85: bool sysVarGpsValidFlag = 0;
-"86
+[; ;sfxProtocol.h: 93: bool sysVarGpsValidFlag = 0;
+"94
 [v _sysVarGpsLat `Al ~T0 @X0 1 e ]
-[; ;sfxProtocol.h: 86: long sysVarGpsLat;
-"87
+[; ;sfxProtocol.h: 94: long sysVarGpsLat;
+"95
 [v _sysVarGpsLong `Al ~T0 @X0 1 e ]
-[; ;sfxProtocol.h: 87: long sysVarGpsLong;
-"88
+[; ;sfxProtocol.h: 95: long sysVarGpsLong;
+"96
 [v _sysVarGpsSpeed `Aui ~T0 @X0 1 e ]
-[; ;sfxProtocol.h: 88: unsigned int sysVarGpsSpeed;
-"89
+[; ;sfxProtocol.h: 96: unsigned int sysVarGpsSpeed;
+"97
 [v _sysVarGpsCourse `Ai ~T0 @X0 1 e ]
-[; ;sfxProtocol.h: 89: int sysVarGpsCourse;
-"90
+[; ;sfxProtocol.h: 97: int sysVarGpsCourse;
+"98
 [v _sysVarGpsAlt `Aui ~T0 @X0 1 e ]
 [i _sysVarGpsAlt
 -> -> 6000 `i `ui
 ]
-[; ;sfxProtocol.h: 90: unsigned int sysVarGpsAlt = 6000;
-"91
+[; ;sfxProtocol.h: 98: unsigned int sysVarGpsAlt = 6000;
+"99
+[v _sysVarGPS `AS821 ~T0 @X0 1 e ]
+[; ;sfxProtocol.h: 99: struct tm sysVarGPS;
+"100
 [v _sysVarGpsDayTime `Al ~T0 @X0 1 e ]
-[; ;sfxProtocol.h: 91: long sysVarGpsDayTime;
-"93
+[; ;sfxProtocol.h: 100: long sysVarGpsDayTime;
+"101
+[v _sysVarUNIXDayTime `Al ~T0 @X0 1 e ]
+[; ;sfxProtocol.h: 101: time_t sysVarUNIXDayTime;
+"103
 [v _sysVarGpsOdometer `Aui ~T0 @X0 1 e ]
-[; ;sfxProtocol.h: 93: unsigned int sysVarGpsOdometer;
-"96
+[; ;sfxProtocol.h: 103: unsigned int sysVarGpsOdometer;
+"106
+[v _sysVarCCID `Auc ~T0 @X0 -> 20 `i e ]
+[i _sysVarCCID
+:U ..
+-> 0 `c
+..
+]
+[; ;sfxProtocol.h: 106: char sysVarCCID[20] = "";
+"107
+[v _sysVarIMEI `Auc ~T0 @X0 -> 20 `i e ]
+[i _sysVarIMEI
+:U ..
+-> 0 `c
+..
+]
+[; ;sfxProtocol.h: 107: char sysVarIMEI[20] = "";
+"109
 [v _sysVarBattery `Auc ~T0 @X0 1 e ]
 [i _sysVarBattery
 -> -> 100 `i `uc
 ]
-[; ;sfxProtocol.h: 96: unsigned char sysVarBattery = 100;
-"99
+[; ;sfxProtocol.h: 109: unsigned char sysVarBattery = 100;
+"112
 [v _sysVarMainInput `Auc ~T0 @X0 1 e ]
 [i _sysVarMainInput
 -> -> 0 `i `uc
 ]
-[; ;sfxProtocol.h: 99: bool sysVarMainInput = 0;
-[; ;sfxProtocol.h: 102: void ProtocolTaskSleepTimeUpdate(unsigned int watchDogSleepingTime);
-[; ;sfxProtocol.h: 103: void ProtocolTaskTick(void);
-[; ;sfxProtocol.h: 104: taskResult_t ProtocolTask(void);
-[; ;sfxProtocol.h: 105: void ProtocolTaskPowerDown(void);
+[; ;sfxProtocol.h: 112: bool sysVarMainInput = 0;
+[; ;sfxProtocol.h: 115: void ProtocolTaskSleepTimeUpdate(unsigned int watchDogSleepingTime);
+[; ;sfxProtocol.h: 116: void ProtocolTaskTick(void);
+[; ;sfxProtocol.h: 117: taskResult_t ProtocolTask(void);
+[; ;sfxProtocol.h: 118: void ProtocolTaskPowerDown(void);
 [; ;eusart2.h: 12: typedef enum _SFX_TASK_COMMANDS_T {
 [; ;eusart2.h: 13: SFX_CMD_INITIALIZE,
 [; ;eusart2.h: 14: SFX_CMD_SEND_MSG,
@@ -6534,9 +6631,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _protVarCommunicationTimer `Aul ~T0 @X0 1 e ]
 [; ;sfxProtocoll.c: 10: unsigned long protVarCommunicationTimer;
 "11
-[v _PROT_STATE `AE6666 ~T0 @X0 1 s ]
+[v _PROT_STATE `AE6698 ~T0 @X0 1 s ]
 [i _PROT_STATE
-. `E6666 0
+. `E6698 0
 ]
 [; ;sfxProtocoll.c: 11: static mainTaskStates_t PROT_STATE = MAIN_TASK_PARKED;
 "12
@@ -6569,20 +6666,20 @@ Version 3.2 HI-TECH Software Intermediate Code
 ..
 ]
 [; ;sfxProtocoll.c: 15: const uint8_t SIT_FRAME_POWERUP_SF_DESC[] = {07,65,66,67,0};
-[v F6860 `(uc ~T0 @X0 1 tf ]
+[v F6899 `(uc ~T0 @X0 1 tf ]
 "17
-[v _ProtocolSetNextMeasTime `AF6860 ~T0 @X0 1 e ]
+[v _ProtocolSetNextMeasTime `AF6899 ~T0 @X0 1 e ]
 {
 [; ;sfxProtocoll.c: 17: bool ProtocolSetNextMeasTime(void){
 [e :U _ProtocolSetNextMeasTime ]
 [f ]
 [; ;sfxProtocoll.c: 19: if(!protVarSystemSynchronizedFlag){
 "19
-[e $ ! ! != -> _protVarSystemSynchronizedFlag `i -> -> -> 0 `i `Auc `i 823  ]
+[e $ ! ! != -> _protVarSystemSynchronizedFlag `i -> -> -> 0 `i `Auc `i 824  ]
 {
 [; ;sfxProtocoll.c: 20: if(sysVarGpsValidFlag){
 "20
-[e $ ! != -> _sysVarGpsValidFlag `i -> -> -> 0 `i `Auc `i 824  ]
+[e $ ! != -> _sysVarGpsValidFlag `i -> -> -> 0 `i `Auc `i 825  ]
 {
 [; ;sfxProtocoll.c: 21: protVarSystemSynchronizedFlag = 1;
 "21
@@ -6596,22 +6693,22 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;sfxProtocoll.c: 24: return(0);
 "24
 [e ) -> -> 0 `i `uc ]
-[e $UE 822  ]
+[e $UE 823  ]
 "25
 }
-[e :U 824 ]
+[e :U 825 ]
 "26
 }
-[e :U 823 ]
+[e :U 824 ]
 [; ;sfxProtocoll.c: 25: }
 [; ;sfxProtocoll.c: 26: }
 [; ;sfxProtocoll.c: 27: if(protVarMeasurementTimer == 0){
 "27
-[e $ ! == _protVarMeasurementTimer -> -> -> 0 `i `l `ul 825  ]
+[e $ ! == _protVarMeasurementTimer -> -> -> 0 `i `l `ul 826  ]
 {
 [; ;sfxProtocoll.c: 28: if(!protVarSystemSynchronizedFlag){
 "28
-[e $ ! ! != -> _protVarSystemSynchronizedFlag `i -> -> -> 0 `i `Auc `i 826  ]
+[e $ ! ! != -> _protVarSystemSynchronizedFlag `i -> -> -> 0 `i `Auc `i 827  ]
 {
 [; ;sfxProtocoll.c: 29: protVarMeasurementTimer = 300;
 "29
@@ -6619,9 +6716,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "30
 }
 [; ;sfxProtocoll.c: 30: }
-[e $U 827  ]
+[e $U 828  ]
 "31
-[e :U 826 ]
+[e :U 827 ]
 [; ;sfxProtocoll.c: 31: else{
 {
 [; ;sfxProtocoll.c: 32: protVarMeasurementTimer = 600 - (sysVarGpsDayTime % 600);
@@ -6629,27 +6726,27 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _protVarMeasurementTimer -> - -> -> 600 `i `l % _sysVarGpsDayTime -> -> 600 `i `l `ul ]
 "33
 }
-[e :U 827 ]
+[e :U 828 ]
 [; ;sfxProtocoll.c: 33: }
 [; ;sfxProtocoll.c: 34: return(1);
 "34
 [e ) -> -> 1 `i `uc ]
-[e $UE 822  ]
+[e $UE 823  ]
 "35
 }
-[e :U 825 ]
+[e :U 826 ]
 [; ;sfxProtocoll.c: 35: }
 [; ;sfxProtocoll.c: 36: return(0);
 "36
 [e ) -> -> 0 `i `uc ]
-[e $UE 822  ]
+[e $UE 823  ]
 [; ;sfxProtocoll.c: 37: }
 "37
-[e :UE 822 ]
+[e :UE 823 ]
 }
-[v F6863 `(uc ~T0 @X0 1 tf ]
+[v F6902 `(uc ~T0 @X0 1 tf ]
 "38
-[v _ProtocolSetNextCommTime `AF6863 ~T0 @X0 1 e ]
+[v _ProtocolSetNextCommTime `AF6902 ~T0 @X0 1 e ]
 {
 [; ;sfxProtocoll.c: 38: bool ProtocolSetNextCommTime(void){
 [e :U _ProtocolSetNextCommTime ]
@@ -6659,19 +6756,19 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _protVarSystemSynchronizedFlag -> -> 1 `i `uc ]
 [; ;sfxProtocoll.c: 42: if(!protVarSystemSynchronizedFlag){
 "42
-[e $ ! ! != -> _protVarSystemSynchronizedFlag `i -> -> -> 0 `i `Auc `i 829  ]
+[e $ ! ! != -> _protVarSystemSynchronizedFlag `i -> -> -> 0 `i `Auc `i 830  ]
 {
 [; ;sfxProtocoll.c: 43: return(0);
 "43
 [e ) -> -> 0 `i `uc ]
-[e $UE 828  ]
+[e $UE 829  ]
 "44
 }
-[e :U 829 ]
+[e :U 830 ]
 [; ;sfxProtocoll.c: 44: }
 [; ;sfxProtocoll.c: 46: if(protVarCommunicationTimer == 0){
 "46
-[e $ ! == _protVarCommunicationTimer -> -> -> 0 `i `l `ul 830  ]
+[e $ ! == _protVarCommunicationTimer -> -> -> 0 `i `l `ul 831  ]
 {
 [; ;sfxProtocoll.c: 47: protVarCommunicationTimer = 600 - (sysVarGpsDayTime % 600) ;
 "47
@@ -6679,71 +6776,71 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;sfxProtocoll.c: 48: return(1);
 "48
 [e ) -> -> 1 `i `uc ]
-[e $UE 828  ]
+[e $UE 829  ]
 "49
 }
-[e :U 830 ]
+[e :U 831 ]
 [; ;sfxProtocoll.c: 49: }
 [; ;sfxProtocoll.c: 50: return(0);
 "50
 [e ) -> -> 0 `i `uc ]
-[e $UE 828  ]
+[e $UE 829  ]
 [; ;sfxProtocoll.c: 51: }
 "51
-[e :UE 828 ]
+[e :UE 829 ]
 }
-[v F6866 `(E6686 ~T0 @X0 1 tf1`uc ]
+[v F6905 `(E6718 ~T0 @X0 1 tf1`uc ]
 "52
-[v _ProtocolGetValidity `AF6866 ~T0 @X0 1 e ]
+[v _ProtocolGetValidity `AF6905 ~T0 @X0 1 e ]
 {
 [; ;sfxProtocoll.c: 52: dataQualifier_t ProtocolGetValidity(uint8_t variableID){
 [e :U _ProtocolGetValidity ]
 [v _variableID `uc ~T0 @X0 1 r1 ]
 [f ]
 "53
-[v _taskResponse `E6686 ~T0 @X0 1 a ]
+[v _taskResponse `E6718 ~T0 @X0 1 a ]
 [; ;sfxProtocoll.c: 53: dataQualifier_t taskResponse;
 [; ;sfxProtocoll.c: 54: taskResponse = gpsTaskGetVarValidity(variableID);
 "54
 [e = _taskResponse ( _gpsTaskGetVarValidity (1 _variableID ]
 [; ;sfxProtocoll.c: 55: if(taskResponse != UNKNOWN_SENSOR){
 "55
-[e $ ! != -> _taskResponse `i -> . `E6686 4 `i 832  ]
+[e $ ! != -> _taskResponse `i -> . `E6718 4 `i 833  ]
 {
 [; ;sfxProtocoll.c: 56: return(taskResponse);
 "56
 [e ) _taskResponse ]
-[e $UE 831  ]
+[e $UE 832  ]
 "57
 }
-[e :U 832 ]
+[e :U 833 ]
 [; ;sfxProtocoll.c: 57: }
 [; ;sfxProtocoll.c: 58: taskResponse = powerTaskGetVarValidity(variableID);
 "58
 [e = _taskResponse ( _powerTaskGetVarValidity (1 _variableID ]
 [; ;sfxProtocoll.c: 59: if(taskResponse != UNKNOWN_SENSOR){
 "59
-[e $ ! != -> _taskResponse `i -> . `E6686 4 `i 833  ]
+[e $ ! != -> _taskResponse `i -> . `E6718 4 `i 834  ]
 {
 [; ;sfxProtocoll.c: 60: return(taskResponse);
 "60
 [e ) _taskResponse ]
-[e $UE 831  ]
+[e $UE 832  ]
 "61
 }
-[e :U 833 ]
+[e :U 834 ]
 [; ;sfxProtocoll.c: 61: }
 [; ;sfxProtocoll.c: 62: return(UNKNOWN_SENSOR);
 "62
-[e ) . `E6686 4 ]
-[e $UE 831  ]
+[e ) . `E6718 4 ]
+[e $UE 832  ]
 [; ;sfxProtocoll.c: 63: }
 "63
-[e :UE 831 ]
+[e :UE 832 ]
 }
-[v F6871 `(v ~T0 @X0 1 tf2`ul`uc ]
+[v F6910 `(v ~T0 @X0 1 tf2`ul`uc ]
 "64
-[v _ProtocolAddFrameData `AF6871 ~T0 @X0 1 e ]
+[v _ProtocolAddFrameData `AF6910 ~T0 @X0 1 e ]
 {
 [; ;sfxProtocoll.c: 64: void ProtocolAddFrameData(unsigned long Data, uint8_t DataRepSize){
 [e :U _ProtocolAddFrameData ]
@@ -6765,16 +6862,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 "69
 {
 [e = _i -> -> 0 `i `uc ]
-[e $U 838  ]
-[e :U 835 ]
+[e $U 839  ]
+[e :U 836 ]
 {
 [; ;sfxProtocoll.c: 70: for(bytes = 0; bytes < 11; bytes++){
 "70
 {
 [e = _bytes -> -> 0 `i `uc ]
-[e $ < -> _bytes `i -> 11 `i 839  ]
-[e $U 840  ]
-[e :U 839 ]
+[e $ < -> _bytes `i -> 11 `i 840  ]
+[e $U 841  ]
+[e :U 840 ]
 {
 [; ;sfxProtocoll.c: 71: protDataShifter[bytes] = protDataShifter[bytes + 1];
 "71
@@ -6783,8 +6880,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "70
 [e ++ _bytes -> -> 1 `i `uc ]
-[e $ < -> _bytes `i -> 11 `i 839  ]
-[e :U 840 ]
+[e $ < -> _bytes `i -> 11 `i 840  ]
+[e :U 841 ]
 "72
 }
 [; ;sfxProtocoll.c: 72: }
@@ -6795,9 +6892,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "69
 [e ++ _i -> -> 1 `i `uc ]
-[e :U 838 ]
-[e $ < -> _i `i -> _toLeft `i 835  ]
-[e :U 836 ]
+[e :U 839 ]
+[e $ < -> _i `i -> _toLeft `i 836  ]
+[e :U 837 ]
 "74
 }
 [; ;sfxProtocoll.c: 74: }
@@ -6808,23 +6905,23 @@ Version 3.2 HI-TECH Software Intermediate Code
 "76
 {
 [e = _i -> -> 0 `i `uc ]
-[e $U 845  ]
-[e :U 842 ]
+[e $U 846  ]
+[e :U 843 ]
 {
 [; ;sfxProtocoll.c: 77: for(bytes = 0; bytes < 12; bytes++){
 "77
 {
 [e = _bytes -> -> 0 `i `uc ]
-[e $ < -> _bytes `i -> 12 `i 846  ]
-[e $U 847  ]
-[e :U 846 ]
+[e $ < -> _bytes `i -> 12 `i 847  ]
+[e $U 848  ]
+[e :U 847 ]
 {
 [; ;sfxProtocoll.c: 78: protDataShifter[bytes] = (protDataShifter[bytes] * 2);
 "78
 [e = *U + &U _protDataShifter * -> _bytes `ux -> -> # *U &U _protDataShifter `ui `ux -> * -> *U + &U _protDataShifter * -> _bytes `ux -> -> # *U &U _protDataShifter `ui `ux `i -> 2 `i `uc ]
 [; ;sfxProtocoll.c: 79: if(protDataShifter[bytes + 1] & 0x80){
 "79
-[e $ ! != & -> *U + &U _protDataShifter * -> -> + -> _bytes `i -> 1 `i `ui `ux -> -> # *U &U _protDataShifter `ui `ux `i -> 128 `i -> 0 `i 849  ]
+[e $ ! != & -> *U + &U _protDataShifter * -> -> + -> _bytes `i -> 1 `i `ui `ux -> -> # *U &U _protDataShifter `ui `ux `i -> 128 `i -> 0 `i 850  ]
 {
 [; ;sfxProtocoll.c: 80: protDataShifter[bytes] |= 1;
 "80
@@ -6832,9 +6929,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "81
 }
 [; ;sfxProtocoll.c: 81: }
-[e $U 850  ]
+[e $U 851  ]
 "82
-[e :U 849 ]
+[e :U 850 ]
 [; ;sfxProtocoll.c: 82: else{
 {
 [; ;sfxProtocoll.c: 83: protDataShifter[bytes] &= 0xFE;
@@ -6842,13 +6939,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e =& *U + &U _protDataShifter * -> _bytes `ux -> -> # *U &U _protDataShifter `ui `ux -> -> 254 `i `uc ]
 "84
 }
-[e :U 850 ]
+[e :U 851 ]
 "85
 }
 "77
 [e ++ _bytes -> -> 1 `i `uc ]
-[e $ < -> _bytes `i -> 12 `i 846  ]
-[e :U 847 ]
+[e $ < -> _bytes `i -> 12 `i 847  ]
+[e :U 848 ]
 "85
 }
 [; ;sfxProtocoll.c: 84: }
@@ -6860,9 +6957,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "76
 [e ++ _i -> -> 1 `i `uc ]
-[e :U 845 ]
-[e $ < -> _i `i -> _toLeft `i 842  ]
-[e :U 843 ]
+[e :U 846 ]
+[e $ < -> _i `i -> _toLeft `i 843  ]
+[e :U 844 ]
 "87
 }
 [; ;sfxProtocoll.c: 87: }
@@ -6876,9 +6973,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "90
 {
 [e = _i -> -> 11 `i `uc ]
-[e $ > -> _i `i -> 7 `i 851  ]
-[e $U 852  ]
-[e :U 851 ]
+[e $ > -> _i `i -> 7 `i 852  ]
+[e $U 853  ]
+[e :U 852 ]
 {
 [; ;sfxProtocoll.c: 91: protDataShifter[i] |= (longMask & 0xFF);
 "91
@@ -6890,22 +6987,22 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "90
 [e -- _i -> -> 1 `i `uc ]
-[e $ > -> _i `i -> 7 `i 851  ]
-[e :U 852 ]
+[e $ > -> _i `i -> 7 `i 852  ]
+[e :U 853 ]
 "93
 }
 [; ;sfxProtocoll.c: 93: }
 [; ;sfxProtocoll.c: 94: }
 "94
-[e :UE 834 ]
+[e :UE 835 ]
 }
-[v F6878 `(uc ~T0 @X0 1 tf1`E6697 ]
+[v F6917 `(uc ~T0 @X0 1 tf1`E6729 ]
 "95
-[v _ProtocolTaskBuildFrame `AF6878 ~T0 @X0 1 e ]
+[v _ProtocolTaskBuildFrame `AF6917 ~T0 @X0 1 e ]
 {
 [; ;sfxProtocoll.c: 95: bool ProtocolTaskBuildFrame(systemEvent_t EVENT){
 [e :U _ProtocolTaskBuildFrame ]
-[v _EVENT `E6697 ~T0 @X0 1 r1 ]
+[v _EVENT `E6729 ~T0 @X0 1 r1 ]
 [f ]
 "97
 [v _totalBits `i ~T0 @X0 1 a ]
@@ -6922,60 +7019,60 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;sfxProtocoll.c: 100: const uint8_t *protFrameDescPtr;
 [; ;sfxProtocoll.c: 102: switch(EVENT){
 "102
-[e $U 856  ]
+[e $U 857  ]
 {
 [; ;sfxProtocoll.c: 103: case TIMER1_EV:
 "103
-[e :U 857 ]
+[e :U 858 ]
 [; ;sfxProtocoll.c: 104: protFrameDescPtr = SIT_FRAME_TRACKER_SF_ID_DESC;
 "104
 [e = _protFrameDescPtr &U _SIT_FRAME_TRACKER_SF_ID_DESC ]
 [; ;sfxProtocoll.c: 105: break;
 "105
-[e $U 855  ]
+[e $U 856  ]
 [; ;sfxProtocoll.c: 106: case TIMER2_EV:
 "106
-[e :U 858 ]
+[e :U 859 ]
 [; ;sfxProtocoll.c: 107: protFrameDescPtr = SIT_FRAME_POWERUP_SF_DESC;
 "107
 [e = _protFrameDescPtr &U _SIT_FRAME_POWERUP_SF_DESC ]
 [; ;sfxProtocoll.c: 108: break;
 "108
-[e $U 855  ]
+[e $U 856  ]
 [; ;sfxProtocoll.c: 109: case INPUT_EV:
 "109
-[e :U 859 ]
-"110
 [e :U 860 ]
-"111
+"110
 [e :U 861 ]
-"112
+"111
 [e :U 862 ]
+"112
+[e :U 863 ]
 [; ;sfxProtocoll.c: 110: case MOTION_EV:
 [; ;sfxProtocoll.c: 111: case VARIABLE_ALARM_EV:
 [; ;sfxProtocoll.c: 112: case BATTERY_EV:
 [; ;sfxProtocoll.c: 113: default:
 "113
-[e :U 863 ]
+[e :U 864 ]
 [; ;sfxProtocoll.c: 114: return(0);
 "114
 [e ) -> -> 0 `i `uc ]
-[e $UE 854  ]
+[e $UE 855  ]
 "115
 }
 [; ;sfxProtocoll.c: 115: }
-[e $U 855  ]
+[e $U 856  ]
 "102
-[e :U 856 ]
-[e [\ _EVENT , $ . `E6697 1 857
- , $ . `E6697 2 858
- , $ . `E6697 3 859
- , $ . `E6697 4 860
- , $ . `E6697 5 861
- , $ . `E6697 6 862
- 863 ]
+[e :U 857 ]
+[e [\ _EVENT , $ . `E6729 1 858
+ , $ . `E6729 2 859
+ , $ . `E6729 3 860
+ , $ . `E6729 4 861
+ , $ . `E6729 5 862
+ , $ . `E6729 6 863
+ 864 ]
 "115
-[e :U 855 ]
+[e :U 856 ]
 [; ;sfxProtocoll.c: 116: ProtocolAddFrameData(EVENT, 3);
 "116
 [e ( _ProtocolAddFrameData (2 , -> -> _EVENT `l `ul -> -> 3 `i `uc ]
@@ -6993,15 +7090,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ++ _protFrameDescPtr * -> -> 1 `i `x -> -> # *U _protFrameDescPtr `i `x ]
 [; ;sfxProtocoll.c: 121: do{
 "121
-[e :U 866 ]
+[e :U 867 ]
 {
 [; ;sfxProtocoll.c: 122: switch(*protFrameDescPtr){
 "122
-[e $U 868  ]
+[e $U 869  ]
 {
 [; ;sfxProtocoll.c: 123: case 0x7F:
 "123
-[e :U 869 ]
+[e :U 870 ]
 [; ;sfxProtocoll.c: 124: dataField = (unsigned long) ProtocolGetValidity(protFrameDescPtr[1]);
 "124
 [e = _dataField -> ( _ProtocolGetValidity (1 *U + _protFrameDescPtr * -> -> 1 `i `x -> -> # *U _protFrameDescPtr `i `x `ul ]
@@ -7010,10 +7107,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _dataSize -> -> 2 `i `uc ]
 [; ;sfxProtocoll.c: 126: break;
 "126
-[e $U 867  ]
+[e $U 868  ]
 [; ;sfxProtocoll.c: 127: case 0x0B:
 "127
-[e :U 870 ]
+[e :U 871 ]
 [; ;sfxProtocoll.c: 128: dataField = (unsigned long)sysVarBattery;
 "128
 [e = _dataField -> _sysVarBattery `ul ]
@@ -7022,10 +7119,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _dataSize -> -> 6 `i `uc ]
 [; ;sfxProtocoll.c: 130: break;
 "130
-[e $U 867  ]
+[e $U 868  ]
 [; ;sfxProtocoll.c: 131: case 0x7E:
 "131
-[e :U 871 ]
+[e :U 872 ]
 [; ;sfxProtocoll.c: 132: dataField = (unsigned long)sysVarMainInput;
 "132
 [e = _dataField -> _sysVarMainInput `ul ]
@@ -7034,10 +7131,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _dataSize -> -> 1 `i `uc ]
 [; ;sfxProtocoll.c: 134: break;
 "134
-[e $U 867  ]
+[e $U 868  ]
 [; ;sfxProtocoll.c: 135: case 0x16:
 "135
-[e :U 872 ]
+[e :U 873 ]
 [; ;sfxProtocoll.c: 136: dataField = (unsigned long)sysVarGpsLat;
 "136
 [e = _dataField -> _sysVarGpsLat `ul ]
@@ -7046,10 +7143,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _dataSize -> -> 28 `i `uc ]
 [; ;sfxProtocoll.c: 138: break;
 "138
-[e $U 867  ]
+[e $U 868  ]
 [; ;sfxProtocoll.c: 139: case 0x18:
 "139
-[e :U 873 ]
+[e :U 874 ]
 [; ;sfxProtocoll.c: 140: dataField = (unsigned long)sysVarGpsLong;
 "140
 [e = _dataField -> _sysVarGpsLong `ul ]
@@ -7058,10 +7155,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _dataSize -> -> 28 `i `uc ]
 [; ;sfxProtocoll.c: 142: break;
 "142
-[e $U 867  ]
+[e $U 868  ]
 [; ;sfxProtocoll.c: 143: case 0x1A:
 "143
-[e :U 874 ]
+[e :U 875 ]
 [; ;sfxProtocoll.c: 144: dataField = (unsigned long)sysVarGpsSpeed;
 "144
 [e = _dataField -> _sysVarGpsSpeed `ul ]
@@ -7070,10 +7167,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _dataSize -> -> 8 `i `uc ]
 [; ;sfxProtocoll.c: 146: break;
 "146
-[e $U 867  ]
+[e $U 868  ]
 [; ;sfxProtocoll.c: 147: case 0x1B:
 "147
-[e :U 875 ]
+[e :U 876 ]
 [; ;sfxProtocoll.c: 148: dataField = (unsigned long)sysVarGpsCourse;
 "148
 [e = _dataField -> _sysVarGpsCourse `ul ]
@@ -7082,10 +7179,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _dataSize -> -> 9 `i `uc ]
 [; ;sfxProtocoll.c: 150: break;
 "150
-[e $U 867  ]
+[e $U 868  ]
 [; ;sfxProtocoll.c: 151: case 0x20:
 "151
-[e :U 876 ]
+[e :U 877 ]
 [; ;sfxProtocoll.c: 152: dataField = (unsigned long)sysVarGpsOdometer;
 "152
 [e = _dataField -> _sysVarGpsOdometer `ul ]
@@ -7094,24 +7191,24 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _dataSize -> -> 16 `i `uc ]
 [; ;sfxProtocoll.c: 154: break;
 "154
-[e $U 867  ]
+[e $U 868  ]
 "155
 }
 [; ;sfxProtocoll.c: 155: }
-[e $U 867  ]
+[e $U 868  ]
 "122
-[e :U 868 ]
-[e [\ *U _protFrameDescPtr , $ -> -> 127 `i `uc 869
- , $ -> -> 11 `i `uc 870
- , $ -> -> 126 `i `uc 871
- , $ -> -> 22 `i `uc 872
- , $ -> -> 24 `i `uc 873
- , $ -> -> 26 `i `uc 874
- , $ -> -> 27 `i `uc 875
- , $ -> -> 32 `i `uc 876
- 867 ]
+[e :U 869 ]
+[e [\ *U _protFrameDescPtr , $ -> -> 127 `i `uc 870
+ , $ -> -> 11 `i `uc 871
+ , $ -> -> 126 `i `uc 872
+ , $ -> -> 22 `i `uc 873
+ , $ -> -> 24 `i `uc 874
+ , $ -> -> 26 `i `uc 875
+ , $ -> -> 27 `i `uc 876
+ , $ -> -> 32 `i `uc 877
+ 868 ]
 "155
-[e :U 867 ]
+[e :U 868 ]
 [; ;sfxProtocoll.c: 156: ProtocolAddFrameData(dataField,dataSize);
 "156
 [e ( _ProtocolAddFrameData (2 , _dataField _dataSize ]
@@ -7120,15 +7217,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e =- _totalBits -> _dataSize `i ]
 [; ;sfxProtocoll.c: 158: if(totalBits < 0){
 "158
-[e $ ! < _totalBits -> 0 `i 877  ]
+[e $ ! < _totalBits -> 0 `i 878  ]
 {
 [; ;sfxProtocoll.c: 159: return(0);
 "159
 [e ) -> -> 0 `i `uc ]
-[e $UE 854  ]
+[e $UE 855  ]
 "160
 }
-[e :U 877 ]
+[e :U 878 ]
 [; ;sfxProtocoll.c: 160: }
 [; ;sfxProtocoll.c: 161: protFrameDescPtr++;
 "161
@@ -7136,18 +7233,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 "162
 }
 [; ;sfxProtocoll.c: 162: }while(*protFrameDescPtr != 0);
-[e $ != -> *U _protFrameDescPtr `i -> 0 `i 866  ]
-[e :U 865 ]
+[e $ != -> *U _protFrameDescPtr `i -> 0 `i 867  ]
+[e :U 866 ]
 [; ;sfxProtocoll.c: 163: if(totalBits>0){
 "163
-[e $ ! > _totalBits -> 0 `i 878  ]
+[e $ ! > _totalBits -> 0 `i 879  ]
 {
 [; ;sfxProtocoll.c: 164: ProtocolAddFrameData(0,totalBits);
 "164
 [e ( _ProtocolAddFrameData (2 , -> -> -> 0 `i `l `ul -> _totalBits `uc ]
 "165
 }
-[e :U 878 ]
+[e :U 879 ]
 [; ;sfxProtocoll.c: 165: }
 [; ;sfxProtocoll.c: 181: SigfoxTaskLoadPayloadBuffer(protDataShifter);
 "181
@@ -7155,63 +7252,63 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;sfxProtocoll.c: 183: return(1);
 "183
 [e ) -> -> 1 `i `uc ]
-[e $UE 854  ]
+[e $UE 855  ]
 [; ;sfxProtocoll.c: 184: }
 "184
-[e :UE 854 ]
+[e :UE 855 ]
 }
-[v F6892 `(v ~T0 @X0 1 tf ]
+[v F6931 `(v ~T0 @X0 1 tf ]
 "186
-[v _ProtocolTaskTick `AF6892 ~T0 @X0 1 e ]
+[v _ProtocolTaskTick `AF6931 ~T0 @X0 1 e ]
 {
 [; ;sfxProtocoll.c: 186: void ProtocolTaskTick(void){
 [e :U _ProtocolTaskTick ]
 [f ]
 "187
-[v F6893 `Auc ~T0 @X0 1 s _500msToSecond ]
+[v F6932 `Auc ~T0 @X0 1 s _500msToSecond ]
 [; ;sfxProtocoll.c: 187: static bool _500msToSecond;
 [; ;sfxProtocoll.c: 189: _500msToSecond = !_500msToSecond;
 "189
-[e = F6893 -> -> ! != -> F6893 `i -> -> -> 0 `i `Auc `i `i `uc ]
+[e = F6932 -> -> ! != -> F6932 `i -> -> -> 0 `i `Auc `i `i `uc ]
 [; ;sfxProtocoll.c: 190: if(_500msToSecond){
 "190
-[e $ ! != -> F6893 `i -> -> -> 0 `i `Auc `i 880  ]
+[e $ ! != -> F6932 `i -> -> -> 0 `i `Auc `i 881  ]
 {
 [; ;sfxProtocoll.c: 191: sysVarGpsDayTime++;
 "191
 [e ++ _sysVarGpsDayTime -> -> 1 `i `l ]
 [; ;sfxProtocoll.c: 192: if(sysVarGpsDayTime >= 86400){
 "192
-[e $ ! >= _sysVarGpsDayTime -> 86400 `l 881  ]
+[e $ ! >= _sysVarGpsDayTime -> 86400 `l 882  ]
 {
 [; ;sfxProtocoll.c: 193: sysVarGpsDayTime -= 86400;
 "193
 [e =- _sysVarGpsDayTime -> 86400 `l ]
 "194
 }
-[e :U 881 ]
+[e :U 882 ]
 [; ;sfxProtocoll.c: 194: }
 [; ;sfxProtocoll.c: 195: if(protVarMeasurementTimer){
 "195
-[e $ ! != _protVarMeasurementTimer -> -> 0 `i `Aul 882  ]
+[e $ ! != _protVarMeasurementTimer -> -> 0 `i `Aul 883  ]
 {
 [; ;sfxProtocoll.c: 196: protVarMeasurementTimer--;
 "196
 [e -- _protVarMeasurementTimer -> -> -> 1 `i `l `ul ]
 "197
 }
-[e :U 882 ]
+[e :U 883 ]
 [; ;sfxProtocoll.c: 197: }
 [; ;sfxProtocoll.c: 198: if(protVarCommunicationTimer){
 "198
-[e $ ! != _protVarCommunicationTimer -> -> 0 `i `Aul 883  ]
+[e $ ! != _protVarCommunicationTimer -> -> 0 `i `Aul 884  ]
 {
 [; ;sfxProtocoll.c: 199: protVarCommunicationTimer--;
 "199
 [e -- _protVarCommunicationTimer -> -> -> 1 `i `l `ul ]
 "200
 }
-[e :U 883 ]
+[e :U 884 ]
 [; ;sfxProtocoll.c: 200: }
 [; ;sfxProtocoll.c: 202: powerTaskTick();
 "202
@@ -7221,15 +7318,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _SigfoxTaskTick ..  ]
 "210
 }
-[e :U 880 ]
+[e :U 881 ]
 [; ;sfxProtocoll.c: 210: }
 [; ;sfxProtocoll.c: 211: }
 "211
-[e :UE 879 ]
+[e :UE 880 ]
 }
-[v F6895 `(v ~T0 @X0 1 tf1`ui ]
+[v F6934 `(v ~T0 @X0 1 tf1`ui ]
 "212
-[v _ProtocolTaskSleepTimeUpdate `AF6895 ~T0 @X0 1 e ]
+[v _ProtocolTaskSleepTimeUpdate `AF6934 ~T0 @X0 1 e ]
 {
 [; ;sfxProtocoll.c: 212: void ProtocolTaskSleepTimeUpdate(unsigned int watchDogSleepingTime){
 [e :U _ProtocolTaskSleepTimeUpdate ]
@@ -7237,7 +7334,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [f ]
 [; ;sfxProtocoll.c: 213: if(protVarMeasurementTimer < watchDogSleepingTime){
 "213
-[e $ ! < _protVarMeasurementTimer -> _watchDogSleepingTime `ul 885  ]
+[e $ ! < _protVarMeasurementTimer -> _watchDogSleepingTime `ul 886  ]
 {
 [; ;sfxProtocoll.c: 214: protVarMeasurementTimer = 0;
 "214
@@ -7245,9 +7342,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "215
 }
 [; ;sfxProtocoll.c: 215: }
-[e $U 886  ]
+[e $U 887  ]
 "216
-[e :U 885 ]
+[e :U 886 ]
 [; ;sfxProtocoll.c: 216: else{
 {
 [; ;sfxProtocoll.c: 217: protVarMeasurementTimer -= watchDogSleepingTime;
@@ -7255,11 +7352,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e =- _protVarMeasurementTimer -> _watchDogSleepingTime `ul ]
 "218
 }
-[e :U 886 ]
+[e :U 887 ]
 [; ;sfxProtocoll.c: 218: }
 [; ;sfxProtocoll.c: 219: if(protVarCommunicationTimer < watchDogSleepingTime){
 "219
-[e $ ! < _protVarCommunicationTimer -> _watchDogSleepingTime `ul 887  ]
+[e $ ! < _protVarCommunicationTimer -> _watchDogSleepingTime `ul 888  ]
 {
 [; ;sfxProtocoll.c: 220: protVarCommunicationTimer = 0;
 "220
@@ -7267,9 +7364,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "221
 }
 [; ;sfxProtocoll.c: 221: }
-[e $U 888  ]
+[e $U 889  ]
 "222
-[e :U 887 ]
+[e :U 888 ]
 [; ;sfxProtocoll.c: 222: else{
 {
 [; ;sfxProtocoll.c: 223: protVarCommunicationTimer -= watchDogSleepingTime;
@@ -7277,37 +7374,37 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e =- _protVarCommunicationTimer -> _watchDogSleepingTime `ul ]
 "224
 }
-[e :U 888 ]
+[e :U 889 ]
 [; ;sfxProtocoll.c: 224: }
 [; ;sfxProtocoll.c: 225: sysVarGpsDayTime += watchDogSleepingTime;
 "225
 [e =+ _sysVarGpsDayTime -> _watchDogSleepingTime `l ]
 [; ;sfxProtocoll.c: 226: if(sysVarGpsDayTime > 86400){
 "226
-[e $ ! > _sysVarGpsDayTime -> 86400 `l 889  ]
+[e $ ! > _sysVarGpsDayTime -> 86400 `l 890  ]
 {
 [; ;sfxProtocoll.c: 227: sysVarGpsDayTime -= 86400;
 "227
 [e =- _sysVarGpsDayTime -> 86400 `l ]
 "228
 }
-[e :U 889 ]
+[e :U 890 ]
 [; ;sfxProtocoll.c: 228: }
 [; ;sfxProtocoll.c: 229: }
 "229
-[e :UE 884 ]
+[e :UE 885 ]
 }
-[v F6901 `(E6679 ~T0 @X0 1 tf2`*F6898`ui ]
+[v F6940 `(E6711 ~T0 @X0 1 tf2`*F6937`ui ]
 "230
-[v _ProtocolTaskExecute `AF6901 ~T0 @X0 1 e ]
+[v _ProtocolTaskExecute `AF6940 ~T0 @X0 1 e ]
 {
 [; ;sfxProtocoll.c: 230: taskResult_t ProtocolTaskExecute(taskResult_t (*taskPointer)(void),unsigned int taskTimeOut){
 [e :U _ProtocolTaskExecute ]
-[v _taskPointer `*F6898 ~T0 @X0 1 r1 ]
+[v _taskPointer `*F6937 ~T0 @X0 1 r1 ]
 [v _taskTimeOut `ui ~T0 @X0 1 r2 ]
 [f ]
 "231
-[v _taskResult `E6679 ~T0 @X0 1 a ]
+[v _taskResult `E6711 ~T0 @X0 1 a ]
 "232
 [v _timeOut `ui ~T0 @X0 1 a ]
 [; ;sfxProtocoll.c: 231: taskResult_t taskResult;
@@ -7317,49 +7414,49 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _timeOut _taskTimeOut ]
 [; ;sfxProtocoll.c: 235: while(timeOut){
 "235
-[e $U 891  ]
-[e :U 892 ]
+[e $U 892  ]
+[e :U 893 ]
 {
 [; ;sfxProtocoll.c: 236: taskResult = taskPointer();
 "236
 [e = _taskResult ( *U _taskPointer ..  ]
 [; ;sfxProtocoll.c: 237: if(taskResult != TASK_ON_COURSE){
 "237
-[e $ ! != -> _taskResult `i -> . `E6679 1 `i 894  ]
+[e $ ! != -> _taskResult `i -> . `E6711 1 `i 895  ]
 {
 [; ;sfxProtocoll.c: 238: return(taskResult);
 "238
 [e ) _taskResult ]
-[e $UE 890  ]
+[e $UE 891  ]
 "239
 }
-[e :U 894 ]
+[e :U 895 ]
 "240
 }
-[e :U 891 ]
+[e :U 892 ]
 "235
-[e $ != _timeOut -> -> 0 `i `ui 892  ]
-[e :U 893 ]
+[e $ != _timeOut -> -> 0 `i `ui 893  ]
+[e :U 894 ]
 [; ;sfxProtocoll.c: 239: }
 [; ;sfxProtocoll.c: 240: }
 [; ;sfxProtocoll.c: 241: return(TASK_TO_ERR);
 "241
-[e ) . `E6679 3 ]
-[e $UE 890  ]
+[e ) . `E6711 3 ]
+[e $UE 891  ]
 [; ;sfxProtocoll.c: 242: }
 "242
-[e :UE 890 ]
+[e :UE 891 ]
 }
-[v F6905 `(v ~T0 @X0 1 tf ]
+[v F6944 `(v ~T0 @X0 1 tf ]
 "243
-[v _ProtocolTaskPowerDown `AF6905 ~T0 @X0 1 e ]
+[v _ProtocolTaskPowerDown `AF6944 ~T0 @X0 1 e ]
 {
 [; ;sfxProtocoll.c: 243: void ProtocolTaskPowerDown(void){
 [e :U _ProtocolTaskPowerDown ]
 [f ]
 [; ;sfxProtocoll.c: 244: PROT_STATE = MAIN_TASK_PARKED;
 "244
-[e = _PROT_STATE . `E6666 0 ]
+[e = _PROT_STATE . `E6698 0 ]
 [; ;sfxProtocoll.c: 249: SigfoxTaskPowerDown();
 "249
 [e ( _SigfoxTaskPowerDown ..  ]
@@ -7368,178 +7465,178 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _powerTaskPowerDown ..  ]
 [; ;sfxProtocoll.c: 252: }
 "252
-[e :UE 895 ]
+[e :UE 896 ]
 }
-[v F6907 `(E6679 ~T0 @X0 1 tf ]
+[v F6946 `(E6711 ~T0 @X0 1 tf ]
 "253
-[v _ProtocolTask `AF6907 ~T0 @X0 1 e ]
+[v _ProtocolTask `AF6946 ~T0 @X0 1 e ]
 {
 [; ;sfxProtocoll.c: 253: taskResult_t ProtocolTask(void){
 [e :U _ProtocolTask ]
 [f ]
 [; ;sfxProtocoll.c: 254: switch(PROT_STATE){
 "254
-[e $U 898  ]
+[e $U 899  ]
 {
 [; ;sfxProtocoll.c: 255: case MAIN_TASK_PARKED:
 "255
-[e :U 899 ]
+[e :U 900 ]
 [; ;sfxProtocoll.c: 256: if(ProtocolSetNextMeasTime()){
 "256
-[e $ ! != -> ( _ProtocolSetNextMeasTime ..  `i -> -> -> 0 `i `uc `i 900  ]
+[e $ ! != -> ( _ProtocolSetNextMeasTime ..  `i -> -> -> 0 `i `uc `i 901  ]
 {
 [; ;sfxProtocoll.c: 257: protVarMeasurementTimer = 0;
 "257
 [e = _protVarMeasurementTimer -> -> -> 0 `i `l `ul ]
 [; ;sfxProtocoll.c: 258: PROT_STATE = POWERING_TASK;
 "258
-[e = _PROT_STATE . `E6666 1 ]
+[e = _PROT_STATE . `E6698 1 ]
 [; ;sfxProtocoll.c: 259: return(TASK_ON_COURSE);
 "259
-[e ) . `E6679 1 ]
-[e $UE 896  ]
+[e ) . `E6711 1 ]
+[e $UE 897  ]
 "260
 }
-[e :U 900 ]
+[e :U 901 ]
 [; ;sfxProtocoll.c: 260: }
 [; ;sfxProtocoll.c: 261: if(ProtocolSetNextCommTime()){
 "261
-[e $ ! != -> ( _ProtocolSetNextCommTime ..  `i -> -> -> 0 `i `uc `i 901  ]
+[e $ ! != -> ( _ProtocolSetNextCommTime ..  `i -> -> -> 0 `i `uc `i 902  ]
 {
 [; ;sfxProtocoll.c: 262: protVarCommunicationTimer = 0;
 "262
 [e = _protVarCommunicationTimer -> -> -> 0 `i `l `ul ]
 [; ;sfxProtocoll.c: 263: PROT_STATE = POWERING_TASK;
 "263
-[e = _PROT_STATE . `E6666 1 ]
+[e = _PROT_STATE . `E6698 1 ]
 [; ;sfxProtocoll.c: 264: return(TASK_ON_COURSE);
 "264
-[e ) . `E6679 1 ]
-[e $UE 896  ]
+[e ) . `E6711 1 ]
+[e $UE 897  ]
 "265
 }
-[e :U 901 ]
+[e :U 902 ]
 [; ;sfxProtocoll.c: 265: }
 [; ;sfxProtocoll.c: 266: return(TASK_NO_SENSOR_FOUND);
 "266
-[e ) . `E6679 0 ]
-[e $UE 896  ]
+[e ) . `E6711 0 ]
+[e $UE 897  ]
 [; ;sfxProtocoll.c: 267: case POWERING_TASK:
 "267
-[e :U 902 ]
+[e :U 903 ]
 [; ;sfxProtocoll.c: 268: if(ProtocolSetNextMeasTime()){
 "268
-[e $ ! != -> ( _ProtocolSetNextMeasTime ..  `i -> -> -> 0 `i `uc `i 903  ]
+[e $ ! != -> ( _ProtocolSetNextMeasTime ..  `i -> -> -> 0 `i `uc `i 904  ]
 {
 [; ;sfxProtocoll.c: 269: powerTaskNewTask(PWR_CMD_INITIALIZE);
 "269
-[e ( _powerTaskNewTask (1 . `E6833 0 ]
+[e ( _powerTaskNewTask (1 . `E6872 0 ]
 [; ;sfxProtocoll.c: 270: powerTaskNewTask(PWR_CMD_VDD_EN);
 "270
-[e ( _powerTaskNewTask (1 . `E6833 1 ]
+[e ( _powerTaskNewTask (1 . `E6872 1 ]
 [; ;sfxProtocoll.c: 271: ProtocolTaskExecute(powerTask,50);
 "271
 [e ( _ProtocolTaskExecute (2 , &U _powerTask -> -> 50 `i `ui ]
 [; ;sfxProtocoll.c: 272: PROT_STATE = MEASURING_TASK;
 "272
-[e = _PROT_STATE . `E6666 2 ]
+[e = _PROT_STATE . `E6698 2 ]
 [; ;sfxProtocoll.c: 273: return(TASK_ON_COURSE);
 "273
-[e ) . `E6679 1 ]
-[e $UE 896  ]
+[e ) . `E6711 1 ]
+[e $UE 897  ]
 "274
 }
-[e :U 903 ]
+[e :U 904 ]
 [; ;sfxProtocoll.c: 274: }
 [; ;sfxProtocoll.c: 275: if(ProtocolSetNextCommTime()){
 "275
-[e $ ! != -> ( _ProtocolSetNextCommTime ..  `i -> -> -> 0 `i `uc `i 904  ]
+[e $ ! != -> ( _ProtocolSetNextCommTime ..  `i -> -> -> 0 `i `uc `i 905  ]
 {
 [; ;sfxProtocoll.c: 276: powerTaskNewTask(PWR_CMD_INITIALIZE);
 "276
-[e ( _powerTaskNewTask (1 . `E6833 0 ]
+[e ( _powerTaskNewTask (1 . `E6872 0 ]
 [; ;sfxProtocoll.c: 281: powerTaskNewTask(PWR_CMD_VDD_EN);
 "281
-[e ( _powerTaskNewTask (1 . `E6833 1 ]
+[e ( _powerTaskNewTask (1 . `E6872 1 ]
 [; ;sfxProtocoll.c: 283: ProtocolTaskExecute(powerTask,50);
 "283
 [e ( _ProtocolTaskExecute (2 , &U _powerTask -> -> 50 `i `ui ]
 [; ;sfxProtocoll.c: 284: ProtocolTaskBuildFrame(TIMER1_EV);
 "284
-[e ( _ProtocolTaskBuildFrame (1 . `E6697 1 ]
+[e ( _ProtocolTaskBuildFrame (1 . `E6729 1 ]
 [; ;sfxProtocoll.c: 285: PROT_STATE = COMMUNICATING_TASK;
 "285
-[e = _PROT_STATE . `E6666 3 ]
+[e = _PROT_STATE . `E6698 3 ]
 [; ;sfxProtocoll.c: 286: return(TASK_ON_COURSE);
 "286
-[e ) . `E6679 1 ]
-[e $UE 896  ]
+[e ) . `E6711 1 ]
+[e $UE 897  ]
 "287
 }
-[e :U 904 ]
+[e :U 905 ]
 [; ;sfxProtocoll.c: 287: }
 [; ;sfxProtocoll.c: 288: ProtocolTaskPowerDown();
 "288
 [e ( _ProtocolTaskPowerDown ..  ]
 [; ;sfxProtocoll.c: 289: return(TASK_NO_SENSOR_FOUND);
 "289
-[e ) . `E6679 0 ]
-[e $UE 896  ]
+[e ) . `E6711 0 ]
+[e $UE 897  ]
 [; ;sfxProtocoll.c: 291: case MEASURING_TASK:
 "291
-[e :U 905 ]
+[e :U 906 ]
 [; ;sfxProtocoll.c: 299: break;
 "299
-[e $U 897  ]
+[e $U 898  ]
 [; ;sfxProtocoll.c: 300: case COMMUNICATING_TASK:
 "300
-[e :U 906 ]
+[e :U 907 ]
 [; ;sfxProtocoll.c: 302: SigfoxTaskNewTask(SFX_CMD_INITIALIZE);
 "302
-[e ( _SigfoxTaskNewTask (1 . `E6724 0 ]
+[e ( _SigfoxTaskNewTask (1 . `E6763 0 ]
 [; ;sfxProtocoll.c: 303: SigfoxTaskNewTask(SFX_CMD_SEND_MSG);
 "303
-[e ( _SigfoxTaskNewTask (1 . `E6724 1 ]
+[e ( _SigfoxTaskNewTask (1 . `E6763 1 ]
 [; ;sfxProtocoll.c: 305: SigfoxTaskNewTask(SFX_CMD_PWR_DOWN);
 "305
-[e ( _SigfoxTaskNewTask (1 . `E6724 5 ]
+[e ( _SigfoxTaskNewTask (1 . `E6763 5 ]
 [; ;sfxProtocoll.c: 306: ProtocolTaskExecute(SigfoxTask,60);
 "306
 [e ( _ProtocolTaskExecute (2 , &U _SigfoxTask -> -> 60 `i `ui ]
 [; ;sfxProtocoll.c: 308: break;
 "308
-[e $U 897  ]
+[e $U 898  ]
 [; ;sfxProtocoll.c: 309: default:
 "309
-[e :U 907 ]
+[e :U 908 ]
 [; ;sfxProtocoll.c: 310: ProtocolTaskPowerDown();
 "310
 [e ( _ProtocolTaskPowerDown ..  ]
 [; ;sfxProtocoll.c: 311: return(TASK_NO_SENSOR_FOUND);
 "311
-[e ) . `E6679 0 ]
-[e $UE 896  ]
+[e ) . `E6711 0 ]
+[e $UE 897  ]
 "312
 }
 [; ;sfxProtocoll.c: 312: }
-[e $U 897  ]
+[e $U 898  ]
 "254
-[e :U 898 ]
-[e [\ _PROT_STATE , $ . `E6666 0 899
- , $ . `E6666 1 902
- , $ . `E6666 2 905
- , $ . `E6666 3 906
- 907 ]
+[e :U 899 ]
+[e [\ _PROT_STATE , $ . `E6698 0 900
+ , $ . `E6698 1 903
+ , $ . `E6698 2 906
+ , $ . `E6698 3 907
+ 908 ]
 "312
-[e :U 897 ]
+[e :U 898 ]
 [; ;sfxProtocoll.c: 313: PROT_STATE = POWERING_TASK;
 "313
-[e = _PROT_STATE . `E6666 1 ]
+[e = _PROT_STATE . `E6698 1 ]
 [; ;sfxProtocoll.c: 314: return(TASK_ON_COURSE);
 "314
-[e ) . `E6679 1 ]
-[e $UE 896  ]
+[e ) . `E6711 1 ]
+[e $UE 897  ]
 [; ;sfxProtocoll.c: 315: }
 "315
-[e :UE 896 ]
+[e :UE 897 ]
 }

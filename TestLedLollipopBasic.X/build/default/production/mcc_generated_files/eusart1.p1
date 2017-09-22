@@ -1,17 +1,20 @@
 Version 3.2 HI-TECH Software Intermediate Code
-[v F7019 `(uc ~T0 @X0 0 tf ]
+"9 /opt/microchip/xc8/v1.42/include/time.h
+[s S821 `i 1 `i 1 `i 1 `i 1 `i 1 `i 1 `i 1 `i 1 `i 1 ]
+[n S821 tm tm_sec tm_min tm_hour tm_mday tm_mon tm_year tm_wday tm_yday tm_isdst ]
+[v F7057 `(uc ~T0 @X0 0 tf ]
 "58 mcc_generated_files/eusart1.c
-[c E6656 0 1 2 3 4 .. ]
-[n E6656 _taskStates_t TASK_PARKED TASK_RESET_TASK TASK_INIT TASK_READY TASK_WAITING_DATA  ]
+[c E6688 0 1 2 3 4 .. ]
+[n E6688 _taskStates_t TASK_PARKED TASK_RESET_TASK TASK_INIT TASK_READY TASK_WAITING_DATA  ]
 "69
-[c E6677 0 1 .. ]
-[n E6677 _TaskCommManagerState_t TASK_SEND_COMMAND_SM TASK_DETECT_TRANSACTION_END_SM  ]
+[c E6709 0 1 .. ]
+[n E6709 _TaskCommManagerState_t TASK_SEND_COMMAND_SM TASK_DETECT_TRANSACTION_END_SM  ]
 "70
-[c E6663 0 1 2 3 4 .. ]
-[n E6663 _taskResult_t TASK_NO_SENSOR_FOUND TASK_ON_COURSE TASK_DATA_READY TASK_TO_ERR TASK_DATA_NOT_AVAILABLE  ]
+[c E6695 0 1 2 3 4 .. ]
+[n E6695 _taskResult_t TASK_NO_SENSOR_FOUND TASK_ON_COURSE TASK_DATA_READY TASK_TO_ERR TASK_DATA_NOT_AVAILABLE  ]
 "38
-[s S826 `uc -> 3 `i `uc -> 3 `i `uc -> 3 `i ]
-[n S826 . DD MM YYYY ]
+[s S827 `uc -> 3 `i `uc -> 3 `i `uc -> 3 `i ]
+[n S827 . DD MM YYYY ]
 "9561 /opt/microchip/xc8/v1.42/include/pic18lf25k22.h
 [s S449 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S449 . RX9D OERR FERR ADDEN CREN SREN RX9 SPEN ]
@@ -62,8 +65,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 "10455
 [v _RCREG1 `Vuc ~T0 @X0 0 e@4014 ]
 "728 mcc_generated_files/eusart1.c
-[c E6670 0 1 2 3 4 .. ]
-[n E6670 _dataQualifier_t SENSOR_READ BORROWED CALCULATED NOT_AVAILABLE UNKNOWN_SENSOR  ]
+[c E6702 0 1 2 3 4 .. ]
+[n E6702 _dataQualifier_t SENSOR_READ BORROWED CALCULATED NOT_AVAILABLE UNKNOWN_SENSOR  ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -6362,92 +6365,186 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 217: typedef uint32_t uintmax_t;
 [; ;stdint.h: 222: typedef int16_t intptr_t;
 [; ;stdint.h: 227: typedef uint16_t uintptr_t;
-[; ;sfxProtocol.h: 34: typedef enum _mainTaskStates_t {
-[; ;sfxProtocol.h: 35: MAIN_TASK_PARKED,
-[; ;sfxProtocol.h: 36: POWERING_TASK,
-[; ;sfxProtocol.h: 37: MEASURING_TASK,
-[; ;sfxProtocol.h: 38: COMMUNICATING_TASK
-[; ;sfxProtocol.h: 39: }mainTaskStates_t;
-[; ;sfxProtocol.h: 41: typedef enum _taskStates_t {
-[; ;sfxProtocol.h: 42: TASK_PARKED,
-[; ;sfxProtocol.h: 43: TASK_RESET_TASK,
-[; ;sfxProtocol.h: 44: TASK_INIT,
-[; ;sfxProtocol.h: 45: TASK_READY,
-[; ;sfxProtocol.h: 46: TASK_WAITING_DATA
-[; ;sfxProtocol.h: 47: }taskStates_t;
-[; ;sfxProtocol.h: 49: typedef enum _taskResult_t {
-[; ;sfxProtocol.h: 50: TASK_NO_SENSOR_FOUND,
-[; ;sfxProtocol.h: 51: TASK_ON_COURSE,
-[; ;sfxProtocol.h: 52: TASK_DATA_READY,
-[; ;sfxProtocol.h: 53: TASK_TO_ERR,
-[; ;sfxProtocol.h: 54: TASK_DATA_NOT_AVAILABLE
-[; ;sfxProtocol.h: 55: }taskResult_t;
-[; ;sfxProtocol.h: 57: typedef enum _dataQualifier_t {
-[; ;sfxProtocol.h: 58: SENSOR_READ,
-[; ;sfxProtocol.h: 59: BORROWED,
-[; ;sfxProtocol.h: 60: CALCULATED,
-[; ;sfxProtocol.h: 61: NOT_AVAILABLE,
-[; ;sfxProtocol.h: 62: UNKNOWN_SENSOR
-[; ;sfxProtocol.h: 63: }dataQualifier_t;
-[; ;sfxProtocol.h: 65: typedef enum _TaskCommManagerState_t {
-[; ;sfxProtocol.h: 66: TASK_SEND_COMMAND_SM = 0,
-[; ;sfxProtocol.h: 67: TASK_DETECT_TRANSACTION_END_SM
-[; ;sfxProtocol.h: 68: } TaskCommManagerState_t;
-[; ;sfxProtocol.h: 70: typedef enum _systemEvent_t {
-[; ;sfxProtocol.h: 71: HW_WARNING_EV,
-[; ;sfxProtocol.h: 72: TIMER1_EV,
-[; ;sfxProtocol.h: 73: TIMER2_EV,
-[; ;sfxProtocol.h: 74: INPUT_EV,
-[; ;sfxProtocol.h: 75: MOTION_EV,
-[; ;sfxProtocol.h: 76: VARIABLE_ALARM_EV,
-[; ;sfxProtocol.h: 77: BATTERY_EV
-[; ;sfxProtocol.h: 78: }systemEvent_t;
-"85 Sigfox/sfxProtocol.h
+[; ;__size_t.h: 4: typedef unsigned size_t;
+[; ;time.h: 8: typedef long time_t;
+[; ;time.h: 9: struct tm {
+[; ;time.h: 10: int tm_sec;
+[; ;time.h: 11: int tm_min;
+[; ;time.h: 12: int tm_hour;
+[; ;time.h: 13: int tm_mday;
+[; ;time.h: 14: int tm_mon;
+[; ;time.h: 15: int tm_year;
+[; ;time.h: 16: int tm_wday;
+[; ;time.h: 17: int tm_yday;
+[; ;time.h: 18: int tm_isdst;
+[; ;time.h: 19: };
+[; ;time.h: 25: extern int time_zone;
+[; ;time.h: 30: extern time_t time(time_t *);
+[; ;time.h: 31: extern int stime(time_t *);
+[; ;time.h: 47: extern char * asctime(const struct tm *) ;
+[; ;time.h: 48: extern char * ctime(const time_t *) ;
+[; ;time.h: 49: extern struct tm * gmtime(const time_t *) ;
+[; ;time.h: 50: extern struct tm * localtime(const time_t *) ;
+[; ;time.h: 51: extern size_t strftime(char *, size_t, const char *, const struct tm *) ;
+[; ;time.h: 52: extern time_t mktime(struct tm *);
+[; ;sfxProtocol.h: 35: typedef enum _mainTaskStates_t {
+[; ;sfxProtocol.h: 36: MAIN_TASK_PARKED,
+[; ;sfxProtocol.h: 37: POWERING_TASK,
+[; ;sfxProtocol.h: 38: MEASURING_TASK,
+[; ;sfxProtocol.h: 39: COMMUNICATING_TASK
+[; ;sfxProtocol.h: 40: }mainTaskStates_t;
+[; ;sfxProtocol.h: 42: typedef enum _taskStates_t {
+[; ;sfxProtocol.h: 43: TASK_PARKED,
+[; ;sfxProtocol.h: 44: TASK_RESET_TASK,
+[; ;sfxProtocol.h: 45: TASK_INIT,
+[; ;sfxProtocol.h: 46: TASK_READY,
+[; ;sfxProtocol.h: 47: TASK_WAITING_DATA
+[; ;sfxProtocol.h: 48: }taskStates_t;
+[; ;sfxProtocol.h: 50: typedef enum _taskResult_t {
+[; ;sfxProtocol.h: 51: TASK_NO_SENSOR_FOUND,
+[; ;sfxProtocol.h: 52: TASK_ON_COURSE,
+[; ;sfxProtocol.h: 53: TASK_DATA_READY,
+[; ;sfxProtocol.h: 54: TASK_TO_ERR,
+[; ;sfxProtocol.h: 55: TASK_DATA_NOT_AVAILABLE
+[; ;sfxProtocol.h: 56: }taskResult_t;
+[; ;sfxProtocol.h: 58: typedef enum _dataQualifier_t {
+[; ;sfxProtocol.h: 59: SENSOR_READ,
+[; ;sfxProtocol.h: 60: BORROWED,
+[; ;sfxProtocol.h: 61: CALCULATED,
+[; ;sfxProtocol.h: 62: NOT_AVAILABLE,
+[; ;sfxProtocol.h: 63: UNKNOWN_SENSOR
+[; ;sfxProtocol.h: 64: }dataQualifier_t;
+[; ;sfxProtocol.h: 66: typedef enum _TaskCommManagerState_t {
+[; ;sfxProtocol.h: 67: TASK_SEND_COMMAND_SM = 0,
+[; ;sfxProtocol.h: 68: TASK_DETECT_TRANSACTION_END_SM
+[; ;sfxProtocol.h: 69: } TaskCommManagerState_t;
+[; ;sfxProtocol.h: 71: typedef enum _systemEvent_t {
+[; ;sfxProtocol.h: 72: HW_WARNING_EV,
+[; ;sfxProtocol.h: 73: TIMER1_EV,
+[; ;sfxProtocol.h: 74: TIMER2_EV,
+[; ;sfxProtocol.h: 75: INPUT_EV,
+[; ;sfxProtocol.h: 76: MOTION_EV,
+[; ;sfxProtocol.h: 77: VARIABLE_ALARM_EV,
+[; ;sfxProtocol.h: 78: BATTERY_EV
+[; ;sfxProtocol.h: 79: }systemEvent_t;
+"88 Sigfox/sfxProtocol.h
+[v _sysVarAPN `AEuc ~T0 @X0 -> 32 `i e ]
+[i _sysVarAPN
+:U ..
+-> 34 `c
+-> 119 `c
+-> 108 `c
+-> 97 `c
+-> 112 `c
+-> 110 `c
+-> 46 `c
+-> 99 `c
+-> 111 `c
+-> 109 `c
+-> 34 `c
+-> 0 `c
+..
+]
+[; ;sfxProtocol.h: 88: eeprom char sysVarAPN[32] = "\"wlapn.com\"";
+"89
+[v _sysVarDestPORT `AEuc ~T0 @X0 -> 8 `i e ]
+[i _sysVarDestPORT
+:U ..
+-> 54 `c
+-> 48 `c
+-> 48 `c
+-> 48 `c
+-> 0 `c
+..
+]
+[; ;sfxProtocol.h: 89: eeprom char sysVarDestPORT[8] = "6000";
+"90
+[v _sysVarDestADDRESS `AEuc ~T0 @X0 -> 32 `i e ]
+[i _sysVarDestADDRESS
+:U ..
+-> 53 `c
+-> 50 `c
+-> 46 `c
+-> 56 `c
+-> 56 `c
+-> 46 `c
+-> 50 `c
+-> 52 `c
+-> 46 `c
+-> 55 `c
+-> 52 `c
+-> 0 `c
+..
+]
+[; ;sfxProtocol.h: 90: eeprom char sysVarDestADDRESS[32] = "52.88.24.74";
+"93
 [v _sysVarGpsValidFlag `Auc ~T0 @X0 1 e ]
 [i _sysVarGpsValidFlag
 -> -> 0 `i `uc
 ]
-[; ;sfxProtocol.h: 85: bool sysVarGpsValidFlag = 0;
-"86
+[; ;sfxProtocol.h: 93: bool sysVarGpsValidFlag = 0;
+"94
 [v _sysVarGpsLat `Al ~T0 @X0 1 e ]
-[; ;sfxProtocol.h: 86: long sysVarGpsLat;
-"87
+[; ;sfxProtocol.h: 94: long sysVarGpsLat;
+"95
 [v _sysVarGpsLong `Al ~T0 @X0 1 e ]
-[; ;sfxProtocol.h: 87: long sysVarGpsLong;
-"88
+[; ;sfxProtocol.h: 95: long sysVarGpsLong;
+"96
 [v _sysVarGpsSpeed `Aui ~T0 @X0 1 e ]
-[; ;sfxProtocol.h: 88: unsigned int sysVarGpsSpeed;
-"89
+[; ;sfxProtocol.h: 96: unsigned int sysVarGpsSpeed;
+"97
 [v _sysVarGpsCourse `Ai ~T0 @X0 1 e ]
-[; ;sfxProtocol.h: 89: int sysVarGpsCourse;
-"90
+[; ;sfxProtocol.h: 97: int sysVarGpsCourse;
+"98
 [v _sysVarGpsAlt `Aui ~T0 @X0 1 e ]
 [i _sysVarGpsAlt
 -> -> 6000 `i `ui
 ]
-[; ;sfxProtocol.h: 90: unsigned int sysVarGpsAlt = 6000;
-"91
+[; ;sfxProtocol.h: 98: unsigned int sysVarGpsAlt = 6000;
+"99
+[v _sysVarGPS `AS821 ~T0 @X0 1 e ]
+[; ;sfxProtocol.h: 99: struct tm sysVarGPS;
+"100
 [v _sysVarGpsDayTime `Al ~T0 @X0 1 e ]
-[; ;sfxProtocol.h: 91: long sysVarGpsDayTime;
-"93
+[; ;sfxProtocol.h: 100: long sysVarGpsDayTime;
+"101
+[v _sysVarUNIXDayTime `Al ~T0 @X0 1 e ]
+[; ;sfxProtocol.h: 101: time_t sysVarUNIXDayTime;
+"103
 [v _sysVarGpsOdometer `Aui ~T0 @X0 1 e ]
-[; ;sfxProtocol.h: 93: unsigned int sysVarGpsOdometer;
-"96
+[; ;sfxProtocol.h: 103: unsigned int sysVarGpsOdometer;
+"106
+[v _sysVarCCID `Auc ~T0 @X0 -> 20 `i e ]
+[i _sysVarCCID
+:U ..
+-> 0 `c
+..
+]
+[; ;sfxProtocol.h: 106: char sysVarCCID[20] = "";
+"107
+[v _sysVarIMEI `Auc ~T0 @X0 -> 20 `i e ]
+[i _sysVarIMEI
+:U ..
+-> 0 `c
+..
+]
+[; ;sfxProtocol.h: 107: char sysVarIMEI[20] = "";
+"109
 [v _sysVarBattery `Auc ~T0 @X0 1 e ]
 [i _sysVarBattery
 -> -> 100 `i `uc
 ]
-[; ;sfxProtocol.h: 96: unsigned char sysVarBattery = 100;
-"99
+[; ;sfxProtocol.h: 109: unsigned char sysVarBattery = 100;
+"112
 [v _sysVarMainInput `Auc ~T0 @X0 1 e ]
 [i _sysVarMainInput
 -> -> 0 `i `uc
 ]
-[; ;sfxProtocol.h: 99: bool sysVarMainInput = 0;
-[; ;sfxProtocol.h: 102: void ProtocolTaskSleepTimeUpdate(unsigned int watchDogSleepingTime);
-[; ;sfxProtocol.h: 103: void ProtocolTaskTick(void);
-[; ;sfxProtocol.h: 104: taskResult_t ProtocolTask(void);
-[; ;sfxProtocol.h: 105: void ProtocolTaskPowerDown(void);
+[; ;sfxProtocol.h: 112: bool sysVarMainInput = 0;
+[; ;sfxProtocol.h: 115: void ProtocolTaskSleepTimeUpdate(unsigned int watchDogSleepingTime);
+[; ;sfxProtocol.h: 116: void ProtocolTaskTick(void);
+[; ;sfxProtocol.h: 117: taskResult_t ProtocolTask(void);
+[; ;sfxProtocol.h: 118: void ProtocolTaskPowerDown(void);
 [; ;eusart1.h: 14: typedef enum gpsResponses {
 [; ;eusart1.h: 15: RMC_FILTER,
 [; ;eusart1.h: 16: GGA_FILTER,
@@ -6477,7 +6574,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;eusart1.h: 62: void EUSART1_Initialize(void);
 [; ;eusart1.h: 63: void EUSART1_Transmit_ISR(void);
 [; ;eusart1.h: 64: void EUSART1_Receive_ISR(void);
-[; ;__size_t.h: 4: typedef unsigned size_t;
 [; ;string.h: 14: extern void * memcpy(void *, const void *, size_t);
 [; ;string.h: 15: extern void * memmove(void *, const void *, size_t);
 [; ;string.h: 16: extern void * memset(void *, int, size_t);
@@ -6600,9 +6696,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "49
 [v _gpsRxBufferFilter `Auc ~T0 @X0 -> 10 `i e ]
 [; ;eusart1.c: 49: char gpsRxBufferFilter[10];
-[v F7021 `*F7019 ~T0 @X0 1 t ]
+[v F7059 `*F7057 ~T0 @X0 1 t ]
 "50
-[v _gpsParsePtr `A*F7019 ~T0 @X0 1 e ]
+[v _gpsParsePtr `A*F7057 ~T0 @X0 1 e ]
 [; ;eusart1.c: 50: bool (*gpsParsePtr)(void);
 "51
 [v _gpsTxBufferPtr `Auc ~T0 @X0 1 e ]
@@ -6626,9 +6722,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _gpsTxDelay `Auc ~T0 @X0 1 e ]
 [; ;eusart1.c: 56: uint8_t gpsTxDelay;
 "58
-[v _GPS_STATE `AE6656 ~T0 @X0 1 e ]
+[v _GPS_STATE `AE6688 ~T0 @X0 1 e ]
 [i _GPS_STATE
-. `E6656 0
+. `E6688 0
 ]
 [; ;eusart1.c: 58: taskStates_t GPS_STATE = TASK_PARKED;
 "59
@@ -6656,23 +6752,23 @@ Version 3.2 HI-TECH Software Intermediate Code
 ]
 [; ;eusart1.c: 64: bool gpsScheduledInitTaskFlag = 0;
 "69
-[v _gpsCommManagerState `AE6677 ~T0 @X0 1 e ]
+[v _gpsCommManagerState `AE6709 ~T0 @X0 1 e ]
 [i _gpsCommManagerState
-. `E6677 0
+. `E6709 0
 ]
 [; ;eusart1.c: 69: TaskCommManagerState_t gpsCommManagerState = TASK_SEND_COMMAND_SM;
 "70
-[v _gpsTransactionResult `AE6663 ~T0 @X0 1 e ]
+[v _gpsTransactionResult `AE6695 ~T0 @X0 1 e ]
 [i _gpsTransactionResult
-. `E6663 1
+. `E6695 1
 ]
 [; ;eusart1.c: 70: taskResult_t gpsTransactionResult = TASK_ON_COURSE;
 "72
-[v _sysVarGpsDate `AS826 ~T0 @X0 1 s ]
+[v _sysVarGpsDate `AS827 ~T0 @X0 1 s ]
 [; ;eusart1.c: 72: static UTCTime_t sysVarGpsDate;
-[v F7038 `(v ~T0 @X0 1 tf ]
+[v F7076 `(v ~T0 @X0 1 tf ]
 "74
-[v _gpsReceive `AF7038 ~T0 @X0 1 e ]
+[v _gpsReceive `AF7076 ~T0 @X0 1 e ]
 {
 [; ;eusart1.c: 74: void gpsReceive(void){
 [e :U _gpsReceive ]
@@ -6697,11 +6793,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . . _PIE1bits 0 5 -> -> 1 `i `uc ]
 [; ;eusart1.c: 86: }
 "86
-[e :UE 827 ]
+[e :UE 828 ]
 }
-[v F7040 `(v ~T0 @X0 1 tf ]
+[v F7078 `(v ~T0 @X0 1 tf ]
 "638
-[v _EUSART1_Transmit_ISR `AF7040 ~T0 @X0 1 e ]
+[v _EUSART1_Transmit_ISR `AF7078 ~T0 @X0 1 e ]
 {
 [; ;eusart1.c: 638: void EUSART1_Transmit_ISR(void){
 [e :U _EUSART1_Transmit_ISR ]
@@ -6714,7 +6810,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . . _PIR1bits 0 4 -> -> 0 `i `uc ]
 [; ;eusart1.c: 642: if(gpsTxBuffer[gpsTxBufferPtr] == 0)
 "642
-[e $ ! == -> *U + &U _gpsTxBuffer * -> _gpsTxBufferPtr `ux -> -> # *U &U _gpsTxBuffer `ui `ux `i -> 0 `i 829  ]
+[e $ ! == -> *U + &U _gpsTxBuffer * -> _gpsTxBufferPtr `ux -> -> # *U &U _gpsTxBuffer `ui `ux `i -> 0 `i 830  ]
 [; ;eusart1.c: 643: {
 "643
 {
@@ -6726,15 +6822,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _gpsReceive ..  ]
 "646
 }
-[e :U 829 ]
+[e :U 830 ]
 [; ;eusart1.c: 646: }
 [; ;eusart1.c: 647: }
 "647
-[e :UE 828 ]
+[e :UE 829 ]
 }
-[v F7042 `(v ~T0 @X0 1 tf ]
+[v F7080 `(v ~T0 @X0 1 tf ]
 "648
-[v _EUSART1_Receive_ISR `AF7042 ~T0 @X0 1 e ]
+[v _EUSART1_Receive_ISR `AF7080 ~T0 @X0 1 e ]
 {
 [; ;eusart1.c: 648: void EUSART1_Receive_ISR(void){
 [e :U _EUSART1_Receive_ISR ]
@@ -6747,21 +6843,21 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _auxVar _RCREG1 ]
 [; ;eusart1.c: 652: if(auxVar == '$'){
 "652
-[e $ ! == -> _auxVar `ui -> 36 `ui 831  ]
+[e $ ! == -> _auxVar `ui -> 36 `ui 832  ]
 {
 [; ;eusart1.c: 653: gpsRxBufferPtr = 0;
 "653
 [e = _gpsRxBufferPtr -> -> 0 `i `uc ]
 "659
 }
-[e :U 831 ]
+[e :U 832 ]
 [; ;eusart1.c: 659: }
 [; ;eusart1.c: 661: PIR1bits.RC1IF = 0;
 "661
 [e = . . _PIR1bits 0 5 -> -> 0 `i `uc ]
 [; ;eusart1.c: 662: if(1 == RCSTA1bits.OERR){
 "662
-[e $ ! == -> 1 `i -> . . _RCSTA1bits 0 1 `i 832  ]
+[e $ ! == -> 1 `i -> . . _RCSTA1bits 0 1 `i 833  ]
 {
 [; ;eusart1.c: 663: RCSTA1bits.CREN = 0;
 "663
@@ -6777,18 +6873,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _auxVar -> -> 0 `i `uc ]
 [; ;eusart1.c: 670: return;
 "670
-[e $UE 830  ]
+[e $UE 831  ]
 "671
 }
-[e :U 832 ]
+[e :U 833 ]
 [; ;eusart1.c: 671: }
 [; ;eusart1.c: 672: if(gpsRxBufferPtr < 8){
 "672
-[e $ ! < -> _gpsRxBufferPtr `i -> 8 `i 833  ]
+[e $ ! < -> _gpsRxBufferPtr `i -> 8 `i 834  ]
 {
 [; ;eusart1.c: 673: if((gpsRxBufferFilter[gpsRxBufferPtr] != '*')&&(auxVar != gpsRxBufferFilter[gpsRxBufferPtr])){
 "673
-[e $ ! && != -> *U + &U _gpsRxBufferFilter * -> _gpsRxBufferPtr `ux -> -> # *U &U _gpsRxBufferFilter `ui `ux `ui -> 42 `ui != -> _auxVar `i -> *U + &U _gpsRxBufferFilter * -> _gpsRxBufferPtr `ux -> -> # *U &U _gpsRxBufferFilter `ui `ux `i 834  ]
+[e $ ! && != -> *U + &U _gpsRxBufferFilter * -> _gpsRxBufferPtr `ux -> -> # *U &U _gpsRxBufferFilter `ui `ux `ui -> 42 `ui != -> _auxVar `i -> *U + &U _gpsRxBufferFilter * -> _gpsRxBufferPtr `ux -> -> # *U &U _gpsRxBufferFilter `ui `ux `i 835  ]
 {
 [; ;eusart1.c: 677: gpsRxBuffer[0] = 0;
 "677
@@ -6798,60 +6894,60 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _gpsRxBufferPtr -> -> 0 `i `uc ]
 [; ;eusart1.c: 679: return;
 "679
-[e $UE 830  ]
+[e $UE 831  ]
 "680
 }
-[e :U 834 ]
+[e :U 835 ]
 "681
 }
 [; ;eusart1.c: 680: }
 [; ;eusart1.c: 681: }
-[e $U 835  ]
+[e $U 836  ]
 "682
-[e :U 833 ]
+[e :U 834 ]
 [; ;eusart1.c: 682: else if(gpsRxBufferPtr < (90-3)){
-[e $ ! < -> _gpsRxBufferPtr `i - -> 90 `i -> 3 `i 836  ]
+[e $ ! < -> _gpsRxBufferPtr `i - -> 90 `i -> 3 `i 837  ]
 {
 [; ;eusart1.c: 684: switch(auxVar){
 "684
-[e $U 838  ]
+[e $U 839  ]
 {
 [; ;eusart1.c: 685: case '.':
 "685
-[e :U 839 ]
-"686
 [e :U 840 ]
+"686
+[e :U 841 ]
 [; ;eusart1.c: 686: case ' ':
 [; ;eusart1.c: 687: return;
 "687
-[e $UE 830  ]
+[e $UE 831  ]
 [; ;eusart1.c: 688: case ',':
 "688
-[e :U 841 ]
+[e :U 842 ]
 [; ;eusart1.c: 689: if(gpsRxBuffer[gpsRxBufferPtr-1] == ' '){
 "689
-[e $ ! == -> *U + &U _gpsRxBuffer * -> -> - -> _gpsRxBufferPtr `i -> 1 `i `ui `ux -> -> # *U &U _gpsRxBuffer `ui `ux `ui -> 32 `ui 842  ]
+[e $ ! == -> *U + &U _gpsRxBuffer * -> -> - -> _gpsRxBufferPtr `i -> 1 `i `ui `ux -> -> # *U &U _gpsRxBuffer `ui `ux `ui -> 32 `ui 843  ]
 {
 [; ;eusart1.c: 690: gpsRxBuffer[gpsRxBufferPtr++] = '0';
 "690
 [e = *U + &U _gpsRxBuffer * -> ++ _gpsRxBufferPtr -> -> 1 `i `uc `ux -> -> # *U &U _gpsRxBuffer `ui `ux -> -> 48 `ui `uc ]
 "691
 }
-[e :U 842 ]
+[e :U 843 ]
 [; ;eusart1.c: 691: }
 [; ;eusart1.c: 692: auxVar = ' ';
 "692
 [e = _auxVar -> -> 32 `ui `uc ]
 [; ;eusart1.c: 693: break;
 "693
-[e $U 837  ]
+[e $U 838  ]
 [; ;eusart1.c: 694: case 'A':
 "694
-[e :U 843 ]
-"695
 [e :U 844 ]
-"696
+"695
 [e :U 845 ]
+"696
+[e :U 846 ]
 [; ;eusart1.c: 695: case 'N':
 [; ;eusart1.c: 696: case 'E':
 [; ;eusart1.c: 697: auxVar = '1';
@@ -6859,14 +6955,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _auxVar -> -> 49 `ui `uc ]
 [; ;eusart1.c: 698: break;
 "698
-[e $U 837  ]
+[e $U 838  ]
 [; ;eusart1.c: 699: case 'V':
 "699
-[e :U 846 ]
-"700
 [e :U 847 ]
-"701
+"700
 [e :U 848 ]
+"701
+[e :U 849 ]
 [; ;eusart1.c: 700: case 'W':
 [; ;eusart1.c: 701: case 'S':
 [; ;eusart1.c: 702: auxVar = '0';
@@ -6874,19 +6970,19 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _auxVar -> -> 48 `ui `uc ]
 [; ;eusart1.c: 703: break;
 "703
-[e $U 837  ]
+[e $U 838  ]
 [; ;eusart1.c: 704: case '*':
 "704
-[e :U 849 ]
+[e :U 850 ]
 [; ;eusart1.c: 708: auxVar = ' ';
 "708
 [e = _auxVar -> -> 32 `ui `uc ]
 [; ;eusart1.c: 709: break;
 "709
-[e $U 837  ]
+[e $U 838  ]
 [; ;eusart1.c: 710: case '\n':
 "710
-[e :U 850 ]
+[e :U 851 ]
 [; ;eusart1.c: 711: PIE1bits.RC1IE = 0;
 "711
 [e = . . _PIE1bits 0 5 -> -> 0 `i `uc ]
@@ -6895,33 +6991,33 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _gpsMsgReceivedFlag -> -> 1 `i `uc ]
 [; ;eusart1.c: 713: break;
 "713
-[e $U 837  ]
+[e $U 838  ]
 "714
 }
 [; ;eusart1.c: 714: }
-[e $U 837  ]
+[e $U 838  ]
 "684
-[e :U 838 ]
-[e [\ _auxVar , $ -> -> 46 `ui `uc 839
- , $ -> -> 32 `ui `uc 840
- , $ -> -> 44 `ui `uc 841
- , $ -> -> 65 `ui `uc 843
- , $ -> -> 78 `ui `uc 844
- , $ -> -> 69 `ui `uc 845
- , $ -> -> 86 `ui `uc 846
- , $ -> -> 87 `ui `uc 847
- , $ -> -> 83 `ui `uc 848
- , $ -> -> 42 `ui `uc 849
- , $ -> -> 10 `ui `uc 850
- 837 ]
+[e :U 839 ]
+[e [\ _auxVar , $ -> -> 46 `ui `uc 840
+ , $ -> -> 32 `ui `uc 841
+ , $ -> -> 44 `ui `uc 842
+ , $ -> -> 65 `ui `uc 844
+ , $ -> -> 78 `ui `uc 845
+ , $ -> -> 69 `ui `uc 846
+ , $ -> -> 86 `ui `uc 847
+ , $ -> -> 87 `ui `uc 848
+ , $ -> -> 83 `ui `uc 849
+ , $ -> -> 42 `ui `uc 850
+ , $ -> -> 10 `ui `uc 851
+ 838 ]
 "714
-[e :U 837 ]
+[e :U 838 ]
 "715
 }
 [; ;eusart1.c: 715: }
-[e $U 851  ]
+[e $U 852  ]
 "716
-[e :U 836 ]
+[e :U 837 ]
 [; ;eusart1.c: 716: else{
 {
 [; ;eusart1.c: 720: gpsRxBufferPtr = 0;
@@ -6935,11 +7031,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _gpsMsgReceivedFlag -> -> 0 `i `uc ]
 [; ;eusart1.c: 723: return;
 "723
-[e $UE 830  ]
+[e $UE 831  ]
 "724
 }
-[e :U 851 ]
-[e :U 835 ]
+[e :U 852 ]
+[e :U 836 ]
 [; ;eusart1.c: 724: }
 [; ;eusart1.c: 725: gpsRxBuffer[gpsRxBufferPtr++] = auxVar;
 "725
@@ -6949,11 +7045,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = *U + &U _gpsRxBuffer * -> _gpsRxBufferPtr `ux -> -> # *U &U _gpsRxBuffer `ui `ux -> -> 0 `i `uc ]
 [; ;eusart1.c: 727: }
 "727
-[e :UE 830 ]
+[e :UE 831 ]
 }
-[v F7045 `(E6670 ~T0 @X0 1 tf1`uc ]
+[v F7083 `(E6702 ~T0 @X0 1 tf1`uc ]
 "728
-[v _gpsTaskGetVarValidity `AF7045 ~T0 @X0 1 e ]
+[v _gpsTaskGetVarValidity `AF7083 ~T0 @X0 1 e ]
 {
 [; ;eusart1.c: 728: dataQualifier_t gpsTaskGetVarValidity(uint8_t variableID){
 [e :U _gpsTaskGetVarValidity ]
@@ -6961,54 +7057,54 @@ Version 3.2 HI-TECH Software Intermediate Code
 [f ]
 [; ;eusart1.c: 730: return(UNKNOWN_SENSOR);
 "730
-[e ) . `E6670 4 ]
-[e $UE 852  ]
+[e ) . `E6702 4 ]
+[e $UE 853  ]
 [; ;eusart1.c: 732: switch(variableID){
 "732
-[e $U 854  ]
+[e $U 855  ]
 {
 [; ;eusart1.c: 733: case 0x16:
 "733
-[e :U 855 ]
-"734
 [e :U 856 ]
-"735
+"734
 [e :U 857 ]
+"735
+[e :U 858 ]
 [; ;eusart1.c: 734: case 0x18:
 [; ;eusart1.c: 735: case 0x20:
 [; ;eusart1.c: 736: if(sysVarGpsValidFlag){
 "736
-[e $ ! != -> _sysVarGpsValidFlag `i -> -> -> 0 `i `Auc `i 858  ]
+[e $ ! != -> _sysVarGpsValidFlag `i -> -> -> 0 `i `Auc `i 859  ]
 {
 [; ;eusart1.c: 737: return(SENSOR_READ);
 "737
-[e ) . `E6670 0 ]
-[e $UE 852  ]
+[e ) . `E6702 0 ]
+[e $UE 853  ]
 "738
 }
-[e :U 858 ]
+[e :U 859 ]
 [; ;eusart1.c: 738: }
 [; ;eusart1.c: 739: return(NOT_AVAILABLE);
 "739
-[e ) . `E6670 3 ]
-[e $UE 852  ]
+[e ) . `E6702 3 ]
+[e $UE 853  ]
 "740
 }
 [; ;eusart1.c: 740: }
-[e $U 853  ]
+[e $U 854  ]
 "732
-[e :U 854 ]
-[e [\ _variableID , $ -> -> 22 `i `uc 855
- , $ -> -> 24 `i `uc 856
- , $ -> -> 32 `i `uc 857
- 853 ]
+[e :U 855 ]
+[e [\ _variableID , $ -> -> 22 `i `uc 856
+ , $ -> -> 24 `i `uc 857
+ , $ -> -> 32 `i `uc 858
+ 854 ]
 "740
-[e :U 853 ]
+[e :U 854 ]
 [; ;eusart1.c: 741: return(UNKNOWN_SENSOR);
 "741
-[e ) . `E6670 4 ]
-[e $UE 852  ]
+[e ) . `E6702 4 ]
+[e $UE 853  ]
 [; ;eusart1.c: 742: }
 "742
-[e :UE 852 ]
+[e :UE 853 ]
 }

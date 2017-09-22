@@ -10,6 +10,7 @@
 
 #include <xc.h> // include processor files - each processor file is guarded.  
 #include <stdbool.h>
+#include <time.h>
 
 //#define UART2_SIMULATE              1
 ////////////////////////////////////////////////////////////////////////////////
@@ -81,6 +82,13 @@ typedef enum _systemEvent_t {
 /* SYSTEM VARS*/
 //////////////////////////////////////////////////////////////////////////
 
+// Configuration Data
+
+// GPRS Parameters
+eeprom char sysVarAPN[32] = "\"wlapn.com\"";
+eeprom char sysVarDestPORT[8] = "6000";
+eeprom char sysVarDestADDRESS[32] = "52.88.24.74";
+
 // GPSTask Data
 bool sysVarGpsValidFlag = false;
 long sysVarGpsLat;
@@ -88,10 +96,15 @@ long sysVarGpsLong;
 unsigned int sysVarGpsSpeed;
 int sysVarGpsCourse;
 unsigned int sysVarGpsAlt = 6000;
+struct tm sysVarGPS;
 long sysVarGpsDayTime;
+time_t sysVarUNIXDayTime;
 
 unsigned int sysVarGpsOdometer;
 
+// Gprs Data
+char sysVarCCID[20] = "";
+char sysVarIMEI[20] = "";
 // Power Data
 unsigned char sysVarBattery = 100;
 
