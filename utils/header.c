@@ -2,5 +2,5 @@
 #include <stdio.h>
 int main(int args,char * argv[]){
 	time_t ti = time(NULL);
-	printf("%04lx",ti);
+	printf("timestamp:\t%04lx\n",ti);
 }
