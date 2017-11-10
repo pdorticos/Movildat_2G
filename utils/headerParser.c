@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <time.h>
 
 int chr2HX(char * chrStr,char * hexStr,int len){
     int i;
@@ -19,6 +20,11 @@ int copyArray(char * orig, char * cpy, int ini,int fin){
 		cpy[i]=orig[i];
 	}
 	cpy[fin+1]='\0';
+	return 0;
+}
+int printLinuxLocalTimeStamp(){
+	time_t ti = time(NULL);
+	printf("timestamp:\t%04lx\n",ti);
 	return 0;
 }
 
