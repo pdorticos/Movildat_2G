@@ -1,6 +1,4 @@
-#include <time.h>
-#include <stdio.h>
-
+#include "dt2ts.h"
 
 int dt2ts(char * devDate){
 	int sec,min,hour,day,month,year,tz;
@@ -26,8 +24,7 @@ int dt2ts(char * devDate){
 	return 0;
 }
 
-//usage: ./dt2ts 17/11/07,12:10:53+04
-int main(int args,char * argv[]){
+/*int main(int args,char * argv[]){
 	return dt2ts(argv[1]);
-}
+}*/
 
