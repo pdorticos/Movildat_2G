@@ -26,6 +26,12 @@ Prints a string with the following aplication layer format:
 |HDOP|1|2|
 |ID of IO|1|2|
 
+## dt2ts: Device time to timestamp
+
+Conversion form device's time format to 4 byte timestamp as required.
+
+    usage: ./dtme2TS 17/11/10,11:21:53+04
+
 
 
 
