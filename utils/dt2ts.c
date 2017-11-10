@@ -1,4 +1,5 @@
 #include "dt2ts.h"
+#include "stdint.h"
 
 int dt2ts(char * devDate){
 	int sec,min,hour,day,month,year,tz;
@@ -22,6 +23,10 @@ int dt2ts(char * devDate){
 	printf("timestamp loc:\t%04lx\t",ti);
 	printf("ctime loc:\t%s\n",ctime(&ti));
 	return 0;
+}
+
+int dt2tsvec(char *devDate,uint8_t output){
+
 }
 
 /*int main(int args,char * argv[]){
