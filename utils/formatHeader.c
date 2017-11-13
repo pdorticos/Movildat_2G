@@ -7,9 +7,9 @@ int main(int args,char * argv[]){
 	header_t head;
         dt2tsvec(argv[1],head.timeStamp);
 	printf("Timestamp:\t\t%s\n",head.timeStamp);
-	head.timeStampExtension=(uint8_t) atoi(argv[2]);
-	printf("TimestampExtension:\t%u\n",head.timeStampExtension);
-	head.priority=(uint8_t) atoi(argv[3]);
-	printf("Priority:\t\t%u\n",head.priority);
+	sprintf(head.timeStampExtension,"%02x",atoi(argv[2]));
+	printf("TimestampExtension:\t%s\n",head.timeStampExtension);
+	sprintf(head.priority,"%02x",atoi(argv[3]));
+	printf("Priority:\t\t%s\n",head.priority);
 	return 0;
 }

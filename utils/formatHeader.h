@@ -2,8 +2,8 @@
 
 typedef struct header{
 	char timeStamp[8];
-	uint8_t timeStampExtension;
-	uint8_t priority;
+	char timeStampExtension[2];
+	char priority[2];
 	uint16_t longitude[4];
 	uint16_t latitude[4];
 	uint16_t altitude[2];
