@@ -25,8 +25,23 @@ int dt2ts(char * devDate){
 	return 0;
 }
 
-int dt2tsvec(char *devDate,uint8_t output){
-
+int dt2tsvec(char *devDate,char *output){
+	int sec,min,hour,day,month,year,tz;
+	struct tm tstamp;
+	sscanf(devDate,"%d/%d/%d,%d:%d:%d+%d",&year,&month,&day,
+		&hour,&min,&sec,&tz);
+	printf("Day\t:%d Month\t:%d Year\t:%d\n",day,month,year);
+	printf("Hour\t:%d Minute\t:%d Seccond\t:%d TZ\t:%d\n"
+		,hour,min,sec,tz);
+	tstamp.tm_sec=sec;
+	tstamp.tm_min=min;
+	tstamp.tm_hour=hour;
+	tstamp.tm_year=100+year;
+	tstamp.tm_mon=month-1;
+	tstamp.tm_mday=day;
+	time_t aux=mktime(&tstamp);
+	sprintf(output,"%04lx",aux);
+	return 0;
 }
 
 /*int main(int args,char * argv[]){
