@@ -30,10 +30,11 @@ Prints a string with the following aplication layer format:
 
 Conversion form device's time format to 4 byte timestamp as required.
 
-    usage: ./dtme2TS 17/11/10,11:21:53+04
+    usage: ./dtme2TS YY/MM/DD,HH:MM:SS+ZZ
 
 
+## Format Header    
+Fills a struct containing header info.
 
-
-
+    usage: ./format YY/MM/DD,HH:MM:SS+ZZ tstamXtension priority
 
