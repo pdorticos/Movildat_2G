@@ -36,5 +36,12 @@ Conversion form device's time format to 4 byte timestamp as required.
 ## Format Header    
 Fills a struct containing header info.
 
-    usage: ./format YY/MM/DD,HH:MM:SS+ZZ tstamXtension priority
+    usage: ./format 17/11/10,11:21:53+04 3 7 01344.26820E 4542.82691N
 
+|Argv|Format|Meaning|
+|:--:|:---|:---|
+|1|YY/MM/DD,HH:MM:SS+ZZ|Date|
+|2|int|TimeStamp Extension|
+|3|int|Priority|
+|4|dddmm.mmmmmS|Longitude|
+|5|ddmm.mmmmmH|Latitude|
