@@ -3,8 +3,8 @@
 #include "formatHeader.h"
 #include "parseCoords.h"
 
-//usage:./dtme2TS2 17/11/10,11:21:53+04 3 7 4542.8106N
-//		   YY/MM/DD,HH:MM:SS+ZZ tsXtension prio latitude
+//usage: ./format 17/11/10,11:21:53+04 3 7 01344.26820E 4542.82691N
+//		   YY/MM/DD,HH:MM:SS+ZZ tsXtension prio longitude latitude
 int main(int args,char * argv[]){
 	header_t head;
         dt2tsvec(argv[1],head.timeStamp);
@@ -19,7 +19,7 @@ int main(int args,char * argv[]){
 	printf("Longitude:\t");
 	printf("degrees:\t%i\t",longitude.degrees);
 	printf("minutes:\t%f\t",longitude.minutes);
-	printf("side:\t\t%c\n",longitude.side);
+	printf("side:\t\t\t%c\n",longitude.side);
 	parseLat(argv[5],&latitude);
 	printf("Latitude:\t");
 	printf("degrees:\t%i\t",latitude.degrees);
